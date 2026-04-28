@@ -3,6 +3,8 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix vann: <http://purl.org/vocab/vann/> .
 
 #################################################################
 # Ontology Information
@@ -10,7 +12,13 @@
 
 ex:EmotionAwareRecommendationOntology rdf:type owl:Ontology ;
     rdfs:label "Emotion-Aware Intelligent Recommendation Ontology"@en ;
-    rdfs:comment "An ontology for modeling personalized recommendations based on user emotions, needs, context, personality traits, preferences, content types, and content effects."@en .
+    rdfs:comment "An ontology for modeling personalized recommendations based on user emotions, needs, context, personality traits, preferences, content types, and content effects."@en ;
+    dc:creator "Elif Özkanat, Büşra Pehlivanlar, Enes Ulucan"@en ;
+    dc:description "This ontology models the relationships between user emotional states, contextual situations, personal needs, and digital content items to enable intelligent, personalized content recommendations."@en ;
+    dc:subject "Emotion-aware recommendation systems, Affective computing, Personalization"@en ;
+    owl:versionInfo "1.0.0" ;
+    vann:preferredNamespacePrefix "ex" ;
+    vann:preferredNamespaceUri "http://example.org/emotion-aware-recommendation#" .
 
 #################################################################
 # Classes
@@ -227,22 +235,26 @@ ex:hasFeedback rdf:type owl:ObjectProperty ;
 ex:hasAge rdf:type owl:DatatypeProperty ;
     rdfs:domain ex:User ;
     rdfs:range xsd:integer ;
-    rdfs:label "has age"@en .
+    rdfs:label "has age"@en ;
+    rdfs:comment "The age of a user in years."@en .
 
 ex:hasConfidenceScore rdf:type owl:DatatypeProperty ;
     rdfs:domain ex:Recommendation ;
     rdfs:range xsd:decimal ;
-    rdfs:label "has confidence score"@en .
+    rdfs:label "has confidence score"@en ;
+    rdfs:comment "A decimal value between 0 and 1 indicating how confident the system is in the recommendation."@en .
 
 ex:hasDurationMinutes rdf:type owl:DatatypeProperty ;
     rdfs:domain ex:Content ;
     rdfs:range xsd:integer ;
-    rdfs:label "has duration in minutes"@en .
+    rdfs:label "has duration in minutes"@en ;
+    rdfs:comment "The duration of a content item in minutes."@en .
 
 ex:hasFeedbackScore rdf:type owl:DatatypeProperty ;
     rdfs:domain ex:Feedback ;
     rdfs:range xsd:integer ;
-    rdfs:label "has feedback score"@en .
+    rdfs:label "has feedback score"@en ;
+    rdfs:comment "An integer score (e.g., 1–5) provided by the user as feedback on a recommendation."@en .
 
 #################################################################
 # Individuals - Users
@@ -259,6 +271,26 @@ ex:Elif rdf:type ex:User ;
     ex:hasTimeContext ex:Night ;
     ex:isInEnvironment ex:Home ;
     ex:isInEnvironment ex:Alone .
+
+ex:Busra rdf:type ex:User ;
+    rdfs:label "Büşra"@en ;
+    ex:hasAge 22 ;
+    ex:feels ex:Boredom ;
+    ex:hasNeed ex:Distraction ;
+    ex:hasPersonality ex:Extrovert ;
+    ex:hasPreference ex:LikesGames ;
+    ex:hasTimeContext ex:Evening ;
+    ex:isInEnvironment ex:Home .
+
+ex:Enes rdf:type ex:User ;
+    rdfs:label "Enes"@en ;
+    ex:hasAge 22 ;
+    ex:feels ex:Tiredness ;
+    ex:hasNeed ex:Motivation ;
+    ex:hasPersonality ex:Introvert ;
+    ex:hasPreference ex:LikesPodcasts ;
+    ex:hasTimeContext ex:Morning ;
+    ex:isInEnvironment ex:School .
 
 ex:Deniz rdf:type ex:User ;
     rdfs:label "Deniz"@en ;
@@ -519,6 +551,14 @@ ex:Feedback002 rdf:type ex:Feedback ;
     rdfs:label "Positive feedback for recommendation 002"@en ;
     ex:hasFeedbackScore 4 .
 
+ex:Feedback003 rdf:type ex:Feedback ;
+    rdfs:label "Positive feedback for recommendation 003"@en ;
+    ex:hasFeedbackScore 4 .
+
+ex:Feedback004 rdf:type ex:Feedback ;
+    rdfs:label "Positive feedback for recommendation 004"@en ;
+    ex:hasFeedbackScore 5 .
+
 #################################################################
 # Individuals - Recommendations
 #################################################################
@@ -547,3 +587,27 @@ ex:Recommendation002 rdf:type ex:Recommendation ;
     ex:hasIntention ex:ImproveMood ;
     ex:hasFeedback ex:Feedback002 ;
     ex:hasConfidenceScore 0.87 .
+
+ex:Recommendation003 rdf:type ex:Recommendation ;
+    rdfs:label "Puzzle game recommendation for Büşra"@en ;
+    ex:givenTo ex:Busra ;
+    ex:includesContent ex:PuzzleGame ;
+    ex:basedOnEmotion ex:Boredom ;
+    ex:basedOnNeed ex:Distraction ;
+    ex:considersContext ex:Evening ;
+    ex:considersContext ex:Home ;
+    ex:hasIntention ex:ImproveMood ;
+    ex:hasFeedback ex:Feedback003 ;
+    ex:hasConfidenceScore 0.81 .
+
+ex:Recommendation004 rdf:type ex:Recommendation ;
+    rdfs:label "Motivational podcast recommendation for Enes"@en ;
+    ex:givenTo ex:Enes ;
+    ex:includesContent ex:MotivationalPodcast ;
+    ex:basedOnEmotion ex:Tiredness ;
+    ex:basedOnNeed ex:Motivation ;
+    ex:considersContext ex:Morning ;
+    ex:considersContext ex:School ;
+    ex:hasIntention ex:IncreaseMotivation ;
+    ex:hasFeedback ex:Feedback004 ;
+    ex:hasConfidenceScore 0.88 .
