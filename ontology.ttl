@@ -1,0 +1,549 @@
+@prefix ex: <http://example.org/emotion-aware-recommendation#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+#################################################################
+# Ontology Information
+#################################################################
+
+ex:EmotionAwareRecommendationOntology rdf:type owl:Ontology ;
+    rdfs:label "Emotion-Aware Intelligent Recommendation Ontology"@en ;
+    rdfs:comment "An ontology for modeling personalized recommendations based on user emotions, needs, context, personality traits, preferences, content types, and content effects."@en .
+
+#################################################################
+# Classes
+#################################################################
+
+ex:User rdf:type owl:Class ;
+    rdfs:label "User"@en ;
+    rdfs:comment "A person who receives recommendations from the system."@en .
+
+ex:Emotion rdf:type owl:Class ;
+    rdfs:label "Emotion"@en ;
+    rdfs:comment "An emotional state experienced by a user."@en .
+
+ex:Need rdf:type owl:Class ;
+    rdfs:label "Need"@en ;
+    rdfs:comment "A user need that may arise from an emotional state."@en .
+
+ex:Content rdf:type owl:Class ;
+    rdfs:label "Content"@en ;
+    rdfs:comment "A digital content item or activity that can be recommended to a user."@en .
+
+ex:Recommendation rdf:type owl:Class ;
+    rdfs:label "Recommendation"@en ;
+    rdfs:comment "A personalized suggestion generated for a user."@en .
+
+ex:Effect rdf:type owl:Class ;
+    rdfs:label "Effect"@en ;
+    rdfs:comment "The expected psychological or behavioral effect of a content item."@en .
+
+ex:Context rdf:type owl:Class ;
+    rdfs:label "Context"@en ;
+    rdfs:comment "The situation in which the user is located."@en .
+
+ex:TimeContext rdf:type owl:Class ;
+    rdfs:subClassOf ex:Context ;
+    rdfs:label "Time Context"@en ;
+    rdfs:comment "The time-related context of a user."@en .
+
+ex:Environment rdf:type owl:Class ;
+    rdfs:subClassOf ex:Context ;
+    rdfs:label "Environment"@en ;
+    rdfs:comment "The physical or social environment of a user."@en .
+
+ex:Personality rdf:type owl:Class ;
+    rdfs:label "Personality"@en ;
+    rdfs:comment "A personality trait that may affect recommendation suitability."@en .
+
+ex:Preference rdf:type owl:Class ;
+    rdfs:label "Preference"@en ;
+    rdfs:comment "A user's preferred content type or activity."@en .
+
+ex:ContentCategory rdf:type owl:Class ;
+    rdfs:label "Content Category"@en ;
+    rdfs:comment "A category describing the type of content."@en .
+
+ex:Platform rdf:type owl:Class ;
+    rdfs:label "Platform"@en ;
+    rdfs:comment "A digital platform where content may be delivered."@en .
+
+ex:Intention rdf:type owl:Class ;
+    rdfs:label "Intention"@en ;
+    rdfs:comment "The intended purpose of a recommendation."@en .
+
+ex:Feedback rdf:type owl:Class ;
+    rdfs:label "Feedback"@en ;
+    rdfs:comment "A user response to a recommendation."@en .
+
+#################################################################
+# Object Properties
+#################################################################
+
+ex:feels rdf:type owl:ObjectProperty ;
+    rdfs:domain ex:User ;
+    rdfs:range ex:Emotion ;
+    rdfs:label "feels"@en ;
+    rdfs:comment "Connects a user to an emotion they experience."@en .
+
+ex:createsNeed rdf:type owl:ObjectProperty ;
+    rdfs:domain ex:Emotion ;
+    rdfs:range ex:Need ;
+    rdfs:label "creates need"@en ;
+    rdfs:comment "Connects an emotion to the need it may create."@en .
+
+ex:hasNeed rdf:type owl:ObjectProperty ;
+    rdfs:domain ex:User ;
+    rdfs:range ex:Need ;
+    rdfs:label "has need"@en ;
+    rdfs:comment "Connects a user to a need."@en .
+
+ex:satisfiedBy rdf:type owl:ObjectProperty ;
+    rdfs:domain ex:Need ;
+    rdfs:range ex:Content ;
+    rdfs:label "satisfied by"@en ;
+    rdfs:comment "Connects a need to content that can satisfy it."@en .
+
+ex:hasEffect rdf:type owl:ObjectProperty ;
+    rdfs:domain ex:Content ;
+    rdfs:range ex:Effect ;
+    rdfs:label "has effect"@en ;
+    rdfs:comment "Connects content to its expected effect."@en .
+
+ex:relievesEmotion rdf:type owl:ObjectProperty ;
+    rdfs:domain ex:Effect ;
+    rdfs:range ex:Emotion ;
+    rdfs:label "relieves emotion"@en ;
+    rdfs:comment "Connects an effect to an emotion it may help reduce."@en .
+
+ex:belongsToCategory rdf:type owl:ObjectProperty ;
+    rdfs:domain ex:Content ;
+    rdfs:range ex:ContentCategory ;
+    rdfs:label "belongs to category"@en ;
+    rdfs:comment "Connects content to its category."@en .
+
+ex:hasPreference rdf:type owl:ObjectProperty ;
+    rdfs:domain ex:User ;
+    rdfs:range ex:Preference ;
+    rdfs:label "has preference"@en ;
+    rdfs:comment "Connects a user to a preference."@en .
+
+ex:matchesPreference rdf:type owl:ObjectProperty ;
+    rdfs:domain ex:Content ;
+    rdfs:range ex:Preference ;
+    rdfs:label "matches preference"@en ;
+    rdfs:comment "Connects content to a matching user preference."@en .
+
+ex:hasPersonality rdf:type owl:ObjectProperty ;
+    rdfs:domain ex:User ;
+    rdfs:range ex:Personality ;
+    rdfs:label "has personality"@en ;
+    rdfs:comment "Connects a user to a personality trait."@en .
+
+ex:suitableForPersonality rdf:type owl:ObjectProperty ;
+    rdfs:domain ex:Content ;
+    rdfs:range ex:Personality ;
+    rdfs:label "suitable for personality"@en ;
+    rdfs:comment "Shows which personality type a content item is suitable for."@en .
+
+ex:hasTimeContext rdf:type owl:ObjectProperty ;
+    rdfs:domain ex:User ;
+    rdfs:range ex:TimeContext ;
+    rdfs:label "has time context"@en ;
+    rdfs:comment "Connects a user to a time context."@en .
+
+ex:isInEnvironment rdf:type owl:ObjectProperty ;
+    rdfs:domain ex:User ;
+    rdfs:range ex:Environment ;
+    rdfs:label "is in environment"@en ;
+    rdfs:comment "Connects a user to an environment."@en .
+
+ex:suitableForTime rdf:type owl:ObjectProperty ;
+    rdfs:domain ex:Content ;
+    rdfs:range ex:TimeContext ;
+    rdfs:label "suitable for time"@en ;
+    rdfs:comment "Shows which time context is suitable for content."@en .
+
+ex:suitableForEnvironment rdf:type owl:ObjectProperty ;
+    rdfs:domain ex:Content ;
+    rdfs:range ex:Environment ;
+    rdfs:label "suitable for environment"@en ;
+    rdfs:comment "Shows which environment is suitable for content."@en .
+
+ex:givenTo rdf:type owl:ObjectProperty ;
+    rdfs:domain ex:Recommendation ;
+    rdfs:range ex:User ;
+    rdfs:label "given to"@en ;
+    rdfs:comment "Connects a recommendation to the user receiving it."@en .
+
+ex:includesContent rdf:type owl:ObjectProperty ;
+    rdfs:domain ex:Recommendation ;
+    rdfs:range ex:Content ;
+    rdfs:label "includes content"@en ;
+    rdfs:comment "Connects a recommendation to the content it includes."@en .
+
+ex:basedOnEmotion rdf:type owl:ObjectProperty ;
+    rdfs:domain ex:Recommendation ;
+    rdfs:range ex:Emotion ;
+    rdfs:label "based on emotion"@en ;
+    rdfs:comment "Shows the emotion considered in a recommendation."@en .
+
+ex:basedOnNeed rdf:type owl:ObjectProperty ;
+    rdfs:domain ex:Recommendation ;
+    rdfs:range ex:Need ;
+    rdfs:label "based on need"@en ;
+    rdfs:comment "Shows the need considered in a recommendation."@en .
+
+ex:considersContext rdf:type owl:ObjectProperty ;
+    rdfs:domain ex:Recommendation ;
+    rdfs:range ex:Context ;
+    rdfs:label "considers context"@en ;
+    rdfs:comment "Shows contextual information used in a recommendation."@en .
+
+ex:hasIntention rdf:type owl:ObjectProperty ;
+    rdfs:domain ex:Recommendation ;
+    rdfs:range ex:Intention ;
+    rdfs:label "has intention"@en ;
+    rdfs:comment "Shows the intended purpose of a recommendation."@en .
+
+ex:availableOnPlatform rdf:type owl:ObjectProperty ;
+    rdfs:domain ex:Content ;
+    rdfs:range ex:Platform ;
+    rdfs:label "available on platform"@en ;
+    rdfs:comment "Connects content to the platform where it is available."@en .
+
+ex:hasFeedback rdf:type owl:ObjectProperty ;
+    rdfs:domain ex:Recommendation ;
+    rdfs:range ex:Feedback ;
+    rdfs:label "has feedback"@en ;
+    rdfs:comment "Connects a recommendation to user feedback."@en .
+
+#################################################################
+# Data Properties
+#################################################################
+
+ex:hasAge rdf:type owl:DatatypeProperty ;
+    rdfs:domain ex:User ;
+    rdfs:range xsd:integer ;
+    rdfs:label "has age"@en .
+
+ex:hasConfidenceScore rdf:type owl:DatatypeProperty ;
+    rdfs:domain ex:Recommendation ;
+    rdfs:range xsd:decimal ;
+    rdfs:label "has confidence score"@en .
+
+ex:hasDurationMinutes rdf:type owl:DatatypeProperty ;
+    rdfs:domain ex:Content ;
+    rdfs:range xsd:integer ;
+    rdfs:label "has duration in minutes"@en .
+
+ex:hasFeedbackScore rdf:type owl:DatatypeProperty ;
+    rdfs:domain ex:Feedback ;
+    rdfs:range xsd:integer ;
+    rdfs:label "has feedback score"@en .
+
+#################################################################
+# Individuals - Users
+#################################################################
+
+ex:Elif rdf:type ex:User ;
+    rdfs:label "Elif"@en ;
+    ex:hasAge 21 ;
+    ex:feels ex:Stress ;
+    ex:hasNeed ex:Relaxation ;
+    ex:hasPersonality ex:Introvert ;
+    ex:hasPreference ex:LikesMusic ;
+    ex:hasPreference ex:LikesShortContent ;
+    ex:hasTimeContext ex:Night ;
+    ex:isInEnvironment ex:Home ;
+    ex:isInEnvironment ex:Alone .
+
+ex:Deniz rdf:type ex:User ;
+    rdfs:label "Deniz"@en ;
+    ex:hasAge 23 ;
+    ex:feels ex:Sadness ;
+    ex:hasNeed ex:EmotionalSupport ;
+    ex:hasPersonality ex:Extrovert ;
+    ex:hasPreference ex:LikesMovies ;
+    ex:hasTimeContext ex:Evening ;
+    ex:isInEnvironment ex:WithFriends .
+
+#################################################################
+# Individuals - Emotions
+#################################################################
+
+ex:Stress rdf:type ex:Emotion ;
+    rdfs:label "Stress"@en ;
+    ex:createsNeed ex:Relaxation .
+
+ex:Sadness rdf:type ex:Emotion ;
+    rdfs:label "Sadness"@en ;
+    ex:createsNeed ex:EmotionalSupport .
+
+ex:Anxiety rdf:type ex:Emotion ;
+    rdfs:label "Anxiety"@en ;
+    ex:createsNeed ex:Calmness .
+
+ex:Tiredness rdf:type ex:Emotion ;
+    rdfs:label "Tiredness"@en ;
+    ex:createsNeed ex:Motivation .
+
+ex:Boredom rdf:type ex:Emotion ;
+    rdfs:label "Boredom"@en ;
+    ex:createsNeed ex:Distraction .
+
+#################################################################
+# Individuals - Needs
+#################################################################
+
+ex:Relaxation rdf:type ex:Need ;
+    rdfs:label "Relaxation"@en ;
+    ex:satisfiedBy ex:LoFiPlaylist ;
+    ex:satisfiedBy ex:BreathingExercise .
+
+ex:EmotionalSupport rdf:type ex:Need ;
+    rdfs:label "Emotional Support"@en ;
+    ex:satisfiedBy ex:ComfortMovie .
+
+ex:Calmness rdf:type ex:Need ;
+    rdfs:label "Calmness"@en ;
+    ex:satisfiedBy ex:MeditationAudio .
+
+ex:Motivation rdf:type ex:Need ;
+    rdfs:label "Motivation"@en ;
+    ex:satisfiedBy ex:MotivationalPodcast .
+
+ex:Distraction rdf:type ex:Need ;
+    rdfs:label "Distraction"@en ;
+    ex:satisfiedBy ex:PuzzleGame .
+
+#################################################################
+# Individuals - Content Categories
+#################################################################
+
+ex:Music rdf:type ex:ContentCategory ;
+    rdfs:label "Music"@en .
+
+ex:Movie rdf:type ex:ContentCategory ;
+    rdfs:label "Movie"@en .
+
+ex:Podcast rdf:type ex:ContentCategory ;
+    rdfs:label "Podcast"@en .
+
+ex:Meditation rdf:type ex:ContentCategory ;
+    rdfs:label "Meditation"@en .
+
+ex:Game rdf:type ex:ContentCategory ;
+    rdfs:label "Game"@en .
+
+#################################################################
+# Individuals - Content
+#################################################################
+
+ex:LoFiPlaylist rdf:type ex:Content ;
+    rdfs:label "Lo-Fi Playlist"@en ;
+    ex:belongsToCategory ex:Music ;
+    ex:hasEffect ex:CalmingEffect ;
+    ex:matchesPreference ex:LikesMusic ;
+    ex:suitableForPersonality ex:Introvert ;
+    ex:suitableForTime ex:Night ;
+    ex:suitableForEnvironment ex:Home ;
+    ex:suitableForEnvironment ex:Alone ;
+    ex:availableOnPlatform ex:Spotify ;
+    ex:hasDurationMinutes 25 .
+
+ex:BreathingExercise rdf:type ex:Content ;
+    rdfs:label "Breathing Exercise"@en ;
+    ex:belongsToCategory ex:Meditation ;
+    ex:hasEffect ex:RelaxingEffect ;
+    ex:suitableForPersonality ex:Introvert ;
+    ex:suitableForTime ex:Night ;
+    ex:suitableForEnvironment ex:Home ;
+    ex:availableOnPlatform ex:MobileApp ;
+    ex:hasDurationMinutes 5 .
+
+ex:ComfortMovie rdf:type ex:Content ;
+    rdfs:label "Comfort Movie"@en ;
+    ex:belongsToCategory ex:Movie ;
+    ex:hasEffect ex:EmotionalReliefEffect ;
+    ex:matchesPreference ex:LikesMovies ;
+    ex:suitableForPersonality ex:Extrovert ;
+    ex:suitableForTime ex:Evening ;
+    ex:suitableForEnvironment ex:WithFriends ;
+    ex:availableOnPlatform ex:Netflix ;
+    ex:hasDurationMinutes 95 .
+
+ex:MeditationAudio rdf:type ex:Content ;
+    rdfs:label "Meditation Audio"@en ;
+    ex:belongsToCategory ex:Meditation ;
+    ex:hasEffect ex:CalmingEffect ;
+    ex:suitableForTime ex:Night ;
+    ex:suitableForEnvironment ex:Home ;
+    ex:availableOnPlatform ex:MobileApp ;
+    ex:hasDurationMinutes 10 .
+
+ex:MotivationalPodcast rdf:type ex:Content ;
+    rdfs:label "Motivational Podcast"@en ;
+    ex:belongsToCategory ex:Podcast ;
+    ex:hasEffect ex:MotivatingEffect ;
+    ex:matchesPreference ex:LikesPodcasts ;
+    ex:suitableForTime ex:Morning ;
+    ex:availableOnPlatform ex:Spotify ;
+    ex:hasDurationMinutes 15 .
+
+ex:PuzzleGame rdf:type ex:Content ;
+    rdfs:label "Puzzle Game"@en ;
+    ex:belongsToCategory ex:Game ;
+    ex:hasEffect ex:DistractingEffect ;
+    ex:matchesPreference ex:LikesGames ;
+    ex:suitableForEnvironment ex:Home ;
+    ex:availableOnPlatform ex:MobileApp ;
+    ex:hasDurationMinutes 20 .
+
+#################################################################
+# Individuals - Effects
+#################################################################
+
+ex:CalmingEffect rdf:type ex:Effect ;
+    rdfs:label "Calming Effect"@en ;
+    ex:relievesEmotion ex:Stress ;
+    ex:relievesEmotion ex:Anxiety .
+
+ex:RelaxingEffect rdf:type ex:Effect ;
+    rdfs:label "Relaxing Effect"@en ;
+    ex:relievesEmotion ex:Stress .
+
+ex:EmotionalReliefEffect rdf:type ex:Effect ;
+    rdfs:label "Emotional Relief Effect"@en ;
+    ex:relievesEmotion ex:Sadness .
+
+ex:MotivatingEffect rdf:type ex:Effect ;
+    rdfs:label "Motivating Effect"@en ;
+    ex:relievesEmotion ex:Tiredness .
+
+ex:DistractingEffect rdf:type ex:Effect ;
+    rdfs:label "Distracting Effect"@en ;
+    ex:relievesEmotion ex:Boredom .
+
+#################################################################
+# Individuals - Contexts
+#################################################################
+
+ex:Morning rdf:type ex:TimeContext ;
+    rdfs:label "Morning"@en .
+
+ex:Evening rdf:type ex:TimeContext ;
+    rdfs:label "Evening"@en .
+
+ex:Night rdf:type ex:TimeContext ;
+    rdfs:label "Night"@en .
+
+ex:Home rdf:type ex:Environment ;
+    rdfs:label "Home"@en .
+
+ex:School rdf:type ex:Environment ;
+    rdfs:label "School"@en .
+
+ex:Alone rdf:type ex:Environment ;
+    rdfs:label "Alone"@en .
+
+ex:WithFriends rdf:type ex:Environment ;
+    rdfs:label "With Friends"@en .
+
+#################################################################
+# Individuals - Personality
+#################################################################
+
+ex:Introvert rdf:type ex:Personality ;
+    rdfs:label "Introvert"@en .
+
+ex:Extrovert rdf:type ex:Personality ;
+    rdfs:label "Extrovert"@en .
+
+#################################################################
+# Individuals - Preferences
+#################################################################
+
+ex:LikesMusic rdf:type ex:Preference ;
+    rdfs:label "Likes Music"@en .
+
+ex:LikesMovies rdf:type ex:Preference ;
+    rdfs:label "Likes Movies"@en .
+
+ex:LikesPodcasts rdf:type ex:Preference ;
+    rdfs:label "Likes Podcasts"@en .
+
+ex:LikesGames rdf:type ex:Preference ;
+    rdfs:label "Likes Games"@en .
+
+ex:LikesShortContent rdf:type ex:Preference ;
+    rdfs:label "Likes Short Content"@en .
+
+#################################################################
+# Individuals - Platforms
+#################################################################
+
+ex:Spotify rdf:type ex:Platform ;
+    rdfs:label "Spotify"@en .
+
+ex:Netflix rdf:type ex:Platform ;
+    rdfs:label "Netflix"@en .
+
+ex:MobileApp rdf:type ex:Platform ;
+    rdfs:label "Mobile Application"@en .
+
+#################################################################
+# Individuals - Intentions
+#################################################################
+
+ex:ReduceStress rdf:type ex:Intention ;
+    rdfs:label "Reduce Stress"@en .
+
+ex:ImproveMood rdf:type ex:Intention ;
+    rdfs:label "Improve Mood"@en .
+
+ex:IncreaseMotivation rdf:type ex:Intention ;
+    rdfs:label "Increase Motivation"@en .
+
+#################################################################
+# Individuals - Feedback
+#################################################################
+
+ex:Feedback001 rdf:type ex:Feedback ;
+    rdfs:label "Positive feedback for recommendation 001"@en ;
+    ex:hasFeedbackScore 5 .
+
+ex:Feedback002 rdf:type ex:Feedback ;
+    rdfs:label "Positive feedback for recommendation 002"@en ;
+    ex:hasFeedbackScore 4 .
+
+#################################################################
+# Individuals - Recommendations
+#################################################################
+
+ex:Recommendation001 rdf:type ex:Recommendation ;
+    rdfs:label "Stress relief music recommendation for Elif"@en ;
+    ex:givenTo ex:Elif ;
+    ex:includesContent ex:LoFiPlaylist ;
+    ex:basedOnEmotion ex:Stress ;
+    ex:basedOnNeed ex:Relaxation ;
+    ex:considersContext ex:Night ;
+    ex:considersContext ex:Home ;
+    ex:considersContext ex:Alone ;
+    ex:hasIntention ex:ReduceStress ;
+    ex:hasFeedback ex:Feedback001 ;
+    ex:hasConfidenceScore 0.92 .
+
+ex:Recommendation002 rdf:type ex:Recommendation ;
+    rdfs:label "Comfort movie recommendation for Deniz"@en ;
+    ex:givenTo ex:Deniz ;
+    ex:includesContent ex:ComfortMovie ;
+    ex:basedOnEmotion ex:Sadness ;
+    ex:basedOnNeed ex:EmotionalSupport ;
+    ex:considersContext ex:Evening ;
+    ex:considersContext ex:WithFriends ;
+    ex:hasIntention ex:ImproveMood ;
+    ex:hasFeedback ex:Feedback002 ;
+    ex:hasConfidenceScore 0.87 .
