@@ -108,8 +108,8 @@ The ontology includes four complete scenario instances:
 
 ## Authors
 
-- Elif Özkanat (220315023)
-- Büşra Pehlivanlar (220315051)
-- Enes Ulucan (220315018)
+-- Elif Özkanat (220315023)
+-- Büşra Pehlivanlar (220315051)
+--Enes Ulucan (220315018)
 
 **Course:** Knowledge Engineering and Ontologies — 2025–2026 Spring Semester
