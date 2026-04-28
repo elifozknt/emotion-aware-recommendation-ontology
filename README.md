@@ -36,3 +36,5 @@ If a user feels stressed at night and is alone at home, the system may recommend
 - RDF
 - Turtle
 - GitHub
+- ## Author
+Elif Özkanat, Büşra Pehlivanlar, Enes Ulucan
