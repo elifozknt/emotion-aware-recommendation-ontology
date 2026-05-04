@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Emotion-Aware Intelligent Recommendation Ontology</title>
+  <style>
+    :root {
+      --primary: #2c3e7a;
+      --secondary: #4a6fa5;
+      --accent: #e8f0fe;
+      --bg: #f9fafb;
+      --card-bg: #ffffff;
+      --text: #1a202c;
+      --muted: #6b7280;
+      --border: #e2e8f0;
+      --class-color: #3b5bdb;
+      --obj-color: #0b7285;
+      --data-color: #862e9c;
+      --radius: 10px;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Segoe UI', Arial, sans-serif; background: var(--bg); color: var(--text); }
+
+    /* Hero */
+    .hero {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+      color: white; padding: 60px 40px 40px;
+    }
+    .hero h1 { font-size: 2.2rem; margin-bottom: 12px; }
+    .hero p { font-size: 1rem; opacity: 0.9; max-width: 700px; line-height: 1.6; }
+    .hero .meta { margin-top: 24px; display: flex; flex-wrap: wrap; gap: 16px; font-size: 0.85rem; opacity: 0.85; }
+    .hero .meta span { background: rgba(255,255,255,0.15); padding: 4px 12px; border-radius: 20px; }
+
+    /* Layout */
+    .layout { display: flex; min-height: 100vh; }
+    .sidebar {
+      width: 260px; min-width: 260px; background: white;
+      border-right: 1px solid var(--border); padding: 24px 0;
+      position: sticky; top: 0; height: 100vh; overflow-y: auto;
+    }
+    .sidebar h4 { font-size: 0.7rem; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 1px; color: var(--muted); padding: 16px 20px 6px; }
+    .sidebar ul { list-style: none; }
+    .sidebar ul li a {
+      display: block; padding: 5px 20px; font-size: 0.88rem;
+      color: var(--text); text-decoration: none; border-left: 3px solid transparent;
+    }
+    .sidebar ul li a:hover { background: var(--accent); border-left-color: var(--secondary); color: var(--primary); }
+    .sidebar .section-link {
+      display: block; padding: 10px 20px; font-weight: 600;
+      color: var(--primary); text-decoration: none; font-size: 0.9rem;
+    }
+    .main { flex: 1; padding: 40px 48px; max-width: 960px; }
+
+    /* Metadata box */
+    .meta-box {
+      background: white; border: 1px solid var(--border); border-radius: var(--radius);
+      padding: 24px; margin-bottom: 40px;
+    }
+    .meta-box h2 { font-size: 1.1rem; color: var(--primary); margin-bottom: 16px; border-bottom: 2px solid var(--accent); padding-bottom: 8px; }
+    .meta-grid { display: grid; grid-template-columns: 160px 1fr; gap: 10px 0; font-size: 0.9rem; }
+    .meta-grid .meta-key { font-weight: 600; color: var(--muted); padding: 4px 0; }
+    .meta-grid .meta-val { padding: 4px 0; }
+    .meta-grid .meta-val a { color: var(--secondary); }
+
+    /* Section */
+    .section { margin-bottom: 48px; }
+    .section-title {
+      font-size: 1.4rem; font-weight: 700; color: var(--primary);
+      border-bottom: 3px solid var(--secondary); padding-bottom: 10px; margin-bottom: 24px;
+    }
+
+    /* Cards */
+    .card {
+      background: var(--card-bg); border: 1px solid var(--border);
+      border-radius: var(--radius); margin-bottom: 20px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.05); scroll-margin-top: 20px;
+    }
+    .card-header {
+      padding: 16px 20px 12px; border-bottom: 1px solid var(--border);
+      display: flex; align-items: center; gap: 12px; flex-wrap: wrap;
+    }
+    .card-header h3 { font-size: 1.05rem; color: var(--text); }
+    .uri { font-size: 0.75rem; color: var(--muted); background: var(--accent); padding: 2px 8px; border-radius: 4px; word-break: break-all; }
+    .card-body { padding: 16px 20px; }
+    .comment { color: var(--muted); font-size: 0.92rem; line-height: 1.6; margin-bottom: 12px; }
+    .prop-row { font-size: 0.88rem; margin-bottom: 6px; display: flex; gap: 8px; flex-wrap: wrap; }
+    .prop-name { font-weight: 600; color: var(--text); min-width: 130px; }
+    .prop-row a { color: var(--secondary); text-decoration: none; }
+    .prop-row a:hover { text-decoration: underline; }
+
+    /* Badges */
+    .badge { padding: 3px 10px; border-radius: 12px; font-size: 0.75rem; font-weight: 700; white-space: nowrap; }
+    .badge-class { background: #dbe4ff; color: var(--class-color); }
+    .badge-obj { background: #e3fafc; color: var(--obj-color); }
+    .badge-data { background: #f3d9fa; color: var(--data-color); }
+
+    /* Namespace box */
+    .ns-box { background: #f0f4ff; border: 1px solid #c5d0ff; border-radius: 8px; padding: 16px 20px; margin-bottom: 32px; font-size: 0.88rem; }
+    .ns-box code { background: white; padding: 2px 6px; border-radius: 4px; font-family: monospace; }
+
+    @media(max-width:768px) {
+      .sidebar { display: none; }
+      .main { padding: 20px; }
+      .hero { padding: 32px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="hero">
+  <h1>Emotion-Aware Intelligent Recommendation Ontology</h1>
+  <p>This ontology models an intelligent recommendation system that provides personalized content suggestions based on the user's emotional state, contextual situation, personality traits, and needs.</p>
+  <div class="meta">
+    <span>Version 1.0.0</span>
+    <span>Created: 2026-04-28</span>
+    <span>Publisher: Manisa Celal Bayar University</span>
+    <span><a href="https://creativecommons.org/licenses/by/4.0/" style="color:white">CC BY 4.0</a></span>
+  </div>
+</div>
+
+<div class="layout">
+  <nav class="sidebar">
+    <a class="section-link" href="#metadata">📋 Metadata</a>
+    <a class="section-link" href="#classes">🔷 Classes</a>
+    <ul><li><a href="#Content">Content</a></li><li><a href="#ContentCategory">Content Category</a></li><li><a href="#Context">Context</a></li><li><a href="#Effect">Effect</a></li><li><a href="#Emotion">Emotion</a></li><li><a href="#Environment">Environment</a></li><li><a href="#Feedback">Feedback</a></li><li><a href="#Intention">Intention</a></li><li><a href="#Need">Need</a></li><li><a href="#Personality">Personality</a></li><li><a href="#Platform">Platform</a></li><li><a href="#Preference">Preference</a></li><li><a href="#Recommendation">Recommendation</a></li><li><a href="#TimeContext">Time Context</a></li><li><a href="#User">User</a></li></ul>
+    <a class="section-link" href="#objectprops">🔗 Object Properties</a>
+    <ul><li><a href="#availableOnPlatform">available on platform</a></li><li><a href="#basedOnEmotion">based on emotion</a></li><li><a href="#basedOnNeed">based on need</a></li><li><a href="#belongsToCategory">belongs to category</a></li><li><a href="#considersContext">considers context</a></li><li><a href="#createsNeed">creates need</a></li><li><a href="#feels">feels</a></li><li><a href="#givenTo">given to</a></li><li><a href="#hasEffect">has effect</a></li><li><a href="#hasFeedback">has feedback</a></li><li><a href="#hasIntention">has intention</a></li><li><a href="#hasNeed">has need</a></li><li><a href="#hasPersonality">has personality</a></li><li><a href="#hasPreference">has preference</a></li><li><a href="#hasTimeContext">has time context</a></li><li><a href="#includesContent">includes content</a></li><li><a href="#isInEnvironment">is in environment</a></li><li><a href="#matchesPreference">matches preference</a></li><li><a href="#relievesEmotion">relieves emotion</a></li><li><a href="#satisfiedBy">satisfied by</a></li><li><a href="#suitableForEnvironment">suitable for environment</a></li><li><a href="#suitableForPersonality">suitable for personality</a></li><li><a href="#suitableForTime">suitable for time</a></li></ul>
+    <a class="section-link" href="#dataprops">📊 Datatype Properties</a>
+    <ul><li><a href="#hasAge">has age</a></li><li><a href="#hasConfidenceScore">has confidence score</a></li><li><a href="#hasDurationMinutes">has duration in minutes</a></li><li><a href="#hasFeedbackScore">has feedback score</a></li></ul>
+  </nav>
+
+  <main class="main">
+
+    <div class="meta-box" id="metadata">
+      <h2>Ontology Metadata</h2>
+      <div class="meta-grid">
+        <span class="meta-key">Title</span><span class="meta-val">Emotion-Aware Intelligent Recommendation Ontology</span>
+        <span class="meta-key">Creators</span><span class="meta-val">Elif Özkanat, Büşra Pehlivanlar, Enes Ulucan</span>
+        <span class="meta-key">Publisher</span><span class="meta-val">Manisa Celal Bayar University</span>
+        <span class="meta-key">Created</span><span class="meta-val">2026-04-28</span>
+        <span class="meta-key">Version</span><span class="meta-val">1.0.0</span>
+        <span class="meta-key">License</span><span class="meta-val"><a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">Creative Commons CC BY 4.0</a></span>
+        <span class="meta-key">Namespace URI</span><span class="meta-val"><code>http://example.org/emotion-aware-recommendation#</code></span>
+        <span class="meta-key">Preferred Prefix</span><span class="meta-val"><code>ex</code></span>
+      </div>
+    </div>
+
+    <div class="ns-box">
+      <strong>Namespace Declarations:</strong><br><br>
+      <code>@prefix ex: &lt;http://example.org/emotion-aware-recommendation#&gt; .</code><br>
+      <code>@prefix owl: &lt;http://www.w3.org/2002/07/owl#&gt; .</code><br>
+      <code>@prefix rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .</code><br>
+      <code>@prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .</code><br>
+      <code>@prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .</code>
+    </div>
+
+    <section class="section" id="classes">
+      <h2 class="section-title">Classes (15)</h2>
+      
+    <div class="card" id="Content">
+      <div class="card-header">
+        <span class="badge badge-class">Class</span>
+        <h3>Content</h3>
+        <code class="uri">http://example.org/emotion-aware-recommendation#Content</code>
+      </div>
+      <div class="card-body">
+        <p class="comment">A digital content item or activity that can be recommended to a user.</p>
+        <div class="prop-row"><span class="prop-name">Domain of:</span> <span>has effect, belongs to category, matches preference, suitable for personality, suitable for time, suitable for environment, available on platform, has duration in minutes</span></div><div class="prop-row"><span class="prop-name">Range of:</span> <span>satisfied by, includes content</span></div>
+      </div>
+    </div>
+    <div class="card" id="ContentCategory">
+      <div class="card-header">
+        <span class="badge badge-class">Class</span>
+        <h3>Content Category</h3>
+        <code class="uri">http://example.org/emotion-aware-recommendation#ContentCategory</code>
+      </div>
+      <div class="card-body">
+        <p class="comment">A category describing the type of content.</p>
+        <div class="prop-row"><span class="prop-name">Range of:</span> <span>belongs to category</span></div>
+      </div>
+    </div>
+    <div class="card" id="Context">
+      <div class="card-header">
+        <span class="badge badge-class">Class</span>
+        <h3>Context</h3>
+        <code class="uri">http://example.org/emotion-aware-recommendation#Context</code>
+      </div>
+      <div class="card-body">
+        <p class="comment">The situation in which the user is located.</p>
+        <div class="prop-row"><span class="prop-name">Range of:</span> <span>considers context</span></div>
+      </div>
+    </div>
+    <div class="card" id="Effect">
+      <div class="card-header">
+        <span class="badge badge-class">Class</span>
+        <h3>Effect</h3>
+        <code class="uri">http://example.org/emotion-aware-recommendation#Effect</code>
+      </div>
+      <div class="card-body">
+        <p class="comment">The expected psychological or behavioral effect of a content item.</p>
+        <div class="prop-row"><span class="prop-name">Domain of:</span> <span>relieves emotion</span></div><div class="prop-row"><span class="prop-name">Range of:</span> <span>has effect</span></div>
+      </div>
+    </div>
+    <div class="card" id="Emotion">
+      <div class="card-header">
+        <span class="badge badge-class">Class</span>
+        <h3>Emotion</h3>
+        <code class="uri">http://example.org/emotion-aware-recommendation#Emotion</code>
+      </div>
+      <div class="card-body">
+        <p class="comment">An emotional state experienced by a user.</p>
+        <div class="prop-row"><span class="prop-name">Domain of:</span> <span>creates need</span></div><div class="prop-row"><span class="prop-name">Range of:</span> <span>feels, relieves emotion, based on emotion</span></div>
+      </div>
+    </div>
+    <div class="card" id="Environment">
+      <div class="card-header">
+        <span class="badge badge-class">Class</span>
+        <h3>Environment</h3>
+        <code class="uri">http://example.org/emotion-aware-recommendation#Environment</code>
+      </div>
+      <div class="card-body">
+        <p class="comment">The physical or social environment of a user.</p>
+        <div class="prop-row"><span class="prop-name">Subclass of:</span> <span><a href="#Context">Context</a></span></div><div class="prop-row"><span class="prop-name">Range of:</span> <span>is in environment, suitable for environment</span></div>
+      </div>
+    </div>
+    <div class="card" id="Feedback">
+      <div class="card-header">
+        <span class="badge badge-class">Class</span>
+        <h3>Feedback</h3>
+        <code class="uri">http://example.org/emotion-aware-recommendation#Feedback</code>
+      </div>
+      <div class="card-body">
+        <p class="comment">A user response to a recommendation.</p>
+        <div class="prop-row"><span class="prop-name">Domain of:</span> <span>has feedback score</span></div><div class="prop-row"><span class="prop-name">Range of:</span> <span>has feedback</span></div>
+      </div>
+    </div>
+    <div class="card" id="Intention">
+      <div class="card-header">
+        <span class="badge badge-class">Class</span>
+        <h3>Intention</h3>
+        <code class="uri">http://example.org/emotion-aware-recommendation#Intention</code>
+      </div>
+      <div class="card-body">
+        <p class="comment">The intended purpose of a recommendation.</p>
+        <div class="prop-row"><span class="prop-name">Range of:</span> <span>has intention</span></div>
+      </div>
+    </div>
+    <div class="card" id="Need">
+      <div class="card-header">
+        <span class="badge badge-class">Class</span>
+        <h3>Need</h3>
+        <code class="uri">http://example.org/emotion-aware-recommendation#Need</code>
+      </div>
+      <div class="card-body">
+        <p class="comment">A user need that may arise from an emotional state.</p>
+        <div class="prop-row"><span class="prop-name">Domain of:</span> <span>satisfied by</span></div><div class="prop-row"><span class="prop-name">Range of:</span> <span>creates need, has need, based on need</span></div>
+      </div>
+    </div>
+    <div class="card" id="Personality">
+      <div class="card-header">
+        <span class="badge badge-class">Class</span>
+        <h3>Personality</h3>
+        <code class="uri">http://example.org/emotion-aware-recommendation#Personality</code>
+      </div>
+      <div class="card-body">
+        <p class="comment">A personality trait that may affect recommendation suitability.</p>
+        <div class="prop-row"><span class="prop-name">Range of:</span> <span>has personality, suitable for personality</span></div>
+      </div>
+    </div>
+    <div class="card" id="Platform">
+      <div class="card-header">
+        <span class="badge badge-class">Class</span>
+        <h3>Platform</h3>
+        <code class="uri">http://example.org/emotion-aware-recommendation#Platform</code>
+      </div>
+      <div class="card-body">
+        <p class="comment">A digital platform where content may be delivered.</p>
+        <div class="prop-row"><span class="prop-name">Range of:</span> <span>available on platform</span></div>
+      </div>
+    </div>
+    <div class="card" id="Preference">
+      <div class="card-header">
+        <span class="badge badge-class">Class</span>
+        <h3>Preference</h3>
+        <code class="uri">http://example.org/emotion-aware-recommendation#Preference</code>
+      </div>
+      <div class="card-body">
+        <p class="comment">A user's preferred content type or activity.</p>
+        <div class="prop-row"><span class="prop-name">Range of:</span> <span>has preference, matches preference</span></div>
+      </div>
+    </div>
+    <div class="card" id="Recommendation">
+      <div class="card-header">
+        <span class="badge badge-class">Class</span>
+        <h3>Recommendation</h3>
+        <code class="uri">http://example.org/emotion-aware-recommendation#Recommendation</code>
+      </div>
+      <div class="card-body">
+        <p class="comment">A personalized suggestion generated for a user.</p>
+        <div class="prop-row"><span class="prop-name">Domain of:</span> <span>given to, includes content, based on emotion, based on need, considers context, has intention, has feedback, has confidence score</span></div>
+      </div>
+    </div>
+    <div class="card" id="TimeContext">
+      <div class="card-header">
+        <span class="badge badge-class">Class</span>
+        <h3>Time Context</h3>
+        <code class="uri">http://example.org/emotion-aware-recommendation#TimeContext</code>
+      </div>
+      <div class="card-body">
+        <p class="comment">The time-related context of a user.</p>
+        <div class="prop-row"><span class="prop-name">Subclass of:</span> <span><a href="#Context">Context</a></span></div><div class="prop-row"><span class="prop-name">Range of:</span> <span>has time context, suitable for time</span></div>
+      </div>
+    </div>
+    <div class="card" id="User">
+      <div class="card-header">
+        <span class="badge badge-class">Class</span>
+        <h3>User</h3>
+        <code class="uri">http://example.org/emotion-aware-recommendation#User</code>
+      </div>
+      <div class="card-body">
+        <p class="comment">A person who receives recommendations from the system.</p>
+        <div class="prop-row"><span class="prop-name">Domain of:</span> <span>feels, has need, has preference, has personality, has time context, is in environment, has age</span></div><div class="prop-row"><span class="prop-name">Range of:</span> <span>given to</span></div>
+      </div>
+    </div>
+    </section>
+
+    <section class="section" id="objectprops">
+      <h2 class="section-title">Object Properties (23)</h2>
+      
+    <div class="card" id="availableOnPlatform">
+      <div class="card-header">
+        <span class="badge badge-obj">Object Property</span>
+        <h3>available on platform</h3>
+        <code class="uri">http://example.org/emotion-aware-recommendation#availableOnPlatform</code>
+      </div>
+      <div class="card-body">
+        <p class="comment">Connects content to the platform where it is available.</p>
+        <div class="prop-row"><span class="prop-name">Domain:</span> <span><a href="#Content">Content</a></span></div><div class="prop-row"><span class="prop-name">Range:</span> <span><a href="#Platform">Platform</a></span></div>
+      </div>
+    </div>
+    <div class="card" id="basedOnEmotion">
+      <div class="card-header">
+        <span class="badge badge-obj">Object Property</span>
+        <h3>based on emotion</h3>
+        <code class="uri">http://example.org/emotion-aware-recommendation#basedOnEmotion</code>
+      </div>
+      <div class="card-body">
+        <p class="comment">Shows the emotion considered in a recommendation.</p>
+        <div class="prop-row"><span class="prop-name">Domain:</span> <span><a href="#Recommendation">Recommendation</a></span></div><div class="prop-row"><span class="prop-name">Range:</span> <span><a href="#Emotion">Emotion</a></span></div>
+      </div>
+    </div>
+    <div class="card" id="basedOnNeed">
+      <div class="card-header">
+        <span class="badge badge-obj">Object Property</span>
+        <h3>based on need</h3>
+        <code class="uri">http://example.org/emotion-aware-recommendation#basedOnNeed</code>
+      </div>
+      <div class="card-body">
+        <p class="comment">Shows the need considered in a recommendation.</p>
+        <div class="prop-row"><span class="prop-name">Domain:</span> <span><a href="#Recommendation">Recommendation</a></span></div><div class="prop-row"><span class="prop-name">Range:</span> <span><a href="#Need">Need</a></span></div>
+      </div>
+    </div>
+    <div class="card" id="belongsToCategory">
+      <div class="card-header">
+        <span class="badge badge-obj">Object Property</span>
+        <h3>belongs to category</h3>
+        <code class="uri">http://example.org/emotion-aware-recommendation#belongsToCategory</code>
+      </div>
+      <div class="card-body">
+        <p class="comment">Connects content to its category.</p>
+        <div class="prop-row"><span class="prop-name">Domain:</span> <span><a href="#Content">Content</a></span></div><div class="prop-row"><span class="prop-name">Range:</span> <span><a href="#ContentCategory">Content Category</a></span></div>
+      </div>
+    </div>
+    <div class="card" id="considersContext">
+      <div class="card-header">
+        <span class="badge badge-obj">Object Property</span>
+        <h3>considers context</h3>
+        <code class="uri">http://example.org/emotion-aware-recommendation#considersContext</code>
+      </div>
+      <div class="card-body">
+        <p class="comment">Shows contextual information used in a recommendation.</p>
+        <div class="prop-row"><span class="prop-name">Domain:</span> <span><a href="#Recommendation">Recommendation</a></span></div><div class="prop-row"><span class="prop-name">Range:</span> <span><a href="#Context">Context</a></span></div>
+      </div>
+    </div>
+    <div class="card" id="createsNeed">
+      <div class="card-header">
+        <span class="badge badge-obj">Object Property</span>
+        <h3>creates need</h3>
+        <code class="uri">http://example.org/emotion-aware-recommendation#createsNeed</code>
+      </div>
+      <div class="card-body">
+        <p class="comment">Connects an emotion to the need it may create.</p>
+        <div class="prop-row"><span class="prop-name">Domain:</span> <span><a href="#Emotion">Emotion</a></span></div><div class="prop-row"><span class="prop-name">Range:</span> <span><a href="#Need">Need</a></span></div>
+      </div>
+    </div>
+    <div class="card" id="feels">
+      <div class="card-header">
+        <span class="badge badge-obj">Object Property</span>
+        <h3>feels</h3>
+        <code class="uri">http://example.org/emotion-aware-recommendation#feels</code>
+      </div>
+      <div class="card-body">
+        <p class="comment">Connects a user to an emotion they experience.</p>
+        <div class="prop-row"><span class="prop-name">Domain:</span> <span><a href="#User">User</a></span></div><div class="prop-row"><span class="prop-name">Range:</span> <span><a href="#Emotion">Emotion</a></span></div>
+      </div>
+    </div>
+    <div class="card" id="givenTo">
+      <div class="card-header">
+        <span class="badge badge-obj">Object Property</span>
+        <h3>given to</h3>
+        <code class="uri">http://example.org/emotion-aware-recommendation#givenTo</code>
+      </div>
+      <div class="card-body">
+        <p class="comment">Connects a recommendation to the user receiving it.</p>
+        <div class="prop-row"><span class="prop-name">Domain:</span> <span><a href="#Recommendation">Recommendation</a></span></div><div class="prop-row"><span class="prop-name">Range:</span> <span><a href="#User">User</a></span></div>
+      </div>
+    </div>
+    <div class="card" id="hasEffect">
+      <div class="card-header">
+        <span class="badge badge-obj">Object Property</span>
+        <h3>has effect</h3>
+        <code class="uri">http://example.org/emotion-aware-recommendation#hasEffect</code>
+      </div>
+      <div class="card-body">
+        <p class="comment">Connects content to its expected effect.</p>
+        <div class="prop-row"><span class="prop-name">Domain:</span> <span><a href="#Content">Content</a></span></div><div class="prop-row"><span class="prop-name">Range:</span> <span><a href="#Effect">Effect</a></span></div>
+      </div>
+    </div>
+    <div class="card" id="hasFeedback">
+      <div class="card-header">
+        <span class="badge badge-obj">Object Property</span>
+        <h3>has feedback</h3>
+        <code class="uri">http://example.org/emotion-aware-recommendation#hasFeedback</code>
+      </div>
+      <div class="card-body">
+        <p class="comment">Connects a recommendation to user feedback.</p>
+        <div class="prop-row"><span class="prop-name">Domain:</span> <span><a href="#Recommendation">Recommendation</a></span></div><div class="prop-row"><span class="prop-name">Range:</span> <span><a href="#Feedback">Feedback</a></span></div>
+      </div>
+    </div>
+    <div class="card" id="hasIntention">
+      <div class="card-header">
+        <span class="badge badge-obj">Object Property</span>
+        <h3>has intention</h3>
+        <code class="uri">http://example.org/emotion-aware-recommendation#hasIntention</code>
+      </div>
+      <div class="card-body">
+        <p class="comment">Shows the intended purpose of a recommendation.</p>
+        <div class="prop-row"><span class="prop-name">Domain:</span> <span><a href="#Recommendation">Recommendation</a></span></div><div class="prop-row"><span class="prop-name">Range:</span> <span><a href="#Intention">Intention</a></span></div>
+      </div>
+    </div>
+    <div class="card" id="hasNeed">
+      <div class="card-header">
+        <span class="badge badge-obj">Object Property</span>
+        <h3>has need</h3>
+        <code class="uri">http://example.org/emotion-aware-recommendation#hasNeed</code>
+      </div>
+      <div class="card-body">
+        <p class="comment">Connects a user to a need.</p>
+        <div class="prop-row"><span class="prop-name">Domain:</span> <span><a href="#User">User</a></span></div><div class="prop-row"><span class="prop-name">Range:</span> <span><a href="#Need">Need</a></span></div>
+      </div>
+    </div>
+    <div class="card" id="hasPersonality">
+      <div class="card-header">
+        <span class="badge badge-obj">Object Property</span>
+        <h3>has personality</h3>
+        <code class="uri">http://example.org/emotion-aware-recommendation#hasPersonality</code>
+      </div>
+      <div class="card-body">
+        <p class="comment">Connects a user to a personality trait.</p>
+        <div class="prop-row"><span class="prop-name">Domain:</span> <span><a href="#User">User</a></span></div><div class="prop-row"><span class="prop-name">Range:</span> <span><a href="#Personality">Personality</a></span></div>
+      </div>
+    </div>
+    <div class="card" id="hasPreference">
+      <div class="card-header">
+        <span class="badge badge-obj">Object Property</span>
+        <h3>has preference</h3>
+        <code class="uri">http://example.org/emotion-aware-recommendation#hasPreference</code>
+      </div>
+      <div class="card-body">
+        <p class="comment">Connects a user to a preference.</p>
+        <div class="prop-row"><span class="prop-name">Domain:</span> <span><a href="#User">User</a></span></div><div class="prop-row"><span class="prop-name">Range:</span> <span><a href="#Preference">Preference</a></span></div>
+      </div>
+    </div>
+    <div class="card" id="hasTimeContext">
+      <div class="card-header">
+        <span class="badge badge-obj">Object Property</span>
+        <h3>has time context</h3>
+        <code class="uri">http://example.org/emotion-aware-recommendation#hasTimeContext</code>
+      </div>
+      <div class="card-body">
+        <p class="comment">Connects a user to a time context.</p>
+        <div class="prop-row"><span class="prop-name">Domain:</span> <span><a href="#User">User</a></span></div><div class="prop-row"><span class="prop-name">Range:</span> <span><a href="#TimeContext">Time Context</a></span></div>
+      </div>
+    </div>
+    <div class="card" id="includesContent">
+      <div class="card-header">
+        <span class="badge badge-obj">Object Property</span>
+        <h3>includes content</h3>
+        <code class="uri">http://example.org/emotion-aware-recommendation#includesContent</code>
+      </div>
+      <div class="card-body">
+        <p class="comment">Connects a recommendation to the content it includes.</p>
+        <div class="prop-row"><span class="prop-name">Domain:</span> <span><a href="#Recommendation">Recommendation</a></span></div><div class="prop-row"><span class="prop-name">Range:</span> <span><a href="#Content">Content</a></span></div>
+      </div>
+    </div>
+    <div class="card" id="isInEnvironment">
+      <div class="card-header">
+        <span class="badge badge-obj">Object Property</span>
+        <h3>is in environment</h3>
+        <code class="uri">http://example.org/emotion-aware-recommendation#isInEnvironment</code>
+      </div>
+      <div class="card-body">
+        <p class="comment">Connects a user to an environment.</p>
+        <div class="prop-row"><span class="prop-name">Domain:</span> <span><a href="#User">User</a></span></div><div class="prop-row"><span class="prop-name">Range:</span> <span><a href="#Environment">Environment</a></span></div>
+      </div>
+    </div>
+    <div class="card" id="matchesPreference">
+      <div class="card-header">
+        <span class="badge badge-obj">Object Property</span>
+        <h3>matches preference</h3>
+        <code class="uri">http://example.org/emotion-aware-recommendation#matchesPreference</code>
+      </div>
+      <div class="card-body">
+        <p class="comment">Connects content to a matching user preference.</p>
+        <div class="prop-row"><span class="prop-name">Domain:</span> <span><a href="#Content">Content</a></span></div><div class="prop-row"><span class="prop-name">Range:</span> <span><a href="#Preference">Preference</a></span></div>
+      </div>
+    </div>
+    <div class="card" id="relievesEmotion">
+      <div class="card-header">
+        <span class="badge badge-obj">Object Property</span>
+        <h3>relieves emotion</h3>
+        <code class="uri">http://example.org/emotion-aware-recommendation#relievesEmotion</code>
+      </div>
+      <div class="card-body">
+        <p class="comment">Connects an effect to an emotion it may help reduce.</p>
+        <div class="prop-row"><span class="prop-name">Domain:</span> <span><a href="#Effect">Effect</a></span></div><div class="prop-row"><span class="prop-name">Range:</span> <span><a href="#Emotion">Emotion</a></span></div>
+      </div>
+    </div>
+    <div class="card" id="satisfiedBy">
+      <div class="card-header">
+        <span class="badge badge-obj">Object Property</span>
+        <h3>satisfied by</h3>
+        <code class="uri">http://example.org/emotion-aware-recommendation#satisfiedBy</code>
+      </div>
+      <div class="card-body">
+        <p class="comment">Connects a need to content that can satisfy it.</p>
+        <div class="prop-row"><span class="prop-name">Domain:</span> <span><a href="#Need">Need</a></span></div><div class="prop-row"><span class="prop-name">Range:</span> <span><a href="#Content">Content</a></span></div>
+      </div>
+    </div>
+    <div class="card" id="suitableForEnvironment">
+      <div class="card-header">
+        <span class="badge badge-obj">Object Property</span>
+        <h3>suitable for environment</h3>
+        <code class="uri">http://example.org/emotion-aware-recommendation#suitableForEnvironment</code>
+      </div>
+      <div class="card-body">
+        <p class="comment">Shows which environment is suitable for content.</p>
+        <div class="prop-row"><span class="prop-name">Domain:</span> <span><a href="#Content">Content</a></span></div><div class="prop-row"><span class="prop-name">Range:</span> <span><a href="#Environment">Environment</a></span></div>
+      </div>
+    </div>
+    <div class="card" id="suitableForPersonality">
+      <div class="card-header">
+        <span class="badge badge-obj">Object Property</span>
+        <h3>suitable for personality</h3>
+        <code class="uri">http://example.org/emotion-aware-recommendation#suitableForPersonality</code>
+      </div>
+      <div class="card-body">
+        <p class="comment">Shows which personality type a content item is suitable for.</p>
+        <div class="prop-row"><span class="prop-name">Domain:</span> <span><a href="#Content">Content</a></span></div><div class="prop-row"><span class="prop-name">Range:</span> <span><a href="#Personality">Personality</a></span></div>
+      </div>
+    </div>
+    <div class="card" id="suitableForTime">
+      <div class="card-header">
+        <span class="badge badge-obj">Object Property</span>
+        <h3>suitable for time</h3>
+        <code class="uri">http://example.org/emotion-aware-recommendation#suitableForTime</code>
+      </div>
+      <div class="card-body">
+        <p class="comment">Shows which time context is suitable for content.</p>
+        <div class="prop-row"><span class="prop-name">Domain:</span> <span><a href="#Content">Content</a></span></div><div class="prop-row"><span class="prop-name">Range:</span> <span><a href="#TimeContext">Time Context</a></span></div>
+      </div>
+    </div>
+    </section>
+
+    <section class="section" id="dataprops">
+      <h2 class="section-title">Datatype Properties (4)</h2>
+      
+    <div class="card" id="hasAge">
+      <div class="card-header">
+        <span class="badge badge-data">Datatype Property</span>
+        <h3>has age</h3>
+        <code class="uri">http://example.org/emotion-aware-recommendation#hasAge</code>
+      </div>
+      <div class="card-body">
+        <p class="comment"></p>
+        <div class="prop-row"><span class="prop-name">Domain:</span> <span><a href="#User">User</a></span></div><div class="prop-row"><span class="prop-name">Range:</span> <span><a href="#integer">integer</a></span></div>
+      </div>
+    </div>
+    <div class="card" id="hasConfidenceScore">
+      <div class="card-header">
+        <span class="badge badge-data">Datatype Property</span>
+        <h3>has confidence score</h3>
+        <code class="uri">http://example.org/emotion-aware-recommendation#hasConfidenceScore</code>
+      </div>
+      <div class="card-body">
+        <p class="comment"></p>
+        <div class="prop-row"><span class="prop-name">Domain:</span> <span><a href="#Recommendation">Recommendation</a></span></div><div class="prop-row"><span class="prop-name">Range:</span> <span><a href="#decimal">decimal</a></span></div>
+      </div>
+    </div>
+    <div class="card" id="hasDurationMinutes">
+      <div class="card-header">
+        <span class="badge badge-data">Datatype Property</span>
+        <h3>has duration in minutes</h3>
+        <code class="uri">http://example.org/emotion-aware-recommendation#hasDurationMinutes</code>
+      </div>
+      <div class="card-body">
+        <p class="comment"></p>
+        <div class="prop-row"><span class="prop-name">Domain:</span> <span><a href="#Content">Content</a></span></div><div class="prop-row"><span class="prop-name">Range:</span> <span><a href="#integer">integer</a></span></div>
+      </div>
+    </div>
+    <div class="card" id="hasFeedbackScore">
+      <div class="card-header">
+        <span class="badge badge-data">Datatype Property</span>
+        <h3>has feedback score</h3>
+        <code class="uri">http://example.org/emotion-aware-recommendation#hasFeedbackScore</code>
+      </div>
+      <div class="card-body">
+        <p class="comment"></p>
+        <div class="prop-row"><span class="prop-name">Domain:</span> <span><a href="#Feedback">Feedback</a></span></div><div class="prop-row"><span class="prop-name">Range:</span> <span><a href="#integer">integer</a></span></div>
+      </div>
+    </div>
+    </section>
+
+  </main>
+</div>
+
+</body>
+</html>
