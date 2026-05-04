@@ -5,6 +5,7 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix dc: <http://purl.org/dc/terms/> .
 @prefix vann: <http://purl.org/vocab/vann/> .
+@prefix schema: <https://schema.org/> .
 
 #################################################################
 # Ontology Information
@@ -13,12 +14,16 @@
 ex:EmotionAwareRecommendationOntology rdf:type owl:Ontology ;
     rdfs:label "Emotion-Aware Intelligent Recommendation Ontology"@en ;
     rdfs:comment "An ontology for modeling personalized recommendations based on user emotions, needs, context, personality traits, preferences, content types, and content effects."@en ;
-    dc:creator "Elif Özkanat, Büşra Pehlivanlar, Enes Ulucan"@en ;
-    dc:description "This ontology models the relationships between user emotional states, contextual situations, personal needs, and digital content items to enable intelligent, personalized content recommendations."@en ;
-    dc:subject "Emotion-aware recommendation systems, Affective computing, Personalization"@en ;
+    dc:title "Emotion-Aware Intelligent Recommendation Ontology"@en ;
+    dc:description "This ontology models an intelligent recommendation system that provides personalized content suggestions based on the user's emotional state, contextual situation, personality traits, and needs."@en ;
+    dc:creator "Elif Özkanat"@en , "Büşra Pehlivanlar"@en , "Enes Ulucan"@en ;
+    dc:publisher "Manisa Celal Bayar University"@en ;
+    dc:created "2026-04-28"^^xsd:date ;
+    dc:license <https://creativecommons.org/licenses/by/4.0/> ;
     owl:versionInfo "1.0.0" ;
     vann:preferredNamespacePrefix "ex" ;
-    vann:preferredNamespaceUri "http://example.org/emotion-aware-recommendation#" .
+    vann:preferredNamespaceUri "http://example.org/emotion-aware-recommendation#" ;
+    schema:codeRepository <https://github.com/elifozknt/emotion-aware-recommendation-ontology> .
 
 #################################################################
 # Classes
@@ -235,26 +240,22 @@ ex:hasFeedback rdf:type owl:ObjectProperty ;
 ex:hasAge rdf:type owl:DatatypeProperty ;
     rdfs:domain ex:User ;
     rdfs:range xsd:integer ;
-    rdfs:label "has age"@en ;
-    rdfs:comment "The age of a user in years."@en .
+    rdfs:label "has age"@en .
 
 ex:hasConfidenceScore rdf:type owl:DatatypeProperty ;
     rdfs:domain ex:Recommendation ;
     rdfs:range xsd:decimal ;
-    rdfs:label "has confidence score"@en ;
-    rdfs:comment "A decimal value between 0 and 1 indicating how confident the system is in the recommendation."@en .
+    rdfs:label "has confidence score"@en .
 
 ex:hasDurationMinutes rdf:type owl:DatatypeProperty ;
     rdfs:domain ex:Content ;
     rdfs:range xsd:integer ;
-    rdfs:label "has duration in minutes"@en ;
-    rdfs:comment "The duration of a content item in minutes."@en .
+    rdfs:label "has duration in minutes"@en .
 
 ex:hasFeedbackScore rdf:type owl:DatatypeProperty ;
     rdfs:domain ex:Feedback ;
     rdfs:range xsd:integer ;
-    rdfs:label "has feedback score"@en ;
-    rdfs:comment "An integer score (e.g., 1–5) provided by the user as feedback on a recommendation."@en .
+    rdfs:label "has feedback score"@en .
 
 #################################################################
 # Individuals - Users
