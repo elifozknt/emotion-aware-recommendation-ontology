@@ -1,0 +1,782 @@
+<http://example.org/emotion-aware-recommendation#EmotionAwareRecommendationOntology> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
+<http://example.org/emotion-aware-recommendation#EmotionAwareRecommendationOntology> <http://purl.org/dc/terms/created> "2026-04-28"^^<http://www.w3.org/2001/XMLSchema#date> .
+<http://example.org/emotion-aware-recommendation#EmotionAwareRecommendationOntology> <http://purl.org/dc/terms/creator> "Büşra Pehlivanlar"@en .
+<http://example.org/emotion-aware-recommendation#EmotionAwareRecommendationOntology> <http://purl.org/dc/terms/creator> "Elif Özkanat"@en .
+<http://example.org/emotion-aware-recommendation#EmotionAwareRecommendationOntology> <http://purl.org/dc/terms/creator> "Enes Ulucan"@en .
+<http://example.org/emotion-aware-recommendation#EmotionAwareRecommendationOntology> <http://purl.org/dc/terms/description> "This ontology models an intelligent recommendation system that provides personalized content suggestions based on the user's emotional state, contextual situation, personality traits, and needs."@en .
+<http://example.org/emotion-aware-recommendation#EmotionAwareRecommendationOntology> <http://purl.org/dc/terms/license> <https://creativecommons.org/licenses/by/4.0/> .
+<http://example.org/emotion-aware-recommendation#EmotionAwareRecommendationOntology> <http://purl.org/dc/terms/publisher> "Manisa Celal Bayar University"@en .
+<http://example.org/emotion-aware-recommendation#EmotionAwareRecommendationOntology> <http://purl.org/dc/terms/title> "Emotion-Aware Intelligent Recommendation Ontology"@en .
+<http://example.org/emotion-aware-recommendation#EmotionAwareRecommendationOntology> <http://purl.org/vocab/vann/preferredNamespacePrefix> "ex" .
+<http://example.org/emotion-aware-recommendation#EmotionAwareRecommendationOntology> <http://purl.org/vocab/vann/preferredNamespaceUri> "http://example.org/emotion-aware-recommendation#" .
+<http://example.org/emotion-aware-recommendation#EmotionAwareRecommendationOntology> <http://www.w3.org/2000/01/rdf-schema#comment> "An ontology for modeling personalized recommendations based on user emotions, needs, context, personality traits, preferences, content types, and content effects."@en .
+<http://example.org/emotion-aware-recommendation#EmotionAwareRecommendationOntology> <http://www.w3.org/2000/01/rdf-schema#label> "Emotion-Aware Intelligent Recommendation Ontology"@en .
+<http://example.org/emotion-aware-recommendation#EmotionAwareRecommendationOntology> <http://www.w3.org/2002/07/owl#versionInfo> "1.0.0" .
+<http://example.org/emotion-aware-recommendation#EmotionAwareRecommendationOntology> <https://schema.org/codeRepository> <https://github.com/elifozknt/emotion-aware-recommendation-ontology> .
+# 
+# 
+# #################################################################
+# #
+# #    Annotation properties
+# #
+# #################################################################
+# 
+# 
+# http://purl.org/dc/terms/created
+<http://purl.org/dc/terms/created> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/terms/creator
+<http://purl.org/dc/terms/creator> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/terms/description
+<http://purl.org/dc/terms/description> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/terms/license
+<http://purl.org/dc/terms/license> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/terms/publisher
+<http://purl.org/dc/terms/publisher> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/terms/title
+<http://purl.org/dc/terms/title> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/vocab/vann/preferredNamespacePrefix
+<http://purl.org/vocab/vann/preferredNamespacePrefix> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/vocab/vann/preferredNamespaceUri
+<http://purl.org/vocab/vann/preferredNamespaceUri> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# https://schema.org/codeRepository
+<https://schema.org/codeRepository> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Datatypes
+# #
+# #################################################################
+# 
+# 
+# http://www.w3.org/2001/XMLSchema#date
+<http://www.w3.org/2001/XMLSchema#date> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Datatype> .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Object Properties
+# #
+# #################################################################
+# 
+# 
+# http://example.org/emotion-aware-recommendation#availableOnPlatform
+<http://example.org/emotion-aware-recommendation#availableOnPlatform> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://example.org/emotion-aware-recommendation#availableOnPlatform> <http://www.w3.org/2000/01/rdf-schema#domain> <http://example.org/emotion-aware-recommendation#Content> .
+<http://example.org/emotion-aware-recommendation#availableOnPlatform> <http://www.w3.org/2000/01/rdf-schema#range> <http://example.org/emotion-aware-recommendation#Platform> .
+<http://example.org/emotion-aware-recommendation#availableOnPlatform> <http://www.w3.org/2000/01/rdf-schema#comment> "Connects content to the platform where it is available."@en .
+<http://example.org/emotion-aware-recommendation#availableOnPlatform> <http://www.w3.org/2000/01/rdf-schema#label> "available on platform"@en .
+# 
+# http://example.org/emotion-aware-recommendation#basedOnEmotion
+<http://example.org/emotion-aware-recommendation#basedOnEmotion> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://example.org/emotion-aware-recommendation#basedOnEmotion> <http://www.w3.org/2000/01/rdf-schema#domain> <http://example.org/emotion-aware-recommendation#Recommendation> .
+<http://example.org/emotion-aware-recommendation#basedOnEmotion> <http://www.w3.org/2000/01/rdf-schema#range> <http://example.org/emotion-aware-recommendation#Emotion> .
+<http://example.org/emotion-aware-recommendation#basedOnEmotion> <http://www.w3.org/2000/01/rdf-schema#comment> "Shows the emotion considered in a recommendation."@en .
+<http://example.org/emotion-aware-recommendation#basedOnEmotion> <http://www.w3.org/2000/01/rdf-schema#label> "based on emotion"@en .
+# 
+# http://example.org/emotion-aware-recommendation#basedOnNeed
+<http://example.org/emotion-aware-recommendation#basedOnNeed> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://example.org/emotion-aware-recommendation#basedOnNeed> <http://www.w3.org/2000/01/rdf-schema#domain> <http://example.org/emotion-aware-recommendation#Recommendation> .
+<http://example.org/emotion-aware-recommendation#basedOnNeed> <http://www.w3.org/2000/01/rdf-schema#range> <http://example.org/emotion-aware-recommendation#Need> .
+<http://example.org/emotion-aware-recommendation#basedOnNeed> <http://www.w3.org/2000/01/rdf-schema#comment> "Shows the need considered in a recommendation."@en .
+<http://example.org/emotion-aware-recommendation#basedOnNeed> <http://www.w3.org/2000/01/rdf-schema#label> "based on need"@en .
+# 
+# http://example.org/emotion-aware-recommendation#belongsToCategory
+<http://example.org/emotion-aware-recommendation#belongsToCategory> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://example.org/emotion-aware-recommendation#belongsToCategory> <http://www.w3.org/2000/01/rdf-schema#domain> <http://example.org/emotion-aware-recommendation#Content> .
+<http://example.org/emotion-aware-recommendation#belongsToCategory> <http://www.w3.org/2000/01/rdf-schema#range> <http://example.org/emotion-aware-recommendation#ContentCategory> .
+<http://example.org/emotion-aware-recommendation#belongsToCategory> <http://www.w3.org/2000/01/rdf-schema#comment> "Connects content to its category."@en .
+<http://example.org/emotion-aware-recommendation#belongsToCategory> <http://www.w3.org/2000/01/rdf-schema#label> "belongs to category"@en .
+# 
+# http://example.org/emotion-aware-recommendation#considersContext
+<http://example.org/emotion-aware-recommendation#considersContext> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://example.org/emotion-aware-recommendation#considersContext> <http://www.w3.org/2000/01/rdf-schema#domain> <http://example.org/emotion-aware-recommendation#Recommendation> .
+<http://example.org/emotion-aware-recommendation#considersContext> <http://www.w3.org/2000/01/rdf-schema#range> <http://example.org/emotion-aware-recommendation#Context> .
+<http://example.org/emotion-aware-recommendation#considersContext> <http://www.w3.org/2000/01/rdf-schema#comment> "Shows contextual information used in a recommendation."@en .
+<http://example.org/emotion-aware-recommendation#considersContext> <http://www.w3.org/2000/01/rdf-schema#label> "considers context"@en .
+# 
+# http://example.org/emotion-aware-recommendation#createsNeed
+<http://example.org/emotion-aware-recommendation#createsNeed> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://example.org/emotion-aware-recommendation#createsNeed> <http://www.w3.org/2000/01/rdf-schema#domain> <http://example.org/emotion-aware-recommendation#Emotion> .
+<http://example.org/emotion-aware-recommendation#createsNeed> <http://www.w3.org/2000/01/rdf-schema#range> <http://example.org/emotion-aware-recommendation#Need> .
+<http://example.org/emotion-aware-recommendation#createsNeed> <http://www.w3.org/2000/01/rdf-schema#comment> "Connects an emotion to the need it may create."@en .
+<http://example.org/emotion-aware-recommendation#createsNeed> <http://www.w3.org/2000/01/rdf-schema#label> "creates need"@en .
+# 
+# http://example.org/emotion-aware-recommendation#feels
+<http://example.org/emotion-aware-recommendation#feels> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://example.org/emotion-aware-recommendation#feels> <http://www.w3.org/2000/01/rdf-schema#domain> <http://example.org/emotion-aware-recommendation#User> .
+<http://example.org/emotion-aware-recommendation#feels> <http://www.w3.org/2000/01/rdf-schema#range> <http://example.org/emotion-aware-recommendation#Emotion> .
+<http://example.org/emotion-aware-recommendation#feels> <http://www.w3.org/2000/01/rdf-schema#comment> "Connects a user to an emotion they experience."@en .
+<http://example.org/emotion-aware-recommendation#feels> <http://www.w3.org/2000/01/rdf-schema#label> "feels"@en .
+# 
+# http://example.org/emotion-aware-recommendation#givenTo
+<http://example.org/emotion-aware-recommendation#givenTo> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://example.org/emotion-aware-recommendation#givenTo> <http://www.w3.org/2000/01/rdf-schema#domain> <http://example.org/emotion-aware-recommendation#Recommendation> .
+<http://example.org/emotion-aware-recommendation#givenTo> <http://www.w3.org/2000/01/rdf-schema#range> <http://example.org/emotion-aware-recommendation#User> .
+<http://example.org/emotion-aware-recommendation#givenTo> <http://www.w3.org/2000/01/rdf-schema#comment> "Connects a recommendation to the user receiving it."@en .
+<http://example.org/emotion-aware-recommendation#givenTo> <http://www.w3.org/2000/01/rdf-schema#label> "given to"@en .
+# 
+# http://example.org/emotion-aware-recommendation#hasEffect
+<http://example.org/emotion-aware-recommendation#hasEffect> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://example.org/emotion-aware-recommendation#hasEffect> <http://www.w3.org/2000/01/rdf-schema#domain> <http://example.org/emotion-aware-recommendation#Content> .
+<http://example.org/emotion-aware-recommendation#hasEffect> <http://www.w3.org/2000/01/rdf-schema#range> <http://example.org/emotion-aware-recommendation#Effect> .
+<http://example.org/emotion-aware-recommendation#hasEffect> <http://www.w3.org/2000/01/rdf-schema#comment> "Connects content to its expected effect."@en .
+<http://example.org/emotion-aware-recommendation#hasEffect> <http://www.w3.org/2000/01/rdf-schema#label> "has effect"@en .
+# 
+# http://example.org/emotion-aware-recommendation#hasFeedback
+<http://example.org/emotion-aware-recommendation#hasFeedback> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://example.org/emotion-aware-recommendation#hasFeedback> <http://www.w3.org/2000/01/rdf-schema#domain> <http://example.org/emotion-aware-recommendation#Recommendation> .
+<http://example.org/emotion-aware-recommendation#hasFeedback> <http://www.w3.org/2000/01/rdf-schema#range> <http://example.org/emotion-aware-recommendation#Feedback> .
+<http://example.org/emotion-aware-recommendation#hasFeedback> <http://www.w3.org/2000/01/rdf-schema#comment> "Connects a recommendation to user feedback."@en .
+<http://example.org/emotion-aware-recommendation#hasFeedback> <http://www.w3.org/2000/01/rdf-schema#label> "has feedback"@en .
+# 
+# http://example.org/emotion-aware-recommendation#hasIntention
+<http://example.org/emotion-aware-recommendation#hasIntention> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://example.org/emotion-aware-recommendation#hasIntention> <http://www.w3.org/2000/01/rdf-schema#domain> <http://example.org/emotion-aware-recommendation#Recommendation> .
+<http://example.org/emotion-aware-recommendation#hasIntention> <http://www.w3.org/2000/01/rdf-schema#range> <http://example.org/emotion-aware-recommendation#Intention> .
+<http://example.org/emotion-aware-recommendation#hasIntention> <http://www.w3.org/2000/01/rdf-schema#comment> "Shows the intended purpose of a recommendation."@en .
+<http://example.org/emotion-aware-recommendation#hasIntention> <http://www.w3.org/2000/01/rdf-schema#label> "has intention"@en .
+# 
+# http://example.org/emotion-aware-recommendation#hasNeed
+<http://example.org/emotion-aware-recommendation#hasNeed> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://example.org/emotion-aware-recommendation#hasNeed> <http://www.w3.org/2000/01/rdf-schema#domain> <http://example.org/emotion-aware-recommendation#User> .
+<http://example.org/emotion-aware-recommendation#hasNeed> <http://www.w3.org/2000/01/rdf-schema#range> <http://example.org/emotion-aware-recommendation#Need> .
+<http://example.org/emotion-aware-recommendation#hasNeed> <http://www.w3.org/2000/01/rdf-schema#comment> "Connects a user to a need."@en .
+<http://example.org/emotion-aware-recommendation#hasNeed> <http://www.w3.org/2000/01/rdf-schema#label> "has need"@en .
+# 
+# http://example.org/emotion-aware-recommendation#hasPersonality
+<http://example.org/emotion-aware-recommendation#hasPersonality> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://example.org/emotion-aware-recommendation#hasPersonality> <http://www.w3.org/2000/01/rdf-schema#domain> <http://example.org/emotion-aware-recommendation#User> .
+<http://example.org/emotion-aware-recommendation#hasPersonality> <http://www.w3.org/2000/01/rdf-schema#range> <http://example.org/emotion-aware-recommendation#Personality> .
+<http://example.org/emotion-aware-recommendation#hasPersonality> <http://www.w3.org/2000/01/rdf-schema#comment> "Connects a user to a personality trait."@en .
+<http://example.org/emotion-aware-recommendation#hasPersonality> <http://www.w3.org/2000/01/rdf-schema#label> "has personality"@en .
+# 
+# http://example.org/emotion-aware-recommendation#hasPreference
+<http://example.org/emotion-aware-recommendation#hasPreference> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://example.org/emotion-aware-recommendation#hasPreference> <http://www.w3.org/2000/01/rdf-schema#domain> <http://example.org/emotion-aware-recommendation#User> .
+<http://example.org/emotion-aware-recommendation#hasPreference> <http://www.w3.org/2000/01/rdf-schema#range> <http://example.org/emotion-aware-recommendation#Preference> .
+<http://example.org/emotion-aware-recommendation#hasPreference> <http://www.w3.org/2000/01/rdf-schema#comment> "Connects a user to a preference."@en .
+<http://example.org/emotion-aware-recommendation#hasPreference> <http://www.w3.org/2000/01/rdf-schema#label> "has preference"@en .
+# 
+# http://example.org/emotion-aware-recommendation#hasTimeContext
+<http://example.org/emotion-aware-recommendation#hasTimeContext> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://example.org/emotion-aware-recommendation#hasTimeContext> <http://www.w3.org/2000/01/rdf-schema#domain> <http://example.org/emotion-aware-recommendation#User> .
+<http://example.org/emotion-aware-recommendation#hasTimeContext> <http://www.w3.org/2000/01/rdf-schema#range> <http://example.org/emotion-aware-recommendation#TimeContext> .
+<http://example.org/emotion-aware-recommendation#hasTimeContext> <http://www.w3.org/2000/01/rdf-schema#comment> "Connects a user to a time context."@en .
+<http://example.org/emotion-aware-recommendation#hasTimeContext> <http://www.w3.org/2000/01/rdf-schema#label> "has time context"@en .
+# 
+# http://example.org/emotion-aware-recommendation#includesContent
+<http://example.org/emotion-aware-recommendation#includesContent> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://example.org/emotion-aware-recommendation#includesContent> <http://www.w3.org/2000/01/rdf-schema#domain> <http://example.org/emotion-aware-recommendation#Recommendation> .
+<http://example.org/emotion-aware-recommendation#includesContent> <http://www.w3.org/2000/01/rdf-schema#range> <http://example.org/emotion-aware-recommendation#Content> .
+<http://example.org/emotion-aware-recommendation#includesContent> <http://www.w3.org/2000/01/rdf-schema#comment> "Connects a recommendation to the content it includes."@en .
+<http://example.org/emotion-aware-recommendation#includesContent> <http://www.w3.org/2000/01/rdf-schema#label> "includes content"@en .
+# 
+# http://example.org/emotion-aware-recommendation#isInEnvironment
+<http://example.org/emotion-aware-recommendation#isInEnvironment> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://example.org/emotion-aware-recommendation#isInEnvironment> <http://www.w3.org/2000/01/rdf-schema#domain> <http://example.org/emotion-aware-recommendation#User> .
+<http://example.org/emotion-aware-recommendation#isInEnvironment> <http://www.w3.org/2000/01/rdf-schema#range> <http://example.org/emotion-aware-recommendation#Environment> .
+<http://example.org/emotion-aware-recommendation#isInEnvironment> <http://www.w3.org/2000/01/rdf-schema#comment> "Connects a user to an environment."@en .
+<http://example.org/emotion-aware-recommendation#isInEnvironment> <http://www.w3.org/2000/01/rdf-schema#label> "is in environment"@en .
+# 
+# http://example.org/emotion-aware-recommendation#matchesPreference
+<http://example.org/emotion-aware-recommendation#matchesPreference> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://example.org/emotion-aware-recommendation#matchesPreference> <http://www.w3.org/2000/01/rdf-schema#domain> <http://example.org/emotion-aware-recommendation#Content> .
+<http://example.org/emotion-aware-recommendation#matchesPreference> <http://www.w3.org/2000/01/rdf-schema#range> <http://example.org/emotion-aware-recommendation#Preference> .
+<http://example.org/emotion-aware-recommendation#matchesPreference> <http://www.w3.org/2000/01/rdf-schema#comment> "Connects content to a matching user preference."@en .
+<http://example.org/emotion-aware-recommendation#matchesPreference> <http://www.w3.org/2000/01/rdf-schema#label> "matches preference"@en .
+# 
+# http://example.org/emotion-aware-recommendation#relievesEmotion
+<http://example.org/emotion-aware-recommendation#relievesEmotion> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://example.org/emotion-aware-recommendation#relievesEmotion> <http://www.w3.org/2000/01/rdf-schema#domain> <http://example.org/emotion-aware-recommendation#Effect> .
+<http://example.org/emotion-aware-recommendation#relievesEmotion> <http://www.w3.org/2000/01/rdf-schema#range> <http://example.org/emotion-aware-recommendation#Emotion> .
+<http://example.org/emotion-aware-recommendation#relievesEmotion> <http://www.w3.org/2000/01/rdf-schema#comment> "Connects an effect to an emotion it may help reduce."@en .
+<http://example.org/emotion-aware-recommendation#relievesEmotion> <http://www.w3.org/2000/01/rdf-schema#label> "relieves emotion"@en .
+# 
+# http://example.org/emotion-aware-recommendation#satisfiedBy
+<http://example.org/emotion-aware-recommendation#satisfiedBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://example.org/emotion-aware-recommendation#satisfiedBy> <http://www.w3.org/2000/01/rdf-schema#domain> <http://example.org/emotion-aware-recommendation#Need> .
+<http://example.org/emotion-aware-recommendation#satisfiedBy> <http://www.w3.org/2000/01/rdf-schema#range> <http://example.org/emotion-aware-recommendation#Content> .
+<http://example.org/emotion-aware-recommendation#satisfiedBy> <http://www.w3.org/2000/01/rdf-schema#comment> "Connects a need to content that can satisfy it."@en .
+<http://example.org/emotion-aware-recommendation#satisfiedBy> <http://www.w3.org/2000/01/rdf-schema#label> "satisfied by"@en .
+# 
+# http://example.org/emotion-aware-recommendation#suitableForEnvironment
+<http://example.org/emotion-aware-recommendation#suitableForEnvironment> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://example.org/emotion-aware-recommendation#suitableForEnvironment> <http://www.w3.org/2000/01/rdf-schema#domain> <http://example.org/emotion-aware-recommendation#Content> .
+<http://example.org/emotion-aware-recommendation#suitableForEnvironment> <http://www.w3.org/2000/01/rdf-schema#range> <http://example.org/emotion-aware-recommendation#Environment> .
+<http://example.org/emotion-aware-recommendation#suitableForEnvironment> <http://www.w3.org/2000/01/rdf-schema#comment> "Shows which environment is suitable for content."@en .
+<http://example.org/emotion-aware-recommendation#suitableForEnvironment> <http://www.w3.org/2000/01/rdf-schema#label> "suitable for environment"@en .
+# 
+# http://example.org/emotion-aware-recommendation#suitableForPersonality
+<http://example.org/emotion-aware-recommendation#suitableForPersonality> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://example.org/emotion-aware-recommendation#suitableForPersonality> <http://www.w3.org/2000/01/rdf-schema#domain> <http://example.org/emotion-aware-recommendation#Content> .
+<http://example.org/emotion-aware-recommendation#suitableForPersonality> <http://www.w3.org/2000/01/rdf-schema#range> <http://example.org/emotion-aware-recommendation#Personality> .
+<http://example.org/emotion-aware-recommendation#suitableForPersonality> <http://www.w3.org/2000/01/rdf-schema#comment> "Shows which personality type a content item is suitable for."@en .
+<http://example.org/emotion-aware-recommendation#suitableForPersonality> <http://www.w3.org/2000/01/rdf-schema#label> "suitable for personality"@en .
+# 
+# http://example.org/emotion-aware-recommendation#suitableForTime
+<http://example.org/emotion-aware-recommendation#suitableForTime> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://example.org/emotion-aware-recommendation#suitableForTime> <http://www.w3.org/2000/01/rdf-schema#domain> <http://example.org/emotion-aware-recommendation#Content> .
+<http://example.org/emotion-aware-recommendation#suitableForTime> <http://www.w3.org/2000/01/rdf-schema#range> <http://example.org/emotion-aware-recommendation#TimeContext> .
+<http://example.org/emotion-aware-recommendation#suitableForTime> <http://www.w3.org/2000/01/rdf-schema#comment> "Shows which time context is suitable for content."@en .
+<http://example.org/emotion-aware-recommendation#suitableForTime> <http://www.w3.org/2000/01/rdf-schema#label> "suitable for time"@en .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Data properties
+# #
+# #################################################################
+# 
+# 
+# http://example.org/emotion-aware-recommendation#hasAge
+<http://example.org/emotion-aware-recommendation#hasAge> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://example.org/emotion-aware-recommendation#hasAge> <http://www.w3.org/2000/01/rdf-schema#domain> <http://example.org/emotion-aware-recommendation#User> .
+<http://example.org/emotion-aware-recommendation#hasAge> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#integer> .
+<http://example.org/emotion-aware-recommendation#hasAge> <http://www.w3.org/2000/01/rdf-schema#label> "has age"@en .
+# 
+# http://example.org/emotion-aware-recommendation#hasConfidenceScore
+<http://example.org/emotion-aware-recommendation#hasConfidenceScore> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://example.org/emotion-aware-recommendation#hasConfidenceScore> <http://www.w3.org/2000/01/rdf-schema#domain> <http://example.org/emotion-aware-recommendation#Recommendation> .
+<http://example.org/emotion-aware-recommendation#hasConfidenceScore> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#decimal> .
+<http://example.org/emotion-aware-recommendation#hasConfidenceScore> <http://www.w3.org/2000/01/rdf-schema#label> "has confidence score"@en .
+# 
+# http://example.org/emotion-aware-recommendation#hasDurationMinutes
+<http://example.org/emotion-aware-recommendation#hasDurationMinutes> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://example.org/emotion-aware-recommendation#hasDurationMinutes> <http://www.w3.org/2000/01/rdf-schema#domain> <http://example.org/emotion-aware-recommendation#Content> .
+<http://example.org/emotion-aware-recommendation#hasDurationMinutes> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#integer> .
+<http://example.org/emotion-aware-recommendation#hasDurationMinutes> <http://www.w3.org/2000/01/rdf-schema#label> "has duration in minutes"@en .
+# 
+# http://example.org/emotion-aware-recommendation#hasFeedbackScore
+<http://example.org/emotion-aware-recommendation#hasFeedbackScore> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://example.org/emotion-aware-recommendation#hasFeedbackScore> <http://www.w3.org/2000/01/rdf-schema#domain> <http://example.org/emotion-aware-recommendation#Feedback> .
+<http://example.org/emotion-aware-recommendation#hasFeedbackScore> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#integer> .
+<http://example.org/emotion-aware-recommendation#hasFeedbackScore> <http://www.w3.org/2000/01/rdf-schema#label> "has feedback score"@en .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Classes
+# #
+# #################################################################
+# 
+# 
+# http://example.org/emotion-aware-recommendation#Content
+<http://example.org/emotion-aware-recommendation#Content> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://example.org/emotion-aware-recommendation#Content> <http://www.w3.org/2000/01/rdf-schema#comment> "A digital content item or activity that can be recommended to a user."@en .
+<http://example.org/emotion-aware-recommendation#Content> <http://www.w3.org/2000/01/rdf-schema#label> "Content"@en .
+# 
+# http://example.org/emotion-aware-recommendation#ContentCategory
+<http://example.org/emotion-aware-recommendation#ContentCategory> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://example.org/emotion-aware-recommendation#ContentCategory> <http://www.w3.org/2000/01/rdf-schema#comment> "A category describing the type of content."@en .
+<http://example.org/emotion-aware-recommendation#ContentCategory> <http://www.w3.org/2000/01/rdf-schema#label> "Content Category"@en .
+# 
+# http://example.org/emotion-aware-recommendation#Context
+<http://example.org/emotion-aware-recommendation#Context> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://example.org/emotion-aware-recommendation#Context> <http://www.w3.org/2000/01/rdf-schema#comment> "The situation in which the user is located."@en .
+<http://example.org/emotion-aware-recommendation#Context> <http://www.w3.org/2000/01/rdf-schema#label> "Context"@en .
+# 
+# http://example.org/emotion-aware-recommendation#Effect
+<http://example.org/emotion-aware-recommendation#Effect> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://example.org/emotion-aware-recommendation#Effect> <http://www.w3.org/2000/01/rdf-schema#comment> "The expected psychological or behavioral effect of a content item."@en .
+<http://example.org/emotion-aware-recommendation#Effect> <http://www.w3.org/2000/01/rdf-schema#label> "Effect"@en .
+# 
+# http://example.org/emotion-aware-recommendation#Emotion
+<http://example.org/emotion-aware-recommendation#Emotion> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://example.org/emotion-aware-recommendation#Emotion> <http://www.w3.org/2000/01/rdf-schema#comment> "An emotional state experienced by a user."@en .
+<http://example.org/emotion-aware-recommendation#Emotion> <http://www.w3.org/2000/01/rdf-schema#label> "Emotion"@en .
+# 
+# http://example.org/emotion-aware-recommendation#Environment
+<http://example.org/emotion-aware-recommendation#Environment> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://example.org/emotion-aware-recommendation#Environment> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://example.org/emotion-aware-recommendation#Context> .
+<http://example.org/emotion-aware-recommendation#Environment> <http://www.w3.org/2000/01/rdf-schema#comment> "The physical or social environment of a user."@en .
+<http://example.org/emotion-aware-recommendation#Environment> <http://www.w3.org/2000/01/rdf-schema#label> "Environment"@en .
+# 
+# http://example.org/emotion-aware-recommendation#Feedback
+<http://example.org/emotion-aware-recommendation#Feedback> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://example.org/emotion-aware-recommendation#Feedback> <http://www.w3.org/2000/01/rdf-schema#comment> "A user response to a recommendation."@en .
+<http://example.org/emotion-aware-recommendation#Feedback> <http://www.w3.org/2000/01/rdf-schema#label> "Feedback"@en .
+# 
+# http://example.org/emotion-aware-recommendation#Intention
+<http://example.org/emotion-aware-recommendation#Intention> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://example.org/emotion-aware-recommendation#Intention> <http://www.w3.org/2000/01/rdf-schema#comment> "The intended purpose of a recommendation."@en .
+<http://example.org/emotion-aware-recommendation#Intention> <http://www.w3.org/2000/01/rdf-schema#label> "Intention"@en .
+# 
+# http://example.org/emotion-aware-recommendation#Need
+<http://example.org/emotion-aware-recommendation#Need> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://example.org/emotion-aware-recommendation#Need> <http://www.w3.org/2000/01/rdf-schema#comment> "A user need that may arise from an emotional state."@en .
+<http://example.org/emotion-aware-recommendation#Need> <http://www.w3.org/2000/01/rdf-schema#label> "Need"@en .
+# 
+# http://example.org/emotion-aware-recommendation#Personality
+<http://example.org/emotion-aware-recommendation#Personality> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://example.org/emotion-aware-recommendation#Personality> <http://www.w3.org/2000/01/rdf-schema#comment> "A personality trait that may affect recommendation suitability."@en .
+<http://example.org/emotion-aware-recommendation#Personality> <http://www.w3.org/2000/01/rdf-schema#label> "Personality"@en .
+# 
+# http://example.org/emotion-aware-recommendation#Platform
+<http://example.org/emotion-aware-recommendation#Platform> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://example.org/emotion-aware-recommendation#Platform> <http://www.w3.org/2000/01/rdf-schema#comment> "A digital platform where content may be delivered."@en .
+<http://example.org/emotion-aware-recommendation#Platform> <http://www.w3.org/2000/01/rdf-schema#label> "Platform"@en .
+# 
+# http://example.org/emotion-aware-recommendation#Preference
+<http://example.org/emotion-aware-recommendation#Preference> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://example.org/emotion-aware-recommendation#Preference> <http://www.w3.org/2000/01/rdf-schema#comment> "A user's preferred content type or activity."@en .
+<http://example.org/emotion-aware-recommendation#Preference> <http://www.w3.org/2000/01/rdf-schema#label> "Preference"@en .
+# 
+# http://example.org/emotion-aware-recommendation#Recommendation
+<http://example.org/emotion-aware-recommendation#Recommendation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://example.org/emotion-aware-recommendation#Recommendation> <http://www.w3.org/2000/01/rdf-schema#comment> "A personalized suggestion generated for a user."@en .
+<http://example.org/emotion-aware-recommendation#Recommendation> <http://www.w3.org/2000/01/rdf-schema#label> "Recommendation"@en .
+# 
+# http://example.org/emotion-aware-recommendation#TimeContext
+<http://example.org/emotion-aware-recommendation#TimeContext> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://example.org/emotion-aware-recommendation#TimeContext> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://example.org/emotion-aware-recommendation#Context> .
+<http://example.org/emotion-aware-recommendation#TimeContext> <http://www.w3.org/2000/01/rdf-schema#comment> "The time-related context of a user."@en .
+<http://example.org/emotion-aware-recommendation#TimeContext> <http://www.w3.org/2000/01/rdf-schema#label> "Time Context"@en .
+# 
+# http://example.org/emotion-aware-recommendation#User
+<http://example.org/emotion-aware-recommendation#User> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://example.org/emotion-aware-recommendation#User> <http://www.w3.org/2000/01/rdf-schema#comment> "A person who receives recommendations from the system."@en .
+<http://example.org/emotion-aware-recommendation#User> <http://www.w3.org/2000/01/rdf-schema#label> "User"@en .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Individuals
+# #
+# #################################################################
+# 
+# 
+# http://example.org/emotion-aware-recommendation#Alone
+<http://example.org/emotion-aware-recommendation#Alone> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://example.org/emotion-aware-recommendation#Alone> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/emotion-aware-recommendation#Environment> .
+<http://example.org/emotion-aware-recommendation#Alone> <http://www.w3.org/2000/01/rdf-schema#label> "Alone"@en .
+# 
+# http://example.org/emotion-aware-recommendation#Anxiety
+<http://example.org/emotion-aware-recommendation#Anxiety> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://example.org/emotion-aware-recommendation#Anxiety> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/emotion-aware-recommendation#Emotion> .
+<http://example.org/emotion-aware-recommendation#Anxiety> <http://example.org/emotion-aware-recommendation#createsNeed> <http://example.org/emotion-aware-recommendation#Calmness> .
+<http://example.org/emotion-aware-recommendation#Calmness> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://example.org/emotion-aware-recommendation#Anxiety> <http://www.w3.org/2000/01/rdf-schema#label> "Anxiety"@en .
+# 
+# http://example.org/emotion-aware-recommendation#Boredom
+<http://example.org/emotion-aware-recommendation#Boredom> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://example.org/emotion-aware-recommendation#Boredom> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/emotion-aware-recommendation#Emotion> .
+<http://example.org/emotion-aware-recommendation#Boredom> <http://example.org/emotion-aware-recommendation#createsNeed> <http://example.org/emotion-aware-recommendation#Distraction> .
+<http://example.org/emotion-aware-recommendation#Distraction> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://example.org/emotion-aware-recommendation#Boredom> <http://www.w3.org/2000/01/rdf-schema#label> "Boredom"@en .
+# 
+# http://example.org/emotion-aware-recommendation#BreathingExercise
+<http://example.org/emotion-aware-recommendation#BreathingExercise> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://example.org/emotion-aware-recommendation#BreathingExercise> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/emotion-aware-recommendation#Content> .
+<http://example.org/emotion-aware-recommendation#BreathingExercise> <http://example.org/emotion-aware-recommendation#availableOnPlatform> <http://example.org/emotion-aware-recommendation#MobileApp> .
+<http://example.org/emotion-aware-recommendation#MobileApp> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://example.org/emotion-aware-recommendation#BreathingExercise> <http://example.org/emotion-aware-recommendation#belongsToCategory> <http://example.org/emotion-aware-recommendation#Meditation> .
+<http://example.org/emotion-aware-recommendation#Meditation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://example.org/emotion-aware-recommendation#BreathingExercise> <http://example.org/emotion-aware-recommendation#hasEffect> <http://example.org/emotion-aware-recommendation#RelaxingEffect> .
+<http://example.org/emotion-aware-recommendation#RelaxingEffect> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://example.org/emotion-aware-recommendation#BreathingExercise> <http://example.org/emotion-aware-recommendation#suitableForEnvironment> <http://example.org/emotion-aware-recommendation#Home> .
+<http://example.org/emotion-aware-recommendation#Home> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://example.org/emotion-aware-recommendation#BreathingExercise> <http://example.org/emotion-aware-recommendation#suitableForPersonality> <http://example.org/emotion-aware-recommendation#Introvert> .
+<http://example.org/emotion-aware-recommendation#Introvert> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://example.org/emotion-aware-recommendation#BreathingExercise> <http://example.org/emotion-aware-recommendation#suitableForTime> <http://example.org/emotion-aware-recommendation#Night> .
+<http://example.org/emotion-aware-recommendation#Night> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://example.org/emotion-aware-recommendation#BreathingExercise> <http://example.org/emotion-aware-recommendation#hasDurationMinutes> "5"^^<http://www.w3.org/2001/XMLSchema#integer> .
+<http://example.org/emotion-aware-recommendation#BreathingExercise> <http://www.w3.org/2000/01/rdf-schema#label> "Breathing Exercise"@en .
+# 
+# http://example.org/emotion-aware-recommendation#Busra
+<http://example.org/emotion-aware-recommendation#Busra> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://example.org/emotion-aware-recommendation#Busra> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/emotion-aware-recommendation#User> .
+<http://example.org/emotion-aware-recommendation#Busra> <http://example.org/emotion-aware-recommendation#feels> <http://example.org/emotion-aware-recommendation#Boredom> .
+<http://example.org/emotion-aware-recommendation#Busra> <http://example.org/emotion-aware-recommendation#hasNeed> <http://example.org/emotion-aware-recommendation#Distraction> .
+<http://example.org/emotion-aware-recommendation#Busra> <http://example.org/emotion-aware-recommendation#hasPersonality> <http://example.org/emotion-aware-recommendation#Extrovert> .
+<http://example.org/emotion-aware-recommendation#Extrovert> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://example.org/emotion-aware-recommendation#Busra> <http://example.org/emotion-aware-recommendation#hasPreference> <http://example.org/emotion-aware-recommendation#LikesGames> .
+<http://example.org/emotion-aware-recommendation#LikesGames> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://example.org/emotion-aware-recommendation#Busra> <http://example.org/emotion-aware-recommendation#hasTimeContext> <http://example.org/emotion-aware-recommendation#Evening> .
+<http://example.org/emotion-aware-recommendation#Evening> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://example.org/emotion-aware-recommendation#Busra> <http://example.org/emotion-aware-recommendation#isInEnvironment> <http://example.org/emotion-aware-recommendation#Home> .
+<http://example.org/emotion-aware-recommendation#Busra> <http://example.org/emotion-aware-recommendation#hasAge> "22"^^<http://www.w3.org/2001/XMLSchema#integer> .
+<http://example.org/emotion-aware-recommendation#Busra> <http://www.w3.org/2000/01/rdf-schema#label> "Büşra"@en .
+# 
+# http://example.org/emotion-aware-recommendation#CalmingEffect
+<http://example.org/emotion-aware-recommendation#CalmingEffect> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://example.org/emotion-aware-recommendation#CalmingEffect> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/emotion-aware-recommendation#Effect> .
+<http://example.org/emotion-aware-recommendation#CalmingEffect> <http://example.org/emotion-aware-recommendation#relievesEmotion> <http://example.org/emotion-aware-recommendation#Anxiety> .
+<http://example.org/emotion-aware-recommendation#CalmingEffect> <http://example.org/emotion-aware-recommendation#relievesEmotion> <http://example.org/emotion-aware-recommendation#Stress> .
+<http://example.org/emotion-aware-recommendation#Stress> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://example.org/emotion-aware-recommendation#CalmingEffect> <http://www.w3.org/2000/01/rdf-schema#label> "Calming Effect"@en .
+# 
+# http://example.org/emotion-aware-recommendation#Calmness
+<http://example.org/emotion-aware-recommendation#Calmness> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/emotion-aware-recommendation#Need> .
+<http://example.org/emotion-aware-recommendation#Calmness> <http://example.org/emotion-aware-recommendation#satisfiedBy> <http://example.org/emotion-aware-recommendation#MeditationAudio> .
+<http://example.org/emotion-aware-recommendation#MeditationAudio> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://example.org/emotion-aware-recommendation#Calmness> <http://www.w3.org/2000/01/rdf-schema#label> "Calmness"@en .
+# 
+# http://example.org/emotion-aware-recommendation#ComfortMovie
+<http://example.org/emotion-aware-recommendation#ComfortMovie> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://example.org/emotion-aware-recommendation#ComfortMovie> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/emotion-aware-recommendation#Content> .
+<http://example.org/emotion-aware-recommendation#ComfortMovie> <http://example.org/emotion-aware-recommendation#availableOnPlatform> <http://example.org/emotion-aware-recommendation#Netflix> .
+<http://example.org/emotion-aware-recommendation#Netflix> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://example.org/emotion-aware-recommendation#ComfortMovie> <http://example.org/emotion-aware-recommendation#belongsToCategory> <http://example.org/emotion-aware-recommendation#Movie> .
+<http://example.org/emotion-aware-recommendation#Movie> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://example.org/emotion-aware-recommendation#ComfortMovie> <http://example.org/emotion-aware-recommendation#hasEffect> <http://example.org/emotion-aware-recommendation#EmotionalReliefEffect> .
+<http://example.org/emotion-aware-recommendation#EmotionalReliefEffect> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://example.org/emotion-aware-recommendation#ComfortMovie> <http://example.org/emotion-aware-recommendation#matchesPreference> <http://example.org/emotion-aware-recommendation#LikesMovies> .
+<http://example.org/emotion-aware-recommendation#LikesMovies> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://example.org/emotion-aware-recommendation#ComfortMovie> <http://example.org/emotion-aware-recommendation#suitableForEnvironment> <http://example.org/emotion-aware-recommendation#WithFriends> .
+<http://example.org/emotion-aware-recommendation#WithFriends> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://example.org/emotion-aware-recommendation#ComfortMovie> <http://example.org/emotion-aware-recommendation#suitableForPersonality> <http://example.org/emotion-aware-recommendation#Extrovert> .
+<http://example.org/emotion-aware-recommendation#ComfortMovie> <http://example.org/emotion-aware-recommendation#suitableForTime> <http://example.org/emotion-aware-recommendation#Evening> .
+<http://example.org/emotion-aware-recommendation#ComfortMovie> <http://example.org/emotion-aware-recommendation#hasDurationMinutes> "95"^^<http://www.w3.org/2001/XMLSchema#integer> .
+<http://example.org/emotion-aware-recommendation#ComfortMovie> <http://www.w3.org/2000/01/rdf-schema#label> "Comfort Movie"@en .
+# 
+# http://example.org/emotion-aware-recommendation#Deniz
+<http://example.org/emotion-aware-recommendation#Deniz> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://example.org/emotion-aware-recommendation#Deniz> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/emotion-aware-recommendation#User> .
+<http://example.org/emotion-aware-recommendation#Deniz> <http://example.org/emotion-aware-recommendation#feels> <http://example.org/emotion-aware-recommendation#Sadness> .
+<http://example.org/emotion-aware-recommendation#Sadness> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://example.org/emotion-aware-recommendation#Deniz> <http://example.org/emotion-aware-recommendation#hasNeed> <http://example.org/emotion-aware-recommendation#EmotionalSupport> .
+<http://example.org/emotion-aware-recommendation#EmotionalSupport> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://example.org/emotion-aware-recommendation#Deniz> <http://example.org/emotion-aware-recommendation#hasPersonality> <http://example.org/emotion-aware-recommendation#Extrovert> .
+<http://example.org/emotion-aware-recommendation#Deniz> <http://example.org/emotion-aware-recommendation#hasPreference> <http://example.org/emotion-aware-recommendation#LikesMovies> .
+<http://example.org/emotion-aware-recommendation#Deniz> <http://example.org/emotion-aware-recommendation#hasTimeContext> <http://example.org/emotion-aware-recommendation#Evening> .
+<http://example.org/emotion-aware-recommendation#Deniz> <http://example.org/emotion-aware-recommendation#isInEnvironment> <http://example.org/emotion-aware-recommendation#WithFriends> .
+<http://example.org/emotion-aware-recommendation#Deniz> <http://example.org/emotion-aware-recommendation#hasAge> "23"^^<http://www.w3.org/2001/XMLSchema#integer> .
+<http://example.org/emotion-aware-recommendation#Deniz> <http://www.w3.org/2000/01/rdf-schema#label> "Deniz"@en .
+# 
+# http://example.org/emotion-aware-recommendation#DistractingEffect
+<http://example.org/emotion-aware-recommendation#DistractingEffect> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://example.org/emotion-aware-recommendation#DistractingEffect> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/emotion-aware-recommendation#Effect> .
+<http://example.org/emotion-aware-recommendation#DistractingEffect> <http://example.org/emotion-aware-recommendation#relievesEmotion> <http://example.org/emotion-aware-recommendation#Boredom> .
+<http://example.org/emotion-aware-recommendation#DistractingEffect> <http://www.w3.org/2000/01/rdf-schema#label> "Distracting Effect"@en .
+# 
+# http://example.org/emotion-aware-recommendation#Distraction
+<http://example.org/emotion-aware-recommendation#Distraction> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/emotion-aware-recommendation#Need> .
+<http://example.org/emotion-aware-recommendation#Distraction> <http://example.org/emotion-aware-recommendation#satisfiedBy> <http://example.org/emotion-aware-recommendation#PuzzleGame> .
+<http://example.org/emotion-aware-recommendation#PuzzleGame> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://example.org/emotion-aware-recommendation#Distraction> <http://www.w3.org/2000/01/rdf-schema#label> "Distraction"@en .
+# 
+# http://example.org/emotion-aware-recommendation#Elif
+<http://example.org/emotion-aware-recommendation#Elif> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://example.org/emotion-aware-recommendation#Elif> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/emotion-aware-recommendation#User> .
+<http://example.org/emotion-aware-recommendation#Elif> <http://example.org/emotion-aware-recommendation#feels> <http://example.org/emotion-aware-recommendation#Stress> .
+<http://example.org/emotion-aware-recommendation#Elif> <http://example.org/emotion-aware-recommendation#hasNeed> <http://example.org/emotion-aware-recommendation#Relaxation> .
+<http://example.org/emotion-aware-recommendation#Relaxation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://example.org/emotion-aware-recommendation#Elif> <http://example.org/emotion-aware-recommendation#hasPersonality> <http://example.org/emotion-aware-recommendation#Introvert> .
+<http://example.org/emotion-aware-recommendation#Elif> <http://example.org/emotion-aware-recommendation#hasPreference> <http://example.org/emotion-aware-recommendation#LikesMusic> .
+<http://example.org/emotion-aware-recommendation#LikesMusic> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://example.org/emotion-aware-recommendation#Elif> <http://example.org/emotion-aware-recommendation#hasPreference> <http://example.org/emotion-aware-recommendation#LikesShortContent> .
+<http://example.org/emotion-aware-recommendation#LikesShortContent> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://example.org/emotion-aware-recommendation#Elif> <http://example.org/emotion-aware-recommendation#hasTimeContext> <http://example.org/emotion-aware-recommendation#Night> .
+<http://example.org/emotion-aware-recommendation#Elif> <http://example.org/emotion-aware-recommendation#isInEnvironment> <http://example.org/emotion-aware-recommendation#Alone> .
+<http://example.org/emotion-aware-recommendation#Elif> <http://example.org/emotion-aware-recommendation#isInEnvironment> <http://example.org/emotion-aware-recommendation#Home> .
+<http://example.org/emotion-aware-recommendation#Elif> <http://example.org/emotion-aware-recommendation#hasAge> "21"^^<http://www.w3.org/2001/XMLSchema#integer> .
+<http://example.org/emotion-aware-recommendation#Elif> <http://www.w3.org/2000/01/rdf-schema#label> "Elif"@en .
+# 
+# http://example.org/emotion-aware-recommendation#EmotionalReliefEffect
+<http://example.org/emotion-aware-recommendation#EmotionalReliefEffect> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/emotion-aware-recommendation#Effect> .
+<http://example.org/emotion-aware-recommendation#EmotionalReliefEffect> <http://example.org/emotion-aware-recommendation#relievesEmotion> <http://example.org/emotion-aware-recommendation#Sadness> .
+<http://example.org/emotion-aware-recommendation#EmotionalReliefEffect> <http://www.w3.org/2000/01/rdf-schema#label> "Emotional Relief Effect"@en .
+# 
+# http://example.org/emotion-aware-recommendation#EmotionalSupport
+<http://example.org/emotion-aware-recommendation#EmotionalSupport> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/emotion-aware-recommendation#Need> .
+<http://example.org/emotion-aware-recommendation#EmotionalSupport> <http://example.org/emotion-aware-recommendation#satisfiedBy> <http://example.org/emotion-aware-recommendation#ComfortMovie> .
+<http://example.org/emotion-aware-recommendation#EmotionalSupport> <http://www.w3.org/2000/01/rdf-schema#label> "Emotional Support"@en .
+# 
+# http://example.org/emotion-aware-recommendation#Enes
+<http://example.org/emotion-aware-recommendation#Enes> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://example.org/emotion-aware-recommendation#Enes> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/emotion-aware-recommendation#User> .
+<http://example.org/emotion-aware-recommendation#Enes> <http://example.org/emotion-aware-recommendation#feels> <http://example.org/emotion-aware-recommendation#Tiredness> .
+<http://example.org/emotion-aware-recommendation#Tiredness> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://example.org/emotion-aware-recommendation#Enes> <http://example.org/emotion-aware-recommendation#hasNeed> <http://example.org/emotion-aware-recommendation#Motivation> .
+<http://example.org/emotion-aware-recommendation#Motivation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://example.org/emotion-aware-recommendation#Enes> <http://example.org/emotion-aware-recommendation#hasPersonality> <http://example.org/emotion-aware-recommendation#Introvert> .
+<http://example.org/emotion-aware-recommendation#Enes> <http://example.org/emotion-aware-recommendation#hasPreference> <http://example.org/emotion-aware-recommendation#LikesPodcasts> .
+<http://example.org/emotion-aware-recommendation#LikesPodcasts> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://example.org/emotion-aware-recommendation#Enes> <http://example.org/emotion-aware-recommendation#hasTimeContext> <http://example.org/emotion-aware-recommendation#Morning> .
+<http://example.org/emotion-aware-recommendation#Morning> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://example.org/emotion-aware-recommendation#Enes> <http://example.org/emotion-aware-recommendation#isInEnvironment> <http://example.org/emotion-aware-recommendation#School> .
+<http://example.org/emotion-aware-recommendation#School> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://example.org/emotion-aware-recommendation#Enes> <http://example.org/emotion-aware-recommendation#hasAge> "22"^^<http://www.w3.org/2001/XMLSchema#integer> .
+<http://example.org/emotion-aware-recommendation#Enes> <http://www.w3.org/2000/01/rdf-schema#label> "Enes"@en .
+# 
+# http://example.org/emotion-aware-recommendation#Evening
+<http://example.org/emotion-aware-recommendation#Evening> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/emotion-aware-recommendation#TimeContext> .
+<http://example.org/emotion-aware-recommendation#Evening> <http://www.w3.org/2000/01/rdf-schema#label> "Evening"@en .
+# 
+# http://example.org/emotion-aware-recommendation#Extrovert
+<http://example.org/emotion-aware-recommendation#Extrovert> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/emotion-aware-recommendation#Personality> .
+<http://example.org/emotion-aware-recommendation#Extrovert> <http://www.w3.org/2000/01/rdf-schema#label> "Extrovert"@en .
+# 
+# http://example.org/emotion-aware-recommendation#Feedback001
+<http://example.org/emotion-aware-recommendation#Feedback001> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://example.org/emotion-aware-recommendation#Feedback001> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/emotion-aware-recommendation#Feedback> .
+<http://example.org/emotion-aware-recommendation#Feedback001> <http://example.org/emotion-aware-recommendation#hasFeedbackScore> "5"^^<http://www.w3.org/2001/XMLSchema#integer> .
+<http://example.org/emotion-aware-recommendation#Feedback001> <http://www.w3.org/2000/01/rdf-schema#label> "Positive feedback for recommendation 001"@en .
+# 
+# http://example.org/emotion-aware-recommendation#Feedback002
+<http://example.org/emotion-aware-recommendation#Feedback002> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://example.org/emotion-aware-recommendation#Feedback002> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/emotion-aware-recommendation#Feedback> .
+<http://example.org/emotion-aware-recommendation#Feedback002> <http://example.org/emotion-aware-recommendation#hasFeedbackScore> "4"^^<http://www.w3.org/2001/XMLSchema#integer> .
+<http://example.org/emotion-aware-recommendation#Feedback002> <http://www.w3.org/2000/01/rdf-schema#label> "Positive feedback for recommendation 002"@en .
+# 
+# http://example.org/emotion-aware-recommendation#Feedback003
+<http://example.org/emotion-aware-recommendation#Feedback003> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://example.org/emotion-aware-recommendation#Feedback003> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/emotion-aware-recommendation#Feedback> .
+<http://example.org/emotion-aware-recommendation#Feedback003> <http://example.org/emotion-aware-recommendation#hasFeedbackScore> "4"^^<http://www.w3.org/2001/XMLSchema#integer> .
+<http://example.org/emotion-aware-recommendation#Feedback003> <http://www.w3.org/2000/01/rdf-schema#label> "Positive feedback for recommendation 003"@en .
+# 
+# http://example.org/emotion-aware-recommendation#Feedback004
+<http://example.org/emotion-aware-recommendation#Feedback004> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://example.org/emotion-aware-recommendation#Feedback004> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/emotion-aware-recommendation#Feedback> .
+<http://example.org/emotion-aware-recommendation#Feedback004> <http://example.org/emotion-aware-recommendation#hasFeedbackScore> "5"^^<http://www.w3.org/2001/XMLSchema#integer> .
+<http://example.org/emotion-aware-recommendation#Feedback004> <http://www.w3.org/2000/01/rdf-schema#label> "Positive feedback for recommendation 004"@en .
+# 
+# http://example.org/emotion-aware-recommendation#Game
+<http://example.org/emotion-aware-recommendation#Game> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://example.org/emotion-aware-recommendation#Game> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/emotion-aware-recommendation#ContentCategory> .
+<http://example.org/emotion-aware-recommendation#Game> <http://www.w3.org/2000/01/rdf-schema#label> "Game"@en .
+# 
+# http://example.org/emotion-aware-recommendation#Home
+<http://example.org/emotion-aware-recommendation#Home> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/emotion-aware-recommendation#Environment> .
+<http://example.org/emotion-aware-recommendation#Home> <http://www.w3.org/2000/01/rdf-schema#label> "Home"@en .
+# 
+# http://example.org/emotion-aware-recommendation#ImproveMood
+<http://example.org/emotion-aware-recommendation#ImproveMood> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://example.org/emotion-aware-recommendation#ImproveMood> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/emotion-aware-recommendation#Intention> .
+<http://example.org/emotion-aware-recommendation#ImproveMood> <http://www.w3.org/2000/01/rdf-schema#label> "Improve Mood"@en .
+# 
+# http://example.org/emotion-aware-recommendation#IncreaseMotivation
+<http://example.org/emotion-aware-recommendation#IncreaseMotivation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://example.org/emotion-aware-recommendation#IncreaseMotivation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/emotion-aware-recommendation#Intention> .
+<http://example.org/emotion-aware-recommendation#IncreaseMotivation> <http://www.w3.org/2000/01/rdf-schema#label> "Increase Motivation"@en .
+# 
+# http://example.org/emotion-aware-recommendation#Introvert
+<http://example.org/emotion-aware-recommendation#Introvert> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/emotion-aware-recommendation#Personality> .
+<http://example.org/emotion-aware-recommendation#Introvert> <http://www.w3.org/2000/01/rdf-schema#label> "Introvert"@en .
+# 
+# http://example.org/emotion-aware-recommendation#LikesGames
+<http://example.org/emotion-aware-recommendation#LikesGames> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/emotion-aware-recommendation#Preference> .
+<http://example.org/emotion-aware-recommendation#LikesGames> <http://www.w3.org/2000/01/rdf-schema#label> "Likes Games"@en .
+# 
+# http://example.org/emotion-aware-recommendation#LikesMovies
+<http://example.org/emotion-aware-recommendation#LikesMovies> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/emotion-aware-recommendation#Preference> .
+<http://example.org/emotion-aware-recommendation#LikesMovies> <http://www.w3.org/2000/01/rdf-schema#label> "Likes Movies"@en .
+# 
+# http://example.org/emotion-aware-recommendation#LikesMusic
+<http://example.org/emotion-aware-recommendation#LikesMusic> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/emotion-aware-recommendation#Preference> .
+<http://example.org/emotion-aware-recommendation#LikesMusic> <http://www.w3.org/2000/01/rdf-schema#label> "Likes Music"@en .
+# 
+# http://example.org/emotion-aware-recommendation#LikesPodcasts
+<http://example.org/emotion-aware-recommendation#LikesPodcasts> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/emotion-aware-recommendation#Preference> .
+<http://example.org/emotion-aware-recommendation#LikesPodcasts> <http://www.w3.org/2000/01/rdf-schema#label> "Likes Podcasts"@en .
+# 
+# http://example.org/emotion-aware-recommendation#LikesShortContent
+<http://example.org/emotion-aware-recommendation#LikesShortContent> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/emotion-aware-recommendation#Preference> .
+<http://example.org/emotion-aware-recommendation#LikesShortContent> <http://www.w3.org/2000/01/rdf-schema#label> "Likes Short Content"@en .
+# 
+# http://example.org/emotion-aware-recommendation#LoFiPlaylist
+<http://example.org/emotion-aware-recommendation#LoFiPlaylist> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://example.org/emotion-aware-recommendation#LoFiPlaylist> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/emotion-aware-recommendation#Content> .
+<http://example.org/emotion-aware-recommendation#LoFiPlaylist> <http://example.org/emotion-aware-recommendation#availableOnPlatform> <http://example.org/emotion-aware-recommendation#Spotify> .
+<http://example.org/emotion-aware-recommendation#Spotify> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://example.org/emotion-aware-recommendation#LoFiPlaylist> <http://example.org/emotion-aware-recommendation#belongsToCategory> <http://example.org/emotion-aware-recommendation#Music> .
+<http://example.org/emotion-aware-recommendation#Music> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://example.org/emotion-aware-recommendation#LoFiPlaylist> <http://example.org/emotion-aware-recommendation#hasEffect> <http://example.org/emotion-aware-recommendation#CalmingEffect> .
+<http://example.org/emotion-aware-recommendation#LoFiPlaylist> <http://example.org/emotion-aware-recommendation#matchesPreference> <http://example.org/emotion-aware-recommendation#LikesMusic> .
+<http://example.org/emotion-aware-recommendation#LoFiPlaylist> <http://example.org/emotion-aware-recommendation#suitableForEnvironment> <http://example.org/emotion-aware-recommendation#Alone> .
+<http://example.org/emotion-aware-recommendation#LoFiPlaylist> <http://example.org/emotion-aware-recommendation#suitableForEnvironment> <http://example.org/emotion-aware-recommendation#Home> .
+<http://example.org/emotion-aware-recommendation#LoFiPlaylist> <http://example.org/emotion-aware-recommendation#suitableForPersonality> <http://example.org/emotion-aware-recommendation#Introvert> .
+<http://example.org/emotion-aware-recommendation#LoFiPlaylist> <http://example.org/emotion-aware-recommendation#suitableForTime> <http://example.org/emotion-aware-recommendation#Night> .
+<http://example.org/emotion-aware-recommendation#LoFiPlaylist> <http://example.org/emotion-aware-recommendation#hasDurationMinutes> "25"^^<http://www.w3.org/2001/XMLSchema#integer> .
+<http://example.org/emotion-aware-recommendation#LoFiPlaylist> <http://www.w3.org/2000/01/rdf-schema#label> "Lo-Fi Playlist"@en .
+# 
+# http://example.org/emotion-aware-recommendation#Meditation
+<http://example.org/emotion-aware-recommendation#Meditation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/emotion-aware-recommendation#ContentCategory> .
+<http://example.org/emotion-aware-recommendation#Meditation> <http://www.w3.org/2000/01/rdf-schema#label> "Meditation"@en .
+# 
+# http://example.org/emotion-aware-recommendation#MeditationAudio
+<http://example.org/emotion-aware-recommendation#MeditationAudio> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/emotion-aware-recommendation#Content> .
+<http://example.org/emotion-aware-recommendation#MeditationAudio> <http://example.org/emotion-aware-recommendation#availableOnPlatform> <http://example.org/emotion-aware-recommendation#MobileApp> .
+<http://example.org/emotion-aware-recommendation#MeditationAudio> <http://example.org/emotion-aware-recommendation#belongsToCategory> <http://example.org/emotion-aware-recommendation#Meditation> .
+<http://example.org/emotion-aware-recommendation#MeditationAudio> <http://example.org/emotion-aware-recommendation#hasEffect> <http://example.org/emotion-aware-recommendation#CalmingEffect> .
+<http://example.org/emotion-aware-recommendation#MeditationAudio> <http://example.org/emotion-aware-recommendation#suitableForEnvironment> <http://example.org/emotion-aware-recommendation#Home> .
+<http://example.org/emotion-aware-recommendation#MeditationAudio> <http://example.org/emotion-aware-recommendation#suitableForTime> <http://example.org/emotion-aware-recommendation#Night> .
+<http://example.org/emotion-aware-recommendation#MeditationAudio> <http://example.org/emotion-aware-recommendation#hasDurationMinutes> "10"^^<http://www.w3.org/2001/XMLSchema#integer> .
+<http://example.org/emotion-aware-recommendation#MeditationAudio> <http://www.w3.org/2000/01/rdf-schema#label> "Meditation Audio"@en .
+# 
+# http://example.org/emotion-aware-recommendation#MobileApp
+<http://example.org/emotion-aware-recommendation#MobileApp> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/emotion-aware-recommendation#Platform> .
+<http://example.org/emotion-aware-recommendation#MobileApp> <http://www.w3.org/2000/01/rdf-schema#label> "Mobile Application"@en .
+# 
+# http://example.org/emotion-aware-recommendation#Morning
+<http://example.org/emotion-aware-recommendation#Morning> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/emotion-aware-recommendation#TimeContext> .
+<http://example.org/emotion-aware-recommendation#Morning> <http://www.w3.org/2000/01/rdf-schema#label> "Morning"@en .
+# 
+# http://example.org/emotion-aware-recommendation#MotivatingEffect
+<http://example.org/emotion-aware-recommendation#MotivatingEffect> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://example.org/emotion-aware-recommendation#MotivatingEffect> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/emotion-aware-recommendation#Effect> .
+<http://example.org/emotion-aware-recommendation#MotivatingEffect> <http://example.org/emotion-aware-recommendation#relievesEmotion> <http://example.org/emotion-aware-recommendation#Tiredness> .
+<http://example.org/emotion-aware-recommendation#MotivatingEffect> <http://www.w3.org/2000/01/rdf-schema#label> "Motivating Effect"@en .
+# 
+# http://example.org/emotion-aware-recommendation#Motivation
+<http://example.org/emotion-aware-recommendation#Motivation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/emotion-aware-recommendation#Need> .
+<http://example.org/emotion-aware-recommendation#Motivation> <http://example.org/emotion-aware-recommendation#satisfiedBy> <http://example.org/emotion-aware-recommendation#MotivationalPodcast> .
+<http://example.org/emotion-aware-recommendation#MotivationalPodcast> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://example.org/emotion-aware-recommendation#Motivation> <http://www.w3.org/2000/01/rdf-schema#label> "Motivation"@en .
+# 
+# http://example.org/emotion-aware-recommendation#MotivationalPodcast
+<http://example.org/emotion-aware-recommendation#MotivationalPodcast> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/emotion-aware-recommendation#Content> .
+<http://example.org/emotion-aware-recommendation#MotivationalPodcast> <http://example.org/emotion-aware-recommendation#availableOnPlatform> <http://example.org/emotion-aware-recommendation#Spotify> .
+<http://example.org/emotion-aware-recommendation#MotivationalPodcast> <http://example.org/emotion-aware-recommendation#belongsToCategory> <http://example.org/emotion-aware-recommendation#Podcast> .
+<http://example.org/emotion-aware-recommendation#Podcast> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://example.org/emotion-aware-recommendation#MotivationalPodcast> <http://example.org/emotion-aware-recommendation#hasEffect> <http://example.org/emotion-aware-recommendation#MotivatingEffect> .
+<http://example.org/emotion-aware-recommendation#MotivationalPodcast> <http://example.org/emotion-aware-recommendation#matchesPreference> <http://example.org/emotion-aware-recommendation#LikesPodcasts> .
+<http://example.org/emotion-aware-recommendation#MotivationalPodcast> <http://example.org/emotion-aware-recommendation#suitableForTime> <http://example.org/emotion-aware-recommendation#Morning> .
+<http://example.org/emotion-aware-recommendation#MotivationalPodcast> <http://example.org/emotion-aware-recommendation#hasDurationMinutes> "15"^^<http://www.w3.org/2001/XMLSchema#integer> .
+<http://example.org/emotion-aware-recommendation#MotivationalPodcast> <http://www.w3.org/2000/01/rdf-schema#label> "Motivational Podcast"@en .
+# 
+# http://example.org/emotion-aware-recommendation#Movie
+<http://example.org/emotion-aware-recommendation#Movie> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/emotion-aware-recommendation#ContentCategory> .
+<http://example.org/emotion-aware-recommendation#Movie> <http://www.w3.org/2000/01/rdf-schema#label> "Movie"@en .
+# 
+# http://example.org/emotion-aware-recommendation#Music
+<http://example.org/emotion-aware-recommendation#Music> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/emotion-aware-recommendation#ContentCategory> .
+<http://example.org/emotion-aware-recommendation#Music> <http://www.w3.org/2000/01/rdf-schema#label> "Music"@en .
+# 
+# http://example.org/emotion-aware-recommendation#Netflix
+<http://example.org/emotion-aware-recommendation#Netflix> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/emotion-aware-recommendation#Platform> .
+<http://example.org/emotion-aware-recommendation#Netflix> <http://www.w3.org/2000/01/rdf-schema#label> "Netflix"@en .
+# 
+# http://example.org/emotion-aware-recommendation#Night
+<http://example.org/emotion-aware-recommendation#Night> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/emotion-aware-recommendation#TimeContext> .
+<http://example.org/emotion-aware-recommendation#Night> <http://www.w3.org/2000/01/rdf-schema#label> "Night"@en .
+# 
+# http://example.org/emotion-aware-recommendation#Podcast
+<http://example.org/emotion-aware-recommendation#Podcast> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/emotion-aware-recommendation#ContentCategory> .
+<http://example.org/emotion-aware-recommendation#Podcast> <http://www.w3.org/2000/01/rdf-schema#label> "Podcast"@en .
+# 
+# http://example.org/emotion-aware-recommendation#PuzzleGame
+<http://example.org/emotion-aware-recommendation#PuzzleGame> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/emotion-aware-recommendation#Content> .
+<http://example.org/emotion-aware-recommendation#PuzzleGame> <http://example.org/emotion-aware-recommendation#availableOnPlatform> <http://example.org/emotion-aware-recommendation#MobileApp> .
+<http://example.org/emotion-aware-recommendation#PuzzleGame> <http://example.org/emotion-aware-recommendation#belongsToCategory> <http://example.org/emotion-aware-recommendation#Game> .
+<http://example.org/emotion-aware-recommendation#PuzzleGame> <http://example.org/emotion-aware-recommendation#hasEffect> <http://example.org/emotion-aware-recommendation#DistractingEffect> .
+<http://example.org/emotion-aware-recommendation#PuzzleGame> <http://example.org/emotion-aware-recommendation#matchesPreference> <http://example.org/emotion-aware-recommendation#LikesGames> .
+<http://example.org/emotion-aware-recommendation#PuzzleGame> <http://example.org/emotion-aware-recommendation#suitableForEnvironment> <http://example.org/emotion-aware-recommendation#Home> .
+<http://example.org/emotion-aware-recommendation#PuzzleGame> <http://example.org/emotion-aware-recommendation#hasDurationMinutes> "20"^^<http://www.w3.org/2001/XMLSchema#integer> .
+<http://example.org/emotion-aware-recommendation#PuzzleGame> <http://www.w3.org/2000/01/rdf-schema#label> "Puzzle Game"@en .
+# 
+# http://example.org/emotion-aware-recommendation#Recommendation001
+<http://example.org/emotion-aware-recommendation#Recommendation001> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://example.org/emotion-aware-recommendation#Recommendation001> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/emotion-aware-recommendation#Recommendation> .
+<http://example.org/emotion-aware-recommendation#Recommendation001> <http://example.org/emotion-aware-recommendation#basedOnEmotion> <http://example.org/emotion-aware-recommendation#Stress> .
+<http://example.org/emotion-aware-recommendation#Recommendation001> <http://example.org/emotion-aware-recommendation#basedOnNeed> <http://example.org/emotion-aware-recommendation#Relaxation> .
+<http://example.org/emotion-aware-recommendation#Recommendation001> <http://example.org/emotion-aware-recommendation#considersContext> <http://example.org/emotion-aware-recommendation#Alone> .
+<http://example.org/emotion-aware-recommendation#Recommendation001> <http://example.org/emotion-aware-recommendation#considersContext> <http://example.org/emotion-aware-recommendation#Home> .
+<http://example.org/emotion-aware-recommendation#Recommendation001> <http://example.org/emotion-aware-recommendation#considersContext> <http://example.org/emotion-aware-recommendation#Night> .
+<http://example.org/emotion-aware-recommendation#Recommendation001> <http://example.org/emotion-aware-recommendation#givenTo> <http://example.org/emotion-aware-recommendation#Elif> .
+<http://example.org/emotion-aware-recommendation#Recommendation001> <http://example.org/emotion-aware-recommendation#hasFeedback> <http://example.org/emotion-aware-recommendation#Feedback001> .
+<http://example.org/emotion-aware-recommendation#Recommendation001> <http://example.org/emotion-aware-recommendation#hasIntention> <http://example.org/emotion-aware-recommendation#ReduceStress> .
+<http://example.org/emotion-aware-recommendation#ReduceStress> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://example.org/emotion-aware-recommendation#Recommendation001> <http://example.org/emotion-aware-recommendation#includesContent> <http://example.org/emotion-aware-recommendation#LoFiPlaylist> .
+<http://example.org/emotion-aware-recommendation#Recommendation001> <http://example.org/emotion-aware-recommendation#hasConfidenceScore> "0.92"^^<http://www.w3.org/2001/XMLSchema#decimal> .
+<http://example.org/emotion-aware-recommendation#Recommendation001> <http://www.w3.org/2000/01/rdf-schema#label> "Stress relief music recommendation for Elif"@en .
+# 
+# http://example.org/emotion-aware-recommendation#Recommendation002
+<http://example.org/emotion-aware-recommendation#Recommendation002> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://example.org/emotion-aware-recommendation#Recommendation002> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/emotion-aware-recommendation#Recommendation> .
+<http://example.org/emotion-aware-recommendation#Recommendation002> <http://example.org/emotion-aware-recommendation#basedOnEmotion> <http://example.org/emotion-aware-recommendation#Sadness> .
+<http://example.org/emotion-aware-recommendation#Recommendation002> <http://example.org/emotion-aware-recommendation#basedOnNeed> <http://example.org/emotion-aware-recommendation#EmotionalSupport> .
+<http://example.org/emotion-aware-recommendation#Recommendation002> <http://example.org/emotion-aware-recommendation#considersContext> <http://example.org/emotion-aware-recommendation#Evening> .
+<http://example.org/emotion-aware-recommendation#Recommendation002> <http://example.org/emotion-aware-recommendation#considersContext> <http://example.org/emotion-aware-recommendation#WithFriends> .
+<http://example.org/emotion-aware-recommendation#Recommendation002> <http://example.org/emotion-aware-recommendation#givenTo> <http://example.org/emotion-aware-recommendation#Deniz> .
+<http://example.org/emotion-aware-recommendation#Recommendation002> <http://example.org/emotion-aware-recommendation#hasFeedback> <http://example.org/emotion-aware-recommendation#Feedback002> .
+<http://example.org/emotion-aware-recommendation#Recommendation002> <http://example.org/emotion-aware-recommendation#hasIntention> <http://example.org/emotion-aware-recommendation#ImproveMood> .
+<http://example.org/emotion-aware-recommendation#Recommendation002> <http://example.org/emotion-aware-recommendation#includesContent> <http://example.org/emotion-aware-recommendation#ComfortMovie> .
+<http://example.org/emotion-aware-recommendation#Recommendation002> <http://example.org/emotion-aware-recommendation#hasConfidenceScore> "0.87"^^<http://www.w3.org/2001/XMLSchema#decimal> .
+<http://example.org/emotion-aware-recommendation#Recommendation002> <http://www.w3.org/2000/01/rdf-schema#label> "Comfort movie recommendation for Deniz"@en .
+# 
+# http://example.org/emotion-aware-recommendation#Recommendation003
+<http://example.org/emotion-aware-recommendation#Recommendation003> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://example.org/emotion-aware-recommendation#Recommendation003> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/emotion-aware-recommendation#Recommendation> .
+<http://example.org/emotion-aware-recommendation#Recommendation003> <http://example.org/emotion-aware-recommendation#basedOnEmotion> <http://example.org/emotion-aware-recommendation#Boredom> .
+<http://example.org/emotion-aware-recommendation#Recommendation003> <http://example.org/emotion-aware-recommendation#basedOnNeed> <http://example.org/emotion-aware-recommendation#Distraction> .
+<http://example.org/emotion-aware-recommendation#Recommendation003> <http://example.org/emotion-aware-recommendation#considersContext> <http://example.org/emotion-aware-recommendation#Evening> .
+<http://example.org/emotion-aware-recommendation#Recommendation003> <http://example.org/emotion-aware-recommendation#considersContext> <http://example.org/emotion-aware-recommendation#Home> .
+<http://example.org/emotion-aware-recommendation#Recommendation003> <http://example.org/emotion-aware-recommendation#givenTo> <http://example.org/emotion-aware-recommendation#Busra> .
+<http://example.org/emotion-aware-recommendation#Recommendation003> <http://example.org/emotion-aware-recommendation#hasFeedback> <http://example.org/emotion-aware-recommendation#Feedback003> .
+<http://example.org/emotion-aware-recommendation#Recommendation003> <http://example.org/emotion-aware-recommendation#hasIntention> <http://example.org/emotion-aware-recommendation#ImproveMood> .
+<http://example.org/emotion-aware-recommendation#Recommendation003> <http://example.org/emotion-aware-recommendation#includesContent> <http://example.org/emotion-aware-recommendation#PuzzleGame> .
+<http://example.org/emotion-aware-recommendation#Recommendation003> <http://example.org/emotion-aware-recommendation#hasConfidenceScore> "0.81"^^<http://www.w3.org/2001/XMLSchema#decimal> .
+<http://example.org/emotion-aware-recommendation#Recommendation003> <http://www.w3.org/2000/01/rdf-schema#label> "Puzzle game recommendation for Büşra"@en .
+# 
+# http://example.org/emotion-aware-recommendation#Recommendation004
+<http://example.org/emotion-aware-recommendation#Recommendation004> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://example.org/emotion-aware-recommendation#Recommendation004> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/emotion-aware-recommendation#Recommendation> .
+<http://example.org/emotion-aware-recommendation#Recommendation004> <http://example.org/emotion-aware-recommendation#basedOnEmotion> <http://example.org/emotion-aware-recommendation#Tiredness> .
+<http://example.org/emotion-aware-recommendation#Recommendation004> <http://example.org/emotion-aware-recommendation#basedOnNeed> <http://example.org/emotion-aware-recommendation#Motivation> .
+<http://example.org/emotion-aware-recommendation#Recommendation004> <http://example.org/emotion-aware-recommendation#considersContext> <http://example.org/emotion-aware-recommendation#Morning> .
+<http://example.org/emotion-aware-recommendation#Recommendation004> <http://example.org/emotion-aware-recommendation#considersContext> <http://example.org/emotion-aware-recommendation#School> .
+<http://example.org/emotion-aware-recommendation#Recommendation004> <http://example.org/emotion-aware-recommendation#givenTo> <http://example.org/emotion-aware-recommendation#Enes> .
+<http://example.org/emotion-aware-recommendation#Recommendation004> <http://example.org/emotion-aware-recommendation#hasFeedback> <http://example.org/emotion-aware-recommendation#Feedback004> .
+<http://example.org/emotion-aware-recommendation#Recommendation004> <http://example.org/emotion-aware-recommendation#hasIntention> <http://example.org/emotion-aware-recommendation#IncreaseMotivation> .
+<http://example.org/emotion-aware-recommendation#Recommendation004> <http://example.org/emotion-aware-recommendation#includesContent> <http://example.org/emotion-aware-recommendation#MotivationalPodcast> .
+<http://example.org/emotion-aware-recommendation#Recommendation004> <http://example.org/emotion-aware-recommendation#hasConfidenceScore> "0.88"^^<http://www.w3.org/2001/XMLSchema#decimal> .
+<http://example.org/emotion-aware-recommendation#Recommendation004> <http://www.w3.org/2000/01/rdf-schema#label> "Motivational podcast recommendation for Enes"@en .
+# 
+# http://example.org/emotion-aware-recommendation#ReduceStress
+<http://example.org/emotion-aware-recommendation#ReduceStress> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/emotion-aware-recommendation#Intention> .
+<http://example.org/emotion-aware-recommendation#ReduceStress> <http://www.w3.org/2000/01/rdf-schema#label> "Reduce Stress"@en .
+# 
+# http://example.org/emotion-aware-recommendation#Relaxation
+<http://example.org/emotion-aware-recommendation#Relaxation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/emotion-aware-recommendation#Need> .
+<http://example.org/emotion-aware-recommendation#Relaxation> <http://example.org/emotion-aware-recommendation#satisfiedBy> <http://example.org/emotion-aware-recommendation#BreathingExercise> .
+<http://example.org/emotion-aware-recommendation#Relaxation> <http://example.org/emotion-aware-recommendation#satisfiedBy> <http://example.org/emotion-aware-recommendation#LoFiPlaylist> .
+<http://example.org/emotion-aware-recommendation#Relaxation> <http://www.w3.org/2000/01/rdf-schema#label> "Relaxation"@en .
+# 
+# http://example.org/emotion-aware-recommendation#RelaxingEffect
+<http://example.org/emotion-aware-recommendation#RelaxingEffect> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/emotion-aware-recommendation#Effect> .
+<http://example.org/emotion-aware-recommendation#RelaxingEffect> <http://example.org/emotion-aware-recommendation#relievesEmotion> <http://example.org/emotion-aware-recommendation#Stress> .
+<http://example.org/emotion-aware-recommendation#RelaxingEffect> <http://www.w3.org/2000/01/rdf-schema#label> "Relaxing Effect"@en .
+# 
+# http://example.org/emotion-aware-recommendation#Sadness
+<http://example.org/emotion-aware-recommendation#Sadness> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/emotion-aware-recommendation#Emotion> .
+<http://example.org/emotion-aware-recommendation#Sadness> <http://example.org/emotion-aware-recommendation#createsNeed> <http://example.org/emotion-aware-recommendation#EmotionalSupport> .
+<http://example.org/emotion-aware-recommendation#Sadness> <http://www.w3.org/2000/01/rdf-schema#label> "Sadness"@en .
+# 
+# http://example.org/emotion-aware-recommendation#School
+<http://example.org/emotion-aware-recommendation#School> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/emotion-aware-recommendation#Environment> .
+<http://example.org/emotion-aware-recommendation#School> <http://www.w3.org/2000/01/rdf-schema#label> "School"@en .
+# 
+# http://example.org/emotion-aware-recommendation#Spotify
+<http://example.org/emotion-aware-recommendation#Spotify> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/emotion-aware-recommendation#Platform> .
+<http://example.org/emotion-aware-recommendation#Spotify> <http://www.w3.org/2000/01/rdf-schema#label> "Spotify"@en .
+# 
+# http://example.org/emotion-aware-recommendation#Stress
+<http://example.org/emotion-aware-recommendation#Stress> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/emotion-aware-recommendation#Emotion> .
+<http://example.org/emotion-aware-recommendation#Stress> <http://example.org/emotion-aware-recommendation#createsNeed> <http://example.org/emotion-aware-recommendation#Relaxation> .
+<http://example.org/emotion-aware-recommendation#Stress> <http://www.w3.org/2000/01/rdf-schema#label> "Stress"@en .
+# 
+# http://example.org/emotion-aware-recommendation#Tiredness
+<http://example.org/emotion-aware-recommendation#Tiredness> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/emotion-aware-recommendation#Emotion> .
+<http://example.org/emotion-aware-recommendation#Tiredness> <http://example.org/emotion-aware-recommendation#createsNeed> <http://example.org/emotion-aware-recommendation#Motivation> .
+<http://example.org/emotion-aware-recommendation#Tiredness> <http://www.w3.org/2000/01/rdf-schema#label> "Tiredness"@en .
+# 
+# http://example.org/emotion-aware-recommendation#WithFriends
+<http://example.org/emotion-aware-recommendation#WithFriends> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/emotion-aware-recommendation#Environment> .
+<http://example.org/emotion-aware-recommendation#WithFriends> <http://www.w3.org/2000/01/rdf-schema#label> "With Friends"@en .
+# 
+# Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/

@@ -1,0 +1,871 @@
+@prefix : <http://example.org/emotion-aware-recommendation#EmotionAwareRecommendationOntology> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://example.org/emotion-aware-recommendation#EmotionAwareRecommendationOntology> .
+
+<http://example.org/emotion-aware-recommendation#EmotionAwareRecommendationOntology> rdf:type owl:Ontology ;
+                                                                                      <http://purl.org/dc/terms/created> "2026-04-28"^^xsd:date ;
+                                                                                      <http://purl.org/dc/terms/creator> "Büşra Pehlivanlar"@en ,
+                                                                                                                         "Elif Özkanat"@en ,
+                                                                                                                         "Enes Ulucan"@en ;
+                                                                                      <http://purl.org/dc/terms/description> "This ontology models an intelligent recommendation system that provides personalized content suggestions based on the user's emotional state, contextual situation, personality traits, and needs."@en ;
+                                                                                      <http://purl.org/dc/terms/license> <https://creativecommons.org/licenses/by/4.0/> ;
+                                                                                      <http://purl.org/dc/terms/publisher> "Manisa Celal Bayar University"@en ;
+                                                                                      <http://purl.org/dc/terms/title> "Emotion-Aware Intelligent Recommendation Ontology"@en ;
+                                                                                      <http://purl.org/vocab/vann/preferredNamespacePrefix> "ex" ;
+                                                                                      <http://purl.org/vocab/vann/preferredNamespaceUri> "http://example.org/emotion-aware-recommendation#" ;
+                                                                                      rdfs:comment "An ontology for modeling personalized recommendations based on user emotions, needs, context, personality traits, preferences, content types, and content effects."@en ;
+                                                                                      rdfs:label "Emotion-Aware Intelligent Recommendation Ontology"@en ;
+                                                                                      owl:versionInfo "1.0.0" ;
+                                                                                      <https://schema.org/codeRepository> <https://github.com/elifozknt/emotion-aware-recommendation-ontology> .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.org/dc/terms/created
+<http://purl.org/dc/terms/created> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/creator
+<http://purl.org/dc/terms/creator> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/description
+<http://purl.org/dc/terms/description> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/license
+<http://purl.org/dc/terms/license> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/publisher
+<http://purl.org/dc/terms/publisher> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/title
+<http://purl.org/dc/terms/title> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/vocab/vann/preferredNamespacePrefix
+<http://purl.org/vocab/vann/preferredNamespacePrefix> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/vocab/vann/preferredNamespaceUri
+<http://purl.org/vocab/vann/preferredNamespaceUri> rdf:type owl:AnnotationProperty .
+
+
+###  https://schema.org/codeRepository
+<https://schema.org/codeRepository> rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Datatypes
+#################################################################
+
+###  http://www.w3.org/2001/XMLSchema#date
+xsd:date rdf:type rdfs:Datatype .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://example.org/emotion-aware-recommendation#availableOnPlatform
+<http://example.org/emotion-aware-recommendation#availableOnPlatform> rdf:type owl:ObjectProperty ;
+                                                                      rdfs:domain <http://example.org/emotion-aware-recommendation#Content> ;
+                                                                      rdfs:range <http://example.org/emotion-aware-recommendation#Platform> ;
+                                                                      rdfs:comment "Connects content to the platform where it is available."@en ;
+                                                                      rdfs:label "available on platform"@en .
+
+
+###  http://example.org/emotion-aware-recommendation#basedOnEmotion
+<http://example.org/emotion-aware-recommendation#basedOnEmotion> rdf:type owl:ObjectProperty ;
+                                                                 rdfs:domain <http://example.org/emotion-aware-recommendation#Recommendation> ;
+                                                                 rdfs:range <http://example.org/emotion-aware-recommendation#Emotion> ;
+                                                                 rdfs:comment "Shows the emotion considered in a recommendation."@en ;
+                                                                 rdfs:label "based on emotion"@en .
+
+
+###  http://example.org/emotion-aware-recommendation#basedOnNeed
+<http://example.org/emotion-aware-recommendation#basedOnNeed> rdf:type owl:ObjectProperty ;
+                                                              rdfs:domain <http://example.org/emotion-aware-recommendation#Recommendation> ;
+                                                              rdfs:range <http://example.org/emotion-aware-recommendation#Need> ;
+                                                              rdfs:comment "Shows the need considered in a recommendation."@en ;
+                                                              rdfs:label "based on need"@en .
+
+
+###  http://example.org/emotion-aware-recommendation#belongsToCategory
+<http://example.org/emotion-aware-recommendation#belongsToCategory> rdf:type owl:ObjectProperty ;
+                                                                    rdfs:domain <http://example.org/emotion-aware-recommendation#Content> ;
+                                                                    rdfs:range <http://example.org/emotion-aware-recommendation#ContentCategory> ;
+                                                                    rdfs:comment "Connects content to its category."@en ;
+                                                                    rdfs:label "belongs to category"@en .
+
+
+###  http://example.org/emotion-aware-recommendation#considersContext
+<http://example.org/emotion-aware-recommendation#considersContext> rdf:type owl:ObjectProperty ;
+                                                                   rdfs:domain <http://example.org/emotion-aware-recommendation#Recommendation> ;
+                                                                   rdfs:range <http://example.org/emotion-aware-recommendation#Context> ;
+                                                                   rdfs:comment "Shows contextual information used in a recommendation."@en ;
+                                                                   rdfs:label "considers context"@en .
+
+
+###  http://example.org/emotion-aware-recommendation#createsNeed
+<http://example.org/emotion-aware-recommendation#createsNeed> rdf:type owl:ObjectProperty ;
+                                                              rdfs:domain <http://example.org/emotion-aware-recommendation#Emotion> ;
+                                                              rdfs:range <http://example.org/emotion-aware-recommendation#Need> ;
+                                                              rdfs:comment "Connects an emotion to the need it may create."@en ;
+                                                              rdfs:label "creates need"@en .
+
+
+###  http://example.org/emotion-aware-recommendation#feels
+<http://example.org/emotion-aware-recommendation#feels> rdf:type owl:ObjectProperty ;
+                                                        rdfs:domain <http://example.org/emotion-aware-recommendation#User> ;
+                                                        rdfs:range <http://example.org/emotion-aware-recommendation#Emotion> ;
+                                                        rdfs:comment "Connects a user to an emotion they experience."@en ;
+                                                        rdfs:label "feels"@en .
+
+
+###  http://example.org/emotion-aware-recommendation#givenTo
+<http://example.org/emotion-aware-recommendation#givenTo> rdf:type owl:ObjectProperty ;
+                                                          rdfs:domain <http://example.org/emotion-aware-recommendation#Recommendation> ;
+                                                          rdfs:range <http://example.org/emotion-aware-recommendation#User> ;
+                                                          rdfs:comment "Connects a recommendation to the user receiving it."@en ;
+                                                          rdfs:label "given to"@en .
+
+
+###  http://example.org/emotion-aware-recommendation#hasEffect
+<http://example.org/emotion-aware-recommendation#hasEffect> rdf:type owl:ObjectProperty ;
+                                                            rdfs:domain <http://example.org/emotion-aware-recommendation#Content> ;
+                                                            rdfs:range <http://example.org/emotion-aware-recommendation#Effect> ;
+                                                            rdfs:comment "Connects content to its expected effect."@en ;
+                                                            rdfs:label "has effect"@en .
+
+
+###  http://example.org/emotion-aware-recommendation#hasFeedback
+<http://example.org/emotion-aware-recommendation#hasFeedback> rdf:type owl:ObjectProperty ;
+                                                              rdfs:domain <http://example.org/emotion-aware-recommendation#Recommendation> ;
+                                                              rdfs:range <http://example.org/emotion-aware-recommendation#Feedback> ;
+                                                              rdfs:comment "Connects a recommendation to user feedback."@en ;
+                                                              rdfs:label "has feedback"@en .
+
+
+###  http://example.org/emotion-aware-recommendation#hasIntention
+<http://example.org/emotion-aware-recommendation#hasIntention> rdf:type owl:ObjectProperty ;
+                                                               rdfs:domain <http://example.org/emotion-aware-recommendation#Recommendation> ;
+                                                               rdfs:range <http://example.org/emotion-aware-recommendation#Intention> ;
+                                                               rdfs:comment "Shows the intended purpose of a recommendation."@en ;
+                                                               rdfs:label "has intention"@en .
+
+
+###  http://example.org/emotion-aware-recommendation#hasNeed
+<http://example.org/emotion-aware-recommendation#hasNeed> rdf:type owl:ObjectProperty ;
+                                                          rdfs:domain <http://example.org/emotion-aware-recommendation#User> ;
+                                                          rdfs:range <http://example.org/emotion-aware-recommendation#Need> ;
+                                                          rdfs:comment "Connects a user to a need."@en ;
+                                                          rdfs:label "has need"@en .
+
+
+###  http://example.org/emotion-aware-recommendation#hasPersonality
+<http://example.org/emotion-aware-recommendation#hasPersonality> rdf:type owl:ObjectProperty ;
+                                                                 rdfs:domain <http://example.org/emotion-aware-recommendation#User> ;
+                                                                 rdfs:range <http://example.org/emotion-aware-recommendation#Personality> ;
+                                                                 rdfs:comment "Connects a user to a personality trait."@en ;
+                                                                 rdfs:label "has personality"@en .
+
+
+###  http://example.org/emotion-aware-recommendation#hasPreference
+<http://example.org/emotion-aware-recommendation#hasPreference> rdf:type owl:ObjectProperty ;
+                                                                rdfs:domain <http://example.org/emotion-aware-recommendation#User> ;
+                                                                rdfs:range <http://example.org/emotion-aware-recommendation#Preference> ;
+                                                                rdfs:comment "Connects a user to a preference."@en ;
+                                                                rdfs:label "has preference"@en .
+
+
+###  http://example.org/emotion-aware-recommendation#hasTimeContext
+<http://example.org/emotion-aware-recommendation#hasTimeContext> rdf:type owl:ObjectProperty ;
+                                                                 rdfs:domain <http://example.org/emotion-aware-recommendation#User> ;
+                                                                 rdfs:range <http://example.org/emotion-aware-recommendation#TimeContext> ;
+                                                                 rdfs:comment "Connects a user to a time context."@en ;
+                                                                 rdfs:label "has time context"@en .
+
+
+###  http://example.org/emotion-aware-recommendation#includesContent
+<http://example.org/emotion-aware-recommendation#includesContent> rdf:type owl:ObjectProperty ;
+                                                                  rdfs:domain <http://example.org/emotion-aware-recommendation#Recommendation> ;
+                                                                  rdfs:range <http://example.org/emotion-aware-recommendation#Content> ;
+                                                                  rdfs:comment "Connects a recommendation to the content it includes."@en ;
+                                                                  rdfs:label "includes content"@en .
+
+
+###  http://example.org/emotion-aware-recommendation#isInEnvironment
+<http://example.org/emotion-aware-recommendation#isInEnvironment> rdf:type owl:ObjectProperty ;
+                                                                  rdfs:domain <http://example.org/emotion-aware-recommendation#User> ;
+                                                                  rdfs:range <http://example.org/emotion-aware-recommendation#Environment> ;
+                                                                  rdfs:comment "Connects a user to an environment."@en ;
+                                                                  rdfs:label "is in environment"@en .
+
+
+###  http://example.org/emotion-aware-recommendation#matchesPreference
+<http://example.org/emotion-aware-recommendation#matchesPreference> rdf:type owl:ObjectProperty ;
+                                                                    rdfs:domain <http://example.org/emotion-aware-recommendation#Content> ;
+                                                                    rdfs:range <http://example.org/emotion-aware-recommendation#Preference> ;
+                                                                    rdfs:comment "Connects content to a matching user preference."@en ;
+                                                                    rdfs:label "matches preference"@en .
+
+
+###  http://example.org/emotion-aware-recommendation#relievesEmotion
+<http://example.org/emotion-aware-recommendation#relievesEmotion> rdf:type owl:ObjectProperty ;
+                                                                  rdfs:domain <http://example.org/emotion-aware-recommendation#Effect> ;
+                                                                  rdfs:range <http://example.org/emotion-aware-recommendation#Emotion> ;
+                                                                  rdfs:comment "Connects an effect to an emotion it may help reduce."@en ;
+                                                                  rdfs:label "relieves emotion"@en .
+
+
+###  http://example.org/emotion-aware-recommendation#satisfiedBy
+<http://example.org/emotion-aware-recommendation#satisfiedBy> rdf:type owl:ObjectProperty ;
+                                                              rdfs:domain <http://example.org/emotion-aware-recommendation#Need> ;
+                                                              rdfs:range <http://example.org/emotion-aware-recommendation#Content> ;
+                                                              rdfs:comment "Connects a need to content that can satisfy it."@en ;
+                                                              rdfs:label "satisfied by"@en .
+
+
+###  http://example.org/emotion-aware-recommendation#suitableForEnvironment
+<http://example.org/emotion-aware-recommendation#suitableForEnvironment> rdf:type owl:ObjectProperty ;
+                                                                         rdfs:domain <http://example.org/emotion-aware-recommendation#Content> ;
+                                                                         rdfs:range <http://example.org/emotion-aware-recommendation#Environment> ;
+                                                                         rdfs:comment "Shows which environment is suitable for content."@en ;
+                                                                         rdfs:label "suitable for environment"@en .
+
+
+###  http://example.org/emotion-aware-recommendation#suitableForPersonality
+<http://example.org/emotion-aware-recommendation#suitableForPersonality> rdf:type owl:ObjectProperty ;
+                                                                         rdfs:domain <http://example.org/emotion-aware-recommendation#Content> ;
+                                                                         rdfs:range <http://example.org/emotion-aware-recommendation#Personality> ;
+                                                                         rdfs:comment "Shows which personality type a content item is suitable for."@en ;
+                                                                         rdfs:label "suitable for personality"@en .
+
+
+###  http://example.org/emotion-aware-recommendation#suitableForTime
+<http://example.org/emotion-aware-recommendation#suitableForTime> rdf:type owl:ObjectProperty ;
+                                                                  rdfs:domain <http://example.org/emotion-aware-recommendation#Content> ;
+                                                                  rdfs:range <http://example.org/emotion-aware-recommendation#TimeContext> ;
+                                                                  rdfs:comment "Shows which time context is suitable for content."@en ;
+                                                                  rdfs:label "suitable for time"@en .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://example.org/emotion-aware-recommendation#hasAge
+<http://example.org/emotion-aware-recommendation#hasAge> rdf:type owl:DatatypeProperty ;
+                                                         rdfs:domain <http://example.org/emotion-aware-recommendation#User> ;
+                                                         rdfs:range xsd:integer ;
+                                                         rdfs:label "has age"@en .
+
+
+###  http://example.org/emotion-aware-recommendation#hasConfidenceScore
+<http://example.org/emotion-aware-recommendation#hasConfidenceScore> rdf:type owl:DatatypeProperty ;
+                                                                     rdfs:domain <http://example.org/emotion-aware-recommendation#Recommendation> ;
+                                                                     rdfs:range xsd:decimal ;
+                                                                     rdfs:label "has confidence score"@en .
+
+
+###  http://example.org/emotion-aware-recommendation#hasDurationMinutes
+<http://example.org/emotion-aware-recommendation#hasDurationMinutes> rdf:type owl:DatatypeProperty ;
+                                                                     rdfs:domain <http://example.org/emotion-aware-recommendation#Content> ;
+                                                                     rdfs:range xsd:integer ;
+                                                                     rdfs:label "has duration in minutes"@en .
+
+
+###  http://example.org/emotion-aware-recommendation#hasFeedbackScore
+<http://example.org/emotion-aware-recommendation#hasFeedbackScore> rdf:type owl:DatatypeProperty ;
+                                                                   rdfs:domain <http://example.org/emotion-aware-recommendation#Feedback> ;
+                                                                   rdfs:range xsd:integer ;
+                                                                   rdfs:label "has feedback score"@en .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://example.org/emotion-aware-recommendation#Content
+<http://example.org/emotion-aware-recommendation#Content> rdf:type owl:Class ;
+                                                          rdfs:comment "A digital content item or activity that can be recommended to a user."@en ;
+                                                          rdfs:label "Content"@en .
+
+
+###  http://example.org/emotion-aware-recommendation#ContentCategory
+<http://example.org/emotion-aware-recommendation#ContentCategory> rdf:type owl:Class ;
+                                                                  rdfs:comment "A category describing the type of content."@en ;
+                                                                  rdfs:label "Content Category"@en .
+
+
+###  http://example.org/emotion-aware-recommendation#Context
+<http://example.org/emotion-aware-recommendation#Context> rdf:type owl:Class ;
+                                                          rdfs:comment "The situation in which the user is located."@en ;
+                                                          rdfs:label "Context"@en .
+
+
+###  http://example.org/emotion-aware-recommendation#Effect
+<http://example.org/emotion-aware-recommendation#Effect> rdf:type owl:Class ;
+                                                         rdfs:comment "The expected psychological or behavioral effect of a content item."@en ;
+                                                         rdfs:label "Effect"@en .
+
+
+###  http://example.org/emotion-aware-recommendation#Emotion
+<http://example.org/emotion-aware-recommendation#Emotion> rdf:type owl:Class ;
+                                                          rdfs:comment "An emotional state experienced by a user."@en ;
+                                                          rdfs:label "Emotion"@en .
+
+
+###  http://example.org/emotion-aware-recommendation#Environment
+<http://example.org/emotion-aware-recommendation#Environment> rdf:type owl:Class ;
+                                                              rdfs:subClassOf <http://example.org/emotion-aware-recommendation#Context> ;
+                                                              rdfs:comment "The physical or social environment of a user."@en ;
+                                                              rdfs:label "Environment"@en .
+
+
+###  http://example.org/emotion-aware-recommendation#Feedback
+<http://example.org/emotion-aware-recommendation#Feedback> rdf:type owl:Class ;
+                                                           rdfs:comment "A user response to a recommendation."@en ;
+                                                           rdfs:label "Feedback"@en .
+
+
+###  http://example.org/emotion-aware-recommendation#Intention
+<http://example.org/emotion-aware-recommendation#Intention> rdf:type owl:Class ;
+                                                            rdfs:comment "The intended purpose of a recommendation."@en ;
+                                                            rdfs:label "Intention"@en .
+
+
+###  http://example.org/emotion-aware-recommendation#Need
+<http://example.org/emotion-aware-recommendation#Need> rdf:type owl:Class ;
+                                                       rdfs:comment "A user need that may arise from an emotional state."@en ;
+                                                       rdfs:label "Need"@en .
+
+
+###  http://example.org/emotion-aware-recommendation#Personality
+<http://example.org/emotion-aware-recommendation#Personality> rdf:type owl:Class ;
+                                                              rdfs:comment "A personality trait that may affect recommendation suitability."@en ;
+                                                              rdfs:label "Personality"@en .
+
+
+###  http://example.org/emotion-aware-recommendation#Platform
+<http://example.org/emotion-aware-recommendation#Platform> rdf:type owl:Class ;
+                                                           rdfs:comment "A digital platform where content may be delivered."@en ;
+                                                           rdfs:label "Platform"@en .
+
+
+###  http://example.org/emotion-aware-recommendation#Preference
+<http://example.org/emotion-aware-recommendation#Preference> rdf:type owl:Class ;
+                                                             rdfs:comment "A user's preferred content type or activity."@en ;
+                                                             rdfs:label "Preference"@en .
+
+
+###  http://example.org/emotion-aware-recommendation#Recommendation
+<http://example.org/emotion-aware-recommendation#Recommendation> rdf:type owl:Class ;
+                                                                 rdfs:comment "A personalized suggestion generated for a user."@en ;
+                                                                 rdfs:label "Recommendation"@en .
+
+
+###  http://example.org/emotion-aware-recommendation#TimeContext
+<http://example.org/emotion-aware-recommendation#TimeContext> rdf:type owl:Class ;
+                                                              rdfs:subClassOf <http://example.org/emotion-aware-recommendation#Context> ;
+                                                              rdfs:comment "The time-related context of a user."@en ;
+                                                              rdfs:label "Time Context"@en .
+
+
+###  http://example.org/emotion-aware-recommendation#User
+<http://example.org/emotion-aware-recommendation#User> rdf:type owl:Class ;
+                                                       rdfs:comment "A person who receives recommendations from the system."@en ;
+                                                       rdfs:label "User"@en .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://example.org/emotion-aware-recommendation#Alone
+<http://example.org/emotion-aware-recommendation#Alone> rdf:type owl:NamedIndividual ,
+                                                                 <http://example.org/emotion-aware-recommendation#Environment> ;
+                                                        rdfs:label "Alone"@en .
+
+
+###  http://example.org/emotion-aware-recommendation#Anxiety
+<http://example.org/emotion-aware-recommendation#Anxiety> rdf:type owl:NamedIndividual ,
+                                                                   <http://example.org/emotion-aware-recommendation#Emotion> ;
+                                                          <http://example.org/emotion-aware-recommendation#createsNeed> <http://example.org/emotion-aware-recommendation#Calmness> ;
+                                                          rdfs:label "Anxiety"@en .
+
+
+###  http://example.org/emotion-aware-recommendation#Boredom
+<http://example.org/emotion-aware-recommendation#Boredom> rdf:type owl:NamedIndividual ,
+                                                                   <http://example.org/emotion-aware-recommendation#Emotion> ;
+                                                          <http://example.org/emotion-aware-recommendation#createsNeed> <http://example.org/emotion-aware-recommendation#Distraction> ;
+                                                          rdfs:label "Boredom"@en .
+
+
+###  http://example.org/emotion-aware-recommendation#BreathingExercise
+<http://example.org/emotion-aware-recommendation#BreathingExercise> rdf:type owl:NamedIndividual ,
+                                                                             <http://example.org/emotion-aware-recommendation#Content> ;
+                                                                    <http://example.org/emotion-aware-recommendation#availableOnPlatform> <http://example.org/emotion-aware-recommendation#MobileApp> ;
+                                                                    <http://example.org/emotion-aware-recommendation#belongsToCategory> <http://example.org/emotion-aware-recommendation#Meditation> ;
+                                                                    <http://example.org/emotion-aware-recommendation#hasEffect> <http://example.org/emotion-aware-recommendation#RelaxingEffect> ;
+                                                                    <http://example.org/emotion-aware-recommendation#suitableForEnvironment> <http://example.org/emotion-aware-recommendation#Home> ;
+                                                                    <http://example.org/emotion-aware-recommendation#suitableForPersonality> <http://example.org/emotion-aware-recommendation#Introvert> ;
+                                                                    <http://example.org/emotion-aware-recommendation#suitableForTime> <http://example.org/emotion-aware-recommendation#Night> ;
+                                                                    <http://example.org/emotion-aware-recommendation#hasDurationMinutes> 5 ;
+                                                                    rdfs:label "Breathing Exercise"@en .
+
+
+###  http://example.org/emotion-aware-recommendation#Busra
+<http://example.org/emotion-aware-recommendation#Busra> rdf:type owl:NamedIndividual ,
+                                                                 <http://example.org/emotion-aware-recommendation#User> ;
+                                                        <http://example.org/emotion-aware-recommendation#feels> <http://example.org/emotion-aware-recommendation#Boredom> ;
+                                                        <http://example.org/emotion-aware-recommendation#hasNeed> <http://example.org/emotion-aware-recommendation#Distraction> ;
+                                                        <http://example.org/emotion-aware-recommendation#hasPersonality> <http://example.org/emotion-aware-recommendation#Extrovert> ;
+                                                        <http://example.org/emotion-aware-recommendation#hasPreference> <http://example.org/emotion-aware-recommendation#LikesGames> ;
+                                                        <http://example.org/emotion-aware-recommendation#hasTimeContext> <http://example.org/emotion-aware-recommendation#Evening> ;
+                                                        <http://example.org/emotion-aware-recommendation#isInEnvironment> <http://example.org/emotion-aware-recommendation#Home> ;
+                                                        <http://example.org/emotion-aware-recommendation#hasAge> 22 ;
+                                                        rdfs:label "Büşra"@en .
+
+
+###  http://example.org/emotion-aware-recommendation#CalmingEffect
+<http://example.org/emotion-aware-recommendation#CalmingEffect> rdf:type owl:NamedIndividual ,
+                                                                         <http://example.org/emotion-aware-recommendation#Effect> ;
+                                                                <http://example.org/emotion-aware-recommendation#relievesEmotion> <http://example.org/emotion-aware-recommendation#Anxiety> ,
+                                                                                                                                  <http://example.org/emotion-aware-recommendation#Stress> ;
+                                                                rdfs:label "Calming Effect"@en .
+
+
+###  http://example.org/emotion-aware-recommendation#Calmness
+<http://example.org/emotion-aware-recommendation#Calmness> rdf:type owl:NamedIndividual ,
+                                                                    <http://example.org/emotion-aware-recommendation#Need> ;
+                                                           <http://example.org/emotion-aware-recommendation#satisfiedBy> <http://example.org/emotion-aware-recommendation#MeditationAudio> ;
+                                                           rdfs:label "Calmness"@en .
+
+
+###  http://example.org/emotion-aware-recommendation#ComfortMovie
+<http://example.org/emotion-aware-recommendation#ComfortMovie> rdf:type owl:NamedIndividual ,
+                                                                        <http://example.org/emotion-aware-recommendation#Content> ;
+                                                               <http://example.org/emotion-aware-recommendation#availableOnPlatform> <http://example.org/emotion-aware-recommendation#Netflix> ;
+                                                               <http://example.org/emotion-aware-recommendation#belongsToCategory> <http://example.org/emotion-aware-recommendation#Movie> ;
+                                                               <http://example.org/emotion-aware-recommendation#hasEffect> <http://example.org/emotion-aware-recommendation#EmotionalReliefEffect> ;
+                                                               <http://example.org/emotion-aware-recommendation#matchesPreference> <http://example.org/emotion-aware-recommendation#LikesMovies> ;
+                                                               <http://example.org/emotion-aware-recommendation#suitableForEnvironment> <http://example.org/emotion-aware-recommendation#WithFriends> ;
+                                                               <http://example.org/emotion-aware-recommendation#suitableForPersonality> <http://example.org/emotion-aware-recommendation#Extrovert> ;
+                                                               <http://example.org/emotion-aware-recommendation#suitableForTime> <http://example.org/emotion-aware-recommendation#Evening> ;
+                                                               <http://example.org/emotion-aware-recommendation#hasDurationMinutes> 95 ;
+                                                               rdfs:label "Comfort Movie"@en .
+
+
+###  http://example.org/emotion-aware-recommendation#Deniz
+<http://example.org/emotion-aware-recommendation#Deniz> rdf:type owl:NamedIndividual ,
+                                                                 <http://example.org/emotion-aware-recommendation#User> ;
+                                                        <http://example.org/emotion-aware-recommendation#feels> <http://example.org/emotion-aware-recommendation#Sadness> ;
+                                                        <http://example.org/emotion-aware-recommendation#hasNeed> <http://example.org/emotion-aware-recommendation#EmotionalSupport> ;
+                                                        <http://example.org/emotion-aware-recommendation#hasPersonality> <http://example.org/emotion-aware-recommendation#Extrovert> ;
+                                                        <http://example.org/emotion-aware-recommendation#hasPreference> <http://example.org/emotion-aware-recommendation#LikesMovies> ;
+                                                        <http://example.org/emotion-aware-recommendation#hasTimeContext> <http://example.org/emotion-aware-recommendation#Evening> ;
+                                                        <http://example.org/emotion-aware-recommendation#isInEnvironment> <http://example.org/emotion-aware-recommendation#WithFriends> ;
+                                                        <http://example.org/emotion-aware-recommendation#hasAge> 23 ;
+                                                        rdfs:label "Deniz"@en .
+
+
+###  http://example.org/emotion-aware-recommendation#DistractingEffect
+<http://example.org/emotion-aware-recommendation#DistractingEffect> rdf:type owl:NamedIndividual ,
+                                                                             <http://example.org/emotion-aware-recommendation#Effect> ;
+                                                                    <http://example.org/emotion-aware-recommendation#relievesEmotion> <http://example.org/emotion-aware-recommendation#Boredom> ;
+                                                                    rdfs:label "Distracting Effect"@en .
+
+
+###  http://example.org/emotion-aware-recommendation#Distraction
+<http://example.org/emotion-aware-recommendation#Distraction> rdf:type owl:NamedIndividual ,
+                                                                       <http://example.org/emotion-aware-recommendation#Need> ;
+                                                              <http://example.org/emotion-aware-recommendation#satisfiedBy> <http://example.org/emotion-aware-recommendation#PuzzleGame> ;
+                                                              rdfs:label "Distraction"@en .
+
+
+###  http://example.org/emotion-aware-recommendation#Elif
+<http://example.org/emotion-aware-recommendation#Elif> rdf:type owl:NamedIndividual ,
+                                                                <http://example.org/emotion-aware-recommendation#User> ;
+                                                       <http://example.org/emotion-aware-recommendation#feels> <http://example.org/emotion-aware-recommendation#Stress> ;
+                                                       <http://example.org/emotion-aware-recommendation#hasNeed> <http://example.org/emotion-aware-recommendation#Relaxation> ;
+                                                       <http://example.org/emotion-aware-recommendation#hasPersonality> <http://example.org/emotion-aware-recommendation#Introvert> ;
+                                                       <http://example.org/emotion-aware-recommendation#hasPreference> <http://example.org/emotion-aware-recommendation#LikesMusic> ,
+                                                                                                                       <http://example.org/emotion-aware-recommendation#LikesShortContent> ;
+                                                       <http://example.org/emotion-aware-recommendation#hasTimeContext> <http://example.org/emotion-aware-recommendation#Night> ;
+                                                       <http://example.org/emotion-aware-recommendation#isInEnvironment> <http://example.org/emotion-aware-recommendation#Alone> ,
+                                                                                                                         <http://example.org/emotion-aware-recommendation#Home> ;
+                                                       <http://example.org/emotion-aware-recommendation#hasAge> 21 ;
+                                                       rdfs:label "Elif"@en .
+
+
+###  http://example.org/emotion-aware-recommendation#EmotionalReliefEffect
+<http://example.org/emotion-aware-recommendation#EmotionalReliefEffect> rdf:type owl:NamedIndividual ,
+                                                                                 <http://example.org/emotion-aware-recommendation#Effect> ;
+                                                                        <http://example.org/emotion-aware-recommendation#relievesEmotion> <http://example.org/emotion-aware-recommendation#Sadness> ;
+                                                                        rdfs:label "Emotional Relief Effect"@en .
+
+
+###  http://example.org/emotion-aware-recommendation#EmotionalSupport
+<http://example.org/emotion-aware-recommendation#EmotionalSupport> rdf:type owl:NamedIndividual ,
+                                                                            <http://example.org/emotion-aware-recommendation#Need> ;
+                                                                   <http://example.org/emotion-aware-recommendation#satisfiedBy> <http://example.org/emotion-aware-recommendation#ComfortMovie> ;
+                                                                   rdfs:label "Emotional Support"@en .
+
+
+###  http://example.org/emotion-aware-recommendation#Enes
+<http://example.org/emotion-aware-recommendation#Enes> rdf:type owl:NamedIndividual ,
+                                                                <http://example.org/emotion-aware-recommendation#User> ;
+                                                       <http://example.org/emotion-aware-recommendation#feels> <http://example.org/emotion-aware-recommendation#Tiredness> ;
+                                                       <http://example.org/emotion-aware-recommendation#hasNeed> <http://example.org/emotion-aware-recommendation#Motivation> ;
+                                                       <http://example.org/emotion-aware-recommendation#hasPersonality> <http://example.org/emotion-aware-recommendation#Introvert> ;
+                                                       <http://example.org/emotion-aware-recommendation#hasPreference> <http://example.org/emotion-aware-recommendation#LikesPodcasts> ;
+                                                       <http://example.org/emotion-aware-recommendation#hasTimeContext> <http://example.org/emotion-aware-recommendation#Morning> ;
+                                                       <http://example.org/emotion-aware-recommendation#isInEnvironment> <http://example.org/emotion-aware-recommendation#School> ;
+                                                       <http://example.org/emotion-aware-recommendation#hasAge> 22 ;
+                                                       rdfs:label "Enes"@en .
+
+
+###  http://example.org/emotion-aware-recommendation#Evening
+<http://example.org/emotion-aware-recommendation#Evening> rdf:type owl:NamedIndividual ,
+                                                                   <http://example.org/emotion-aware-recommendation#TimeContext> ;
+                                                          rdfs:label "Evening"@en .
+
+
+###  http://example.org/emotion-aware-recommendation#Extrovert
+<http://example.org/emotion-aware-recommendation#Extrovert> rdf:type owl:NamedIndividual ,
+                                                                     <http://example.org/emotion-aware-recommendation#Personality> ;
+                                                            rdfs:label "Extrovert"@en .
+
+
+###  http://example.org/emotion-aware-recommendation#Feedback001
+<http://example.org/emotion-aware-recommendation#Feedback001> rdf:type owl:NamedIndividual ,
+                                                                       <http://example.org/emotion-aware-recommendation#Feedback> ;
+                                                              <http://example.org/emotion-aware-recommendation#hasFeedbackScore> 5 ;
+                                                              rdfs:label "Positive feedback for recommendation 001"@en .
+
+
+###  http://example.org/emotion-aware-recommendation#Feedback002
+<http://example.org/emotion-aware-recommendation#Feedback002> rdf:type owl:NamedIndividual ,
+                                                                       <http://example.org/emotion-aware-recommendation#Feedback> ;
+                                                              <http://example.org/emotion-aware-recommendation#hasFeedbackScore> 4 ;
+                                                              rdfs:label "Positive feedback for recommendation 002"@en .
+
+
+###  http://example.org/emotion-aware-recommendation#Feedback003
+<http://example.org/emotion-aware-recommendation#Feedback003> rdf:type owl:NamedIndividual ,
+                                                                       <http://example.org/emotion-aware-recommendation#Feedback> ;
+                                                              <http://example.org/emotion-aware-recommendation#hasFeedbackScore> 4 ;
+                                                              rdfs:label "Positive feedback for recommendation 003"@en .
+
+
+###  http://example.org/emotion-aware-recommendation#Feedback004
+<http://example.org/emotion-aware-recommendation#Feedback004> rdf:type owl:NamedIndividual ,
+                                                                       <http://example.org/emotion-aware-recommendation#Feedback> ;
+                                                              <http://example.org/emotion-aware-recommendation#hasFeedbackScore> 5 ;
+                                                              rdfs:label "Positive feedback for recommendation 004"@en .
+
+
+###  http://example.org/emotion-aware-recommendation#Game
+<http://example.org/emotion-aware-recommendation#Game> rdf:type owl:NamedIndividual ,
+                                                                <http://example.org/emotion-aware-recommendation#ContentCategory> ;
+                                                       rdfs:label "Game"@en .
+
+
+###  http://example.org/emotion-aware-recommendation#Home
+<http://example.org/emotion-aware-recommendation#Home> rdf:type owl:NamedIndividual ,
+                                                                <http://example.org/emotion-aware-recommendation#Environment> ;
+                                                       rdfs:label "Home"@en .
+
+
+###  http://example.org/emotion-aware-recommendation#ImproveMood
+<http://example.org/emotion-aware-recommendation#ImproveMood> rdf:type owl:NamedIndividual ,
+                                                                       <http://example.org/emotion-aware-recommendation#Intention> ;
+                                                              rdfs:label "Improve Mood"@en .
+
+
+###  http://example.org/emotion-aware-recommendation#IncreaseMotivation
+<http://example.org/emotion-aware-recommendation#IncreaseMotivation> rdf:type owl:NamedIndividual ,
+                                                                              <http://example.org/emotion-aware-recommendation#Intention> ;
+                                                                     rdfs:label "Increase Motivation"@en .
+
+
+###  http://example.org/emotion-aware-recommendation#Introvert
+<http://example.org/emotion-aware-recommendation#Introvert> rdf:type owl:NamedIndividual ,
+                                                                     <http://example.org/emotion-aware-recommendation#Personality> ;
+                                                            rdfs:label "Introvert"@en .
+
+
+###  http://example.org/emotion-aware-recommendation#LikesGames
+<http://example.org/emotion-aware-recommendation#LikesGames> rdf:type owl:NamedIndividual ,
+                                                                      <http://example.org/emotion-aware-recommendation#Preference> ;
+                                                             rdfs:label "Likes Games"@en .
+
+
+###  http://example.org/emotion-aware-recommendation#LikesMovies
+<http://example.org/emotion-aware-recommendation#LikesMovies> rdf:type owl:NamedIndividual ,
+                                                                       <http://example.org/emotion-aware-recommendation#Preference> ;
+                                                              rdfs:label "Likes Movies"@en .
+
+
+###  http://example.org/emotion-aware-recommendation#LikesMusic
+<http://example.org/emotion-aware-recommendation#LikesMusic> rdf:type owl:NamedIndividual ,
+                                                                      <http://example.org/emotion-aware-recommendation#Preference> ;
+                                                             rdfs:label "Likes Music"@en .
+
+
+###  http://example.org/emotion-aware-recommendation#LikesPodcasts
+<http://example.org/emotion-aware-recommendation#LikesPodcasts> rdf:type owl:NamedIndividual ,
+                                                                         <http://example.org/emotion-aware-recommendation#Preference> ;
+                                                                rdfs:label "Likes Podcasts"@en .
+
+
+###  http://example.org/emotion-aware-recommendation#LikesShortContent
+<http://example.org/emotion-aware-recommendation#LikesShortContent> rdf:type owl:NamedIndividual ,
+                                                                             <http://example.org/emotion-aware-recommendation#Preference> ;
+                                                                    rdfs:label "Likes Short Content"@en .
+
+
+###  http://example.org/emotion-aware-recommendation#LoFiPlaylist
+<http://example.org/emotion-aware-recommendation#LoFiPlaylist> rdf:type owl:NamedIndividual ,
+                                                                        <http://example.org/emotion-aware-recommendation#Content> ;
+                                                               <http://example.org/emotion-aware-recommendation#availableOnPlatform> <http://example.org/emotion-aware-recommendation#Spotify> ;
+                                                               <http://example.org/emotion-aware-recommendation#belongsToCategory> <http://example.org/emotion-aware-recommendation#Music> ;
+                                                               <http://example.org/emotion-aware-recommendation#hasEffect> <http://example.org/emotion-aware-recommendation#CalmingEffect> ;
+                                                               <http://example.org/emotion-aware-recommendation#matchesPreference> <http://example.org/emotion-aware-recommendation#LikesMusic> ;
+                                                               <http://example.org/emotion-aware-recommendation#suitableForEnvironment> <http://example.org/emotion-aware-recommendation#Alone> ,
+                                                                                                                                        <http://example.org/emotion-aware-recommendation#Home> ;
+                                                               <http://example.org/emotion-aware-recommendation#suitableForPersonality> <http://example.org/emotion-aware-recommendation#Introvert> ;
+                                                               <http://example.org/emotion-aware-recommendation#suitableForTime> <http://example.org/emotion-aware-recommendation#Night> ;
+                                                               <http://example.org/emotion-aware-recommendation#hasDurationMinutes> 25 ;
+                                                               rdfs:label "Lo-Fi Playlist"@en .
+
+
+###  http://example.org/emotion-aware-recommendation#Meditation
+<http://example.org/emotion-aware-recommendation#Meditation> rdf:type owl:NamedIndividual ,
+                                                                      <http://example.org/emotion-aware-recommendation#ContentCategory> ;
+                                                             rdfs:label "Meditation"@en .
+
+
+###  http://example.org/emotion-aware-recommendation#MeditationAudio
+<http://example.org/emotion-aware-recommendation#MeditationAudio> rdf:type owl:NamedIndividual ,
+                                                                           <http://example.org/emotion-aware-recommendation#Content> ;
+                                                                  <http://example.org/emotion-aware-recommendation#availableOnPlatform> <http://example.org/emotion-aware-recommendation#MobileApp> ;
+                                                                  <http://example.org/emotion-aware-recommendation#belongsToCategory> <http://example.org/emotion-aware-recommendation#Meditation> ;
+                                                                  <http://example.org/emotion-aware-recommendation#hasEffect> <http://example.org/emotion-aware-recommendation#CalmingEffect> ;
+                                                                  <http://example.org/emotion-aware-recommendation#suitableForEnvironment> <http://example.org/emotion-aware-recommendation#Home> ;
+                                                                  <http://example.org/emotion-aware-recommendation#suitableForTime> <http://example.org/emotion-aware-recommendation#Night> ;
+                                                                  <http://example.org/emotion-aware-recommendation#hasDurationMinutes> 10 ;
+                                                                  rdfs:label "Meditation Audio"@en .
+
+
+###  http://example.org/emotion-aware-recommendation#MobileApp
+<http://example.org/emotion-aware-recommendation#MobileApp> rdf:type owl:NamedIndividual ,
+                                                                     <http://example.org/emotion-aware-recommendation#Platform> ;
+                                                            rdfs:label "Mobile Application"@en .
+
+
+###  http://example.org/emotion-aware-recommendation#Morning
+<http://example.org/emotion-aware-recommendation#Morning> rdf:type owl:NamedIndividual ,
+                                                                   <http://example.org/emotion-aware-recommendation#TimeContext> ;
+                                                          rdfs:label "Morning"@en .
+
+
+###  http://example.org/emotion-aware-recommendation#MotivatingEffect
+<http://example.org/emotion-aware-recommendation#MotivatingEffect> rdf:type owl:NamedIndividual ,
+                                                                            <http://example.org/emotion-aware-recommendation#Effect> ;
+                                                                   <http://example.org/emotion-aware-recommendation#relievesEmotion> <http://example.org/emotion-aware-recommendation#Tiredness> ;
+                                                                   rdfs:label "Motivating Effect"@en .
+
+
+###  http://example.org/emotion-aware-recommendation#Motivation
+<http://example.org/emotion-aware-recommendation#Motivation> rdf:type owl:NamedIndividual ,
+                                                                      <http://example.org/emotion-aware-recommendation#Need> ;
+                                                             <http://example.org/emotion-aware-recommendation#satisfiedBy> <http://example.org/emotion-aware-recommendation#MotivationalPodcast> ;
+                                                             rdfs:label "Motivation"@en .
+
+
+###  http://example.org/emotion-aware-recommendation#MotivationalPodcast
+<http://example.org/emotion-aware-recommendation#MotivationalPodcast> rdf:type owl:NamedIndividual ,
+                                                                               <http://example.org/emotion-aware-recommendation#Content> ;
+                                                                      <http://example.org/emotion-aware-recommendation#availableOnPlatform> <http://example.org/emotion-aware-recommendation#Spotify> ;
+                                                                      <http://example.org/emotion-aware-recommendation#belongsToCategory> <http://example.org/emotion-aware-recommendation#Podcast> ;
+                                                                      <http://example.org/emotion-aware-recommendation#hasEffect> <http://example.org/emotion-aware-recommendation#MotivatingEffect> ;
+                                                                      <http://example.org/emotion-aware-recommendation#matchesPreference> <http://example.org/emotion-aware-recommendation#LikesPodcasts> ;
+                                                                      <http://example.org/emotion-aware-recommendation#suitableForTime> <http://example.org/emotion-aware-recommendation#Morning> ;
+                                                                      <http://example.org/emotion-aware-recommendation#hasDurationMinutes> 15 ;
+                                                                      rdfs:label "Motivational Podcast"@en .
+
+
+###  http://example.org/emotion-aware-recommendation#Movie
+<http://example.org/emotion-aware-recommendation#Movie> rdf:type owl:NamedIndividual ,
+                                                                 <http://example.org/emotion-aware-recommendation#ContentCategory> ;
+                                                        rdfs:label "Movie"@en .
+
+
+###  http://example.org/emotion-aware-recommendation#Music
+<http://example.org/emotion-aware-recommendation#Music> rdf:type owl:NamedIndividual ,
+                                                                 <http://example.org/emotion-aware-recommendation#ContentCategory> ;
+                                                        rdfs:label "Music"@en .
+
+
+###  http://example.org/emotion-aware-recommendation#Netflix
+<http://example.org/emotion-aware-recommendation#Netflix> rdf:type owl:NamedIndividual ,
+                                                                   <http://example.org/emotion-aware-recommendation#Platform> ;
+                                                          rdfs:label "Netflix"@en .
+
+
+###  http://example.org/emotion-aware-recommendation#Night
+<http://example.org/emotion-aware-recommendation#Night> rdf:type owl:NamedIndividual ,
+                                                                 <http://example.org/emotion-aware-recommendation#TimeContext> ;
+                                                        rdfs:label "Night"@en .
+
+
+###  http://example.org/emotion-aware-recommendation#Podcast
+<http://example.org/emotion-aware-recommendation#Podcast> rdf:type owl:NamedIndividual ,
+                                                                   <http://example.org/emotion-aware-recommendation#ContentCategory> ;
+                                                          rdfs:label "Podcast"@en .
+
+
+###  http://example.org/emotion-aware-recommendation#PuzzleGame
+<http://example.org/emotion-aware-recommendation#PuzzleGame> rdf:type owl:NamedIndividual ,
+                                                                      <http://example.org/emotion-aware-recommendation#Content> ;
+                                                             <http://example.org/emotion-aware-recommendation#availableOnPlatform> <http://example.org/emotion-aware-recommendation#MobileApp> ;
+                                                             <http://example.org/emotion-aware-recommendation#belongsToCategory> <http://example.org/emotion-aware-recommendation#Game> ;
+                                                             <http://example.org/emotion-aware-recommendation#hasEffect> <http://example.org/emotion-aware-recommendation#DistractingEffect> ;
+                                                             <http://example.org/emotion-aware-recommendation#matchesPreference> <http://example.org/emotion-aware-recommendation#LikesGames> ;
+                                                             <http://example.org/emotion-aware-recommendation#suitableForEnvironment> <http://example.org/emotion-aware-recommendation#Home> ;
+                                                             <http://example.org/emotion-aware-recommendation#hasDurationMinutes> 20 ;
+                                                             rdfs:label "Puzzle Game"@en .
+
+
+###  http://example.org/emotion-aware-recommendation#Recommendation001
+<http://example.org/emotion-aware-recommendation#Recommendation001> rdf:type owl:NamedIndividual ,
+                                                                             <http://example.org/emotion-aware-recommendation#Recommendation> ;
+                                                                    <http://example.org/emotion-aware-recommendation#basedOnEmotion> <http://example.org/emotion-aware-recommendation#Stress> ;
+                                                                    <http://example.org/emotion-aware-recommendation#basedOnNeed> <http://example.org/emotion-aware-recommendation#Relaxation> ;
+                                                                    <http://example.org/emotion-aware-recommendation#considersContext> <http://example.org/emotion-aware-recommendation#Alone> ,
+                                                                                                                                       <http://example.org/emotion-aware-recommendation#Home> ,
+                                                                                                                                       <http://example.org/emotion-aware-recommendation#Night> ;
+                                                                    <http://example.org/emotion-aware-recommendation#givenTo> <http://example.org/emotion-aware-recommendation#Elif> ;
+                                                                    <http://example.org/emotion-aware-recommendation#hasFeedback> <http://example.org/emotion-aware-recommendation#Feedback001> ;
+                                                                    <http://example.org/emotion-aware-recommendation#hasIntention> <http://example.org/emotion-aware-recommendation#ReduceStress> ;
+                                                                    <http://example.org/emotion-aware-recommendation#includesContent> <http://example.org/emotion-aware-recommendation#LoFiPlaylist> ;
+                                                                    <http://example.org/emotion-aware-recommendation#hasConfidenceScore> 0.92 ;
+                                                                    rdfs:label "Stress relief music recommendation for Elif"@en .
+
+
+###  http://example.org/emotion-aware-recommendation#Recommendation002
+<http://example.org/emotion-aware-recommendation#Recommendation002> rdf:type owl:NamedIndividual ,
+                                                                             <http://example.org/emotion-aware-recommendation#Recommendation> ;
+                                                                    <http://example.org/emotion-aware-recommendation#basedOnEmotion> <http://example.org/emotion-aware-recommendation#Sadness> ;
+                                                                    <http://example.org/emotion-aware-recommendation#basedOnNeed> <http://example.org/emotion-aware-recommendation#EmotionalSupport> ;
+                                                                    <http://example.org/emotion-aware-recommendation#considersContext> <http://example.org/emotion-aware-recommendation#Evening> ,
+                                                                                                                                       <http://example.org/emotion-aware-recommendation#WithFriends> ;
+                                                                    <http://example.org/emotion-aware-recommendation#givenTo> <http://example.org/emotion-aware-recommendation#Deniz> ;
+                                                                    <http://example.org/emotion-aware-recommendation#hasFeedback> <http://example.org/emotion-aware-recommendation#Feedback002> ;
+                                                                    <http://example.org/emotion-aware-recommendation#hasIntention> <http://example.org/emotion-aware-recommendation#ImproveMood> ;
+                                                                    <http://example.org/emotion-aware-recommendation#includesContent> <http://example.org/emotion-aware-recommendation#ComfortMovie> ;
+                                                                    <http://example.org/emotion-aware-recommendation#hasConfidenceScore> 0.87 ;
+                                                                    rdfs:label "Comfort movie recommendation for Deniz"@en .
+
+
+###  http://example.org/emotion-aware-recommendation#Recommendation003
+<http://example.org/emotion-aware-recommendation#Recommendation003> rdf:type owl:NamedIndividual ,
+                                                                             <http://example.org/emotion-aware-recommendation#Recommendation> ;
+                                                                    <http://example.org/emotion-aware-recommendation#basedOnEmotion> <http://example.org/emotion-aware-recommendation#Boredom> ;
+                                                                    <http://example.org/emotion-aware-recommendation#basedOnNeed> <http://example.org/emotion-aware-recommendation#Distraction> ;
+                                                                    <http://example.org/emotion-aware-recommendation#considersContext> <http://example.org/emotion-aware-recommendation#Evening> ,
+                                                                                                                                       <http://example.org/emotion-aware-recommendation#Home> ;
+                                                                    <http://example.org/emotion-aware-recommendation#givenTo> <http://example.org/emotion-aware-recommendation#Busra> ;
+                                                                    <http://example.org/emotion-aware-recommendation#hasFeedback> <http://example.org/emotion-aware-recommendation#Feedback003> ;
+                                                                    <http://example.org/emotion-aware-recommendation#hasIntention> <http://example.org/emotion-aware-recommendation#ImproveMood> ;
+                                                                    <http://example.org/emotion-aware-recommendation#includesContent> <http://example.org/emotion-aware-recommendation#PuzzleGame> ;
+                                                                    <http://example.org/emotion-aware-recommendation#hasConfidenceScore> 0.81 ;
+                                                                    rdfs:label "Puzzle game recommendation for Büşra"@en .
+
+
+###  http://example.org/emotion-aware-recommendation#Recommendation004
+<http://example.org/emotion-aware-recommendation#Recommendation004> rdf:type owl:NamedIndividual ,
+                                                                             <http://example.org/emotion-aware-recommendation#Recommendation> ;
+                                                                    <http://example.org/emotion-aware-recommendation#basedOnEmotion> <http://example.org/emotion-aware-recommendation#Tiredness> ;
+                                                                    <http://example.org/emotion-aware-recommendation#basedOnNeed> <http://example.org/emotion-aware-recommendation#Motivation> ;
+                                                                    <http://example.org/emotion-aware-recommendation#considersContext> <http://example.org/emotion-aware-recommendation#Morning> ,
+                                                                                                                                       <http://example.org/emotion-aware-recommendation#School> ;
+                                                                    <http://example.org/emotion-aware-recommendation#givenTo> <http://example.org/emotion-aware-recommendation#Enes> ;
+                                                                    <http://example.org/emotion-aware-recommendation#hasFeedback> <http://example.org/emotion-aware-recommendation#Feedback004> ;
+                                                                    <http://example.org/emotion-aware-recommendation#hasIntention> <http://example.org/emotion-aware-recommendation#IncreaseMotivation> ;
+                                                                    <http://example.org/emotion-aware-recommendation#includesContent> <http://example.org/emotion-aware-recommendation#MotivationalPodcast> ;
+                                                                    <http://example.org/emotion-aware-recommendation#hasConfidenceScore> 0.88 ;
+                                                                    rdfs:label "Motivational podcast recommendation for Enes"@en .
+
+
+###  http://example.org/emotion-aware-recommendation#ReduceStress
+<http://example.org/emotion-aware-recommendation#ReduceStress> rdf:type owl:NamedIndividual ,
+                                                                        <http://example.org/emotion-aware-recommendation#Intention> ;
+                                                               rdfs:label "Reduce Stress"@en .
+
+
+###  http://example.org/emotion-aware-recommendation#Relaxation
+<http://example.org/emotion-aware-recommendation#Relaxation> rdf:type owl:NamedIndividual ,
+                                                                      <http://example.org/emotion-aware-recommendation#Need> ;
+                                                             <http://example.org/emotion-aware-recommendation#satisfiedBy> <http://example.org/emotion-aware-recommendation#BreathingExercise> ,
+                                                                                                                           <http://example.org/emotion-aware-recommendation#LoFiPlaylist> ;
+                                                             rdfs:label "Relaxation"@en .
+
+
+###  http://example.org/emotion-aware-recommendation#RelaxingEffect
+<http://example.org/emotion-aware-recommendation#RelaxingEffect> rdf:type owl:NamedIndividual ,
+                                                                          <http://example.org/emotion-aware-recommendation#Effect> ;
+                                                                 <http://example.org/emotion-aware-recommendation#relievesEmotion> <http://example.org/emotion-aware-recommendation#Stress> ;
+                                                                 rdfs:label "Relaxing Effect"@en .
+
+
+###  http://example.org/emotion-aware-recommendation#Sadness
+<http://example.org/emotion-aware-recommendation#Sadness> rdf:type owl:NamedIndividual ,
+                                                                   <http://example.org/emotion-aware-recommendation#Emotion> ;
+                                                          <http://example.org/emotion-aware-recommendation#createsNeed> <http://example.org/emotion-aware-recommendation#EmotionalSupport> ;
+                                                          rdfs:label "Sadness"@en .
+
+
+###  http://example.org/emotion-aware-recommendation#School
+<http://example.org/emotion-aware-recommendation#School> rdf:type owl:NamedIndividual ,
+                                                                  <http://example.org/emotion-aware-recommendation#Environment> ;
+                                                         rdfs:label "School"@en .
+
+
+###  http://example.org/emotion-aware-recommendation#Spotify
+<http://example.org/emotion-aware-recommendation#Spotify> rdf:type owl:NamedIndividual ,
+                                                                   <http://example.org/emotion-aware-recommendation#Platform> ;
+                                                          rdfs:label "Spotify"@en .
+
+
+###  http://example.org/emotion-aware-recommendation#Stress
+<http://example.org/emotion-aware-recommendation#Stress> rdf:type owl:NamedIndividual ,
+                                                                  <http://example.org/emotion-aware-recommendation#Emotion> ;
+                                                         <http://example.org/emotion-aware-recommendation#createsNeed> <http://example.org/emotion-aware-recommendation#Relaxation> ;
+                                                         rdfs:label "Stress"@en .
+
+
+###  http://example.org/emotion-aware-recommendation#Tiredness
+<http://example.org/emotion-aware-recommendation#Tiredness> rdf:type owl:NamedIndividual ,
+                                                                     <http://example.org/emotion-aware-recommendation#Emotion> ;
+                                                            <http://example.org/emotion-aware-recommendation#createsNeed> <http://example.org/emotion-aware-recommendation#Motivation> ;
+                                                            rdfs:label "Tiredness"@en .
+
+
+###  http://example.org/emotion-aware-recommendation#WithFriends
+<http://example.org/emotion-aware-recommendation#WithFriends> rdf:type owl:NamedIndividual ,
+                                                                       <http://example.org/emotion-aware-recommendation#Environment> ;
+                                                              rdfs:label "With Friends"@en .
+
+
+###  Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/
