@@ -1,6 +1,6 @@
 ## 🌐 Ontology Documentation
 
-📄 [View Live Documentation](https://elifozknt.github.io/emotion-aware-recommendation-ontology/)
+📄 [View Live Documentation](https://elifozknt.github.io/emotion-aware-recommendation-ontology/)](https://elifozknt.github.io/emotion-aware-recommendation-ontology/index-en.html)
 
 # Emotion-Aware Intelligent Recommendation Ontology
 
