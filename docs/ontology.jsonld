@@ -1,0 +1,1675 @@
+[ {
+  "@id" : "http://example.org/emotion-aware-recommendation#Alone",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#Environment"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Alone"
+  } ]
+}, {
+  "@id" : "http://example.org/emotion-aware-recommendation#Anxiety",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://example.org/emotion-aware-recommendation#createsNeed" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#Calmness"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#Emotion"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Anxiety"
+  } ]
+}, {
+  "@id" : "http://example.org/emotion-aware-recommendation#Boredom",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://example.org/emotion-aware-recommendation#createsNeed" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#Distraction"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#Emotion"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Boredom"
+  } ]
+}, {
+  "@id" : "http://example.org/emotion-aware-recommendation#BreathingExercise",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://example.org/emotion-aware-recommendation#availableOnPlatform" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#MobileApp"
+  } ],
+  "http://example.org/emotion-aware-recommendation#belongsToCategory" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#Meditation"
+  } ],
+  "http://example.org/emotion-aware-recommendation#hasDurationMinutes" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "5"
+  } ],
+  "http://example.org/emotion-aware-recommendation#hasEffect" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#RelaxingEffect"
+  } ],
+  "http://example.org/emotion-aware-recommendation#suitableForEnvironment" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#Home"
+  } ],
+  "http://example.org/emotion-aware-recommendation#suitableForPersonality" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#Introvert"
+  } ],
+  "http://example.org/emotion-aware-recommendation#suitableForTime" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#Night"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#Content"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Breathing Exercise"
+  } ]
+}, {
+  "@id" : "http://example.org/emotion-aware-recommendation#Busra",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://example.org/emotion-aware-recommendation#feels" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#Boredom"
+  } ],
+  "http://example.org/emotion-aware-recommendation#hasAge" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "22"
+  } ],
+  "http://example.org/emotion-aware-recommendation#hasNeed" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#Distraction"
+  } ],
+  "http://example.org/emotion-aware-recommendation#hasPersonality" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#Extrovert"
+  } ],
+  "http://example.org/emotion-aware-recommendation#hasPreference" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#LikesGames"
+  } ],
+  "http://example.org/emotion-aware-recommendation#hasTimeContext" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#Evening"
+  } ],
+  "http://example.org/emotion-aware-recommendation#isInEnvironment" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#Home"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#User"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Büşra"
+  } ]
+}, {
+  "@id" : "http://example.org/emotion-aware-recommendation#CalmingEffect",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://example.org/emotion-aware-recommendation#relievesEmotion" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#Anxiety"
+  }, {
+    "@id" : "http://example.org/emotion-aware-recommendation#Stress"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#Effect"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Calming Effect"
+  } ]
+}, {
+  "@id" : "http://example.org/emotion-aware-recommendation#Calmness",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://example.org/emotion-aware-recommendation#satisfiedBy" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#MeditationAudio"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#Need"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Calmness"
+  } ]
+}, {
+  "@id" : "http://example.org/emotion-aware-recommendation#ComfortMovie",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://example.org/emotion-aware-recommendation#availableOnPlatform" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#Netflix"
+  } ],
+  "http://example.org/emotion-aware-recommendation#belongsToCategory" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#Movie"
+  } ],
+  "http://example.org/emotion-aware-recommendation#hasDurationMinutes" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "95"
+  } ],
+  "http://example.org/emotion-aware-recommendation#hasEffect" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#EmotionalReliefEffect"
+  } ],
+  "http://example.org/emotion-aware-recommendation#matchesPreference" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#LikesMovies"
+  } ],
+  "http://example.org/emotion-aware-recommendation#suitableForEnvironment" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#WithFriends"
+  } ],
+  "http://example.org/emotion-aware-recommendation#suitableForPersonality" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#Extrovert"
+  } ],
+  "http://example.org/emotion-aware-recommendation#suitableForTime" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#Evening"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#Content"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Comfort Movie"
+  } ]
+}, {
+  "@id" : "http://example.org/emotion-aware-recommendation#Content",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A digital content item or activity that can be recommended to a user."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Content"
+  } ]
+}, {
+  "@id" : "http://example.org/emotion-aware-recommendation#ContentCategory",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A category describing the type of content."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Content Category"
+  } ]
+}, {
+  "@id" : "http://example.org/emotion-aware-recommendation#Context",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "The situation in which the user is located."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Context"
+  } ]
+}, {
+  "@id" : "http://example.org/emotion-aware-recommendation#Deniz",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://example.org/emotion-aware-recommendation#feels" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#Sadness"
+  } ],
+  "http://example.org/emotion-aware-recommendation#hasAge" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "23"
+  } ],
+  "http://example.org/emotion-aware-recommendation#hasNeed" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#EmotionalSupport"
+  } ],
+  "http://example.org/emotion-aware-recommendation#hasPersonality" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#Extrovert"
+  } ],
+  "http://example.org/emotion-aware-recommendation#hasPreference" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#LikesMovies"
+  } ],
+  "http://example.org/emotion-aware-recommendation#hasTimeContext" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#Evening"
+  } ],
+  "http://example.org/emotion-aware-recommendation#isInEnvironment" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#WithFriends"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#User"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Deniz"
+  } ]
+}, {
+  "@id" : "http://example.org/emotion-aware-recommendation#DistractingEffect",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://example.org/emotion-aware-recommendation#relievesEmotion" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#Boredom"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#Effect"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Distracting Effect"
+  } ]
+}, {
+  "@id" : "http://example.org/emotion-aware-recommendation#Distraction",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://example.org/emotion-aware-recommendation#satisfiedBy" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#PuzzleGame"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#Need"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Distraction"
+  } ]
+}, {
+  "@id" : "http://example.org/emotion-aware-recommendation#Effect",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "The expected psychological or behavioral effect of a content item."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Effect"
+  } ]
+}, {
+  "@id" : "http://example.org/emotion-aware-recommendation#Elif",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://example.org/emotion-aware-recommendation#feels" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#Stress"
+  } ],
+  "http://example.org/emotion-aware-recommendation#hasAge" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "21"
+  } ],
+  "http://example.org/emotion-aware-recommendation#hasNeed" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#Relaxation"
+  } ],
+  "http://example.org/emotion-aware-recommendation#hasPersonality" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#Introvert"
+  } ],
+  "http://example.org/emotion-aware-recommendation#hasPreference" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#LikesMusic"
+  }, {
+    "@id" : "http://example.org/emotion-aware-recommendation#LikesShortContent"
+  } ],
+  "http://example.org/emotion-aware-recommendation#hasTimeContext" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#Night"
+  } ],
+  "http://example.org/emotion-aware-recommendation#isInEnvironment" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#Alone"
+  }, {
+    "@id" : "http://example.org/emotion-aware-recommendation#Home"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#User"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Elif"
+  } ]
+}, {
+  "@id" : "http://example.org/emotion-aware-recommendation#Emotion",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "An emotional state experienced by a user."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Emotion"
+  } ]
+}, {
+  "@id" : "http://example.org/emotion-aware-recommendation#EmotionAwareRecommendationOntology",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Ontology" ],
+  "http://purl.org/dc/terms/created" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#date",
+    "@value" : "2026-04-28"
+  } ],
+  "http://purl.org/dc/terms/creator" : [ {
+    "@language" : "en",
+    "@value" : "Büşra Pehlivanlar"
+  }, {
+    "@language" : "en",
+    "@value" : "Elif Özkanat"
+  }, {
+    "@language" : "en",
+    "@value" : "Enes Ulucan"
+  } ],
+  "http://purl.org/dc/terms/description" : [ {
+    "@language" : "en",
+    "@value" : "This ontology models an intelligent recommendation system that provides personalized content suggestions based on the user's emotional state, contextual situation, personality traits, and needs."
+  } ],
+  "http://purl.org/dc/terms/license" : [ {
+    "@id" : "https://creativecommons.org/licenses/by/4.0/"
+  } ],
+  "http://purl.org/dc/terms/publisher" : [ {
+    "@language" : "en",
+    "@value" : "Manisa Celal Bayar University"
+  } ],
+  "http://purl.org/dc/terms/title" : [ {
+    "@language" : "en",
+    "@value" : "Emotion-Aware Intelligent Recommendation Ontology"
+  } ],
+  "http://purl.org/vocab/vann/preferredNamespacePrefix" : [ {
+    "@value" : "ex"
+  } ],
+  "http://purl.org/vocab/vann/preferredNamespaceUri" : [ {
+    "@value" : "http://example.org/emotion-aware-recommendation#"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "An ontology for modeling personalized recommendations based on user emotions, needs, context, personality traits, preferences, content types, and content effects."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Emotion-Aware Intelligent Recommendation Ontology"
+  } ],
+  "http://www.w3.org/2002/07/owl#versionInfo" : [ {
+    "@value" : "1.0.0"
+  } ],
+  "https://schema.org/codeRepository" : [ {
+    "@id" : "https://github.com/elifozknt/emotion-aware-recommendation-ontology"
+  } ]
+}, {
+  "@id" : "http://example.org/emotion-aware-recommendation#EmotionalReliefEffect",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://example.org/emotion-aware-recommendation#relievesEmotion" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#Sadness"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#Effect"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Emotional Relief Effect"
+  } ]
+}, {
+  "@id" : "http://example.org/emotion-aware-recommendation#EmotionalSupport",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://example.org/emotion-aware-recommendation#satisfiedBy" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#ComfortMovie"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#Need"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Emotional Support"
+  } ]
+}, {
+  "@id" : "http://example.org/emotion-aware-recommendation#Enes",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://example.org/emotion-aware-recommendation#feels" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#Tiredness"
+  } ],
+  "http://example.org/emotion-aware-recommendation#hasAge" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "22"
+  } ],
+  "http://example.org/emotion-aware-recommendation#hasNeed" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#Motivation"
+  } ],
+  "http://example.org/emotion-aware-recommendation#hasPersonality" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#Introvert"
+  } ],
+  "http://example.org/emotion-aware-recommendation#hasPreference" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#LikesPodcasts"
+  } ],
+  "http://example.org/emotion-aware-recommendation#hasTimeContext" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#Morning"
+  } ],
+  "http://example.org/emotion-aware-recommendation#isInEnvironment" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#School"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#User"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Enes"
+  } ]
+}, {
+  "@id" : "http://example.org/emotion-aware-recommendation#Environment",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "The physical or social environment of a user."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Environment"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#Context"
+  } ]
+}, {
+  "@id" : "http://example.org/emotion-aware-recommendation#Evening",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#TimeContext"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Evening"
+  } ]
+}, {
+  "@id" : "http://example.org/emotion-aware-recommendation#Extrovert",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#Personality"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Extrovert"
+  } ]
+}, {
+  "@id" : "http://example.org/emotion-aware-recommendation#Feedback",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A user response to a recommendation."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Feedback"
+  } ]
+}, {
+  "@id" : "http://example.org/emotion-aware-recommendation#Feedback001",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://example.org/emotion-aware-recommendation#hasFeedbackScore" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "5"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#Feedback"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Positive feedback for recommendation 001"
+  } ]
+}, {
+  "@id" : "http://example.org/emotion-aware-recommendation#Feedback002",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://example.org/emotion-aware-recommendation#hasFeedbackScore" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "4"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#Feedback"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Positive feedback for recommendation 002"
+  } ]
+}, {
+  "@id" : "http://example.org/emotion-aware-recommendation#Feedback003",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://example.org/emotion-aware-recommendation#hasFeedbackScore" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "4"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#Feedback"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Positive feedback for recommendation 003"
+  } ]
+}, {
+  "@id" : "http://example.org/emotion-aware-recommendation#Feedback004",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://example.org/emotion-aware-recommendation#hasFeedbackScore" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "5"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#Feedback"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Positive feedback for recommendation 004"
+  } ]
+}, {
+  "@id" : "http://example.org/emotion-aware-recommendation#Game",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#ContentCategory"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Game"
+  } ]
+}, {
+  "@id" : "http://example.org/emotion-aware-recommendation#Home",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#Environment"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Home"
+  } ]
+}, {
+  "@id" : "http://example.org/emotion-aware-recommendation#ImproveMood",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#Intention"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Improve Mood"
+  } ]
+}, {
+  "@id" : "http://example.org/emotion-aware-recommendation#IncreaseMotivation",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#Intention"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Increase Motivation"
+  } ]
+}, {
+  "@id" : "http://example.org/emotion-aware-recommendation#Intention",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "The intended purpose of a recommendation."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Intention"
+  } ]
+}, {
+  "@id" : "http://example.org/emotion-aware-recommendation#Introvert",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#Personality"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Introvert"
+  } ]
+}, {
+  "@id" : "http://example.org/emotion-aware-recommendation#LikesGames",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#Preference"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Likes Games"
+  } ]
+}, {
+  "@id" : "http://example.org/emotion-aware-recommendation#LikesMovies",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#Preference"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Likes Movies"
+  } ]
+}, {
+  "@id" : "http://example.org/emotion-aware-recommendation#LikesMusic",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#Preference"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Likes Music"
+  } ]
+}, {
+  "@id" : "http://example.org/emotion-aware-recommendation#LikesPodcasts",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#Preference"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Likes Podcasts"
+  } ]
+}, {
+  "@id" : "http://example.org/emotion-aware-recommendation#LikesShortContent",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#Preference"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Likes Short Content"
+  } ]
+}, {
+  "@id" : "http://example.org/emotion-aware-recommendation#LoFiPlaylist",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://example.org/emotion-aware-recommendation#availableOnPlatform" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#Spotify"
+  } ],
+  "http://example.org/emotion-aware-recommendation#belongsToCategory" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#Music"
+  } ],
+  "http://example.org/emotion-aware-recommendation#hasDurationMinutes" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "25"
+  } ],
+  "http://example.org/emotion-aware-recommendation#hasEffect" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#CalmingEffect"
+  } ],
+  "http://example.org/emotion-aware-recommendation#matchesPreference" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#LikesMusic"
+  } ],
+  "http://example.org/emotion-aware-recommendation#suitableForEnvironment" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#Alone"
+  }, {
+    "@id" : "http://example.org/emotion-aware-recommendation#Home"
+  } ],
+  "http://example.org/emotion-aware-recommendation#suitableForPersonality" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#Introvert"
+  } ],
+  "http://example.org/emotion-aware-recommendation#suitableForTime" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#Night"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#Content"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Lo-Fi Playlist"
+  } ]
+}, {
+  "@id" : "http://example.org/emotion-aware-recommendation#Meditation",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#ContentCategory"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Meditation"
+  } ]
+}, {
+  "@id" : "http://example.org/emotion-aware-recommendation#MeditationAudio",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://example.org/emotion-aware-recommendation#availableOnPlatform" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#MobileApp"
+  } ],
+  "http://example.org/emotion-aware-recommendation#belongsToCategory" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#Meditation"
+  } ],
+  "http://example.org/emotion-aware-recommendation#hasDurationMinutes" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "10"
+  } ],
+  "http://example.org/emotion-aware-recommendation#hasEffect" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#CalmingEffect"
+  } ],
+  "http://example.org/emotion-aware-recommendation#suitableForEnvironment" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#Home"
+  } ],
+  "http://example.org/emotion-aware-recommendation#suitableForTime" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#Night"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#Content"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Meditation Audio"
+  } ]
+}, {
+  "@id" : "http://example.org/emotion-aware-recommendation#MobileApp",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#Platform"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Mobile Application"
+  } ]
+}, {
+  "@id" : "http://example.org/emotion-aware-recommendation#Morning",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#TimeContext"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Morning"
+  } ]
+}, {
+  "@id" : "http://example.org/emotion-aware-recommendation#MotivatingEffect",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://example.org/emotion-aware-recommendation#relievesEmotion" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#Tiredness"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#Effect"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Motivating Effect"
+  } ]
+}, {
+  "@id" : "http://example.org/emotion-aware-recommendation#Motivation",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://example.org/emotion-aware-recommendation#satisfiedBy" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#MotivationalPodcast"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#Need"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Motivation"
+  } ]
+}, {
+  "@id" : "http://example.org/emotion-aware-recommendation#MotivationalPodcast",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://example.org/emotion-aware-recommendation#availableOnPlatform" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#Spotify"
+  } ],
+  "http://example.org/emotion-aware-recommendation#belongsToCategory" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#Podcast"
+  } ],
+  "http://example.org/emotion-aware-recommendation#hasDurationMinutes" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "15"
+  } ],
+  "http://example.org/emotion-aware-recommendation#hasEffect" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#MotivatingEffect"
+  } ],
+  "http://example.org/emotion-aware-recommendation#matchesPreference" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#LikesPodcasts"
+  } ],
+  "http://example.org/emotion-aware-recommendation#suitableForTime" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#Morning"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#Content"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Motivational Podcast"
+  } ]
+}, {
+  "@id" : "http://example.org/emotion-aware-recommendation#Movie",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#ContentCategory"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Movie"
+  } ]
+}, {
+  "@id" : "http://example.org/emotion-aware-recommendation#Music",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#ContentCategory"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Music"
+  } ]
+}, {
+  "@id" : "http://example.org/emotion-aware-recommendation#Need",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A user need that may arise from an emotional state."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Need"
+  } ]
+}, {
+  "@id" : "http://example.org/emotion-aware-recommendation#Netflix",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#Platform"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Netflix"
+  } ]
+}, {
+  "@id" : "http://example.org/emotion-aware-recommendation#Night",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#TimeContext"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Night"
+  } ]
+}, {
+  "@id" : "http://example.org/emotion-aware-recommendation#Personality",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A personality trait that may affect recommendation suitability."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Personality"
+  } ]
+}, {
+  "@id" : "http://example.org/emotion-aware-recommendation#Platform",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A digital platform where content may be delivered."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Platform"
+  } ]
+}, {
+  "@id" : "http://example.org/emotion-aware-recommendation#Podcast",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#ContentCategory"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Podcast"
+  } ]
+}, {
+  "@id" : "http://example.org/emotion-aware-recommendation#Preference",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A user's preferred content type or activity."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Preference"
+  } ]
+}, {
+  "@id" : "http://example.org/emotion-aware-recommendation#PuzzleGame",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://example.org/emotion-aware-recommendation#availableOnPlatform" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#MobileApp"
+  } ],
+  "http://example.org/emotion-aware-recommendation#belongsToCategory" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#Game"
+  } ],
+  "http://example.org/emotion-aware-recommendation#hasDurationMinutes" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "20"
+  } ],
+  "http://example.org/emotion-aware-recommendation#hasEffect" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#DistractingEffect"
+  } ],
+  "http://example.org/emotion-aware-recommendation#matchesPreference" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#LikesGames"
+  } ],
+  "http://example.org/emotion-aware-recommendation#suitableForEnvironment" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#Home"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#Content"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Puzzle Game"
+  } ]
+}, {
+  "@id" : "http://example.org/emotion-aware-recommendation#Recommendation",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A personalized suggestion generated for a user."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Recommendation"
+  } ]
+}, {
+  "@id" : "http://example.org/emotion-aware-recommendation#Recommendation001",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://example.org/emotion-aware-recommendation#basedOnEmotion" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#Stress"
+  } ],
+  "http://example.org/emotion-aware-recommendation#basedOnNeed" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#Relaxation"
+  } ],
+  "http://example.org/emotion-aware-recommendation#considersContext" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#Alone"
+  }, {
+    "@id" : "http://example.org/emotion-aware-recommendation#Home"
+  }, {
+    "@id" : "http://example.org/emotion-aware-recommendation#Night"
+  } ],
+  "http://example.org/emotion-aware-recommendation#givenTo" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#Elif"
+  } ],
+  "http://example.org/emotion-aware-recommendation#hasConfidenceScore" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#decimal",
+    "@value" : "0.92"
+  } ],
+  "http://example.org/emotion-aware-recommendation#hasFeedback" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#Feedback001"
+  } ],
+  "http://example.org/emotion-aware-recommendation#hasIntention" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#ReduceStress"
+  } ],
+  "http://example.org/emotion-aware-recommendation#includesContent" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#LoFiPlaylist"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#Recommendation"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Stress relief music recommendation for Elif"
+  } ]
+}, {
+  "@id" : "http://example.org/emotion-aware-recommendation#Recommendation002",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://example.org/emotion-aware-recommendation#basedOnEmotion" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#Sadness"
+  } ],
+  "http://example.org/emotion-aware-recommendation#basedOnNeed" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#EmotionalSupport"
+  } ],
+  "http://example.org/emotion-aware-recommendation#considersContext" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#Evening"
+  }, {
+    "@id" : "http://example.org/emotion-aware-recommendation#WithFriends"
+  } ],
+  "http://example.org/emotion-aware-recommendation#givenTo" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#Deniz"
+  } ],
+  "http://example.org/emotion-aware-recommendation#hasConfidenceScore" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#decimal",
+    "@value" : "0.87"
+  } ],
+  "http://example.org/emotion-aware-recommendation#hasFeedback" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#Feedback002"
+  } ],
+  "http://example.org/emotion-aware-recommendation#hasIntention" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#ImproveMood"
+  } ],
+  "http://example.org/emotion-aware-recommendation#includesContent" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#ComfortMovie"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#Recommendation"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Comfort movie recommendation for Deniz"
+  } ]
+}, {
+  "@id" : "http://example.org/emotion-aware-recommendation#Recommendation003",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://example.org/emotion-aware-recommendation#basedOnEmotion" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#Boredom"
+  } ],
+  "http://example.org/emotion-aware-recommendation#basedOnNeed" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#Distraction"
+  } ],
+  "http://example.org/emotion-aware-recommendation#considersContext" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#Evening"
+  }, {
+    "@id" : "http://example.org/emotion-aware-recommendation#Home"
+  } ],
+  "http://example.org/emotion-aware-recommendation#givenTo" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#Busra"
+  } ],
+  "http://example.org/emotion-aware-recommendation#hasConfidenceScore" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#decimal",
+    "@value" : "0.81"
+  } ],
+  "http://example.org/emotion-aware-recommendation#hasFeedback" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#Feedback003"
+  } ],
+  "http://example.org/emotion-aware-recommendation#hasIntention" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#ImproveMood"
+  } ],
+  "http://example.org/emotion-aware-recommendation#includesContent" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#PuzzleGame"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#Recommendation"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Puzzle game recommendation for Büşra"
+  } ]
+}, {
+  "@id" : "http://example.org/emotion-aware-recommendation#Recommendation004",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://example.org/emotion-aware-recommendation#basedOnEmotion" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#Tiredness"
+  } ],
+  "http://example.org/emotion-aware-recommendation#basedOnNeed" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#Motivation"
+  } ],
+  "http://example.org/emotion-aware-recommendation#considersContext" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#Morning"
+  }, {
+    "@id" : "http://example.org/emotion-aware-recommendation#School"
+  } ],
+  "http://example.org/emotion-aware-recommendation#givenTo" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#Enes"
+  } ],
+  "http://example.org/emotion-aware-recommendation#hasConfidenceScore" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#decimal",
+    "@value" : "0.88"
+  } ],
+  "http://example.org/emotion-aware-recommendation#hasFeedback" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#Feedback004"
+  } ],
+  "http://example.org/emotion-aware-recommendation#hasIntention" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#IncreaseMotivation"
+  } ],
+  "http://example.org/emotion-aware-recommendation#includesContent" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#MotivationalPodcast"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#Recommendation"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Motivational podcast recommendation for Enes"
+  } ]
+}, {
+  "@id" : "http://example.org/emotion-aware-recommendation#ReduceStress",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#Intention"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Reduce Stress"
+  } ]
+}, {
+  "@id" : "http://example.org/emotion-aware-recommendation#Relaxation",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://example.org/emotion-aware-recommendation#satisfiedBy" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#BreathingExercise"
+  }, {
+    "@id" : "http://example.org/emotion-aware-recommendation#LoFiPlaylist"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#Need"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Relaxation"
+  } ]
+}, {
+  "@id" : "http://example.org/emotion-aware-recommendation#RelaxingEffect",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://example.org/emotion-aware-recommendation#relievesEmotion" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#Stress"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#Effect"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Relaxing Effect"
+  } ]
+}, {
+  "@id" : "http://example.org/emotion-aware-recommendation#Sadness",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://example.org/emotion-aware-recommendation#createsNeed" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#EmotionalSupport"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#Emotion"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Sadness"
+  } ]
+}, {
+  "@id" : "http://example.org/emotion-aware-recommendation#School",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#Environment"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "School"
+  } ]
+}, {
+  "@id" : "http://example.org/emotion-aware-recommendation#Spotify",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#Platform"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Spotify"
+  } ]
+}, {
+  "@id" : "http://example.org/emotion-aware-recommendation#Stress",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://example.org/emotion-aware-recommendation#createsNeed" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#Relaxation"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#Emotion"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Stress"
+  } ]
+}, {
+  "@id" : "http://example.org/emotion-aware-recommendation#TimeContext",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "The time-related context of a user."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Time Context"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#Context"
+  } ]
+}, {
+  "@id" : "http://example.org/emotion-aware-recommendation#Tiredness",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://example.org/emotion-aware-recommendation#createsNeed" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#Motivation"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#Emotion"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Tiredness"
+  } ]
+}, {
+  "@id" : "http://example.org/emotion-aware-recommendation#User",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A person who receives recommendations from the system."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "User"
+  } ]
+}, {
+  "@id" : "http://example.org/emotion-aware-recommendation#WithFriends",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#Environment"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "With Friends"
+  } ]
+}, {
+  "@id" : "http://example.org/emotion-aware-recommendation#availableOnPlatform",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Connects content to the platform where it is available."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#Content"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "available on platform"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#Platform"
+  } ]
+}, {
+  "@id" : "http://example.org/emotion-aware-recommendation#basedOnEmotion",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Shows the emotion considered in a recommendation."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#Recommendation"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "based on emotion"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#Emotion"
+  } ]
+}, {
+  "@id" : "http://example.org/emotion-aware-recommendation#basedOnNeed",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Shows the need considered in a recommendation."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#Recommendation"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "based on need"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#Need"
+  } ]
+}, {
+  "@id" : "http://example.org/emotion-aware-recommendation#belongsToCategory",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Connects content to its category."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#Content"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "belongs to category"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#ContentCategory"
+  } ]
+}, {
+  "@id" : "http://example.org/emotion-aware-recommendation#considersContext",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Shows contextual information used in a recommendation."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#Recommendation"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "considers context"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#Context"
+  } ]
+}, {
+  "@id" : "http://example.org/emotion-aware-recommendation#createsNeed",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Connects an emotion to the need it may create."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#Emotion"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "creates need"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#Need"
+  } ]
+}, {
+  "@id" : "http://example.org/emotion-aware-recommendation#feels",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Connects a user to an emotion they experience."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#User"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "feels"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#Emotion"
+  } ]
+}, {
+  "@id" : "http://example.org/emotion-aware-recommendation#givenTo",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Connects a recommendation to the user receiving it."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#Recommendation"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "given to"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#User"
+  } ]
+}, {
+  "@id" : "http://example.org/emotion-aware-recommendation#hasAge",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#User"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "has age"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#integer"
+  } ]
+}, {
+  "@id" : "http://example.org/emotion-aware-recommendation#hasConfidenceScore",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#Recommendation"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "has confidence score"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#decimal"
+  } ]
+}, {
+  "@id" : "http://example.org/emotion-aware-recommendation#hasDurationMinutes",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#Content"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "has duration in minutes"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#integer"
+  } ]
+}, {
+  "@id" : "http://example.org/emotion-aware-recommendation#hasEffect",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Connects content to its expected effect."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#Content"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "has effect"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#Effect"
+  } ]
+}, {
+  "@id" : "http://example.org/emotion-aware-recommendation#hasFeedback",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Connects a recommendation to user feedback."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#Recommendation"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "has feedback"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#Feedback"
+  } ]
+}, {
+  "@id" : "http://example.org/emotion-aware-recommendation#hasFeedbackScore",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#Feedback"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "has feedback score"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#integer"
+  } ]
+}, {
+  "@id" : "http://example.org/emotion-aware-recommendation#hasIntention",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Shows the intended purpose of a recommendation."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#Recommendation"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "has intention"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#Intention"
+  } ]
+}, {
+  "@id" : "http://example.org/emotion-aware-recommendation#hasNeed",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Connects a user to a need."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#User"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "has need"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#Need"
+  } ]
+}, {
+  "@id" : "http://example.org/emotion-aware-recommendation#hasPersonality",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Connects a user to a personality trait."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#User"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "has personality"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#Personality"
+  } ]
+}, {
+  "@id" : "http://example.org/emotion-aware-recommendation#hasPreference",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Connects a user to a preference."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#User"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "has preference"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#Preference"
+  } ]
+}, {
+  "@id" : "http://example.org/emotion-aware-recommendation#hasTimeContext",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Connects a user to a time context."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#User"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "has time context"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#TimeContext"
+  } ]
+}, {
+  "@id" : "http://example.org/emotion-aware-recommendation#includesContent",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Connects a recommendation to the content it includes."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#Recommendation"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "includes content"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#Content"
+  } ]
+}, {
+  "@id" : "http://example.org/emotion-aware-recommendation#isInEnvironment",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Connects a user to an environment."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#User"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "is in environment"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#Environment"
+  } ]
+}, {
+  "@id" : "http://example.org/emotion-aware-recommendation#matchesPreference",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Connects content to a matching user preference."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#Content"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "matches preference"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#Preference"
+  } ]
+}, {
+  "@id" : "http://example.org/emotion-aware-recommendation#relievesEmotion",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Connects an effect to an emotion it may help reduce."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#Effect"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "relieves emotion"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#Emotion"
+  } ]
+}, {
+  "@id" : "http://example.org/emotion-aware-recommendation#satisfiedBy",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Connects a need to content that can satisfy it."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#Need"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "satisfied by"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#Content"
+  } ]
+}, {
+  "@id" : "http://example.org/emotion-aware-recommendation#suitableForEnvironment",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Shows which environment is suitable for content."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#Content"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "suitable for environment"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#Environment"
+  } ]
+}, {
+  "@id" : "http://example.org/emotion-aware-recommendation#suitableForPersonality",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Shows which personality type a content item is suitable for."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#Content"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "suitable for personality"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#Personality"
+  } ]
+}, {
+  "@id" : "http://example.org/emotion-aware-recommendation#suitableForTime",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Shows which time context is suitable for content."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#Content"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "suitable for time"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#TimeContext"
+  } ]
+}, {
+  "@id" : "http://purl.org/dc/terms/created",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://purl.org/dc/terms/creator",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://purl.org/dc/terms/description",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://purl.org/dc/terms/license",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://purl.org/dc/terms/publisher",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://purl.org/dc/terms/title",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://purl.org/vocab/vann/preferredNamespacePrefix",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://purl.org/vocab/vann/preferredNamespaceUri",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://www.w3.org/2001/XMLSchema#date",
+  "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype" ]
+}, {
+  "@id" : "https://schema.org/codeRepository",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+} ]
