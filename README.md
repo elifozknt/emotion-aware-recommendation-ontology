@@ -1,7 +1,8 @@
 
 ## 🌐 Ontology Documentation
 
-📄 [View Live Documentation](https://elifozknt.github.io/emotion-aware-recommendation-ontology/index-en.html)
+📄 [View Live Documentation](https://elifozknt.github.io/emotion-aware-recommendation-ontology/index.html)
+  
 
 ## Phase 2 Updates
 - Personality class extended with 6 subclasses (Big Five model)
