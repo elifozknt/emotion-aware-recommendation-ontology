@@ -13,20 +13,22 @@
 
 ex:EmotionAwareRecommendationOntology rdf:type owl:Ontology ;
     rdfs:label "Emotion-Aware Intelligent Recommendation Ontology"@en ;
-    rdfs:comment "An ontology for modeling personalized recommendations based on user emotions, needs, context, personality traits, preferences, content types, and content effects."@en ;
+    rdfs:comment "An ontology for modeling personalized recommendations based on user emotions, needs, context, personality traits, preferences, content types, and content effects. Version 2 extends the ontology with dynamic emotion tracking, behavioral prediction, LLM-based population support, and session-level interaction modeling."@en ;
     dc:title "Emotion-Aware Intelligent Recommendation Ontology"@en ;
-    dc:description "This ontology models an intelligent recommendation system that provides personalized content suggestions based on the user's emotional state, contextual situation, personality traits, and needs."@en ;
+    dc:description "This ontology models an intelligent recommendation system that provides personalized content suggestions based on the user's emotional state, contextual situation, personality traits, and needs. Phase 2 adds DynamicEmotion, BehaviorProfile, EmotionSession, UserInteraction, and DataSource classes inspired by Norouzi et al. (2025) ontology population with LLMs and Fernandez et al. (2023) GRU-RNN behavioral prediction."@en ;
     dc:creator "Elif Özkanat"@en , "Büşra Pehlivanlar"@en , "Enes Ulucan"@en ;
     dc:publisher "Manisa Celal Bayar University"@en ;
     dc:created "2026-04-28"^^xsd:date ;
+    dc:modified "2026-05-14"^^xsd:date ;
     dc:license <https://creativecommons.org/licenses/by/4.0/> ;
-    owl:versionInfo "1.0.0" ;
+    owl:versionInfo "2.0.0" ;
+    owl:priorVersion "1.0.0" ;
     vann:preferredNamespacePrefix "ex" ;
     vann:preferredNamespaceUri "http://example.org/emotion-aware-recommendation#" ;
     schema:codeRepository <https://github.com/elifozknt/emotion-aware-recommendation-ontology> .
 
 #################################################################
-# Classes
+# Classes  —  Phase 1 (unchanged)
 #################################################################
 
 ex:User rdf:type owl:Class ;
@@ -35,7 +37,24 @@ ex:User rdf:type owl:Class ;
 
 ex:Emotion rdf:type owl:Class ;
     rdfs:label "Emotion"@en ;
-    rdfs:comment "An emotional state experienced by a user."@en .
+    rdfs:comment "An emotional state experienced by a user. Inspired by the UniEmotion ontology (Kim 2013) and Kim & Lee (2015) emotion ontology for recommendation, emotions are categorized as Positive, Negative, or Neutral/Factual."@en .
+
+# --- Emotion Sub-Classes (inspired by UniEmotion ontology — Kim 2013, and Kim & Lee 2015) ---
+
+ex:PositiveEmotion rdf:type owl:Class ;
+    rdfs:subClassOf ex:Emotion ;
+    rdfs:label "Positive Emotion"@en ;
+    rdfs:comment "An emotion associated with pleasant, favorable affective states. Corresponds to 'positive emotional tags' in the UniEmotion ontology (Kim 2013). Examples: happiness, excitement, contentment."@en .
+
+ex:NegativeEmotion rdf:type owl:Class ;
+    rdfs:subClassOf ex:Emotion ;
+    rdfs:label "Negative Emotion"@en ;
+    rdfs:comment "An emotion associated with unpleasant or unfavorable affective states. Corresponds to 'negative emotional tags' in the UniEmotion ontology (Kim 2013). Examples: stress, sadness, anxiety, tiredness."@en .
+
+ex:NeutralEmotion rdf:type owl:Class ;
+    rdfs:subClassOf ex:Emotion ;
+    rdfs:label "Neutral Emotion"@en ;
+    rdfs:comment "A factual or neutral affective state with neither strong positive nor negative valence. Corresponds to 'factual tags' in the UniEmotion ontology (Kim 2013). Examples: calmness, focus, boredom."@en .
 
 ex:Need rdf:type owl:Class ;
     rdfs:label "Need"@en ;
@@ -69,7 +88,39 @@ ex:Environment rdf:type owl:Class ;
 
 ex:Personality rdf:type owl:Class ;
     rdfs:label "Personality"@en ;
-    rdfs:comment "A personality trait that may affect recommendation suitability."@en .
+    rdfs:comment "A personality trait based on the Big Five model that may affect recommendation suitability. Sub-classes represent the primary personality dimensions relevant to emotion-based recommendation."@en .
+
+# --- Personality Sub-Classes (Big Five inspired) ---
+
+ex:IntrovertedPersonality rdf:type owl:Class ;
+    rdfs:subClassOf ex:Personality ;
+    rdfs:label "Introverted Personality"@en ;
+    rdfs:comment "A personality type characterized by preference for solitary activities, deep focus, and low-stimulation environments. Introverted users tend to prefer calm, solo content (e.g., lo-fi music, meditation, solo games)."@en .
+
+ex:ExtrovertedPersonality rdf:type owl:Class ;
+    rdfs:subClassOf ex:Personality ;
+    rdfs:label "Extroverted Personality"@en ;
+    rdfs:comment "A personality type characterized by sociability, high energy, and preference for stimulating environments. Extroverted users tend to prefer social, upbeat, or group-oriented content (e.g., party playlists, group films)."@en .
+
+ex:AgreeablePersonality rdf:type owl:Class ;
+    rdfs:subClassOf ex:Personality ;
+    rdfs:label "Agreeable Personality"@en ;
+    rdfs:comment "A personality type characterized by cooperativeness, empathy, and trust. Agreeable users tend to enjoy emotionally warm content (e.g., feel-good movies, collaborative games, uplifting podcasts)."@en .
+
+ex:NeuroticlPersonality rdf:type owl:Class ;
+    rdfs:subClassOf ex:Personality ;
+    rdfs:label "Neurotic Personality"@en ;
+    rdfs:comment "A personality type characterized by emotional instability and high sensitivity to stress. Neurotic users benefit most from calming, grounding content (e.g., meditation, nature soundscapes, breathing exercises)."@en .
+
+ex:OpennessPersonality rdf:type owl:Class ;
+    rdfs:subClassOf ex:Personality ;
+    rdfs:label "Openness Personality"@en ;
+    rdfs:comment "A personality type characterized by curiosity, creativity, and appreciation of art. Users high in openness tend to enjoy diverse, novel, or artistic content (e.g., experimental music, documentaries, creative games)."@en .
+
+ex:ConscientiousPersonality rdf:type owl:Class ;
+    rdfs:subClassOf ex:Personality ;
+    rdfs:label "Conscientious Personality"@en ;
+    rdfs:comment "A personality type characterized by organization, goal-directedness, and discipline. Conscientious users prefer structured, purposeful content (e.g., educational podcasts, productivity music, self-improvement content)."@en .
 
 ex:Preference rdf:type owl:Class ;
     rdfs:label "Preference"@en ;
@@ -92,7 +143,37 @@ ex:Feedback rdf:type owl:Class ;
     rdfs:comment "A user response to a recommendation."@en .
 
 #################################################################
-# Object Properties
+# NEW Classes  —  Phase 2 Extensions
+#################################################################
+
+# --- Dynamic Emotion (inspired by GRU-RNN behavioral prediction) ---
+ex:DynamicEmotion rdf:type owl:Class ;
+    rdfs:subClassOf ex:Emotion ;
+    rdfs:label "Dynamic Emotion"@en ;
+    rdfs:comment "An emotion state that changes over time and is tracked across multiple sessions. Inspired by the temporal behavioral modeling in Fernandez et al. (2023) GRU-RNN framework, which predicts evolving user behavior styles across sessions."@en .
+
+# --- Behavior Profile (maps to GRU-RNN behavior classes) ---
+ex:BehaviorProfile rdf:type owl:Class ;
+    rdfs:label "Behavior Profile"@en ;
+    rdfs:comment "A classification of the user's interaction behavior style, analogous to the four behavioral classes (Cognitive, Speed, Sedentary, Aggressive) predicted by Fernandez et al. (2023). Used to personalize recommendation frequency and content depth."@en .
+
+# --- Emotion Session (tracks a bounded interaction episode) ---
+ex:EmotionSession rdf:type owl:Class ;
+    rdfs:label "Emotion Session"@en ;
+    rdfs:comment "A bounded time window during which a user's emotional state and interactions are recorded. Enables longitudinal modeling of emotion change, supporting the dynamic emotion tracking capability."@en .
+
+# --- User Interaction (records a single content interaction event) ---
+ex:UserInteraction rdf:type owl:Class ;
+    rdfs:label "User Interaction"@en ;
+    rdfs:comment "A single recorded interaction event between a user and a recommended content item (e.g., play, skip, complete). Used to populate ontology instances from log data, as described in the LLM-based ontology population approach of Norouzi et al. (2025)."@en .
+
+# --- Data Source (documents provenance for LLM-based population) ---
+ex:DataSource rdf:type owl:Class ;
+    rdfs:label "Data Source"@en ;
+    rdfs:comment "A source of data used to populate the ontology with instances (e.g., Kaggle dataset, Spotify API, survey). Supports the data provenance tracking recommended by Norouzi et al. (2025) for LLM-based knowledge graph population."@en .
+
+#################################################################
+# Object Properties  —  Phase 1 (unchanged)
 #################################################################
 
 ex:feels rdf:type owl:ObjectProperty ;
@@ -234,7 +315,59 @@ ex:hasFeedback rdf:type owl:ObjectProperty ;
     rdfs:comment "Connects a recommendation to user feedback."@en .
 
 #################################################################
-# Data Properties
+# NEW Object Properties  —  Phase 2 Extensions
+#################################################################
+
+ex:hasDynamicEmotion rdf:type owl:ObjectProperty ;
+    rdfs:domain ex:User ;
+    rdfs:range ex:DynamicEmotion ;
+    rdfs:label "has dynamic emotion"@en ;
+    rdfs:comment "Connects a user to a temporally-tracked dynamic emotion state recorded within a session."@en .
+
+ex:hasBehaviorProfile rdf:type owl:ObjectProperty ;
+    rdfs:domain ex:User ;
+    rdfs:range ex:BehaviorProfile ;
+    rdfs:label "has behavior profile"@en ;
+    rdfs:comment "Connects a user to their predicted behavior profile (e.g., Cognitive, Speed, Sedentary, Aggressive), as classified by the GRU-RNN behavioral model described in Fernandez et al. (2023)."@en .
+
+ex:recordedInSession rdf:type owl:ObjectProperty ;
+    rdfs:domain ex:DynamicEmotion ;
+    rdfs:range ex:EmotionSession ;
+    rdfs:label "recorded in session"@en ;
+    rdfs:comment "Links a dynamic emotion observation to the session in which it was recorded."@en .
+
+ex:hasInteraction rdf:type owl:ObjectProperty ;
+    rdfs:domain ex:EmotionSession ;
+    rdfs:range ex:UserInteraction ;
+    rdfs:label "has interaction"@en ;
+    rdfs:comment "Connects an emotion session to individual user interaction events within it."@en .
+
+ex:interactedWith rdf:type owl:ObjectProperty ;
+    rdfs:domain ex:UserInteraction ;
+    rdfs:range ex:Content ;
+    rdfs:label "interacted with"@en ;
+    rdfs:comment "Connects an interaction event to the content item the user acted on."@en .
+
+ex:changesOverTime rdf:type owl:ObjectProperty ;
+    rdfs:domain ex:DynamicEmotion ;
+    rdfs:range ex:DynamicEmotion ;
+    rdfs:label "changes over time"@en ;
+    rdfs:comment "Links two dynamic emotion states to represent temporal transitions, enabling temporal reasoning over emotional trajectories."@en .
+
+ex:populatedFrom rdf:type owl:ObjectProperty ;
+    rdfs:domain ex:UserInteraction ;
+    rdfs:range ex:DataSource ;
+    rdfs:label "populated from"@en ;
+    rdfs:comment "Documents the data source from which this interaction instance was extracted, supporting the provenance tracking approach of Norouzi et al. (2025)."@en .
+
+ex:derivedFromContext rdf:type owl:ObjectProperty ;
+    rdfs:domain ex:DynamicEmotion ;
+    rdfs:range ex:Context ;
+    rdfs:label "derived from context"@en ;
+    rdfs:comment "Links a dynamic emotion state to the contextual factors (time, environment) that contributed to it."@en .
+
+#################################################################
+# Data Properties  —  Phase 1 (unchanged)
 #################################################################
 
 ex:hasAge rdf:type owl:DatatypeProperty ;
@@ -258,7 +391,35 @@ ex:hasFeedbackScore rdf:type owl:DatatypeProperty ;
     rdfs:label "has feedback score"@en .
 
 #################################################################
-# Individuals - Users
+# NEW Data Properties  —  Phase 2 Extensions
+#################################################################
+
+ex:hasIntensityLevel rdf:type owl:DatatypeProperty ;
+    rdfs:domain ex:DynamicEmotion ;
+    rdfs:range xsd:decimal ;
+    rdfs:label "has intensity level"@en ;
+    rdfs:comment "A numeric score (0.0–1.0) representing the intensity of a dynamic emotion at the time of observation."@en .
+
+ex:hasTimestamp rdf:type owl:DatatypeProperty ;
+    rdfs:domain ex:EmotionSession ;
+    rdfs:range xsd:dateTime ;
+    rdfs:label "has timestamp"@en ;
+    rdfs:comment "The date-time when the emotion session was recorded."@en .
+
+ex:hasInteractionType rdf:type owl:DatatypeProperty ;
+    rdfs:domain ex:UserInteraction ;
+    rdfs:range xsd:string ;
+    rdfs:label "has interaction type"@en ;
+    rdfs:comment "The type of user interaction (e.g., 'play', 'skip', 'complete', 'like')."@en .
+
+ex:hasSourceURL rdf:type owl:DatatypeProperty ;
+    rdfs:domain ex:DataSource ;
+    rdfs:range xsd:anyURI ;
+    rdfs:label "has source URL"@en ;
+    rdfs:comment "The URL of the data source used for ontology population."@en .
+
+#################################################################
+# Individuals — Phase 1 (all retained)
 #################################################################
 
 ex:Elif rdf:type ex:User ;
@@ -303,33 +464,25 @@ ex:Deniz rdf:type ex:User ;
     ex:hasTimeContext ex:Evening ;
     ex:isInEnvironment ex:WithFriends .
 
-#################################################################
-# Individuals - Emotions
-#################################################################
-
-ex:Stress rdf:type ex:Emotion ;
+ex:Stress rdf:type ex:NegativeEmotion ;
     rdfs:label "Stress"@en ;
     ex:createsNeed ex:Relaxation .
 
-ex:Sadness rdf:type ex:Emotion ;
+ex:Sadness rdf:type ex:NegativeEmotion ;
     rdfs:label "Sadness"@en ;
     ex:createsNeed ex:EmotionalSupport .
 
-ex:Anxiety rdf:type ex:Emotion ;
+ex:Anxiety rdf:type ex:NegativeEmotion ;
     rdfs:label "Anxiety"@en ;
     ex:createsNeed ex:Calmness .
 
-ex:Tiredness rdf:type ex:Emotion ;
+ex:Tiredness rdf:type ex:NegativeEmotion ;
     rdfs:label "Tiredness"@en ;
     ex:createsNeed ex:Motivation .
 
-ex:Boredom rdf:type ex:Emotion ;
+ex:Boredom rdf:type ex:NeutralEmotion ;
     rdfs:label "Boredom"@en ;
     ex:createsNeed ex:Distraction .
-
-#################################################################
-# Individuals - Needs
-#################################################################
 
 ex:Relaxation rdf:type ex:Need ;
     rdfs:label "Relaxation"@en ;
@@ -352,28 +505,11 @@ ex:Distraction rdf:type ex:Need ;
     rdfs:label "Distraction"@en ;
     ex:satisfiedBy ex:PuzzleGame .
 
-#################################################################
-# Individuals - Content Categories
-#################################################################
-
-ex:Music rdf:type ex:ContentCategory ;
-    rdfs:label "Music"@en .
-
-ex:Movie rdf:type ex:ContentCategory ;
-    rdfs:label "Movie"@en .
-
-ex:Podcast rdf:type ex:ContentCategory ;
-    rdfs:label "Podcast"@en .
-
-ex:Meditation rdf:type ex:ContentCategory ;
-    rdfs:label "Meditation"@en .
-
-ex:Game rdf:type ex:ContentCategory ;
-    rdfs:label "Game"@en .
-
-#################################################################
-# Individuals - Content
-#################################################################
+ex:Music rdf:type ex:ContentCategory ; rdfs:label "Music"@en .
+ex:Movie rdf:type ex:ContentCategory ; rdfs:label "Movie"@en .
+ex:Podcast rdf:type ex:ContentCategory ; rdfs:label "Podcast"@en .
+ex:Meditation rdf:type ex:ContentCategory ; rdfs:label "Meditation"@en .
+ex:Game rdf:type ex:ContentCategory ; rdfs:label "Game"@en .
 
 ex:LoFiPlaylist rdf:type ex:Content ;
     rdfs:label "Lo-Fi Playlist"@en ;
@@ -435,10 +571,6 @@ ex:PuzzleGame rdf:type ex:Content ;
     ex:availableOnPlatform ex:MobileApp ;
     ex:hasDurationMinutes 20 .
 
-#################################################################
-# Individuals - Effects
-#################################################################
-
 ex:CalmingEffect rdf:type ex:Effect ;
     rdfs:label "Calming Effect"@en ;
     ex:relievesEmotion ex:Stress ;
@@ -460,109 +592,53 @@ ex:DistractingEffect rdf:type ex:Effect ;
     rdfs:label "Distracting Effect"@en ;
     ex:relievesEmotion ex:Boredom .
 
-#################################################################
-# Individuals - Contexts
-#################################################################
+ex:Morning rdf:type ex:TimeContext ; rdfs:label "Morning"@en .
+ex:Evening rdf:type ex:TimeContext ; rdfs:label "Evening"@en .
+ex:Night rdf:type ex:TimeContext ; rdfs:label "Night"@en .
+ex:Home rdf:type ex:Environment ; rdfs:label "Home"@en .
+ex:School rdf:type ex:Environment ; rdfs:label "School"@en .
+ex:Alone rdf:type ex:Environment ; rdfs:label "Alone"@en .
+ex:WithFriends rdf:type ex:Environment ; rdfs:label "With Friends"@en .
+# Personality individuals — instances of proper sub-classes
+ex:Introvert rdf:type ex:IntrovertedPersonality ;
+    rdfs:label "Introvert"@en ;
+    rdfs:comment "Introverted personality individual. Suitable for calm, solo, low-stimulation content."@en .
 
-ex:Morning rdf:type ex:TimeContext ;
-    rdfs:label "Morning"@en .
+ex:Extrovert rdf:type ex:ExtrovertedPersonality ;
+    rdfs:label "Extrovert"@en ;
+    rdfs:comment "Extroverted personality individual. Suitable for social, energetic content."@en .
 
-ex:Evening rdf:type ex:TimeContext ;
-    rdfs:label "Evening"@en .
+ex:AgreeableUser rdf:type ex:AgreeablePersonality ;
+    rdfs:label "Agreeable User"@en ;
+    rdfs:comment "Agreeable personality individual — enjoys emotionally warm, cooperative content."@en .
 
-ex:Night rdf:type ex:TimeContext ;
-    rdfs:label "Night"@en .
+ex:NeuroticiUser rdf:type ex:NeuroticlPersonality ;
+    rdfs:label "Neurotic User"@en ;
+    rdfs:comment "Neurotic personality individual — benefits most from calming, grounding content."@en .
 
-ex:Home rdf:type ex:Environment ;
-    rdfs:label "Home"@en .
+ex:OpenUser rdf:type ex:OpennessPersonality ;
+    rdfs:label "Open User"@en ;
+    rdfs:comment "High-openness personality individual — enjoys novel, artistic, experimental content."@en .
 
-ex:School rdf:type ex:Environment ;
-    rdfs:label "School"@en .
+ex:ConscientiousUser rdf:type ex:ConscientiousPersonality ;
+    rdfs:label "Conscientious User"@en ;
+    rdfs:comment "Conscientious personality individual — prefers structured, educational content."@en .
+ex:LikesMusic rdf:type ex:Preference ; rdfs:label "Likes Music"@en .
+ex:LikesMovies rdf:type ex:Preference ; rdfs:label "Likes Movies"@en .
+ex:LikesPodcasts rdf:type ex:Preference ; rdfs:label "Likes Podcasts"@en .
+ex:LikesGames rdf:type ex:Preference ; rdfs:label "Likes Games"@en .
+ex:LikesShortContent rdf:type ex:Preference ; rdfs:label "Likes Short Content"@en .
+ex:Spotify rdf:type ex:Platform ; rdfs:label "Spotify"@en .
+ex:Netflix rdf:type ex:Platform ; rdfs:label "Netflix"@en .
+ex:MobileApp rdf:type ex:Platform ; rdfs:label "Mobile Application"@en .
+ex:ReduceStress rdf:type ex:Intention ; rdfs:label "Reduce Stress"@en .
+ex:ImproveMood rdf:type ex:Intention ; rdfs:label "Improve Mood"@en .
+ex:IncreaseMotivation rdf:type ex:Intention ; rdfs:label "Increase Motivation"@en .
 
-ex:Alone rdf:type ex:Environment ;
-    rdfs:label "Alone"@en .
-
-ex:WithFriends rdf:type ex:Environment ;
-    rdfs:label "With Friends"@en .
-
-#################################################################
-# Individuals - Personality
-#################################################################
-
-ex:Introvert rdf:type ex:Personality ;
-    rdfs:label "Introvert"@en .
-
-ex:Extrovert rdf:type ex:Personality ;
-    rdfs:label "Extrovert"@en .
-
-#################################################################
-# Individuals - Preferences
-#################################################################
-
-ex:LikesMusic rdf:type ex:Preference ;
-    rdfs:label "Likes Music"@en .
-
-ex:LikesMovies rdf:type ex:Preference ;
-    rdfs:label "Likes Movies"@en .
-
-ex:LikesPodcasts rdf:type ex:Preference ;
-    rdfs:label "Likes Podcasts"@en .
-
-ex:LikesGames rdf:type ex:Preference ;
-    rdfs:label "Likes Games"@en .
-
-ex:LikesShortContent rdf:type ex:Preference ;
-    rdfs:label "Likes Short Content"@en .
-
-#################################################################
-# Individuals - Platforms
-#################################################################
-
-ex:Spotify rdf:type ex:Platform ;
-    rdfs:label "Spotify"@en .
-
-ex:Netflix rdf:type ex:Platform ;
-    rdfs:label "Netflix"@en .
-
-ex:MobileApp rdf:type ex:Platform ;
-    rdfs:label "Mobile Application"@en .
-
-#################################################################
-# Individuals - Intentions
-#################################################################
-
-ex:ReduceStress rdf:type ex:Intention ;
-    rdfs:label "Reduce Stress"@en .
-
-ex:ImproveMood rdf:type ex:Intention ;
-    rdfs:label "Improve Mood"@en .
-
-ex:IncreaseMotivation rdf:type ex:Intention ;
-    rdfs:label "Increase Motivation"@en .
-
-#################################################################
-# Individuals - Feedback
-#################################################################
-
-ex:Feedback001 rdf:type ex:Feedback ;
-    rdfs:label "Positive feedback for recommendation 001"@en ;
-    ex:hasFeedbackScore 5 .
-
-ex:Feedback002 rdf:type ex:Feedback ;
-    rdfs:label "Positive feedback for recommendation 002"@en ;
-    ex:hasFeedbackScore 4 .
-
-ex:Feedback003 rdf:type ex:Feedback ;
-    rdfs:label "Positive feedback for recommendation 003"@en ;
-    ex:hasFeedbackScore 4 .
-
-ex:Feedback004 rdf:type ex:Feedback ;
-    rdfs:label "Positive feedback for recommendation 004"@en ;
-    ex:hasFeedbackScore 5 .
-
-#################################################################
-# Individuals - Recommendations
-#################################################################
+ex:Feedback001 rdf:type ex:Feedback ; rdfs:label "Positive feedback 001"@en ; ex:hasFeedbackScore 5 .
+ex:Feedback002 rdf:type ex:Feedback ; rdfs:label "Positive feedback 002"@en ; ex:hasFeedbackScore 4 .
+ex:Feedback003 rdf:type ex:Feedback ; rdfs:label "Positive feedback 003"@en ; ex:hasFeedbackScore 4 .
+ex:Feedback004 rdf:type ex:Feedback ; rdfs:label "Positive feedback 004"@en ; ex:hasFeedbackScore 5 .
 
 ex:Recommendation001 rdf:type ex:Recommendation ;
     rdfs:label "Stress relief music recommendation for Elif"@en ;
@@ -612,3 +688,83 @@ ex:Recommendation004 rdf:type ex:Recommendation ;
     ex:hasIntention ex:IncreaseMotivation ;
     ex:hasFeedback ex:Feedback004 ;
     ex:hasConfidenceScore 0.88 .
+
+#################################################################
+# NEW Individuals  —  Phase 2 Extensions
+#################################################################
+
+# Behavior Profiles (mapped from Fernandez et al. 2023 GRU-RNN classes)
+ex:CognitiveBehavior rdf:type ex:BehaviorProfile ;
+    rdfs:label "Cognitive Behavior"@en ;
+    rdfs:comment "User who engages deeply with content, high intellectual processing."@en .
+
+ex:SpeedBehavior rdf:type ex:BehaviorProfile ;
+    rdfs:label "Speed Behavior"@en ;
+    rdfs:comment "User who consumes content quickly, prefers short-form recommendations."@en .
+
+ex:SedentaryBehavior rdf:type ex:BehaviorProfile ;
+    rdfs:label "Sedentary Behavior"@en ;
+    rdfs:comment "User with passive interaction patterns, low effort content preferred."@en .
+
+ex:AggressiveBehavior rdf:type ex:BehaviorProfile ;
+    rdfs:label "Aggressive Behavior"@en ;
+    rdfs:comment "User who skips content frequently, indicating high selectivity or stress."@en .
+
+# Dynamic Emotions for Elif (temporal change example)
+ex:ElilStressHigh rdf:type ex:DynamicEmotion ;
+    rdfs:label "Elif - High Stress at Night"@en ;
+    ex:hasIntensityLevel 0.85 ;
+    ex:derivedFromContext ex:Night ;
+    ex:derivedFromContext ex:Alone .
+
+ex:ElifStressLow rdf:type ex:DynamicEmotion ;
+    rdfs:label "Elif - Low Stress After Listening"@en ;
+    ex:hasIntensityLevel 0.30 ;
+    ex:changesOverTime ex:ElilStressHigh .
+
+# Assign dynamic emotions and behavior profiles to users
+ex:Elif ex:hasDynamicEmotion ex:ElilStressHigh ;
+    ex:hasBehaviorProfile ex:SpeedBehavior .
+
+ex:Enes ex:hasDynamicEmotion ex:EnesLowMotivationMorning ;
+    ex:hasBehaviorProfile ex:CognitiveBehavior .
+
+ex:EnesLowMotivationMorning rdf:type ex:DynamicEmotion ;
+    rdfs:label "Enes - Low Motivation in Morning"@en ;
+    ex:hasIntensityLevel 0.65 ;
+    ex:derivedFromContext ex:Morning ;
+    ex:derivedFromContext ex:School .
+
+# Emotion Sessions
+ex:Session001 rdf:type ex:EmotionSession ;
+    rdfs:label "Elif Evening Session 2026-05-14"@en ;
+    ex:hasTimestamp "2026-05-14T21:30:00"^^xsd:dateTime ;
+    ex:hasInteraction ex:Interaction001 ;
+    ex:hasInteraction ex:Interaction002 .
+
+# User Interactions
+ex:Interaction001 rdf:type ex:UserInteraction ;
+    rdfs:label "Elif plays LoFi Playlist"@en ;
+    ex:hasInteractionType "play" ;
+    ex:interactedWith ex:LoFiPlaylist ;
+    ex:populatedFrom ex:SpotifyAPISource .
+
+ex:Interaction002 rdf:type ex:UserInteraction ;
+    rdfs:label "Elif completes Breathing Exercise"@en ;
+    ex:hasInteractionType "complete" ;
+    ex:interactedWith ex:BreathingExercise ;
+    ex:populatedFrom ex:SpotifyAPISource .
+
+# Dynamic Emotion linked to session
+ex:ElilStressHigh ex:recordedInSession ex:Session001 .
+
+# Data Sources
+ex:SpotifyAPISource rdf:type ex:DataSource ;
+    rdfs:label "Spotify Web API"@en ;
+    rdfs:comment "User listening history and interaction logs collected via the Spotify Web API."@en ;
+    ex:hasSourceURL <https://developer.spotify.com/documentation/web-api> .
+
+ex:KaggleEmotionDataset rdf:type ex:DataSource ;
+    rdfs:label "Kaggle Emotion-Music Dataset"@en ;
+    rdfs:comment "Publicly available dataset mapping emotion labels to music features, used for ontology population."@en ;
+    ex:hasSourceURL <https://www.kaggle.com/datasets/musicemotionrecognition> .
