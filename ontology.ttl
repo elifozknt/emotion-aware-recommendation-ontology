@@ -7,9 +7,9 @@
 @prefix vann: <http://purl.org/vocab/vann/> .
 @prefix schema: <https://schema.org/> .
 
-#################################################################
+################################################################
 # Ontology Information
-#################################################################
+################################################################
 
 ex:EmotionAwareRecommendationOntology rdf:type owl:Ontology ;
     rdfs:label "Emotion-Aware Intelligent Recommendation Ontology"@en ;
