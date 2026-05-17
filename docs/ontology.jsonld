@@ -1,4 +1,46 @@
 [ {
+  "@id" : "http://example.org/emotion-aware-recommendation#AggressiveBehavior",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#BehaviorProfile"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "User who skips content frequently, indicating high selectivity or stress."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Aggressive Behavior"
+  } ]
+}, {
+  "@id" : "http://example.org/emotion-aware-recommendation#AgreeablePersonality",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A personality type characterized by cooperativeness, empathy, and trust. Agreeable users tend to enjoy emotionally warm content (e.g., feel-good movies, collaborative games, uplifting podcasts)."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Agreeable Personality"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#Personality"
+  } ]
+}, {
+  "@id" : "http://example.org/emotion-aware-recommendation#AgreeableUser",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#AgreeablePersonality"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Agreeable personality individual — enjoys emotionally warm, cooperative content."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Agreeable User"
+  } ]
+}, {
   "@id" : "http://example.org/emotion-aware-recommendation#Alone",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
@@ -15,11 +57,22 @@
     "@id" : "http://example.org/emotion-aware-recommendation#Calmness"
   } ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "http://example.org/emotion-aware-recommendation#Emotion"
+    "@id" : "http://example.org/emotion-aware-recommendation#NegativeEmotion"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Anxiety"
+  } ]
+}, {
+  "@id" : "http://example.org/emotion-aware-recommendation#BehaviorProfile",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A classification of the user's interaction behavior style, analogous to the four behavioral classes (Cognitive, Speed, Sedentary, Aggressive) predicted by Fernandez et al. (2023). Used to personalize recommendation frequency and content depth."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Behavior Profile"
   } ]
 }, {
   "@id" : "http://example.org/emotion-aware-recommendation#Boredom",
@@ -28,7 +81,7 @@
     "@id" : "http://example.org/emotion-aware-recommendation#Distraction"
   } ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "http://example.org/emotion-aware-recommendation#Emotion"
+    "@id" : "http://example.org/emotion-aware-recommendation#NeutralEmotion"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -127,6 +180,20 @@
     "@value" : "Calmness"
   } ]
 }, {
+  "@id" : "http://example.org/emotion-aware-recommendation#CognitiveBehavior",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#BehaviorProfile"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "User who engages deeply with content, high intellectual processing."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Cognitive Behavior"
+  } ]
+}, {
   "@id" : "http://example.org/emotion-aware-recommendation#ComfortMovie",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://example.org/emotion-aware-recommendation#availableOnPlatform" : [ {
@@ -162,6 +229,34 @@
     "@value" : "Comfort Movie"
   } ]
 }, {
+  "@id" : "http://example.org/emotion-aware-recommendation#ConscientiousPersonality",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A personality type characterized by organization, goal-directedness, and discipline. Conscientious users prefer structured, purposeful content (e.g., educational podcasts, productivity music, self-improvement content)."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Conscientious Personality"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#Personality"
+  } ]
+}, {
+  "@id" : "http://example.org/emotion-aware-recommendation#ConscientiousUser",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#ConscientiousPersonality"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Conscientious personality individual — prefers structured, educational content."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Conscientious User"
+  } ]
+}, {
   "@id" : "http://example.org/emotion-aware-recommendation#Content",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
@@ -193,6 +288,17 @@
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Context"
+  } ]
+}, {
+  "@id" : "http://example.org/emotion-aware-recommendation#DataSource",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A source of data used to populate the ontology with instances (e.g., Kaggle dataset, Spotify API, survey). Supports the data provenance tracking recommended by Norouzi et al. (2025) for LLM-based knowledge graph population."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Data Source"
   } ]
 }, {
   "@id" : "http://example.org/emotion-aware-recommendation#Deniz",
@@ -253,6 +359,20 @@
     "@value" : "Distraction"
   } ]
 }, {
+  "@id" : "http://example.org/emotion-aware-recommendation#DynamicEmotion",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "An emotion state that changes over time and is tracked across multiple sessions. Inspired by the temporal behavioral modeling in Fernandez et al. (2023) GRU-RNN framework, which predicts evolving user behavior styles across sessions."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Dynamic Emotion"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#Emotion"
+  } ]
+}, {
   "@id" : "http://example.org/emotion-aware-recommendation#Effect",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
@@ -272,6 +392,12 @@
   "http://example.org/emotion-aware-recommendation#hasAge" : [ {
     "@type" : "http://www.w3.org/2001/XMLSchema#integer",
     "@value" : "21"
+  } ],
+  "http://example.org/emotion-aware-recommendation#hasBehaviorProfile" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#SpeedBehavior"
+  } ],
+  "http://example.org/emotion-aware-recommendation#hasDynamicEmotion" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#ElilStressHigh"
   } ],
   "http://example.org/emotion-aware-recommendation#hasNeed" : [ {
     "@id" : "http://example.org/emotion-aware-recommendation#Relaxation"
@@ -300,11 +426,50 @@
     "@value" : "Elif"
   } ]
 }, {
+  "@id" : "http://example.org/emotion-aware-recommendation#ElifStressLow",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://example.org/emotion-aware-recommendation#changesOverTime" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#ElilStressHigh"
+  } ],
+  "http://example.org/emotion-aware-recommendation#hasIntensityLevel" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#decimal",
+    "@value" : "0.30"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#DynamicEmotion"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Elif - Low Stress After Listening"
+  } ]
+}, {
+  "@id" : "http://example.org/emotion-aware-recommendation#ElilStressHigh",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://example.org/emotion-aware-recommendation#derivedFromContext" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#Alone"
+  }, {
+    "@id" : "http://example.org/emotion-aware-recommendation#Night"
+  } ],
+  "http://example.org/emotion-aware-recommendation#hasIntensityLevel" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#decimal",
+    "@value" : "0.85"
+  } ],
+  "http://example.org/emotion-aware-recommendation#recordedInSession" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#Session001"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#DynamicEmotion"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Elif - High Stress at Night"
+  } ]
+}, {
   "@id" : "http://example.org/emotion-aware-recommendation#Emotion",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
-    "@value" : "An emotional state experienced by a user."
+    "@value" : "An emotional state experienced by a user. Inspired by the UniEmotion ontology (Kim 2013) and Kim & Lee (2015) emotion ontology for recommendation, emotions are categorized as Positive, Negative, or Neutral/Factual."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -329,10 +494,14 @@
   } ],
   "http://purl.org/dc/terms/description" : [ {
     "@language" : "en",
-    "@value" : "This ontology models an intelligent recommendation system that provides personalized content suggestions based on the user's emotional state, contextual situation, personality traits, and needs."
+    "@value" : "This ontology models an intelligent recommendation system that provides personalized content suggestions based on the user's emotional state, contextual situation, personality traits, and needs. Phase 2 adds DynamicEmotion, BehaviorProfile, EmotionSession, UserInteraction, and DataSource classes inspired by Norouzi et al. (2025) ontology population with LLMs and Fernandez et al. (2023) GRU-RNN behavioral prediction."
   } ],
   "http://purl.org/dc/terms/license" : [ {
     "@id" : "https://creativecommons.org/licenses/by/4.0/"
+  } ],
+  "http://purl.org/dc/terms/modified" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#date",
+    "@value" : "2026-05-14"
   } ],
   "http://purl.org/dc/terms/publisher" : [ {
     "@language" : "en",
@@ -350,17 +519,31 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
-    "@value" : "An ontology for modeling personalized recommendations based on user emotions, needs, context, personality traits, preferences, content types, and content effects."
+    "@value" : "An ontology for modeling personalized recommendations based on user emotions, needs, context, personality traits, preferences, content types, and content effects. Version 2 extends the ontology with dynamic emotion tracking, behavioral prediction, LLM-based population support, and session-level interaction modeling."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Emotion-Aware Intelligent Recommendation Ontology"
   } ],
-  "http://www.w3.org/2002/07/owl#versionInfo" : [ {
+  "http://www.w3.org/2002/07/owl#priorVersion" : [ {
     "@value" : "1.0.0"
+  } ],
+  "http://www.w3.org/2002/07/owl#versionInfo" : [ {
+    "@value" : "2.0.0"
   } ],
   "https://schema.org/codeRepository" : [ {
     "@id" : "https://github.com/elifozknt/emotion-aware-recommendation-ontology"
+  } ]
+}, {
+  "@id" : "http://example.org/emotion-aware-recommendation#EmotionSession",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A bounded time window during which a user's emotional state and interactions are recorded. Enables longitudinal modeling of emotion change, supporting the dynamic emotion tracking capability."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Emotion Session"
   } ]
 }, {
   "@id" : "http://example.org/emotion-aware-recommendation#EmotionalReliefEffect",
@@ -398,6 +581,12 @@
     "@type" : "http://www.w3.org/2001/XMLSchema#integer",
     "@value" : "22"
   } ],
+  "http://example.org/emotion-aware-recommendation#hasBehaviorProfile" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#CognitiveBehavior"
+  } ],
+  "http://example.org/emotion-aware-recommendation#hasDynamicEmotion" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#EnesLowMotivationMorning"
+  } ],
   "http://example.org/emotion-aware-recommendation#hasNeed" : [ {
     "@id" : "http://example.org/emotion-aware-recommendation#Motivation"
   } ],
@@ -419,6 +608,25 @@
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Enes"
+  } ]
+}, {
+  "@id" : "http://example.org/emotion-aware-recommendation#EnesLowMotivationMorning",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://example.org/emotion-aware-recommendation#derivedFromContext" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#Morning"
+  }, {
+    "@id" : "http://example.org/emotion-aware-recommendation#School"
+  } ],
+  "http://example.org/emotion-aware-recommendation#hasIntensityLevel" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#decimal",
+    "@value" : "0.65"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#DynamicEmotion"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Enes - Low Motivation in Morning"
   } ]
 }, {
   "@id" : "http://example.org/emotion-aware-recommendation#Environment",
@@ -448,11 +656,29 @@
   "@id" : "http://example.org/emotion-aware-recommendation#Extrovert",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "http://example.org/emotion-aware-recommendation#Personality"
+    "@id" : "http://example.org/emotion-aware-recommendation#ExtrovertedPersonality"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Extroverted personality individual. Suitable for social, energetic content."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Extrovert"
+  } ]
+}, {
+  "@id" : "http://example.org/emotion-aware-recommendation#ExtrovertedPersonality",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A personality type characterized by sociability, high energy, and preference for stimulating environments. Extroverted users tend to prefer social, upbeat, or group-oriented content (e.g., party playlists, group films)."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Extroverted Personality"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#Personality"
   } ]
 }, {
   "@id" : "http://example.org/emotion-aware-recommendation#Feedback",
@@ -477,7 +703,7 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
-    "@value" : "Positive feedback for recommendation 001"
+    "@value" : "Positive feedback 001"
   } ]
 }, {
   "@id" : "http://example.org/emotion-aware-recommendation#Feedback002",
@@ -491,7 +717,7 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
-    "@value" : "Positive feedback for recommendation 002"
+    "@value" : "Positive feedback 002"
   } ]
 }, {
   "@id" : "http://example.org/emotion-aware-recommendation#Feedback003",
@@ -505,7 +731,7 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
-    "@value" : "Positive feedback for recommendation 003"
+    "@value" : "Positive feedback 003"
   } ]
 }, {
   "@id" : "http://example.org/emotion-aware-recommendation#Feedback004",
@@ -519,7 +745,7 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
-    "@value" : "Positive feedback for recommendation 004"
+    "@value" : "Positive feedback 004"
   } ]
 }, {
   "@id" : "http://example.org/emotion-aware-recommendation#Game",
@@ -573,14 +799,87 @@
     "@value" : "Intention"
   } ]
 }, {
+  "@id" : "http://example.org/emotion-aware-recommendation#Interaction001",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://example.org/emotion-aware-recommendation#hasInteractionType" : [ {
+    "@value" : "play"
+  } ],
+  "http://example.org/emotion-aware-recommendation#interactedWith" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#LoFiPlaylist"
+  } ],
+  "http://example.org/emotion-aware-recommendation#populatedFrom" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#SpotifyAPISource"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#UserInteraction"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Elif plays LoFi Playlist"
+  } ]
+}, {
+  "@id" : "http://example.org/emotion-aware-recommendation#Interaction002",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://example.org/emotion-aware-recommendation#hasInteractionType" : [ {
+    "@value" : "complete"
+  } ],
+  "http://example.org/emotion-aware-recommendation#interactedWith" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#BreathingExercise"
+  } ],
+  "http://example.org/emotion-aware-recommendation#populatedFrom" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#SpotifyAPISource"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#UserInteraction"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Elif completes Breathing Exercise"
+  } ]
+}, {
   "@id" : "http://example.org/emotion-aware-recommendation#Introvert",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "http://example.org/emotion-aware-recommendation#Personality"
+    "@id" : "http://example.org/emotion-aware-recommendation#IntrovertedPersonality"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Introverted personality individual. Suitable for calm, solo, low-stimulation content."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Introvert"
+  } ]
+}, {
+  "@id" : "http://example.org/emotion-aware-recommendation#IntrovertedPersonality",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A personality type characterized by preference for solitary activities, deep focus, and low-stimulation environments. Introverted users tend to prefer calm, solo content (e.g., lo-fi music, meditation, solo games)."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Introverted Personality"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#Personality"
+  } ]
+}, {
+  "@id" : "http://example.org/emotion-aware-recommendation#KaggleEmotionDataset",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://example.org/emotion-aware-recommendation#hasSourceURL" : [ {
+    "@id" : "https://www.kaggle.com/datasets/musicemotionrecognition"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#DataSource"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Publicly available dataset mapping emotion labels to music features, used for ontology population."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Kaggle Emotion-Music Dataset"
   } ]
 }, {
   "@id" : "http://example.org/emotion-aware-recommendation#LikesGames",
@@ -815,6 +1114,20 @@
     "@value" : "Need"
   } ]
 }, {
+  "@id" : "http://example.org/emotion-aware-recommendation#NegativeEmotion",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "An emotion associated with unpleasant or unfavorable affective states. Corresponds to 'negative emotional tags' in the UniEmotion ontology (Kim 2013). Examples: stress, sadness, anxiety, tiredness."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Negative Emotion"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#Emotion"
+  } ]
+}, {
   "@id" : "http://example.org/emotion-aware-recommendation#Netflix",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
@@ -823,6 +1136,48 @@
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Netflix"
+  } ]
+}, {
+  "@id" : "http://example.org/emotion-aware-recommendation#NeuroticiUser",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#NeuroticlPersonality"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Neurotic personality individual — benefits most from calming, grounding content."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Neurotic User"
+  } ]
+}, {
+  "@id" : "http://example.org/emotion-aware-recommendation#NeuroticlPersonality",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A personality type characterized by emotional instability and high sensitivity to stress. Neurotic users benefit most from calming, grounding content (e.g., meditation, nature soundscapes, breathing exercises)."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Neurotic Personality"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#Personality"
+  } ]
+}, {
+  "@id" : "http://example.org/emotion-aware-recommendation#NeutralEmotion",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A factual or neutral affective state with neither strong positive nor negative valence. Corresponds to 'factual tags' in the UniEmotion ontology (Kim 2013). Examples: calmness, focus, boredom."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Neutral Emotion"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#Emotion"
   } ]
 }, {
   "@id" : "http://example.org/emotion-aware-recommendation#Night",
@@ -835,11 +1190,39 @@
     "@value" : "Night"
   } ]
 }, {
+  "@id" : "http://example.org/emotion-aware-recommendation#OpenUser",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#OpennessPersonality"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "High-openness personality individual — enjoys novel, artistic, experimental content."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Open User"
+  } ]
+}, {
+  "@id" : "http://example.org/emotion-aware-recommendation#OpennessPersonality",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A personality type characterized by curiosity, creativity, and appreciation of art. Users high in openness tend to enjoy diverse, novel, or artistic content (e.g., experimental music, documentaries, creative games)."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Openness Personality"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#Personality"
+  } ]
+}, {
   "@id" : "http://example.org/emotion-aware-recommendation#Personality",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
-    "@value" : "A personality trait that may affect recommendation suitability."
+    "@value" : "A personality trait based on the Big Five model that may affect recommendation suitability. Sub-classes represent the primary personality dimensions relevant to emotion-based recommendation."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -865,6 +1248,20 @@
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Podcast"
+  } ]
+}, {
+  "@id" : "http://example.org/emotion-aware-recommendation#PositiveEmotion",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "An emotion associated with pleasant, favorable affective states. Corresponds to 'positive emotional tags' in the UniEmotion ontology (Kim 2013). Examples: happiness, excitement, contentment."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Positive Emotion"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#Emotion"
   } ]
 }, {
   "@id" : "http://example.org/emotion-aware-recommendation#Preference",
@@ -1112,7 +1509,7 @@
     "@id" : "http://example.org/emotion-aware-recommendation#EmotionalSupport"
   } ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "http://example.org/emotion-aware-recommendation#Emotion"
+    "@id" : "http://example.org/emotion-aware-recommendation#NegativeEmotion"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -1129,6 +1526,53 @@
     "@value" : "School"
   } ]
 }, {
+  "@id" : "http://example.org/emotion-aware-recommendation#SedentaryBehavior",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#BehaviorProfile"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "User with passive interaction patterns, low effort content preferred."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Sedentary Behavior"
+  } ]
+}, {
+  "@id" : "http://example.org/emotion-aware-recommendation#Session001",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://example.org/emotion-aware-recommendation#hasInteraction" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#Interaction001"
+  }, {
+    "@id" : "http://example.org/emotion-aware-recommendation#Interaction002"
+  } ],
+  "http://example.org/emotion-aware-recommendation#hasTimestamp" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#dateTime",
+    "@value" : "2026-05-14T21:30:00"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#EmotionSession"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Elif Evening Session 2026-05-14"
+  } ]
+}, {
+  "@id" : "http://example.org/emotion-aware-recommendation#SpeedBehavior",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#BehaviorProfile"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "User who consumes content quickly, prefers short-form recommendations."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Speed Behavior"
+  } ]
+}, {
   "@id" : "http://example.org/emotion-aware-recommendation#Spotify",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
@@ -1139,13 +1583,30 @@
     "@value" : "Spotify"
   } ]
 }, {
+  "@id" : "http://example.org/emotion-aware-recommendation#SpotifyAPISource",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://example.org/emotion-aware-recommendation#hasSourceURL" : [ {
+    "@id" : "https://developer.spotify.com/documentation/web-api"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#DataSource"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "User listening history and interaction logs collected via the Spotify Web API."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Spotify Web API"
+  } ]
+}, {
   "@id" : "http://example.org/emotion-aware-recommendation#Stress",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://example.org/emotion-aware-recommendation#createsNeed" : [ {
     "@id" : "http://example.org/emotion-aware-recommendation#Relaxation"
   } ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "http://example.org/emotion-aware-recommendation#Emotion"
+    "@id" : "http://example.org/emotion-aware-recommendation#NegativeEmotion"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -1172,7 +1633,7 @@
     "@id" : "http://example.org/emotion-aware-recommendation#Motivation"
   } ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "http://example.org/emotion-aware-recommendation#Emotion"
+    "@id" : "http://example.org/emotion-aware-recommendation#NegativeEmotion"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -1188,6 +1649,17 @@
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "User"
+  } ]
+}, {
+  "@id" : "http://example.org/emotion-aware-recommendation#UserInteraction",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A single recorded interaction event between a user and a recommended content item (e.g., play, skip, complete). Used to populate ontology instances from log data, as described in the LLM-based ontology population approach of Norouzi et al. (2025)."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "User Interaction"
   } ]
 }, {
   "@id" : "http://example.org/emotion-aware-recommendation#WithFriends",
@@ -1268,6 +1740,23 @@
     "@id" : "http://example.org/emotion-aware-recommendation#ContentCategory"
   } ]
 }, {
+  "@id" : "http://example.org/emotion-aware-recommendation#changesOverTime",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Links two dynamic emotion states to represent temporal transitions, enabling temporal reasoning over emotional trajectories."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#DynamicEmotion"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "changes over time"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#DynamicEmotion"
+  } ]
+}, {
   "@id" : "http://example.org/emotion-aware-recommendation#considersContext",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
@@ -1300,6 +1789,23 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "http://example.org/emotion-aware-recommendation#Need"
+  } ]
+}, {
+  "@id" : "http://example.org/emotion-aware-recommendation#derivedFromContext",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Links a dynamic emotion state to the contextual factors (time, environment) that contributed to it."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#DynamicEmotion"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "derived from context"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#Context"
   } ]
 }, {
   "@id" : "http://example.org/emotion-aware-recommendation#feels",
@@ -1349,6 +1855,23 @@
     "@id" : "http://www.w3.org/2001/XMLSchema#integer"
   } ]
 }, {
+  "@id" : "http://example.org/emotion-aware-recommendation#hasBehaviorProfile",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Connects a user to their predicted behavior profile (e.g., Cognitive, Speed, Sedentary, Aggressive), as classified by the GRU-RNN behavioral model described in Fernandez et al. (2023)."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#User"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "has behavior profile"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#BehaviorProfile"
+  } ]
+}, {
   "@id" : "http://example.org/emotion-aware-recommendation#hasConfidenceScore",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
@@ -1373,6 +1896,23 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "http://www.w3.org/2001/XMLSchema#integer"
+  } ]
+}, {
+  "@id" : "http://example.org/emotion-aware-recommendation#hasDynamicEmotion",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Connects a user to a temporally-tracked dynamic emotion state recorded within a session."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#User"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "has dynamic emotion"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#DynamicEmotion"
   } ]
 }, {
   "@id" : "http://example.org/emotion-aware-recommendation#hasEffect",
@@ -1422,6 +1962,23 @@
     "@id" : "http://www.w3.org/2001/XMLSchema#integer"
   } ]
 }, {
+  "@id" : "http://example.org/emotion-aware-recommendation#hasIntensityLevel",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A numeric score (0.0–1.0) representing the intensity of a dynamic emotion at the time of observation."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#DynamicEmotion"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "has intensity level"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#decimal"
+  } ]
+}, {
   "@id" : "http://example.org/emotion-aware-recommendation#hasIntention",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
@@ -1437,6 +1994,40 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "http://example.org/emotion-aware-recommendation#Intention"
+  } ]
+}, {
+  "@id" : "http://example.org/emotion-aware-recommendation#hasInteraction",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Connects an emotion session to individual user interaction events within it."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#EmotionSession"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "has interaction"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#UserInteraction"
+  } ]
+}, {
+  "@id" : "http://example.org/emotion-aware-recommendation#hasInteractionType",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "The type of user interaction (e.g., 'play', 'skip', 'complete', 'like')."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#UserInteraction"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "has interaction type"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#string"
   } ]
 }, {
   "@id" : "http://example.org/emotion-aware-recommendation#hasNeed",
@@ -1490,6 +2081,23 @@
     "@id" : "http://example.org/emotion-aware-recommendation#Preference"
   } ]
 }, {
+  "@id" : "http://example.org/emotion-aware-recommendation#hasSourceURL",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "The URL of the data source used for ontology population."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#DataSource"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "has source URL"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#anyURI"
+  } ]
+}, {
   "@id" : "http://example.org/emotion-aware-recommendation#hasTimeContext",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
@@ -1507,6 +2115,23 @@
     "@id" : "http://example.org/emotion-aware-recommendation#TimeContext"
   } ]
 }, {
+  "@id" : "http://example.org/emotion-aware-recommendation#hasTimestamp",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "The date-time when the emotion session was recorded."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#EmotionSession"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "has timestamp"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#dateTime"
+  } ]
+}, {
   "@id" : "http://example.org/emotion-aware-recommendation#includesContent",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
@@ -1519,6 +2144,23 @@
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "includes content"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#Content"
+  } ]
+}, {
+  "@id" : "http://example.org/emotion-aware-recommendation#interactedWith",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Connects an interaction event to the content item the user acted on."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#UserInteraction"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "interacted with"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "http://example.org/emotion-aware-recommendation#Content"
@@ -1556,6 +2198,40 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "http://example.org/emotion-aware-recommendation#Preference"
+  } ]
+}, {
+  "@id" : "http://example.org/emotion-aware-recommendation#populatedFrom",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Documents the data source from which this interaction instance was extracted, supporting the provenance tracking approach of Norouzi et al. (2025)."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#UserInteraction"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "populated from"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#DataSource"
+  } ]
+}, {
+  "@id" : "http://example.org/emotion-aware-recommendation#recordedInSession",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Links a dynamic emotion observation to the session in which it was recorded."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#DynamicEmotion"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "recorded in session"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://example.org/emotion-aware-recommendation#EmotionSession"
   } ]
 }, {
   "@id" : "http://example.org/emotion-aware-recommendation#relievesEmotion",
@@ -1653,6 +2329,9 @@
   "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
 }, {
   "@id" : "http://purl.org/dc/terms/license",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://purl.org/dc/terms/modified",
   "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
 }, {
   "@id" : "http://purl.org/dc/terms/publisher",

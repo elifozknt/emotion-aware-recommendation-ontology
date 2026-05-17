@@ -15,15 +15,17 @@
         <terms:creator xml:lang="en">Büşra Pehlivanlar</terms:creator>
         <terms:creator xml:lang="en">Elif Özkanat</terms:creator>
         <terms:creator xml:lang="en">Enes Ulucan</terms:creator>
-        <terms:description xml:lang="en">This ontology models an intelligent recommendation system that provides personalized content suggestions based on the user&apos;s emotional state, contextual situation, personality traits, and needs.</terms:description>
+        <terms:description xml:lang="en">This ontology models an intelligent recommendation system that provides personalized content suggestions based on the user&apos;s emotional state, contextual situation, personality traits, and needs. Phase 2 adds DynamicEmotion, BehaviorProfile, EmotionSession, UserInteraction, and DataSource classes inspired by Norouzi et al. (2025) ontology population with LLMs and Fernandez et al. (2023) GRU-RNN behavioral prediction.</terms:description>
         <terms:license rdf:resource="https://creativecommons.org/licenses/by/4.0/"/>
+        <terms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-05-14</terms:modified>
         <terms:publisher xml:lang="en">Manisa Celal Bayar University</terms:publisher>
         <terms:title xml:lang="en">Emotion-Aware Intelligent Recommendation Ontology</terms:title>
         <vann:preferredNamespacePrefix>ex</vann:preferredNamespacePrefix>
         <vann:preferredNamespaceUri>http://example.org/emotion-aware-recommendation#</vann:preferredNamespaceUri>
-        <rdfs:comment xml:lang="en">An ontology for modeling personalized recommendations based on user emotions, needs, context, personality traits, preferences, content types, and content effects.</rdfs:comment>
+        <rdfs:comment xml:lang="en">An ontology for modeling personalized recommendations based on user emotions, needs, context, personality traits, preferences, content types, and content effects. Version 2 extends the ontology with dynamic emotion tracking, behavioral prediction, LLM-based population support, and session-level interaction modeling.</rdfs:comment>
         <rdfs:label xml:lang="en">Emotion-Aware Intelligent Recommendation Ontology</rdfs:label>
-        <owl:versionInfo>1.0.0</owl:versionInfo>
+        <owl:priorVersion>1.0.0</owl:priorVersion>
+        <owl:versionInfo>2.0.0</owl:versionInfo>
         <schema:codeRepository rdf:resource="https://github.com/elifozknt/emotion-aware-recommendation-ontology"/>
     </owl:Ontology>
     
@@ -66,6 +68,13 @@
 
 
     <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/license"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/modified -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/modified"/>
     
 
 
@@ -183,6 +192,18 @@
     
 
 
+    <!-- http://example.org/emotion-aware-recommendation#changesOverTime -->
+
+
+    <owl:ObjectProperty rdf:about="http://example.org/emotion-aware-recommendation#changesOverTime">
+        <rdfs:domain rdf:resource="http://example.org/emotion-aware-recommendation#DynamicEmotion"/>
+        <rdfs:range rdf:resource="http://example.org/emotion-aware-recommendation#DynamicEmotion"/>
+        <rdfs:comment xml:lang="en">Links two dynamic emotion states to represent temporal transitions, enabling temporal reasoning over emotional trajectories.</rdfs:comment>
+        <rdfs:label xml:lang="en">changes over time</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://example.org/emotion-aware-recommendation#considersContext -->
 
 
@@ -207,6 +228,18 @@
     
 
 
+    <!-- http://example.org/emotion-aware-recommendation#derivedFromContext -->
+
+
+    <owl:ObjectProperty rdf:about="http://example.org/emotion-aware-recommendation#derivedFromContext">
+        <rdfs:domain rdf:resource="http://example.org/emotion-aware-recommendation#DynamicEmotion"/>
+        <rdfs:range rdf:resource="http://example.org/emotion-aware-recommendation#Context"/>
+        <rdfs:comment xml:lang="en">Links a dynamic emotion state to the contextual factors (time, environment) that contributed to it.</rdfs:comment>
+        <rdfs:label xml:lang="en">derived from context</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://example.org/emotion-aware-recommendation#feels -->
 
 
@@ -227,6 +260,30 @@
         <rdfs:range rdf:resource="http://example.org/emotion-aware-recommendation#User"/>
         <rdfs:comment xml:lang="en">Connects a recommendation to the user receiving it.</rdfs:comment>
         <rdfs:label xml:lang="en">given to</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://example.org/emotion-aware-recommendation#hasBehaviorProfile -->
+
+
+    <owl:ObjectProperty rdf:about="http://example.org/emotion-aware-recommendation#hasBehaviorProfile">
+        <rdfs:domain rdf:resource="http://example.org/emotion-aware-recommendation#User"/>
+        <rdfs:range rdf:resource="http://example.org/emotion-aware-recommendation#BehaviorProfile"/>
+        <rdfs:comment xml:lang="en">Connects a user to their predicted behavior profile (e.g., Cognitive, Speed, Sedentary, Aggressive), as classified by the GRU-RNN behavioral model described in Fernandez et al. (2023).</rdfs:comment>
+        <rdfs:label xml:lang="en">has behavior profile</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://example.org/emotion-aware-recommendation#hasDynamicEmotion -->
+
+
+    <owl:ObjectProperty rdf:about="http://example.org/emotion-aware-recommendation#hasDynamicEmotion">
+        <rdfs:domain rdf:resource="http://example.org/emotion-aware-recommendation#User"/>
+        <rdfs:range rdf:resource="http://example.org/emotion-aware-recommendation#DynamicEmotion"/>
+        <rdfs:comment xml:lang="en">Connects a user to a temporally-tracked dynamic emotion state recorded within a session.</rdfs:comment>
+        <rdfs:label xml:lang="en">has dynamic emotion</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -263,6 +320,18 @@
         <rdfs:range rdf:resource="http://example.org/emotion-aware-recommendation#Intention"/>
         <rdfs:comment xml:lang="en">Shows the intended purpose of a recommendation.</rdfs:comment>
         <rdfs:label xml:lang="en">has intention</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://example.org/emotion-aware-recommendation#hasInteraction -->
+
+
+    <owl:ObjectProperty rdf:about="http://example.org/emotion-aware-recommendation#hasInteraction">
+        <rdfs:domain rdf:resource="http://example.org/emotion-aware-recommendation#EmotionSession"/>
+        <rdfs:range rdf:resource="http://example.org/emotion-aware-recommendation#UserInteraction"/>
+        <rdfs:comment xml:lang="en">Connects an emotion session to individual user interaction events within it.</rdfs:comment>
+        <rdfs:label xml:lang="en">has interaction</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -327,6 +396,18 @@
     
 
 
+    <!-- http://example.org/emotion-aware-recommendation#interactedWith -->
+
+
+    <owl:ObjectProperty rdf:about="http://example.org/emotion-aware-recommendation#interactedWith">
+        <rdfs:domain rdf:resource="http://example.org/emotion-aware-recommendation#UserInteraction"/>
+        <rdfs:range rdf:resource="http://example.org/emotion-aware-recommendation#Content"/>
+        <rdfs:comment xml:lang="en">Connects an interaction event to the content item the user acted on.</rdfs:comment>
+        <rdfs:label xml:lang="en">interacted with</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://example.org/emotion-aware-recommendation#isInEnvironment -->
 
 
@@ -347,6 +428,30 @@
         <rdfs:range rdf:resource="http://example.org/emotion-aware-recommendation#Preference"/>
         <rdfs:comment xml:lang="en">Connects content to a matching user preference.</rdfs:comment>
         <rdfs:label xml:lang="en">matches preference</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://example.org/emotion-aware-recommendation#populatedFrom -->
+
+
+    <owl:ObjectProperty rdf:about="http://example.org/emotion-aware-recommendation#populatedFrom">
+        <rdfs:domain rdf:resource="http://example.org/emotion-aware-recommendation#UserInteraction"/>
+        <rdfs:range rdf:resource="http://example.org/emotion-aware-recommendation#DataSource"/>
+        <rdfs:comment xml:lang="en">Documents the data source from which this interaction instance was extracted, supporting the provenance tracking approach of Norouzi et al. (2025).</rdfs:comment>
+        <rdfs:label xml:lang="en">populated from</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://example.org/emotion-aware-recommendation#recordedInSession -->
+
+
+    <owl:ObjectProperty rdf:about="http://example.org/emotion-aware-recommendation#recordedInSession">
+        <rdfs:domain rdf:resource="http://example.org/emotion-aware-recommendation#DynamicEmotion"/>
+        <rdfs:range rdf:resource="http://example.org/emotion-aware-recommendation#EmotionSession"/>
+        <rdfs:comment xml:lang="en">Links a dynamic emotion observation to the session in which it was recorded.</rdfs:comment>
+        <rdfs:label xml:lang="en">recorded in session</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -467,6 +572,52 @@
     
 
 
+    <!-- http://example.org/emotion-aware-recommendation#hasIntensityLevel -->
+
+
+    <owl:DatatypeProperty rdf:about="http://example.org/emotion-aware-recommendation#hasIntensityLevel">
+        <rdfs:domain rdf:resource="http://example.org/emotion-aware-recommendation#DynamicEmotion"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+        <rdfs:comment xml:lang="en">A numeric score (0.0–1.0) representing the intensity of a dynamic emotion at the time of observation.</rdfs:comment>
+        <rdfs:label xml:lang="en">has intensity level</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://example.org/emotion-aware-recommendation#hasInteractionType -->
+
+
+    <owl:DatatypeProperty rdf:about="http://example.org/emotion-aware-recommendation#hasInteractionType">
+        <rdfs:domain rdf:resource="http://example.org/emotion-aware-recommendation#UserInteraction"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en">The type of user interaction (e.g., &apos;play&apos;, &apos;skip&apos;, &apos;complete&apos;, &apos;like&apos;).</rdfs:comment>
+        <rdfs:label xml:lang="en">has interaction type</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://example.org/emotion-aware-recommendation#hasSourceURL -->
+
+
+    <owl:DatatypeProperty rdf:about="http://example.org/emotion-aware-recommendation#hasSourceURL">
+        <rdfs:domain rdf:resource="http://example.org/emotion-aware-recommendation#DataSource"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://example.org/emotion-aware-recommendation#hasTimestamp -->
+
+
+    <owl:DatatypeProperty rdf:about="http://example.org/emotion-aware-recommendation#hasTimestamp">
+        <rdfs:domain rdf:resource="http://example.org/emotion-aware-recommendation#EmotionSession"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:comment xml:lang="en">The date-time when the emotion session was recorded.</rdfs:comment>
+        <rdfs:label xml:lang="en">has timestamp</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
@@ -476,6 +627,38 @@
      -->
 
 
+    
+
+
+    <!-- http://example.org/emotion-aware-recommendation#AgreeablePersonality -->
+
+
+    <owl:Class rdf:about="http://example.org/emotion-aware-recommendation#AgreeablePersonality">
+        <rdfs:subClassOf rdf:resource="http://example.org/emotion-aware-recommendation#Personality"/>
+        <rdfs:comment xml:lang="en">A personality type characterized by cooperativeness, empathy, and trust. Agreeable users tend to enjoy emotionally warm content (e.g., feel-good movies, collaborative games, uplifting podcasts).</rdfs:comment>
+        <rdfs:label xml:lang="en">Agreeable Personality</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/emotion-aware-recommendation#BehaviorProfile -->
+
+
+    <owl:Class rdf:about="http://example.org/emotion-aware-recommendation#BehaviorProfile">
+        <rdfs:comment xml:lang="en">A classification of the user&apos;s interaction behavior style, analogous to the four behavioral classes (Cognitive, Speed, Sedentary, Aggressive) predicted by Fernandez et al. (2023). Used to personalize recommendation frequency and content depth.</rdfs:comment>
+        <rdfs:label xml:lang="en">Behavior Profile</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/emotion-aware-recommendation#ConscientiousPersonality -->
+
+
+    <owl:Class rdf:about="http://example.org/emotion-aware-recommendation#ConscientiousPersonality">
+        <rdfs:subClassOf rdf:resource="http://example.org/emotion-aware-recommendation#Personality"/>
+        <rdfs:comment xml:lang="en">A personality type characterized by organization, goal-directedness, and discipline. Conscientious users prefer structured, purposeful content (e.g., educational podcasts, productivity music, self-improvement content).</rdfs:comment>
+        <rdfs:label xml:lang="en">Conscientious Personality</rdfs:label>
+    </owl:Class>
     
 
 
@@ -509,6 +692,27 @@
     
 
 
+    <!-- http://example.org/emotion-aware-recommendation#DataSource -->
+
+
+    <owl:Class rdf:about="http://example.org/emotion-aware-recommendation#DataSource">
+        <rdfs:comment xml:lang="en">A source of data used to populate the ontology with instances (e.g., Kaggle dataset, Spotify API, survey). Supports the data provenance tracking recommended by Norouzi et al. (2025) for LLM-based knowledge graph population.</rdfs:comment>
+        <rdfs:label xml:lang="en">Data Source</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/emotion-aware-recommendation#DynamicEmotion -->
+
+
+    <owl:Class rdf:about="http://example.org/emotion-aware-recommendation#DynamicEmotion">
+        <rdfs:subClassOf rdf:resource="http://example.org/emotion-aware-recommendation#Emotion"/>
+        <rdfs:comment xml:lang="en">An emotion state that changes over time and is tracked across multiple sessions. Inspired by the temporal behavioral modeling in Fernandez et al. (2023) GRU-RNN framework, which predicts evolving user behavior styles across sessions.</rdfs:comment>
+        <rdfs:label xml:lang="en">Dynamic Emotion</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://example.org/emotion-aware-recommendation#Effect -->
 
 
@@ -523,8 +727,18 @@
 
 
     <owl:Class rdf:about="http://example.org/emotion-aware-recommendation#Emotion">
-        <rdfs:comment xml:lang="en">An emotional state experienced by a user.</rdfs:comment>
+        <rdfs:comment xml:lang="en">An emotional state experienced by a user. Inspired by the UniEmotion ontology (Kim 2013) and Kim &amp; Lee (2015) emotion ontology for recommendation, emotions are categorized as Positive, Negative, or Neutral/Factual.</rdfs:comment>
         <rdfs:label xml:lang="en">Emotion</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/emotion-aware-recommendation#EmotionSession -->
+
+
+    <owl:Class rdf:about="http://example.org/emotion-aware-recommendation#EmotionSession">
+        <rdfs:comment xml:lang="en">A bounded time window during which a user&apos;s emotional state and interactions are recorded. Enables longitudinal modeling of emotion change, supporting the dynamic emotion tracking capability.</rdfs:comment>
+        <rdfs:label xml:lang="en">Emotion Session</rdfs:label>
     </owl:Class>
     
 
@@ -536,6 +750,17 @@
         <rdfs:subClassOf rdf:resource="http://example.org/emotion-aware-recommendation#Context"/>
         <rdfs:comment xml:lang="en">The physical or social environment of a user.</rdfs:comment>
         <rdfs:label xml:lang="en">Environment</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/emotion-aware-recommendation#ExtrovertedPersonality -->
+
+
+    <owl:Class rdf:about="http://example.org/emotion-aware-recommendation#ExtrovertedPersonality">
+        <rdfs:subClassOf rdf:resource="http://example.org/emotion-aware-recommendation#Personality"/>
+        <rdfs:comment xml:lang="en">A personality type characterized by sociability, high energy, and preference for stimulating environments. Extroverted users tend to prefer social, upbeat, or group-oriented content (e.g., party playlists, group films).</rdfs:comment>
+        <rdfs:label xml:lang="en">Extroverted Personality</rdfs:label>
     </owl:Class>
     
 
@@ -560,6 +785,17 @@
     
 
 
+    <!-- http://example.org/emotion-aware-recommendation#IntrovertedPersonality -->
+
+
+    <owl:Class rdf:about="http://example.org/emotion-aware-recommendation#IntrovertedPersonality">
+        <rdfs:subClassOf rdf:resource="http://example.org/emotion-aware-recommendation#Personality"/>
+        <rdfs:comment xml:lang="en">A personality type characterized by preference for solitary activities, deep focus, and low-stimulation environments. Introverted users tend to prefer calm, solo content (e.g., lo-fi music, meditation, solo games).</rdfs:comment>
+        <rdfs:label xml:lang="en">Introverted Personality</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://example.org/emotion-aware-recommendation#Need -->
 
 
@@ -570,11 +806,55 @@
     
 
 
+    <!-- http://example.org/emotion-aware-recommendation#NegativeEmotion -->
+
+
+    <owl:Class rdf:about="http://example.org/emotion-aware-recommendation#NegativeEmotion">
+        <rdfs:subClassOf rdf:resource="http://example.org/emotion-aware-recommendation#Emotion"/>
+        <rdfs:comment xml:lang="en">An emotion associated with unpleasant or unfavorable affective states. Corresponds to &apos;negative emotional tags&apos; in the UniEmotion ontology (Kim 2013). Examples: stress, sadness, anxiety, tiredness.</rdfs:comment>
+        <rdfs:label xml:lang="en">Negative Emotion</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/emotion-aware-recommendation#NeuroticlPersonality -->
+
+
+    <owl:Class rdf:about="http://example.org/emotion-aware-recommendation#NeuroticlPersonality">
+        <rdfs:subClassOf rdf:resource="http://example.org/emotion-aware-recommendation#Personality"/>
+        <rdfs:comment xml:lang="en">A personality type characterized by emotional instability and high sensitivity to stress. Neurotic users benefit most from calming, grounding content (e.g., meditation, nature soundscapes, breathing exercises).</rdfs:comment>
+        <rdfs:label xml:lang="en">Neurotic Personality</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/emotion-aware-recommendation#NeutralEmotion -->
+
+
+    <owl:Class rdf:about="http://example.org/emotion-aware-recommendation#NeutralEmotion">
+        <rdfs:subClassOf rdf:resource="http://example.org/emotion-aware-recommendation#Emotion"/>
+        <rdfs:comment xml:lang="en">A factual or neutral affective state with neither strong positive nor negative valence. Corresponds to &apos;factual tags&apos; in the UniEmotion ontology (Kim 2013). Examples: calmness, focus, boredom.</rdfs:comment>
+        <rdfs:label xml:lang="en">Neutral Emotion</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/emotion-aware-recommendation#OpennessPersonality -->
+
+
+    <owl:Class rdf:about="http://example.org/emotion-aware-recommendation#OpennessPersonality">
+        <rdfs:subClassOf rdf:resource="http://example.org/emotion-aware-recommendation#Personality"/>
+        <rdfs:comment xml:lang="en">A personality type characterized by curiosity, creativity, and appreciation of art. Users high in openness tend to enjoy diverse, novel, or artistic content (e.g., experimental music, documentaries, creative games).</rdfs:comment>
+        <rdfs:label xml:lang="en">Openness Personality</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://example.org/emotion-aware-recommendation#Personality -->
 
 
     <owl:Class rdf:about="http://example.org/emotion-aware-recommendation#Personality">
-        <rdfs:comment xml:lang="en">A personality trait that may affect recommendation suitability.</rdfs:comment>
+        <rdfs:comment xml:lang="en">A personality trait based on the Big Five model that may affect recommendation suitability. Sub-classes represent the primary personality dimensions relevant to emotion-based recommendation.</rdfs:comment>
         <rdfs:label xml:lang="en">Personality</rdfs:label>
     </owl:Class>
     
@@ -586,6 +866,17 @@
     <owl:Class rdf:about="http://example.org/emotion-aware-recommendation#Platform">
         <rdfs:comment xml:lang="en">A digital platform where content may be delivered.</rdfs:comment>
         <rdfs:label xml:lang="en">Platform</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/emotion-aware-recommendation#PositiveEmotion -->
+
+
+    <owl:Class rdf:about="http://example.org/emotion-aware-recommendation#PositiveEmotion">
+        <rdfs:subClassOf rdf:resource="http://example.org/emotion-aware-recommendation#Emotion"/>
+        <rdfs:comment xml:lang="en">An emotion associated with pleasant, favorable affective states. Corresponds to &apos;positive emotional tags&apos; in the UniEmotion ontology (Kim 2013). Examples: happiness, excitement, contentment.</rdfs:comment>
+        <rdfs:label xml:lang="en">Positive Emotion</rdfs:label>
     </owl:Class>
     
 
@@ -631,6 +922,16 @@
     
 
 
+    <!-- http://example.org/emotion-aware-recommendation#UserInteraction -->
+
+
+    <owl:Class rdf:about="http://example.org/emotion-aware-recommendation#UserInteraction">
+        <rdfs:comment xml:lang="en">A single recorded interaction event between a user and a recommended content item (e.g., play, skip, complete). Used to populate ontology instances from log data, as described in the LLM-based ontology population approach of Norouzi et al. (2025).</rdfs:comment>
+        <rdfs:label xml:lang="en">User Interaction</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
@@ -640,6 +941,28 @@
      -->
 
 
+    
+
+
+    <!-- http://example.org/emotion-aware-recommendation#AggressiveBehavior -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.org/emotion-aware-recommendation#AggressiveBehavior">
+        <rdf:type rdf:resource="http://example.org/emotion-aware-recommendation#BehaviorProfile"/>
+        <rdfs:comment xml:lang="en">User who skips content frequently, indicating high selectivity or stress.</rdfs:comment>
+        <rdfs:label xml:lang="en">Aggressive Behavior</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/emotion-aware-recommendation#AgreeableUser -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.org/emotion-aware-recommendation#AgreeableUser">
+        <rdf:type rdf:resource="http://example.org/emotion-aware-recommendation#AgreeablePersonality"/>
+        <rdfs:comment xml:lang="en">Agreeable personality individual — enjoys emotionally warm, cooperative content.</rdfs:comment>
+        <rdfs:label xml:lang="en">Agreeable User</rdfs:label>
+    </owl:NamedIndividual>
     
 
 
@@ -657,7 +980,7 @@
 
 
     <owl:NamedIndividual rdf:about="http://example.org/emotion-aware-recommendation#Anxiety">
-        <rdf:type rdf:resource="http://example.org/emotion-aware-recommendation#Emotion"/>
+        <rdf:type rdf:resource="http://example.org/emotion-aware-recommendation#NegativeEmotion"/>
         <emotion-aware-recommendation:createsNeed rdf:resource="http://example.org/emotion-aware-recommendation#Calmness"/>
         <rdfs:label xml:lang="en">Anxiety</rdfs:label>
     </owl:NamedIndividual>
@@ -668,7 +991,7 @@
 
 
     <owl:NamedIndividual rdf:about="http://example.org/emotion-aware-recommendation#Boredom">
-        <rdf:type rdf:resource="http://example.org/emotion-aware-recommendation#Emotion"/>
+        <rdf:type rdf:resource="http://example.org/emotion-aware-recommendation#NeutralEmotion"/>
         <emotion-aware-recommendation:createsNeed rdf:resource="http://example.org/emotion-aware-recommendation#Distraction"/>
         <rdfs:label xml:lang="en">Boredom</rdfs:label>
     </owl:NamedIndividual>
@@ -732,6 +1055,17 @@
     
 
 
+    <!-- http://example.org/emotion-aware-recommendation#CognitiveBehavior -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.org/emotion-aware-recommendation#CognitiveBehavior">
+        <rdf:type rdf:resource="http://example.org/emotion-aware-recommendation#BehaviorProfile"/>
+        <rdfs:comment xml:lang="en">User who engages deeply with content, high intellectual processing.</rdfs:comment>
+        <rdfs:label xml:lang="en">Cognitive Behavior</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://example.org/emotion-aware-recommendation#ComfortMovie -->
 
 
@@ -746,6 +1080,17 @@
         <emotion-aware-recommendation:suitableForTime rdf:resource="http://example.org/emotion-aware-recommendation#Evening"/>
         <emotion-aware-recommendation:hasDurationMinutes rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">95</emotion-aware-recommendation:hasDurationMinutes>
         <rdfs:label xml:lang="en">Comfort Movie</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/emotion-aware-recommendation#ConscientiousUser -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.org/emotion-aware-recommendation#ConscientiousUser">
+        <rdf:type rdf:resource="http://example.org/emotion-aware-recommendation#ConscientiousPersonality"/>
+        <rdfs:comment xml:lang="en">Conscientious personality individual — prefers structured, educational content.</rdfs:comment>
+        <rdfs:label xml:lang="en">Conscientious User</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -795,6 +1140,8 @@
     <owl:NamedIndividual rdf:about="http://example.org/emotion-aware-recommendation#Elif">
         <rdf:type rdf:resource="http://example.org/emotion-aware-recommendation#User"/>
         <emotion-aware-recommendation:feels rdf:resource="http://example.org/emotion-aware-recommendation#Stress"/>
+        <emotion-aware-recommendation:hasBehaviorProfile rdf:resource="http://example.org/emotion-aware-recommendation#SpeedBehavior"/>
+        <emotion-aware-recommendation:hasDynamicEmotion rdf:resource="http://example.org/emotion-aware-recommendation#ElilStressHigh"/>
         <emotion-aware-recommendation:hasNeed rdf:resource="http://example.org/emotion-aware-recommendation#Relaxation"/>
         <emotion-aware-recommendation:hasPersonality rdf:resource="http://example.org/emotion-aware-recommendation#Introvert"/>
         <emotion-aware-recommendation:hasPreference rdf:resource="http://example.org/emotion-aware-recommendation#LikesMusic"/>
@@ -804,6 +1151,32 @@
         <emotion-aware-recommendation:isInEnvironment rdf:resource="http://example.org/emotion-aware-recommendation#Home"/>
         <emotion-aware-recommendation:hasAge rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">21</emotion-aware-recommendation:hasAge>
         <rdfs:label xml:lang="en">Elif</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/emotion-aware-recommendation#ElifStressLow -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.org/emotion-aware-recommendation#ElifStressLow">
+        <rdf:type rdf:resource="http://example.org/emotion-aware-recommendation#DynamicEmotion"/>
+        <emotion-aware-recommendation:changesOverTime rdf:resource="http://example.org/emotion-aware-recommendation#ElilStressHigh"/>
+        <emotion-aware-recommendation:hasIntensityLevel rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.30</emotion-aware-recommendation:hasIntensityLevel>
+        <rdfs:label xml:lang="en">Elif - Low Stress After Listening</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/emotion-aware-recommendation#ElilStressHigh -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.org/emotion-aware-recommendation#ElilStressHigh">
+        <rdf:type rdf:resource="http://example.org/emotion-aware-recommendation#DynamicEmotion"/>
+        <emotion-aware-recommendation:derivedFromContext rdf:resource="http://example.org/emotion-aware-recommendation#Alone"/>
+        <emotion-aware-recommendation:derivedFromContext rdf:resource="http://example.org/emotion-aware-recommendation#Night"/>
+        <emotion-aware-recommendation:recordedInSession rdf:resource="http://example.org/emotion-aware-recommendation#Session001"/>
+        <emotion-aware-recommendation:hasIntensityLevel rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.85</emotion-aware-recommendation:hasIntensityLevel>
+        <rdfs:label xml:lang="en">Elif - High Stress at Night</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -836,6 +1209,8 @@
     <owl:NamedIndividual rdf:about="http://example.org/emotion-aware-recommendation#Enes">
         <rdf:type rdf:resource="http://example.org/emotion-aware-recommendation#User"/>
         <emotion-aware-recommendation:feels rdf:resource="http://example.org/emotion-aware-recommendation#Tiredness"/>
+        <emotion-aware-recommendation:hasBehaviorProfile rdf:resource="http://example.org/emotion-aware-recommendation#CognitiveBehavior"/>
+        <emotion-aware-recommendation:hasDynamicEmotion rdf:resource="http://example.org/emotion-aware-recommendation#EnesLowMotivationMorning"/>
         <emotion-aware-recommendation:hasNeed rdf:resource="http://example.org/emotion-aware-recommendation#Motivation"/>
         <emotion-aware-recommendation:hasPersonality rdf:resource="http://example.org/emotion-aware-recommendation#Introvert"/>
         <emotion-aware-recommendation:hasPreference rdf:resource="http://example.org/emotion-aware-recommendation#LikesPodcasts"/>
@@ -843,6 +1218,19 @@
         <emotion-aware-recommendation:isInEnvironment rdf:resource="http://example.org/emotion-aware-recommendation#School"/>
         <emotion-aware-recommendation:hasAge rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">22</emotion-aware-recommendation:hasAge>
         <rdfs:label xml:lang="en">Enes</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/emotion-aware-recommendation#EnesLowMotivationMorning -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.org/emotion-aware-recommendation#EnesLowMotivationMorning">
+        <rdf:type rdf:resource="http://example.org/emotion-aware-recommendation#DynamicEmotion"/>
+        <emotion-aware-recommendation:derivedFromContext rdf:resource="http://example.org/emotion-aware-recommendation#Morning"/>
+        <emotion-aware-recommendation:derivedFromContext rdf:resource="http://example.org/emotion-aware-recommendation#School"/>
+        <emotion-aware-recommendation:hasIntensityLevel rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.65</emotion-aware-recommendation:hasIntensityLevel>
+        <rdfs:label xml:lang="en">Enes - Low Motivation in Morning</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -861,7 +1249,8 @@
 
 
     <owl:NamedIndividual rdf:about="http://example.org/emotion-aware-recommendation#Extrovert">
-        <rdf:type rdf:resource="http://example.org/emotion-aware-recommendation#Personality"/>
+        <rdf:type rdf:resource="http://example.org/emotion-aware-recommendation#ExtrovertedPersonality"/>
+        <rdfs:comment xml:lang="en">Extroverted personality individual. Suitable for social, energetic content.</rdfs:comment>
         <rdfs:label xml:lang="en">Extrovert</rdfs:label>
     </owl:NamedIndividual>
     
@@ -873,7 +1262,7 @@
     <owl:NamedIndividual rdf:about="http://example.org/emotion-aware-recommendation#Feedback001">
         <rdf:type rdf:resource="http://example.org/emotion-aware-recommendation#Feedback"/>
         <emotion-aware-recommendation:hasFeedbackScore rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</emotion-aware-recommendation:hasFeedbackScore>
-        <rdfs:label xml:lang="en">Positive feedback for recommendation 001</rdfs:label>
+        <rdfs:label xml:lang="en">Positive feedback 001</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -884,7 +1273,7 @@
     <owl:NamedIndividual rdf:about="http://example.org/emotion-aware-recommendation#Feedback002">
         <rdf:type rdf:resource="http://example.org/emotion-aware-recommendation#Feedback"/>
         <emotion-aware-recommendation:hasFeedbackScore rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</emotion-aware-recommendation:hasFeedbackScore>
-        <rdfs:label xml:lang="en">Positive feedback for recommendation 002</rdfs:label>
+        <rdfs:label xml:lang="en">Positive feedback 002</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -895,7 +1284,7 @@
     <owl:NamedIndividual rdf:about="http://example.org/emotion-aware-recommendation#Feedback003">
         <rdf:type rdf:resource="http://example.org/emotion-aware-recommendation#Feedback"/>
         <emotion-aware-recommendation:hasFeedbackScore rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</emotion-aware-recommendation:hasFeedbackScore>
-        <rdfs:label xml:lang="en">Positive feedback for recommendation 003</rdfs:label>
+        <rdfs:label xml:lang="en">Positive feedback 003</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -906,7 +1295,7 @@
     <owl:NamedIndividual rdf:about="http://example.org/emotion-aware-recommendation#Feedback004">
         <rdf:type rdf:resource="http://example.org/emotion-aware-recommendation#Feedback"/>
         <emotion-aware-recommendation:hasFeedbackScore rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</emotion-aware-recommendation:hasFeedbackScore>
-        <rdfs:label xml:lang="en">Positive feedback for recommendation 004</rdfs:label>
+        <rdfs:label xml:lang="en">Positive feedback 004</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -951,12 +1340,51 @@
     
 
 
+    <!-- http://example.org/emotion-aware-recommendation#Interaction001 -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.org/emotion-aware-recommendation#Interaction001">
+        <rdf:type rdf:resource="http://example.org/emotion-aware-recommendation#UserInteraction"/>
+        <emotion-aware-recommendation:interactedWith rdf:resource="http://example.org/emotion-aware-recommendation#LoFiPlaylist"/>
+        <emotion-aware-recommendation:populatedFrom rdf:resource="http://example.org/emotion-aware-recommendation#SpotifyAPISource"/>
+        <emotion-aware-recommendation:hasInteractionType>play</emotion-aware-recommendation:hasInteractionType>
+        <rdfs:label xml:lang="en">Elif plays LoFi Playlist</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/emotion-aware-recommendation#Interaction002 -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.org/emotion-aware-recommendation#Interaction002">
+        <rdf:type rdf:resource="http://example.org/emotion-aware-recommendation#UserInteraction"/>
+        <emotion-aware-recommendation:interactedWith rdf:resource="http://example.org/emotion-aware-recommendation#BreathingExercise"/>
+        <emotion-aware-recommendation:populatedFrom rdf:resource="http://example.org/emotion-aware-recommendation#SpotifyAPISource"/>
+        <emotion-aware-recommendation:hasInteractionType>complete</emotion-aware-recommendation:hasInteractionType>
+        <rdfs:label xml:lang="en">Elif completes Breathing Exercise</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://example.org/emotion-aware-recommendation#Introvert -->
 
 
     <owl:NamedIndividual rdf:about="http://example.org/emotion-aware-recommendation#Introvert">
-        <rdf:type rdf:resource="http://example.org/emotion-aware-recommendation#Personality"/>
+        <rdf:type rdf:resource="http://example.org/emotion-aware-recommendation#IntrovertedPersonality"/>
+        <rdfs:comment xml:lang="en">Introverted personality individual. Suitable for calm, solo, low-stimulation content.</rdfs:comment>
         <rdfs:label xml:lang="en">Introvert</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/emotion-aware-recommendation#KaggleEmotionDataset -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.org/emotion-aware-recommendation#KaggleEmotionDataset">
+        <rdf:type rdf:resource="http://example.org/emotion-aware-recommendation#DataSource"/>
+        <emotion-aware-recommendation:hasSourceURL rdf:resource="https://www.kaggle.com/datasets/musicemotionrecognition"/>
+        <rdfs:comment xml:lang="en">Publicly available dataset mapping emotion labels to music features, used for ontology population.</rdfs:comment>
+        <rdfs:label xml:lang="en">Kaggle Emotion-Music Dataset</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -1144,12 +1572,34 @@
     
 
 
+    <!-- http://example.org/emotion-aware-recommendation#NeuroticiUser -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.org/emotion-aware-recommendation#NeuroticiUser">
+        <rdf:type rdf:resource="http://example.org/emotion-aware-recommendation#NeuroticlPersonality"/>
+        <rdfs:comment xml:lang="en">Neurotic personality individual — benefits most from calming, grounding content.</rdfs:comment>
+        <rdfs:label xml:lang="en">Neurotic User</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://example.org/emotion-aware-recommendation#Night -->
 
 
     <owl:NamedIndividual rdf:about="http://example.org/emotion-aware-recommendation#Night">
         <rdf:type rdf:resource="http://example.org/emotion-aware-recommendation#TimeContext"/>
         <rdfs:label xml:lang="en">Night</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/emotion-aware-recommendation#OpenUser -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.org/emotion-aware-recommendation#OpenUser">
+        <rdf:type rdf:resource="http://example.org/emotion-aware-recommendation#OpennessPersonality"/>
+        <rdfs:comment xml:lang="en">High-openness personality individual — enjoys novel, artistic, experimental content.</rdfs:comment>
+        <rdfs:label xml:lang="en">Open User</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -1294,7 +1744,7 @@
 
 
     <owl:NamedIndividual rdf:about="http://example.org/emotion-aware-recommendation#Sadness">
-        <rdf:type rdf:resource="http://example.org/emotion-aware-recommendation#Emotion"/>
+        <rdf:type rdf:resource="http://example.org/emotion-aware-recommendation#NegativeEmotion"/>
         <emotion-aware-recommendation:createsNeed rdf:resource="http://example.org/emotion-aware-recommendation#EmotionalSupport"/>
         <rdfs:label xml:lang="en">Sadness</rdfs:label>
     </owl:NamedIndividual>
@@ -1311,6 +1761,41 @@
     
 
 
+    <!-- http://example.org/emotion-aware-recommendation#SedentaryBehavior -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.org/emotion-aware-recommendation#SedentaryBehavior">
+        <rdf:type rdf:resource="http://example.org/emotion-aware-recommendation#BehaviorProfile"/>
+        <rdfs:comment xml:lang="en">User with passive interaction patterns, low effort content preferred.</rdfs:comment>
+        <rdfs:label xml:lang="en">Sedentary Behavior</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/emotion-aware-recommendation#Session001 -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.org/emotion-aware-recommendation#Session001">
+        <rdf:type rdf:resource="http://example.org/emotion-aware-recommendation#EmotionSession"/>
+        <emotion-aware-recommendation:hasInteraction rdf:resource="http://example.org/emotion-aware-recommendation#Interaction001"/>
+        <emotion-aware-recommendation:hasInteraction rdf:resource="http://example.org/emotion-aware-recommendation#Interaction002"/>
+        <emotion-aware-recommendation:hasTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2026-05-14T21:30:00</emotion-aware-recommendation:hasTimestamp>
+        <rdfs:label xml:lang="en">Elif Evening Session 2026-05-14</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/emotion-aware-recommendation#SpeedBehavior -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.org/emotion-aware-recommendation#SpeedBehavior">
+        <rdf:type rdf:resource="http://example.org/emotion-aware-recommendation#BehaviorProfile"/>
+        <rdfs:comment xml:lang="en">User who consumes content quickly, prefers short-form recommendations.</rdfs:comment>
+        <rdfs:label xml:lang="en">Speed Behavior</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://example.org/emotion-aware-recommendation#Spotify -->
 
 
@@ -1321,11 +1806,23 @@
     
 
 
+    <!-- http://example.org/emotion-aware-recommendation#SpotifyAPISource -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.org/emotion-aware-recommendation#SpotifyAPISource">
+        <rdf:type rdf:resource="http://example.org/emotion-aware-recommendation#DataSource"/>
+        <emotion-aware-recommendation:hasSourceURL rdf:resource="https://developer.spotify.com/documentation/web-api"/>
+        <rdfs:comment xml:lang="en">User listening history and interaction logs collected via the Spotify Web API.</rdfs:comment>
+        <rdfs:label xml:lang="en">Spotify Web API</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://example.org/emotion-aware-recommendation#Stress -->
 
 
     <owl:NamedIndividual rdf:about="http://example.org/emotion-aware-recommendation#Stress">
-        <rdf:type rdf:resource="http://example.org/emotion-aware-recommendation#Emotion"/>
+        <rdf:type rdf:resource="http://example.org/emotion-aware-recommendation#NegativeEmotion"/>
         <emotion-aware-recommendation:createsNeed rdf:resource="http://example.org/emotion-aware-recommendation#Relaxation"/>
         <rdfs:label xml:lang="en">Stress</rdfs:label>
     </owl:NamedIndividual>
@@ -1336,7 +1833,7 @@
 
 
     <owl:NamedIndividual rdf:about="http://example.org/emotion-aware-recommendation#Tiredness">
-        <rdf:type rdf:resource="http://example.org/emotion-aware-recommendation#Emotion"/>
+        <rdf:type rdf:resource="http://example.org/emotion-aware-recommendation#NegativeEmotion"/>
         <emotion-aware-recommendation:createsNeed rdf:resource="http://example.org/emotion-aware-recommendation#Motivation"/>
         <rdfs:label xml:lang="en">Tiredness</rdfs:label>
     </owl:NamedIndividual>
@@ -1350,6 +1847,22 @@
         <rdf:type rdf:resource="http://example.org/emotion-aware-recommendation#Environment"/>
         <rdfs:label xml:lang="en">With Friends</rdfs:label>
     </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotations
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    <rdf:Description rdf:about="http://example.org/emotion-aware-recommendation#hasSourceURL">
+        <rdfs:comment xml:lang="en">The URL of the data source used for ontology population.</rdfs:comment>
+        <rdfs:label xml:lang="en">has source URL</rdfs:label>
+    </rdf:Description>
 </rdf:RDF>
 
 

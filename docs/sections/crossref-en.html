@@ -3,22 +3,99 @@ This section provides details for each class and property defined by Emotion-Awa
 <div xmlns:widoco="https://w3id.org/widoco/vocab#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="classes">
  <h3 id="classes-headline" class="list">Classes</h3>
  <ul class="hlist">
+  <li><a href="#AgreeablePersonality" title="http://example.org/emotion-aware-recommendation#AgreeablePersonality">Agreeable Personality</a></li>
+  <li><a href="#BehaviorProfile" title="http://example.org/emotion-aware-recommendation#BehaviorProfile">Behavior Profile</a></li>
+  <li><a href="#ConscientiousPersonality" title="http://example.org/emotion-aware-recommendation#ConscientiousPersonality">Conscientious Personality</a></li>
   <li><a href="#Content" title="http://example.org/emotion-aware-recommendation#Content">Content</a></li>
   <li><a href="#ContentCategory" title="http://example.org/emotion-aware-recommendation#ContentCategory">Content Category</a></li>
   <li><a href="#Context" title="http://example.org/emotion-aware-recommendation#Context">Context</a></li>
+  <li><a href="#DataSource" title="http://example.org/emotion-aware-recommendation#DataSource">Data Source</a></li>
+  <li><a href="#DynamicEmotion" title="http://example.org/emotion-aware-recommendation#DynamicEmotion">Dynamic Emotion</a></li>
   <li><a href="#Effect" title="http://example.org/emotion-aware-recommendation#Effect">Effect</a></li>
   <li><a href="#Emotion" title="http://example.org/emotion-aware-recommendation#Emotion">Emotion</a></li>
+  <li><a href="#EmotionSession" title="http://example.org/emotion-aware-recommendation#EmotionSession">Emotion Session</a></li>
   <li><a href="#Environment" title="http://example.org/emotion-aware-recommendation#Environment">Environment</a></li>
+  <li><a href="#ExtrovertedPersonality" title="http://example.org/emotion-aware-recommendation#ExtrovertedPersonality">Extroverted Personality</a></li>
   <li><a href="#Feedback" title="http://example.org/emotion-aware-recommendation#Feedback">Feedback</a></li>
   <li><a href="#Need" title="http://example.org/emotion-aware-recommendation#Need">Need</a></li>
+  <li><a href="#NegativeEmotion" title="http://example.org/emotion-aware-recommendation#NegativeEmotion">Negative Emotion</a></li>
+  <li><a href="#NeuroticlPersonality" title="http://example.org/emotion-aware-recommendation#NeuroticlPersonality">Neurotic Personality</a></li>
+  <li><a href="#NeutralEmotion" title="http://example.org/emotion-aware-recommendation#NeutralEmotion">Neutral Emotion</a></li>
+  <li><a href="#OpennessPersonality" title="http://example.org/emotion-aware-recommendation#OpennessPersonality">Openness Personality</a></li>
   <li><a href="#Personality" title="http://example.org/emotion-aware-recommendation#Personality">Personality</a></li>
   <li><a href="#Platform" title="http://example.org/emotion-aware-recommendation#Platform">Platform</a></li>
+  <li><a href="#PositiveEmotion" title="http://example.org/emotion-aware-recommendation#PositiveEmotion">Positive Emotion</a></li>
   <li><a href="#Preference" title="http://example.org/emotion-aware-recommendation#Preference">Preference</a></li>
   <li><a href="#Recommendation" title="http://example.org/emotion-aware-recommendation#Recommendation">Recommendation</a></li>
   <li><a href="#TimeContext" title="http://example.org/emotion-aware-recommendation#TimeContext">Time Context</a></li>
   <li><a href="#User" title="http://example.org/emotion-aware-recommendation#User">User</a></li>
+  <li><a href="#UserInteraction" title="http://example.org/emotion-aware-recommendation#UserInteraction">User Interaction</a></li>
   <li><a href="#Intention" title="http://example.org/emotion-aware-recommendation#Intention">Intention</a></li>
+  <li><a href="#IntrovertedPersonality" title="http://example.org/emotion-aware-recommendation#IntrovertedPersonality">Introverted Personality</a></li>
  </ul>
+ <div class="entity" id="AgreeablePersonality">
+  <h3>Agreeable Personality<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://example.org/emotion-aware-recommendation#AgreeablePersonality</p>
+  <div class="comment">
+   <span class="markdown">A personality type characterized by cooperativeness, empathy, and trust. Agreeable users tend to enjoy emotionally warm content (e.g., feel-good movies, collaborative games, uplifting podcasts).</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#Personality" title="http://example.org/emotion-aware-recommendation#Personality">Personality</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has members
+   </dt>
+   <dd>
+    <a href="#AgreeableUser" title="http://example.org/emotion-aware-recommendation#AgreeableUser">Agreeable User</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="BehaviorProfile">
+  <h3>Behavior Profile<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://example.org/emotion-aware-recommendation#BehaviorProfile</p>
+  <div class="comment">
+   <span class="markdown">A classification of the user's interaction behavior style, analogous to the four behavioral classes (Cognitive, Speed, Sedentary, Aggressive) predicted by Fernandez et al. (2023). Used to personalize recommendation frequency and content depth.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#hasBehaviorProfile" title="http://example.org/emotion-aware-recommendation#hasBehaviorProfile">has behavior profile</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    has members
+   </dt>
+   <dd>
+    <a href="#AggressiveBehavior" title="http://example.org/emotion-aware-recommendation#AggressiveBehavior">Aggressive Behavior</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#CognitiveBehavior" title="http://example.org/emotion-aware-recommendation#CognitiveBehavior">Cognitive Behavior</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#SedentaryBehavior" title="http://example.org/emotion-aware-recommendation#SedentaryBehavior">Sedentary Behavior</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#SpeedBehavior" title="http://example.org/emotion-aware-recommendation#SpeedBehavior">Speed Behavior</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="ConscientiousPersonality">
+  <h3>Conscientious Personality<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://example.org/emotion-aware-recommendation#ConscientiousPersonality</p>
+  <div class="comment">
+   <span class="markdown">A personality type characterized by organization, goal-directedness, and discipline. Conscientious users prefer structured, purposeful content (e.g., educational podcasts, productivity music, self-improvement content).</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#Personality" title="http://example.org/emotion-aware-recommendation#Personality">Personality</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has members
+   </dt>
+   <dd>
+    <a href="#ConscientiousUser" title="http://example.org/emotion-aware-recommendation#ConscientiousUser">Conscientious User</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+  </dl>
+ </div>
  <div class="entity" id="Content">
   <h3>Content<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
   <p><strong>IRI:</strong> http://example.org/emotion-aware-recommendation#Content</p>
@@ -36,7 +113,7 @@ This section provides details for each class and property defined by Emotion-Awa
     is in range of
    </dt>
    <dd>
-    <a href="#includesContent" title="http://example.org/emotion-aware-recommendation#includesContent">includes content</a> <sup class="type-op" title="object property">op</sup>, <a href="#satisfiedBy" title="http://example.org/emotion-aware-recommendation#satisfiedBy">satisfied by</a> <sup class="type-op" title="object property">op</sup>
+    <a href="#includesContent" title="http://example.org/emotion-aware-recommendation#includesContent">includes content</a> <sup class="type-op" title="object property">op</sup>, <a href="#interactedWith" title="http://example.org/emotion-aware-recommendation#interactedWith">interacted with</a> <sup class="type-op" title="object property">op</sup>, <a href="#satisfiedBy" title="http://example.org/emotion-aware-recommendation#satisfiedBy">satisfied by</a> <sup class="type-op" title="object property">op</sup>
    </dd>
    <dt>
     has members
@@ -84,7 +161,67 @@ This section provides details for each class and property defined by Emotion-Awa
     is in range of
    </dt>
    <dd>
-    <a href="#considersContext" title="http://example.org/emotion-aware-recommendation#considersContext">considers context</a> <sup class="type-op" title="object property">op</sup>
+    <a href="#considersContext" title="http://example.org/emotion-aware-recommendation#considersContext">considers context</a> <sup class="type-op" title="object property">op</sup>, <a href="#derivedFromContext" title="http://example.org/emotion-aware-recommendation#derivedFromContext">derived from context</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="DataSource">
+  <h3>Data Source<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://example.org/emotion-aware-recommendation#DataSource</p>
+  <div class="comment">
+   <span class="markdown">A source of data used to populate the ontology with instances (e.g., Kaggle dataset, Spotify API, survey). Supports the data provenance tracking recommended by Norouzi et al. (2025) for LLM-based knowledge graph population.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#hasSourceURL" title="http://example.org/emotion-aware-recommendation#hasSourceURL">has source URL</a> <sup class="type-dp" title="data property">dp</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#populatedFrom" title="http://example.org/emotion-aware-recommendation#populatedFrom">populated from</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    has members
+   </dt>
+   <dd>
+    <a href="#KaggleEmotionDataset" title="http://example.org/emotion-aware-recommendation#KaggleEmotionDataset">Kaggle Emotion-Music Dataset</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#SpotifyAPISource" title="http://example.org/emotion-aware-recommendation#SpotifyAPISource">Spotify Web API</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="DynamicEmotion">
+  <h3>Dynamic Emotion<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://example.org/emotion-aware-recommendation#DynamicEmotion</p>
+  <div class="comment">
+   <span class="markdown">An emotion state that changes over time and is tracked across multiple sessions. Inspired by the temporal behavioral modeling in Fernandez et al. (2023) GRU-RNN framework, which predicts evolving user behavior styles across sessions.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#Emotion" title="http://example.org/emotion-aware-recommendation#Emotion">Emotion</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#changesOverTime" title="http://example.org/emotion-aware-recommendation#changesOverTime">changes over time</a> <sup class="type-op" title="object property">op</sup>, <a href="#derivedFromContext" title="http://example.org/emotion-aware-recommendation#derivedFromContext">derived from context</a> <sup class="type-op" title="object property">op</sup>, <a href="#hasIntensityLevel" title="http://example.org/emotion-aware-recommendation#hasIntensityLevel">has intensity level</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#recordedInSession" title="http://example.org/emotion-aware-recommendation#recordedInSession">recorded in session</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#changesOverTime" title="http://example.org/emotion-aware-recommendation#changesOverTime">changes over time</a> <sup class="type-op" title="object property">op</sup>, <a href="#hasDynamicEmotion" title="http://example.org/emotion-aware-recommendation#hasDynamicEmotion">has dynamic emotion</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    has members
+   </dt>
+   <dd>
+    <a href="#ElilStressHigh" title="http://example.org/emotion-aware-recommendation#ElilStressHigh">Elif - High Stress at Night</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#ElifStressLow" title="http://example.org/emotion-aware-recommendation#ElifStressLow">Elif - Low Stress After Listening</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#EnesLowMotivationMorning" title="http://example.org/emotion-aware-recommendation#EnesLowMotivationMorning">Enes - Low Motivation in Morning</a> <sup class="type-ni" title="named individual">ni</sup>
    </dd>
   </dl>
  </div>
@@ -119,9 +256,15 @@ This section provides details for each class and property defined by Emotion-Awa
   <h3>Emotion<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
   <p><strong>IRI:</strong> http://example.org/emotion-aware-recommendation#Emotion</p>
   <div class="comment">
-   <span class="markdown">An emotional state experienced by a user.</span>
+   <span class="markdown">An emotional state experienced by a user. Inspired by the UniEmotion ontology (Kim 2013) and Kim &amp; Lee (2015) emotion ontology for recommendation, emotions are categorized as Positive, Negative, or Neutral/Factual.</span>
   </div>
   <dl class="description">
+   <dt>
+    has sub-classes
+   </dt>
+   <dd>
+    <a href="#DynamicEmotion" title="http://example.org/emotion-aware-recommendation#DynamicEmotion">Dynamic Emotion</a> <sup class="type-c" title="class">c</sup>, <a href="#NegativeEmotion" title="http://example.org/emotion-aware-recommendation#NegativeEmotion">Negative Emotion</a> <sup class="type-c" title="class">c</sup>, <a href="#NeutralEmotion" title="http://example.org/emotion-aware-recommendation#NeutralEmotion">Neutral Emotion</a> <sup class="type-c" title="class">c</sup>, <a href="#PositiveEmotion" title="http://example.org/emotion-aware-recommendation#PositiveEmotion">Positive Emotion</a> <sup class="type-c" title="class">c</sup>
+   </dd>
    <dt>
     is in domain of
    </dt>
@@ -134,11 +277,32 @@ This section provides details for each class and property defined by Emotion-Awa
    <dd>
     <a href="#basedOnEmotion" title="http://example.org/emotion-aware-recommendation#basedOnEmotion">based on emotion</a> <sup class="type-op" title="object property">op</sup>, <a href="#feels" title="http://example.org/emotion-aware-recommendation#feels">feels</a> <sup class="type-op" title="object property">op</sup>, <a href="#relievesEmotion" title="http://example.org/emotion-aware-recommendation#relievesEmotion">relieves emotion</a> <sup class="type-op" title="object property">op</sup>
    </dd>
+  </dl>
+ </div>
+ <div class="entity" id="EmotionSession">
+  <h3>Emotion Session<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://example.org/emotion-aware-recommendation#EmotionSession</p>
+  <div class="comment">
+   <span class="markdown">A bounded time window during which a user's emotional state and interactions are recorded. Enables longitudinal modeling of emotion change, supporting the dynamic emotion tracking capability.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#hasInteraction" title="http://example.org/emotion-aware-recommendation#hasInteraction">has interaction</a> <sup class="type-op" title="object property">op</sup>, <a href="#hasTimestamp" title="http://example.org/emotion-aware-recommendation#hasTimestamp">has timestamp</a> <sup class="type-dp" title="data property">dp</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#recordedInSession" title="http://example.org/emotion-aware-recommendation#recordedInSession">recorded in session</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
    <dt>
     has members
    </dt>
    <dd>
-    <a href="#Anxiety" title="http://example.org/emotion-aware-recommendation#Anxiety">Anxiety</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#Boredom" title="http://example.org/emotion-aware-recommendation#Boredom">Boredom</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#Sadness" title="http://example.org/emotion-aware-recommendation#Sadness">Sadness</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#Stress" title="http://example.org/emotion-aware-recommendation#Stress">Stress</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#Tiredness" title="http://example.org/emotion-aware-recommendation#Tiredness">Tiredness</a> <sup class="type-ni" title="named individual">ni</sup>
+    <a href="#Session001" title="http://example.org/emotion-aware-recommendation#Session001">Elif Evening Session 2026-05-14</a> <sup class="type-ni" title="named individual">ni</sup>
    </dd>
   </dl>
  </div>
@@ -169,6 +333,27 @@ This section provides details for each class and property defined by Emotion-Awa
    </dd>
   </dl>
  </div>
+ <div class="entity" id="ExtrovertedPersonality">
+  <h3>Extroverted Personality<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://example.org/emotion-aware-recommendation#ExtrovertedPersonality</p>
+  <div class="comment">
+   <span class="markdown">A personality type characterized by sociability, high energy, and preference for stimulating environments. Extroverted users tend to prefer social, upbeat, or group-oriented content (e.g., party playlists, group films).</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#Personality" title="http://example.org/emotion-aware-recommendation#Personality">Personality</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has members
+   </dt>
+   <dd>
+    <a href="#Extrovert" title="http://example.org/emotion-aware-recommendation#Extrovert">Extrovert</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+  </dl>
+ </div>
  <div class="entity" id="Feedback">
   <h3>Feedback<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
   <p><strong>IRI:</strong> http://example.org/emotion-aware-recommendation#Feedback</p>
@@ -192,7 +377,7 @@ This section provides details for each class and property defined by Emotion-Awa
     has members
    </dt>
    <dd>
-    <a href="#Feedback001" title="http://example.org/emotion-aware-recommendation#Feedback001">Positive feedback for recommendation 001</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#Feedback002" title="http://example.org/emotion-aware-recommendation#Feedback002">Positive feedback for recommendation 002</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#Feedback003" title="http://example.org/emotion-aware-recommendation#Feedback003">Positive feedback for recommendation 003</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#Feedback004" title="http://example.org/emotion-aware-recommendation#Feedback004">Positive feedback for recommendation 004</a> <sup class="type-ni" title="named individual">ni</sup>
+    <a href="#Feedback001" title="http://example.org/emotion-aware-recommendation#Feedback001">Positive feedback 001</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#Feedback002" title="http://example.org/emotion-aware-recommendation#Feedback002">Positive feedback 002</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#Feedback003" title="http://example.org/emotion-aware-recommendation#Feedback003">Positive feedback 003</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#Feedback004" title="http://example.org/emotion-aware-recommendation#Feedback004">Positive feedback 004</a> <sup class="type-ni" title="named individual">ni</sup>
    </dd>
   </dl>
  </div>
@@ -223,24 +408,108 @@ This section provides details for each class and property defined by Emotion-Awa
    </dd>
   </dl>
  </div>
- <div class="entity" id="Personality">
-  <h3>Personality<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
-  <p><strong>IRI:</strong> http://example.org/emotion-aware-recommendation#Personality</p>
+ <div class="entity" id="NegativeEmotion">
+  <h3>Negative Emotion<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://example.org/emotion-aware-recommendation#NegativeEmotion</p>
   <div class="comment">
-   <span class="markdown">A personality trait that may affect recommendation suitability.</span>
+   <span class="markdown">An emotion associated with unpleasant or unfavorable affective states. Corresponds to 'negative emotional tags' in the UniEmotion ontology (Kim 2013). Examples: stress, sadness, anxiety, tiredness.</span>
   </div>
   <dl class="description">
    <dt>
-    is in range of
+    has super-classes
    </dt>
    <dd>
-    <a href="#hasPersonality" title="http://example.org/emotion-aware-recommendation#hasPersonality">has personality</a> <sup class="type-op" title="object property">op</sup>, <a href="#suitableForPersonality" title="http://example.org/emotion-aware-recommendation#suitableForPersonality">suitable for personality</a> <sup class="type-op" title="object property">op</sup>
+    <a href="#Emotion" title="http://example.org/emotion-aware-recommendation#Emotion">Emotion</a> <sup class="type-c" title="class">c</sup>
    </dd>
    <dt>
     has members
    </dt>
    <dd>
-    <a href="#Extrovert" title="http://example.org/emotion-aware-recommendation#Extrovert">Extrovert</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#Introvert" title="http://example.org/emotion-aware-recommendation#Introvert">Introvert</a> <sup class="type-ni" title="named individual">ni</sup>
+    <a href="#Anxiety" title="http://example.org/emotion-aware-recommendation#Anxiety">Anxiety</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#Sadness" title="http://example.org/emotion-aware-recommendation#Sadness">Sadness</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#Stress" title="http://example.org/emotion-aware-recommendation#Stress">Stress</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#Tiredness" title="http://example.org/emotion-aware-recommendation#Tiredness">Tiredness</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="NeuroticlPersonality">
+  <h3>Neurotic Personality<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://example.org/emotion-aware-recommendation#NeuroticlPersonality</p>
+  <div class="comment">
+   <span class="markdown">A personality type characterized by emotional instability and high sensitivity to stress. Neurotic users benefit most from calming, grounding content (e.g., meditation, nature soundscapes, breathing exercises).</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#Personality" title="http://example.org/emotion-aware-recommendation#Personality">Personality</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has members
+   </dt>
+   <dd>
+    <a href="#NeuroticiUser" title="http://example.org/emotion-aware-recommendation#NeuroticiUser">Neurotic User</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="NeutralEmotion">
+  <h3>Neutral Emotion<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://example.org/emotion-aware-recommendation#NeutralEmotion</p>
+  <div class="comment">
+   <span class="markdown">A factual or neutral affective state with neither strong positive nor negative valence. Corresponds to 'factual tags' in the UniEmotion ontology (Kim 2013). Examples: calmness, focus, boredom.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#Emotion" title="http://example.org/emotion-aware-recommendation#Emotion">Emotion</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has members
+   </dt>
+   <dd>
+    <a href="#Boredom" title="http://example.org/emotion-aware-recommendation#Boredom">Boredom</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="OpennessPersonality">
+  <h3>Openness Personality<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://example.org/emotion-aware-recommendation#OpennessPersonality</p>
+  <div class="comment">
+   <span class="markdown">A personality type characterized by curiosity, creativity, and appreciation of art. Users high in openness tend to enjoy diverse, novel, or artistic content (e.g., experimental music, documentaries, creative games).</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#Personality" title="http://example.org/emotion-aware-recommendation#Personality">Personality</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has members
+   </dt>
+   <dd>
+    <a href="#OpenUser" title="http://example.org/emotion-aware-recommendation#OpenUser">Open User</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Personality">
+  <h3>Personality<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://example.org/emotion-aware-recommendation#Personality</p>
+  <div class="comment">
+   <span class="markdown">A personality trait based on the Big Five model that may affect recommendation suitability. Sub-classes represent the primary personality dimensions relevant to emotion-based recommendation.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has sub-classes
+   </dt>
+   <dd>
+    <a href="#AgreeablePersonality" title="http://example.org/emotion-aware-recommendation#AgreeablePersonality">Agreeable Personality</a> <sup class="type-c" title="class">c</sup>, <a href="#ConscientiousPersonality" title="http://example.org/emotion-aware-recommendation#ConscientiousPersonality">Conscientious Personality</a> <sup class="type-c" title="class">c</sup>, <a href="#ExtrovertedPersonality" title="http://example.org/emotion-aware-recommendation#ExtrovertedPersonality">Extroverted Personality</a> <sup class="type-c" title="class">c</sup>, <a href="#IntrovertedPersonality" title="http://example.org/emotion-aware-recommendation#IntrovertedPersonality">Introverted Personality</a> <sup class="type-c" title="class">c</sup>, <a href="#NeuroticlPersonality" title="http://example.org/emotion-aware-recommendation#NeuroticlPersonality">Neurotic Personality</a> <sup class="type-c" title="class">c</sup>, <a href="#OpennessPersonality" title="http://example.org/emotion-aware-recommendation#OpennessPersonality">Openness Personality</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#hasPersonality" title="http://example.org/emotion-aware-recommendation#hasPersonality">has personality</a> <sup class="type-op" title="object property">op</sup>, <a href="#suitableForPersonality" title="http://example.org/emotion-aware-recommendation#suitableForPersonality">suitable for personality</a> <sup class="type-op" title="object property">op</sup>
    </dd>
   </dl>
  </div>
@@ -262,6 +531,21 @@ This section provides details for each class and property defined by Emotion-Awa
    </dt>
    <dd>
     <a href="#MobileApp" title="http://example.org/emotion-aware-recommendation#MobileApp">Mobile Application</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#Netflix" title="http://example.org/emotion-aware-recommendation#Netflix">Netflix</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#Spotify" title="http://example.org/emotion-aware-recommendation#Spotify">Spotify</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="PositiveEmotion">
+  <h3>Positive Emotion<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://example.org/emotion-aware-recommendation#PositiveEmotion</p>
+  <div class="comment">
+   <span class="markdown">An emotion associated with pleasant, favorable affective states. Corresponds to 'positive emotional tags' in the UniEmotion ontology (Kim 2013). Examples: happiness, excitement, contentment.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#Emotion" title="http://example.org/emotion-aware-recommendation#Emotion">Emotion</a> <sup class="type-c" title="class">c</sup>
    </dd>
   </dl>
  </div>
@@ -345,7 +629,7 @@ This section provides details for each class and property defined by Emotion-Awa
     is in domain of
    </dt>
    <dd>
-    <a href="#feels" title="http://example.org/emotion-aware-recommendation#feels">feels</a> <sup class="type-op" title="object property">op</sup>, <a href="#hasAge" title="http://example.org/emotion-aware-recommendation#hasAge">has age</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#hasNeed" title="http://example.org/emotion-aware-recommendation#hasNeed">has need</a> <sup class="type-op" title="object property">op</sup>, <a href="#hasPersonality" title="http://example.org/emotion-aware-recommendation#hasPersonality">has personality</a> <sup class="type-op" title="object property">op</sup>, <a href="#hasPreference" title="http://example.org/emotion-aware-recommendation#hasPreference">has preference</a> <sup class="type-op" title="object property">op</sup>, <a href="#hasTimeContext" title="http://example.org/emotion-aware-recommendation#hasTimeContext">has time context</a> <sup class="type-op" title="object property">op</sup>, <a href="#isInEnvironment" title="http://example.org/emotion-aware-recommendation#isInEnvironment">is in environment</a> <sup class="type-op" title="object property">op</sup>
+    <a href="#feels" title="http://example.org/emotion-aware-recommendation#feels">feels</a> <sup class="type-op" title="object property">op</sup>, <a href="#hasAge" title="http://example.org/emotion-aware-recommendation#hasAge">has age</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#hasBehaviorProfile" title="http://example.org/emotion-aware-recommendation#hasBehaviorProfile">has behavior profile</a> <sup class="type-op" title="object property">op</sup>, <a href="#hasDynamicEmotion" title="http://example.org/emotion-aware-recommendation#hasDynamicEmotion">has dynamic emotion</a> <sup class="type-op" title="object property">op</sup>, <a href="#hasNeed" title="http://example.org/emotion-aware-recommendation#hasNeed">has need</a> <sup class="type-op" title="object property">op</sup>, <a href="#hasPersonality" title="http://example.org/emotion-aware-recommendation#hasPersonality">has personality</a> <sup class="type-op" title="object property">op</sup>, <a href="#hasPreference" title="http://example.org/emotion-aware-recommendation#hasPreference">has preference</a> <sup class="type-op" title="object property">op</sup>, <a href="#hasTimeContext" title="http://example.org/emotion-aware-recommendation#hasTimeContext">has time context</a> <sup class="type-op" title="object property">op</sup>, <a href="#isInEnvironment" title="http://example.org/emotion-aware-recommendation#isInEnvironment">is in environment</a> <sup class="type-op" title="object property">op</sup>
    </dd>
    <dt>
     is in range of
@@ -358,6 +642,33 @@ This section provides details for each class and property defined by Emotion-Awa
    </dt>
    <dd>
     <a href="#Busra" title="http://example.org/emotion-aware-recommendation#Busra">Büşra</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#Deniz" title="http://example.org/emotion-aware-recommendation#Deniz">Deniz</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#Elif" title="http://example.org/emotion-aware-recommendation#Elif">Elif</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#Enes" title="http://example.org/emotion-aware-recommendation#Enes">Enes</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="UserInteraction">
+  <h3>User Interaction<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://example.org/emotion-aware-recommendation#UserInteraction</p>
+  <div class="comment">
+   <span class="markdown">A single recorded interaction event between a user and a recommended content item (e.g., play, skip, complete). Used to populate ontology instances from log data, as described in the LLM-based ontology population approach of Norouzi et al. (2025).</span>
+  </div>
+  <dl class="description">
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#hasInteractionType" title="http://example.org/emotion-aware-recommendation#hasInteractionType">has interaction type</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#interactedWith" title="http://example.org/emotion-aware-recommendation#interactedWith">interacted with</a> <sup class="type-op" title="object property">op</sup>, <a href="#populatedFrom" title="http://example.org/emotion-aware-recommendation#populatedFrom">populated from</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#hasInteraction" title="http://example.org/emotion-aware-recommendation#hasInteraction">has interaction</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    has members
+   </dt>
+   <dd>
+    <a href="#Interaction002" title="http://example.org/emotion-aware-recommendation#Interaction002">Elif completes Breathing Exercise</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#Interaction001" title="http://example.org/emotion-aware-recommendation#Interaction001">Elif plays LoFi Playlist</a> <sup class="type-ni" title="named individual">ni</sup>
    </dd>
   </dl>
  </div>
@@ -382,6 +693,27 @@ This section provides details for each class and property defined by Emotion-Awa
    </dd>
   </dl>
  </div>
+ <div class="entity" id="IntrovertedPersonality">
+  <h3>Introverted Personality<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://example.org/emotion-aware-recommendation#IntrovertedPersonality</p>
+  <div class="comment">
+   <span class="markdown">A personality type characterized by preference for solitary activities, deep focus, and low-stimulation environments. Introverted users tend to prefer calm, solo content (e.g., lo-fi music, meditation, solo games).</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#Personality" title="http://example.org/emotion-aware-recommendation#Personality">Personality</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has members
+   </dt>
+   <dd>
+    <a href="#Introvert" title="http://example.org/emotion-aware-recommendation#Introvert">Introvert</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+  </dl>
+ </div>
 </div><div xmlns:widoco="https://w3id.org/widoco/vocab#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="objectproperties">
  <h3 id="properties" class="list">Object Properties</h3>
  <ul class="hlist">
@@ -389,20 +721,28 @@ This section provides details for each class and property defined by Emotion-Awa
   <li><a href="#basedOnEmotion" title="http://example.org/emotion-aware-recommendation#basedOnEmotion">based on emotion</a></li>
   <li><a href="#basedOnNeed" title="http://example.org/emotion-aware-recommendation#basedOnNeed">based on need</a></li>
   <li><a href="#belongsToCategory" title="http://example.org/emotion-aware-recommendation#belongsToCategory">belongs to category</a></li>
+  <li><a href="#changesOverTime" title="http://example.org/emotion-aware-recommendation#changesOverTime">changes over time</a></li>
   <li><a href="#considersContext" title="http://example.org/emotion-aware-recommendation#considersContext">considers context</a></li>
   <li><a href="#createsNeed" title="http://example.org/emotion-aware-recommendation#createsNeed">creates need</a></li>
+  <li><a href="#derivedFromContext" title="http://example.org/emotion-aware-recommendation#derivedFromContext">derived from context</a></li>
   <li><a href="#feels" title="http://example.org/emotion-aware-recommendation#feels">feels</a></li>
   <li><a href="#givenTo" title="http://example.org/emotion-aware-recommendation#givenTo">given to</a></li>
+  <li><a href="#hasBehaviorProfile" title="http://example.org/emotion-aware-recommendation#hasBehaviorProfile">has behavior profile</a></li>
+  <li><a href="#hasDynamicEmotion" title="http://example.org/emotion-aware-recommendation#hasDynamicEmotion">has dynamic emotion</a></li>
   <li><a href="#hasEffect" title="http://example.org/emotion-aware-recommendation#hasEffect">has effect</a></li>
   <li><a href="#hasFeedback" title="http://example.org/emotion-aware-recommendation#hasFeedback">has feedback</a></li>
   <li><a href="#hasIntention" title="http://example.org/emotion-aware-recommendation#hasIntention">has intention</a></li>
+  <li><a href="#hasInteraction" title="http://example.org/emotion-aware-recommendation#hasInteraction">has interaction</a></li>
   <li><a href="#hasNeed" title="http://example.org/emotion-aware-recommendation#hasNeed">has need</a></li>
   <li><a href="#hasPersonality" title="http://example.org/emotion-aware-recommendation#hasPersonality">has personality</a></li>
   <li><a href="#hasPreference" title="http://example.org/emotion-aware-recommendation#hasPreference">has preference</a></li>
   <li><a href="#hasTimeContext" title="http://example.org/emotion-aware-recommendation#hasTimeContext">has time context</a></li>
   <li><a href="#includesContent" title="http://example.org/emotion-aware-recommendation#includesContent">includes content</a></li>
+  <li><a href="#interactedWith" title="http://example.org/emotion-aware-recommendation#interactedWith">interacted with</a></li>
   <li><a href="#isInEnvironment" title="http://example.org/emotion-aware-recommendation#isInEnvironment">is in environment</a></li>
   <li><a href="#matchesPreference" title="http://example.org/emotion-aware-recommendation#matchesPreference">matches preference</a></li>
+  <li><a href="#populatedFrom" title="http://example.org/emotion-aware-recommendation#populatedFrom">populated from</a></li>
+  <li><a href="#recordedInSession" title="http://example.org/emotion-aware-recommendation#recordedInSession">recorded in session</a></li>
   <li><a href="#relievesEmotion" title="http://example.org/emotion-aware-recommendation#relievesEmotion">relieves emotion</a></li>
   <li><a href="#satisfiedBy" title="http://example.org/emotion-aware-recommendation#satisfiedBy">satisfied by</a></li>
   <li><a href="#suitableForEnvironment" title="http://example.org/emotion-aware-recommendation#suitableForEnvironment">suitable for environment</a></li>
@@ -501,6 +841,29 @@ This section provides details for each class and property defined by Emotion-Awa
    </dl>
   </div>
  </div>
+ <div class="entity" id="changesOverTime">
+  <h3>changes over time<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://example.org/emotion-aware-recommendation#changesOverTime</p>
+  <div class="comment">
+   <span class="markdown">Links two dynamic emotion states to represent temporal transitions, enabling temporal reasoning over emotional trajectories.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#DynamicEmotion" title="http://example.org/emotion-aware-recommendation#DynamicEmotion">Dynamic Emotion</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#DynamicEmotion" title="http://example.org/emotion-aware-recommendation#DynamicEmotion">Dynamic Emotion</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
  <div class="entity" id="considersContext">
   <h3>considers context<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
   <p><strong>IRI:</strong> http://example.org/emotion-aware-recommendation#considersContext</p>
@@ -547,6 +910,29 @@ This section provides details for each class and property defined by Emotion-Awa
    </dl>
   </div>
  </div>
+ <div class="entity" id="derivedFromContext">
+  <h3>derived from context<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://example.org/emotion-aware-recommendation#derivedFromContext</p>
+  <div class="comment">
+   <span class="markdown">Links a dynamic emotion state to the contextual factors (time, environment) that contributed to it.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#DynamicEmotion" title="http://example.org/emotion-aware-recommendation#DynamicEmotion">Dynamic Emotion</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#Context" title="http://example.org/emotion-aware-recommendation#Context">Context</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
  <div class="entity" id="feels">
   <h3>feels<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
   <p><strong>IRI:</strong> http://example.org/emotion-aware-recommendation#feels</p>
@@ -589,6 +975,52 @@ This section provides details for each class and property defined by Emotion-Awa
     </dt>
     <dd>
      <a href="#User" title="http://example.org/emotion-aware-recommendation#User">User</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="hasBehaviorProfile">
+  <h3>has behavior profile<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://example.org/emotion-aware-recommendation#hasBehaviorProfile</p>
+  <div class="comment">
+   <span class="markdown">Connects a user to their predicted behavior profile (e.g., Cognitive, Speed, Sedentary, Aggressive), as classified by the GRU-RNN behavioral model described in Fernandez et al. (2023).</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#User" title="http://example.org/emotion-aware-recommendation#User">User</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#BehaviorProfile" title="http://example.org/emotion-aware-recommendation#BehaviorProfile">Behavior Profile</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="hasDynamicEmotion">
+  <h3>has dynamic emotion<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://example.org/emotion-aware-recommendation#hasDynamicEmotion</p>
+  <div class="comment">
+   <span class="markdown">Connects a user to a temporally-tracked dynamic emotion state recorded within a session.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#User" title="http://example.org/emotion-aware-recommendation#User">User</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#DynamicEmotion" title="http://example.org/emotion-aware-recommendation#DynamicEmotion">Dynamic Emotion</a> <sup class="type-c" title="class">c</sup>
     </dd>
    </dl>
   </div>
@@ -658,6 +1090,29 @@ This section provides details for each class and property defined by Emotion-Awa
     </dt>
     <dd>
      <a href="#Intention" title="http://example.org/emotion-aware-recommendation#Intention">Intention</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="hasInteraction">
+  <h3>has interaction<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://example.org/emotion-aware-recommendation#hasInteraction</p>
+  <div class="comment">
+   <span class="markdown">Connects an emotion session to individual user interaction events within it.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#EmotionSession" title="http://example.org/emotion-aware-recommendation#EmotionSession">Emotion Session</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#UserInteraction" title="http://example.org/emotion-aware-recommendation#UserInteraction">User Interaction</a> <sup class="type-c" title="class">c</sup>
     </dd>
    </dl>
   </div>
@@ -777,6 +1232,29 @@ This section provides details for each class and property defined by Emotion-Awa
    </dl>
   </div>
  </div>
+ <div class="entity" id="interactedWith">
+  <h3>interacted with<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://example.org/emotion-aware-recommendation#interactedWith</p>
+  <div class="comment">
+   <span class="markdown">Connects an interaction event to the content item the user acted on.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#UserInteraction" title="http://example.org/emotion-aware-recommendation#UserInteraction">User Interaction</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#Content" title="http://example.org/emotion-aware-recommendation#Content">Content</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
  <div class="entity" id="isInEnvironment">
   <h3>is in environment<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
   <p><strong>IRI:</strong> http://example.org/emotion-aware-recommendation#isInEnvironment</p>
@@ -819,6 +1297,52 @@ This section provides details for each class and property defined by Emotion-Awa
     </dt>
     <dd>
      <a href="#Preference" title="http://example.org/emotion-aware-recommendation#Preference">Preference</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="populatedFrom">
+  <h3>populated from<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://example.org/emotion-aware-recommendation#populatedFrom</p>
+  <div class="comment">
+   <span class="markdown">Documents the data source from which this interaction instance was extracted, supporting the provenance tracking approach of Norouzi et al. (2025).</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#UserInteraction" title="http://example.org/emotion-aware-recommendation#UserInteraction">User Interaction</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#DataSource" title="http://example.org/emotion-aware-recommendation#DataSource">Data Source</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="recordedInSession">
+  <h3>recorded in session<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://example.org/emotion-aware-recommendation#recordedInSession</p>
+  <div class="comment">
+   <span class="markdown">Links a dynamic emotion observation to the session in which it was recorded.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#DynamicEmotion" title="http://example.org/emotion-aware-recommendation#DynamicEmotion">Dynamic Emotion</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#EmotionSession" title="http://example.org/emotion-aware-recommendation#EmotionSession">Emotion Session</a> <sup class="type-c" title="class">c</sup>
     </dd>
    </dl>
   </div>
@@ -945,6 +1469,10 @@ This section provides details for each class and property defined by Emotion-Awa
   <li><a href="#hasConfidenceScore" title="http://example.org/emotion-aware-recommendation#hasConfidenceScore">has confidence score</a></li>
   <li><a href="#hasDurationMinutes" title="http://example.org/emotion-aware-recommendation#hasDurationMinutes">has duration in minutes</a></li>
   <li><a href="#hasFeedbackScore" title="http://example.org/emotion-aware-recommendation#hasFeedbackScore">has feedback score</a></li>
+  <li><a href="#hasIntensityLevel" title="http://example.org/emotion-aware-recommendation#hasIntensityLevel">has intensity level</a></li>
+  <li><a href="#hasInteractionType" title="http://example.org/emotion-aware-recommendation#hasInteractionType">has interaction type</a></li>
+  <li><a href="#hasSourceURL" title="http://example.org/emotion-aware-recommendation#hasSourceURL"> <span>has source URL</span> </a></li>
+  <li><a href="#hasTimestamp" title="http://example.org/emotion-aware-recommendation#hasTimestamp">has timestamp</a></li>
  </ul>
  <div class="entity" id="hasAge">
   <h3>has age<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
@@ -1026,58 +1554,100 @@ This section provides details for each class and property defined by Emotion-Awa
    </dl>
   </div>
  </div>
-</div><div xmlns:widoco="https://w3id.org/widoco/vocab#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="annotationproperties">
- <h3 id="annotationproperties" class="list">Annotation Properties</h3>
- <ul class="hlist">
-  <li><a href="#https://schema.org/codeRepository" title="https://schema.org/codeRepository"> <span>code Repository</span> </a></li>
-  <li><a href="#http://purl.org/dc/terms/created" title="http://purl.org/dc/terms/created"> <span>created</span> </a></li>
-  <li><a href="#http://purl.org/dc/terms/creator" title="http://purl.org/dc/terms/creator"> <span>creator</span> </a></li>
-  <li><a href="#http://purl.org/dc/terms/description" title="http://purl.org/dc/terms/description"> <span>description</span> </a></li>
-  <li><a href="#http://purl.org/dc/terms/license" title="http://purl.org/dc/terms/license"> <span>license</span> </a></li>
-  <li><a href="#http://purl.org/vocab/vann/preferredNamespacePrefix" title="http://purl.org/vocab/vann/preferredNamespacePrefix"> <span>preferred Namespace Prefix</span> </a></li>
-  <li><a href="#http://purl.org/vocab/vann/preferredNamespaceUri" title="http://purl.org/vocab/vann/preferredNamespaceUri"> <span>preferred Namespace Uri</span> </a></li>
-  <li><a href="#http://purl.org/dc/terms/publisher" title="http://purl.org/dc/terms/publisher"> <span>publisher</span> </a></li>
-  <li><a href="#http://purl.org/dc/terms/title" title="http://purl.org/dc/terms/title"> <span>title</span> </a></li>
- </ul>
- <div class="entity" id="https://schema.org/codeRepository">
-  <h3>code Repository<sup class="type-ap" title="annotation property">ap</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a> </span></h3>
-  <p><strong>IRI:</strong> https://schema.org/codeRepository</p>
+ <div class="entity" id="hasIntensityLevel">
+  <h3>has intensity level<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://example.org/emotion-aware-recommendation#hasIntensityLevel</p>
+  <div class="comment">
+   <span class="markdown">A numeric score (0.0–1.0) representing the intensity of a dynamic emotion at the time of observation.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#DynamicEmotion" title="http://example.org/emotion-aware-recommendation#DynamicEmotion">Dynamic Emotion</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2001/XMLSchema#decimal" target="_blank" title="http://www.w3.org/2001/XMLSchema#decimal">decimal</a>
+    </dd>
+   </dl>
+  </div>
  </div>
- <div class="entity" id="http://purl.org/dc/terms/created">
-  <h3>created<sup class="type-ap" title="annotation property">ap</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a> </span></h3>
-  <p><strong>IRI:</strong> http://purl.org/dc/terms/created</p>
+ <div class="entity" id="hasInteractionType">
+  <h3>has interaction type<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://example.org/emotion-aware-recommendation#hasInteractionType</p>
+  <div class="comment">
+   <span class="markdown">The type of user interaction (e.g., 'play', 'skip', 'complete', 'like').</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#UserInteraction" title="http://example.org/emotion-aware-recommendation#UserInteraction">User Interaction</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2001/XMLSchema#string" target="_blank" title="http://www.w3.org/2001/XMLSchema#string">string</a>
+    </dd>
+   </dl>
+  </div>
  </div>
- <div class="entity" id="http://purl.org/dc/terms/creator">
-  <h3>creator<sup class="type-ap" title="annotation property">ap</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a> </span></h3>
-  <p><strong>IRI:</strong> http://purl.org/dc/terms/creator</p>
+ <div class="entity" id="hasSourceURL">
+  <h3>has source URL<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://example.org/emotion-aware-recommendation#hasSourceURL</p>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#DataSource" title="http://example.org/emotion-aware-recommendation#DataSource">Data Source</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2001/XMLSchema#anyURI" target="_blank" title="http://www.w3.org/2001/XMLSchema#anyURI">any U R I</a>
+    </dd>
+   </dl>
+  </div>
  </div>
- <div class="entity" id="http://purl.org/dc/terms/description">
-  <h3>description<sup class="type-ap" title="annotation property">ap</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a> </span></h3>
-  <p><strong>IRI:</strong> http://purl.org/dc/terms/description</p>
- </div>
- <div class="entity" id="http://purl.org/dc/terms/license">
-  <h3>license<sup class="type-ap" title="annotation property">ap</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a> </span></h3>
-  <p><strong>IRI:</strong> http://purl.org/dc/terms/license</p>
- </div>
- <div class="entity" id="http://purl.org/vocab/vann/preferredNamespacePrefix">
-  <h3>preferred Namespace Prefix<sup class="type-ap" title="annotation property">ap</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a> </span></h3>
-  <p><strong>IRI:</strong> http://purl.org/vocab/vann/preferredNamespacePrefix</p>
- </div>
- <div class="entity" id="http://purl.org/vocab/vann/preferredNamespaceUri">
-  <h3>preferred Namespace Uri<sup class="type-ap" title="annotation property">ap</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a> </span></h3>
-  <p><strong>IRI:</strong> http://purl.org/vocab/vann/preferredNamespaceUri</p>
- </div>
- <div class="entity" id="http://purl.org/dc/terms/publisher">
-  <h3>publisher<sup class="type-ap" title="annotation property">ap</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a> </span></h3>
-  <p><strong>IRI:</strong> http://purl.org/dc/terms/publisher</p>
- </div>
- <div class="entity" id="http://purl.org/dc/terms/title">
-  <h3>title<sup class="type-ap" title="annotation property">ap</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a> </span></h3>
-  <p><strong>IRI:</strong> http://purl.org/dc/terms/title</p>
+ <div class="entity" id="hasTimestamp">
+  <h3>has timestamp<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://example.org/emotion-aware-recommendation#hasTimestamp</p>
+  <div class="comment">
+   <span class="markdown">The date-time when the emotion session was recorded.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#EmotionSession" title="http://example.org/emotion-aware-recommendation#EmotionSession">Emotion Session</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2001/XMLSchema#dateTime" target="_blank" title="http://www.w3.org/2001/XMLSchema#dateTime">date Time</a>
+    </dd>
+   </dl>
+  </div>
  </div>
 </div><div xmlns:widoco="https://w3id.org/widoco/vocab#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="namedindividuals">
  <h3 id="namedindividuals" class="list">Named Individuals</h3>
  <ul class="hlist">
+  <li><a href="#AggressiveBehavior" title="http://example.org/emotion-aware-recommendation#AggressiveBehavior">Aggressive Behavior</a></li>
+  <li><a href="#AgreeableUser" title="http://example.org/emotion-aware-recommendation#AgreeableUser">Agreeable User</a></li>
   <li><a href="#Alone" title="http://example.org/emotion-aware-recommendation#Alone">Alone</a></li>
   <li><a href="#Anxiety" title="http://example.org/emotion-aware-recommendation#Anxiety">Anxiety</a></li>
   <li><a href="#Boredom" title="http://example.org/emotion-aware-recommendation#Boredom">Boredom</a></li>
@@ -1085,19 +1655,28 @@ This section provides details for each class and property defined by Emotion-Awa
   <li><a href="#Busra" title="http://example.org/emotion-aware-recommendation#Busra">Büşra</a></li>
   <li><a href="#CalmingEffect" title="http://example.org/emotion-aware-recommendation#CalmingEffect">Calming Effect</a></li>
   <li><a href="#Calmness" title="http://example.org/emotion-aware-recommendation#Calmness">Calmness</a></li>
+  <li><a href="#CognitiveBehavior" title="http://example.org/emotion-aware-recommendation#CognitiveBehavior">Cognitive Behavior</a></li>
   <li><a href="#ComfortMovie" title="http://example.org/emotion-aware-recommendation#ComfortMovie">Comfort Movie</a></li>
   <li><a href="#Recommendation002" title="http://example.org/emotion-aware-recommendation#Recommendation002">Comfort movie recommendation for Deniz</a></li>
+  <li><a href="#ConscientiousUser" title="http://example.org/emotion-aware-recommendation#ConscientiousUser">Conscientious User</a></li>
   <li><a href="#Deniz" title="http://example.org/emotion-aware-recommendation#Deniz">Deniz</a></li>
   <li><a href="#DistractingEffect" title="http://example.org/emotion-aware-recommendation#DistractingEffect">Distracting Effect</a></li>
   <li><a href="#Distraction" title="http://example.org/emotion-aware-recommendation#Distraction">Distraction</a></li>
   <li><a href="#Elif" title="http://example.org/emotion-aware-recommendation#Elif">Elif</a></li>
+  <li><a href="#ElilStressHigh" title="http://example.org/emotion-aware-recommendation#ElilStressHigh">Elif - High Stress at Night</a></li>
+  <li><a href="#ElifStressLow" title="http://example.org/emotion-aware-recommendation#ElifStressLow">Elif - Low Stress After Listening</a></li>
+  <li><a href="#Interaction002" title="http://example.org/emotion-aware-recommendation#Interaction002">Elif completes Breathing Exercise</a></li>
+  <li><a href="#Session001" title="http://example.org/emotion-aware-recommendation#Session001">Elif Evening Session 2026-05-14</a></li>
+  <li><a href="#Interaction001" title="http://example.org/emotion-aware-recommendation#Interaction001">Elif plays LoFi Playlist</a></li>
   <li><a href="#EmotionalReliefEffect" title="http://example.org/emotion-aware-recommendation#EmotionalReliefEffect">Emotional Relief Effect</a></li>
   <li><a href="#EmotionalSupport" title="http://example.org/emotion-aware-recommendation#EmotionalSupport">Emotional Support</a></li>
   <li><a href="#Enes" title="http://example.org/emotion-aware-recommendation#Enes">Enes</a></li>
+  <li><a href="#EnesLowMotivationMorning" title="http://example.org/emotion-aware-recommendation#EnesLowMotivationMorning">Enes - Low Motivation in Morning</a></li>
   <li><a href="#Evening" title="http://example.org/emotion-aware-recommendation#Evening">Evening</a></li>
   <li><a href="#Extrovert" title="http://example.org/emotion-aware-recommendation#Extrovert">Extrovert</a></li>
   <li><a href="#Game" title="http://example.org/emotion-aware-recommendation#Game">Game</a></li>
   <li><a href="#Home" title="http://example.org/emotion-aware-recommendation#Home">Home</a></li>
+  <li><a href="#KaggleEmotionDataset" title="http://example.org/emotion-aware-recommendation#KaggleEmotionDataset">Kaggle Emotion-Music Dataset</a></li>
   <li><a href="#LikesGames" title="http://example.org/emotion-aware-recommendation#LikesGames">Likes Games</a></li>
   <li><a href="#LikesMovies" title="http://example.org/emotion-aware-recommendation#LikesMovies">Likes Movies</a></li>
   <li><a href="#LikesMusic" title="http://example.org/emotion-aware-recommendation#LikesMusic">Likes Music</a></li>
@@ -1115,12 +1694,14 @@ This section provides details for each class and property defined by Emotion-Awa
   <li><a href="#Movie" title="http://example.org/emotion-aware-recommendation#Movie">Movie</a></li>
   <li><a href="#Music" title="http://example.org/emotion-aware-recommendation#Music">Music</a></li>
   <li><a href="#Netflix" title="http://example.org/emotion-aware-recommendation#Netflix">Netflix</a></li>
+  <li><a href="#NeuroticiUser" title="http://example.org/emotion-aware-recommendation#NeuroticiUser">Neurotic User</a></li>
   <li><a href="#Night" title="http://example.org/emotion-aware-recommendation#Night">Night</a></li>
+  <li><a href="#OpenUser" title="http://example.org/emotion-aware-recommendation#OpenUser">Open User</a></li>
   <li><a href="#Podcast" title="http://example.org/emotion-aware-recommendation#Podcast">Podcast</a></li>
-  <li><a href="#Feedback001" title="http://example.org/emotion-aware-recommendation#Feedback001">Positive feedback for recommendation 001</a></li>
-  <li><a href="#Feedback002" title="http://example.org/emotion-aware-recommendation#Feedback002">Positive feedback for recommendation 002</a></li>
-  <li><a href="#Feedback003" title="http://example.org/emotion-aware-recommendation#Feedback003">Positive feedback for recommendation 003</a></li>
-  <li><a href="#Feedback004" title="http://example.org/emotion-aware-recommendation#Feedback004">Positive feedback for recommendation 004</a></li>
+  <li><a href="#Feedback001" title="http://example.org/emotion-aware-recommendation#Feedback001">Positive feedback 001</a></li>
+  <li><a href="#Feedback002" title="http://example.org/emotion-aware-recommendation#Feedback002">Positive feedback 002</a></li>
+  <li><a href="#Feedback003" title="http://example.org/emotion-aware-recommendation#Feedback003">Positive feedback 003</a></li>
+  <li><a href="#Feedback004" title="http://example.org/emotion-aware-recommendation#Feedback004">Positive feedback 004</a></li>
   <li><a href="#PuzzleGame" title="http://example.org/emotion-aware-recommendation#PuzzleGame">Puzzle Game</a></li>
   <li><a href="#Recommendation003" title="http://example.org/emotion-aware-recommendation#Recommendation003">Puzzle game recommendation for Büşra</a></li>
   <li><a href="#ReduceStress" title="http://example.org/emotion-aware-recommendation#ReduceStress">Reduce Stress</a></li>
@@ -1128,7 +1709,10 @@ This section provides details for each class and property defined by Emotion-Awa
   <li><a href="#RelaxingEffect" title="http://example.org/emotion-aware-recommendation#RelaxingEffect">Relaxing Effect</a></li>
   <li><a href="#Sadness" title="http://example.org/emotion-aware-recommendation#Sadness">Sadness</a></li>
   <li><a href="#School" title="http://example.org/emotion-aware-recommendation#School">School</a></li>
+  <li><a href="#SedentaryBehavior" title="http://example.org/emotion-aware-recommendation#SedentaryBehavior">Sedentary Behavior</a></li>
+  <li><a href="#SpeedBehavior" title="http://example.org/emotion-aware-recommendation#SpeedBehavior">Speed Behavior</a></li>
   <li><a href="#Spotify" title="http://example.org/emotion-aware-recommendation#Spotify">Spotify</a></li>
+  <li><a href="#SpotifyAPISource" title="http://example.org/emotion-aware-recommendation#SpotifyAPISource">Spotify Web API</a></li>
   <li><a href="#Stress" title="http://example.org/emotion-aware-recommendation#Stress">Stress</a></li>
   <li><a href="#Recommendation001" title="http://example.org/emotion-aware-recommendation#Recommendation001">Stress relief music recommendation for Elif</a></li>
   <li><a href="#Tiredness" title="http://example.org/emotion-aware-recommendation#Tiredness">Tiredness</a></li>
@@ -1137,6 +1721,36 @@ This section provides details for each class and property defined by Emotion-Awa
   <li><a href="#IncreaseMotivation" title="http://example.org/emotion-aware-recommendation#IncreaseMotivation">Increase Motivation</a></li>
   <li><a href="#Introvert" title="http://example.org/emotion-aware-recommendation#Introvert">Introvert</a></li>
  </ul>
+ <div class="entity" id="AggressiveBehavior">
+  <h3>Aggressive Behavior<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://example.org/emotion-aware-recommendation#AggressiveBehavior</p>
+  <div class="comment">
+   <span class="markdown">User who skips content frequently, indicating high selectivity or stress.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    belongs to
+   </dt>
+   <dd>
+    <a href="#BehaviorProfile" title="http://example.org/emotion-aware-recommendation#BehaviorProfile">Behavior Profile</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="AgreeableUser">
+  <h3>Agreeable User<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://example.org/emotion-aware-recommendation#AgreeableUser</p>
+  <div class="comment">
+   <span class="markdown">Agreeable personality individual — enjoys emotionally warm, cooperative content.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    belongs to
+   </dt>
+   <dd>
+    <a href="#AgreeablePersonality" title="http://example.org/emotion-aware-recommendation#AgreeablePersonality">Agreeable Personality</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
  <div class="entity" id="Alone">
   <h3>Alone<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
   <p><strong>IRI:</strong> http://example.org/emotion-aware-recommendation#Alone</p>
@@ -1157,7 +1771,7 @@ This section provides details for each class and property defined by Emotion-Awa
     belongs to
    </dt>
    <dd>
-    <a href="#Emotion" title="http://example.org/emotion-aware-recommendation#Emotion">Emotion</a> <sup class="type-c" title="class">c</sup>
+    <a href="#NegativeEmotion" title="http://example.org/emotion-aware-recommendation#NegativeEmotion">Negative Emotion</a> <sup class="type-c" title="class">c</sup>
    </dd>
    <dt>
     has facts
@@ -1175,7 +1789,7 @@ This section provides details for each class and property defined by Emotion-Awa
     belongs to
    </dt>
    <dd>
-    <a href="#Emotion" title="http://example.org/emotion-aware-recommendation#Emotion">Emotion</a> <sup class="type-c" title="class">c</sup>
+    <a href="#NeutralEmotion" title="http://example.org/emotion-aware-recommendation#NeutralEmotion">Neutral Emotion</a> <sup class="type-c" title="class">c</sup>
    </dd>
    <dt>
     has facts
@@ -1296,6 +1910,21 @@ This section provides details for each class and property defined by Emotion-Awa
    </dd>
   </dl>
  </div>
+ <div class="entity" id="CognitiveBehavior">
+  <h3>Cognitive Behavior<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://example.org/emotion-aware-recommendation#CognitiveBehavior</p>
+  <div class="comment">
+   <span class="markdown">User who engages deeply with content, high intellectual processing.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    belongs to
+   </dt>
+   <dd>
+    <a href="#BehaviorProfile" title="http://example.org/emotion-aware-recommendation#BehaviorProfile">Behavior Profile</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
  <div class="entity" id="ComfortMovie">
   <h3>Comfort Movie<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
   <p><strong>IRI:</strong> http://example.org/emotion-aware-recommendation#ComfortMovie</p>
@@ -1364,7 +1993,7 @@ This section provides details for each class and property defined by Emotion-Awa
     <a href="#givenTo" title="http://example.org/emotion-aware-recommendation#givenTo">given to</a> <sup class="type-op" title="object property">op</sup> <a href="#Deniz" title="http://example.org/emotion-aware-recommendation#Deniz">Deniz</a> <sup class="type-ni" title="named individual">ni</sup>
    </dd>
    <dd>
-    <a href="#hasFeedback" title="http://example.org/emotion-aware-recommendation#hasFeedback">has feedback</a> <sup class="type-op" title="object property">op</sup> <a href="#Feedback002" title="http://example.org/emotion-aware-recommendation#Feedback002">Positive feedback for recommendation 002</a> <sup class="type-ni" title="named individual">ni</sup>
+    <a href="#hasFeedback" title="http://example.org/emotion-aware-recommendation#hasFeedback">has feedback</a> <sup class="type-op" title="object property">op</sup> <a href="#Feedback002" title="http://example.org/emotion-aware-recommendation#Feedback002">Positive feedback 002</a> <sup class="type-ni" title="named individual">ni</sup>
    </dd>
    <dd>
     <a href="#hasIntention" title="http://example.org/emotion-aware-recommendation#hasIntention">has intention</a> <sup class="type-op" title="object property">op</sup> <a href="#ImproveMood" title="http://example.org/emotion-aware-recommendation#ImproveMood">Improve Mood</a> <sup class="type-ni" title="named individual">ni</sup>
@@ -1374,6 +2003,21 @@ This section provides details for each class and property defined by Emotion-Awa
    </dd>
    <dd>
     <a href="#hasConfidenceScore" title="http://example.org/emotion-aware-recommendation#hasConfidenceScore">has confidence score</a> <sup class="type-dp" title="data property">dp</sup> <span class="literal">"0.87"^^<a href="http://www.w3.org/2001/XMLSchema#decimal" target="_blank" title="http://www.w3.org/2001/XMLSchema#decimal">decimal</a> </span>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="ConscientiousUser">
+  <h3>Conscientious User<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://example.org/emotion-aware-recommendation#ConscientiousUser</p>
+  <div class="comment">
+   <span class="markdown">Conscientious personality individual — prefers structured, educational content.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    belongs to
+   </dt>
+   <dd>
+    <a href="#ConscientiousPersonality" title="http://example.org/emotion-aware-recommendation#ConscientiousPersonality">Conscientious Personality</a> <sup class="type-c" title="class">c</sup>
    </dd>
   </dl>
  </div>
@@ -1466,6 +2110,12 @@ This section provides details for each class and property defined by Emotion-Awa
     <a href="#feels" title="http://example.org/emotion-aware-recommendation#feels">feels</a> <sup class="type-op" title="object property">op</sup> <a href="#Stress" title="http://example.org/emotion-aware-recommendation#Stress">Stress</a> <sup class="type-ni" title="named individual">ni</sup>
    </dd>
    <dd>
+    <a href="#hasBehaviorProfile" title="http://example.org/emotion-aware-recommendation#hasBehaviorProfile">has behavior profile</a> <sup class="type-op" title="object property">op</sup> <a href="#SpeedBehavior" title="http://example.org/emotion-aware-recommendation#SpeedBehavior">Speed Behavior</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+   <dd>
+    <a href="#hasDynamicEmotion" title="http://example.org/emotion-aware-recommendation#hasDynamicEmotion">has dynamic emotion</a> <sup class="type-op" title="object property">op</sup> <a href="#ElilStressHigh" title="http://example.org/emotion-aware-recommendation#ElilStressHigh">Elif - High Stress at Night</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+   <dd>
     <a href="#hasNeed" title="http://example.org/emotion-aware-recommendation#hasNeed">has need</a> <sup class="type-op" title="object property">op</sup> <a href="#Relaxation" title="http://example.org/emotion-aware-recommendation#Relaxation">Relaxation</a> <sup class="type-ni" title="named individual">ni</sup>
    </dd>
    <dd>
@@ -1488,6 +2138,126 @@ This section provides details for each class and property defined by Emotion-Awa
    </dd>
    <dd>
     <a href="#hasAge" title="http://example.org/emotion-aware-recommendation#hasAge">has age</a> <sup class="type-dp" title="data property">dp</sup> <span class="literal">"21"^^<a href="http://www.w3.org/2001/XMLSchema#integer" target="_blank" title="http://www.w3.org/2001/XMLSchema#integer">integer</a> </span>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="ElilStressHigh">
+  <h3>Elif - High Stress at Night<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://example.org/emotion-aware-recommendation#ElilStressHigh</p>
+  <dl class="description">
+   <dt>
+    belongs to
+   </dt>
+   <dd>
+    <a href="#DynamicEmotion" title="http://example.org/emotion-aware-recommendation#DynamicEmotion">Dynamic Emotion</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has facts
+   </dt>
+   <dd>
+    <a href="#derivedFromContext" title="http://example.org/emotion-aware-recommendation#derivedFromContext">derived from context</a> <sup class="type-op" title="object property">op</sup> <a href="#Alone" title="http://example.org/emotion-aware-recommendation#Alone">Alone</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+   <dd>
+    <a href="#derivedFromContext" title="http://example.org/emotion-aware-recommendation#derivedFromContext">derived from context</a> <sup class="type-op" title="object property">op</sup> <a href="#Night" title="http://example.org/emotion-aware-recommendation#Night">Night</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+   <dd>
+    <a href="#recordedInSession" title="http://example.org/emotion-aware-recommendation#recordedInSession">recorded in session</a> <sup class="type-op" title="object property">op</sup> <a href="#Session001" title="http://example.org/emotion-aware-recommendation#Session001">Elif Evening Session 2026-05-14</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+   <dd>
+    <a href="#hasIntensityLevel" title="http://example.org/emotion-aware-recommendation#hasIntensityLevel">has intensity level</a> <sup class="type-dp" title="data property">dp</sup> <span class="literal">"0.85"^^<a href="http://www.w3.org/2001/XMLSchema#decimal" target="_blank" title="http://www.w3.org/2001/XMLSchema#decimal">decimal</a> </span>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="ElifStressLow">
+  <h3>Elif - Low Stress After Listening<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://example.org/emotion-aware-recommendation#ElifStressLow</p>
+  <dl class="description">
+   <dt>
+    belongs to
+   </dt>
+   <dd>
+    <a href="#DynamicEmotion" title="http://example.org/emotion-aware-recommendation#DynamicEmotion">Dynamic Emotion</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has facts
+   </dt>
+   <dd>
+    <a href="#changesOverTime" title="http://example.org/emotion-aware-recommendation#changesOverTime">changes over time</a> <sup class="type-op" title="object property">op</sup> <a href="#ElilStressHigh" title="http://example.org/emotion-aware-recommendation#ElilStressHigh">Elif - High Stress at Night</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+   <dd>
+    <a href="#hasIntensityLevel" title="http://example.org/emotion-aware-recommendation#hasIntensityLevel">has intensity level</a> <sup class="type-dp" title="data property">dp</sup> <span class="literal">"0.30"^^<a href="http://www.w3.org/2001/XMLSchema#decimal" target="_blank" title="http://www.w3.org/2001/XMLSchema#decimal">decimal</a> </span>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Interaction002">
+  <h3>Elif completes Breathing Exercise<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://example.org/emotion-aware-recommendation#Interaction002</p>
+  <dl class="description">
+   <dt>
+    belongs to
+   </dt>
+   <dd>
+    <a href="#UserInteraction" title="http://example.org/emotion-aware-recommendation#UserInteraction">User Interaction</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has facts
+   </dt>
+   <dd>
+    <a href="#interactedWith" title="http://example.org/emotion-aware-recommendation#interactedWith">interacted with</a> <sup class="type-op" title="object property">op</sup> <a href="#BreathingExercise" title="http://example.org/emotion-aware-recommendation#BreathingExercise">Breathing Exercise</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+   <dd>
+    <a href="#populatedFrom" title="http://example.org/emotion-aware-recommendation#populatedFrom">populated from</a> <sup class="type-op" title="object property">op</sup> <a href="#SpotifyAPISource" title="http://example.org/emotion-aware-recommendation#SpotifyAPISource">Spotify Web API</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+   <dd>
+    <a href="#hasInteractionType" title="http://example.org/emotion-aware-recommendation#hasInteractionType">has interaction type</a> <sup class="type-dp" title="data property">dp</sup> <span class="literal">"complete"</span>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Session001">
+  <h3>Elif Evening Session 2026-05-14<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://example.org/emotion-aware-recommendation#Session001</p>
+  <dl class="description">
+   <dt>
+    belongs to
+   </dt>
+   <dd>
+    <a href="#EmotionSession" title="http://example.org/emotion-aware-recommendation#EmotionSession">Emotion Session</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has facts
+   </dt>
+   <dd>
+    <a href="#hasInteraction" title="http://example.org/emotion-aware-recommendation#hasInteraction">has interaction</a> <sup class="type-op" title="object property">op</sup> <a href="#Interaction001" title="http://example.org/emotion-aware-recommendation#Interaction001">Elif plays LoFi Playlist</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+   <dd>
+    <a href="#hasInteraction" title="http://example.org/emotion-aware-recommendation#hasInteraction">has interaction</a> <sup class="type-op" title="object property">op</sup> <a href="#Interaction002" title="http://example.org/emotion-aware-recommendation#Interaction002">Elif completes Breathing Exercise</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+   <dd>
+    <a href="#hasTimestamp" title="http://example.org/emotion-aware-recommendation#hasTimestamp">has timestamp</a> <sup class="type-dp" title="data property">dp</sup> <span class="literal">"2026-05-14T21:30:00"^^<a href="http://www.w3.org/2001/XMLSchema#dateTime" target="_blank" title="http://www.w3.org/2001/XMLSchema#dateTime">date Time</a> </span>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Interaction001">
+  <h3>Elif plays LoFi Playlist<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://example.org/emotion-aware-recommendation#Interaction001</p>
+  <dl class="description">
+   <dt>
+    belongs to
+   </dt>
+   <dd>
+    <a href="#UserInteraction" title="http://example.org/emotion-aware-recommendation#UserInteraction">User Interaction</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has facts
+   </dt>
+   <dd>
+    <a href="#interactedWith" title="http://example.org/emotion-aware-recommendation#interactedWith">interacted with</a> <sup class="type-op" title="object property">op</sup> <a href="#LoFiPlaylist" title="http://example.org/emotion-aware-recommendation#LoFiPlaylist">Lo-Fi Playlist</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+   <dd>
+    <a href="#populatedFrom" title="http://example.org/emotion-aware-recommendation#populatedFrom">populated from</a> <sup class="type-op" title="object property">op</sup> <a href="#SpotifyAPISource" title="http://example.org/emotion-aware-recommendation#SpotifyAPISource">Spotify Web API</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+   <dd>
+    <a href="#hasInteractionType" title="http://example.org/emotion-aware-recommendation#hasInteractionType">has interaction type</a> <sup class="type-dp" title="data property">dp</sup> <span class="literal">"play"</span>
    </dd>
   </dl>
  </div>
@@ -1544,6 +2314,12 @@ This section provides details for each class and property defined by Emotion-Awa
     <a href="#feels" title="http://example.org/emotion-aware-recommendation#feels">feels</a> <sup class="type-op" title="object property">op</sup> <a href="#Tiredness" title="http://example.org/emotion-aware-recommendation#Tiredness">Tiredness</a> <sup class="type-ni" title="named individual">ni</sup>
    </dd>
    <dd>
+    <a href="#hasBehaviorProfile" title="http://example.org/emotion-aware-recommendation#hasBehaviorProfile">has behavior profile</a> <sup class="type-op" title="object property">op</sup> <a href="#CognitiveBehavior" title="http://example.org/emotion-aware-recommendation#CognitiveBehavior">Cognitive Behavior</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+   <dd>
+    <a href="#hasDynamicEmotion" title="http://example.org/emotion-aware-recommendation#hasDynamicEmotion">has dynamic emotion</a> <sup class="type-op" title="object property">op</sup> <a href="#EnesLowMotivationMorning" title="http://example.org/emotion-aware-recommendation#EnesLowMotivationMorning">Enes - Low Motivation in Morning</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+   <dd>
     <a href="#hasNeed" title="http://example.org/emotion-aware-recommendation#hasNeed">has need</a> <sup class="type-op" title="object property">op</sup> <a href="#Motivation" title="http://example.org/emotion-aware-recommendation#Motivation">Motivation</a> <sup class="type-ni" title="named individual">ni</sup>
    </dd>
    <dd>
@@ -1563,6 +2339,30 @@ This section provides details for each class and property defined by Emotion-Awa
    </dd>
   </dl>
  </div>
+ <div class="entity" id="EnesLowMotivationMorning">
+  <h3>Enes - Low Motivation in Morning<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://example.org/emotion-aware-recommendation#EnesLowMotivationMorning</p>
+  <dl class="description">
+   <dt>
+    belongs to
+   </dt>
+   <dd>
+    <a href="#DynamicEmotion" title="http://example.org/emotion-aware-recommendation#DynamicEmotion">Dynamic Emotion</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has facts
+   </dt>
+   <dd>
+    <a href="#derivedFromContext" title="http://example.org/emotion-aware-recommendation#derivedFromContext">derived from context</a> <sup class="type-op" title="object property">op</sup> <a href="#Morning" title="http://example.org/emotion-aware-recommendation#Morning">Morning</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+   <dd>
+    <a href="#derivedFromContext" title="http://example.org/emotion-aware-recommendation#derivedFromContext">derived from context</a> <sup class="type-op" title="object property">op</sup> <a href="#School" title="http://example.org/emotion-aware-recommendation#School">School</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+   <dd>
+    <a href="#hasIntensityLevel" title="http://example.org/emotion-aware-recommendation#hasIntensityLevel">has intensity level</a> <sup class="type-dp" title="data property">dp</sup> <span class="literal">"0.65"^^<a href="http://www.w3.org/2001/XMLSchema#decimal" target="_blank" title="http://www.w3.org/2001/XMLSchema#decimal">decimal</a> </span>
+   </dd>
+  </dl>
+ </div>
  <div class="entity" id="Evening">
   <h3>Evening<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
   <p><strong>IRI:</strong> http://example.org/emotion-aware-recommendation#Evening</p>
@@ -1578,12 +2378,15 @@ This section provides details for each class and property defined by Emotion-Awa
  <div class="entity" id="Extrovert">
   <h3>Extrovert<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
   <p><strong>IRI:</strong> http://example.org/emotion-aware-recommendation#Extrovert</p>
+  <div class="comment">
+   <span class="markdown">Extroverted personality individual. Suitable for social, energetic content.</span>
+  </div>
   <dl class="description">
    <dt>
     belongs to
    </dt>
    <dd>
-    <a href="#Personality" title="http://example.org/emotion-aware-recommendation#Personality">Personality</a> <sup class="type-c" title="class">c</sup>
+    <a href="#ExtrovertedPersonality" title="http://example.org/emotion-aware-recommendation#ExtrovertedPersonality">Extroverted Personality</a> <sup class="type-c" title="class">c</sup>
    </dd>
   </dl>
  </div>
@@ -1608,6 +2411,27 @@ This section provides details for each class and property defined by Emotion-Awa
    </dt>
    <dd>
     <a href="#Environment" title="http://example.org/emotion-aware-recommendation#Environment">Environment</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="KaggleEmotionDataset">
+  <h3>Kaggle Emotion-Music Dataset<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://example.org/emotion-aware-recommendation#KaggleEmotionDataset</p>
+  <div class="comment">
+   <span class="markdown">Publicly available dataset mapping emotion labels to music features, used for ontology population.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    belongs to
+   </dt>
+   <dd>
+    <a href="#DataSource" title="http://example.org/emotion-aware-recommendation#DataSource">Data Source</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has facts
+   </dt>
+   <dd>
+    <a href="#hasSourceURL" title="http://example.org/emotion-aware-recommendation#hasSourceURL">has source URL</a> <sup class="type-dp" title="data property">dp</sup> <a href="https://www.kaggle.com/datasets/musicemotionrecognition" target="_blank" title="https://www.kaggle.com/datasets/musicemotionrecognition">musicemotionrecognition</a> <sup class="type-ep" title="external property">ep</sup>
    </dd>
   </dl>
  </div>
@@ -1880,7 +2704,7 @@ This section provides details for each class and property defined by Emotion-Awa
     <a href="#givenTo" title="http://example.org/emotion-aware-recommendation#givenTo">given to</a> <sup class="type-op" title="object property">op</sup> <a href="#Enes" title="http://example.org/emotion-aware-recommendation#Enes">Enes</a> <sup class="type-ni" title="named individual">ni</sup>
    </dd>
    <dd>
-    <a href="#hasFeedback" title="http://example.org/emotion-aware-recommendation#hasFeedback">has feedback</a> <sup class="type-op" title="object property">op</sup> <a href="#Feedback004" title="http://example.org/emotion-aware-recommendation#Feedback004">Positive feedback for recommendation 004</a> <sup class="type-ni" title="named individual">ni</sup>
+    <a href="#hasFeedback" title="http://example.org/emotion-aware-recommendation#hasFeedback">has feedback</a> <sup class="type-op" title="object property">op</sup> <a href="#Feedback004" title="http://example.org/emotion-aware-recommendation#Feedback004">Positive feedback 004</a> <sup class="type-ni" title="named individual">ni</sup>
    </dd>
    <dd>
     <a href="#hasIntention" title="http://example.org/emotion-aware-recommendation#hasIntention">has intention</a> <sup class="type-op" title="object property">op</sup> <a href="#IncreaseMotivation" title="http://example.org/emotion-aware-recommendation#IncreaseMotivation">Increase Motivation</a> <sup class="type-ni" title="named individual">ni</sup>
@@ -1929,6 +2753,21 @@ This section provides details for each class and property defined by Emotion-Awa
    </dd>
   </dl>
  </div>
+ <div class="entity" id="NeuroticiUser">
+  <h3>Neurotic User<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://example.org/emotion-aware-recommendation#NeuroticiUser</p>
+  <div class="comment">
+   <span class="markdown">Neurotic personality individual — benefits most from calming, grounding content.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    belongs to
+   </dt>
+   <dd>
+    <a href="#NeuroticlPersonality" title="http://example.org/emotion-aware-recommendation#NeuroticlPersonality">Neurotic Personality</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
  <div class="entity" id="Night">
   <h3>Night<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
   <p><strong>IRI:</strong> http://example.org/emotion-aware-recommendation#Night</p>
@@ -1938,6 +2777,21 @@ This section provides details for each class and property defined by Emotion-Awa
    </dt>
    <dd>
     <a href="#TimeContext" title="http://example.org/emotion-aware-recommendation#TimeContext">Time Context</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="OpenUser">
+  <h3>Open User<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://example.org/emotion-aware-recommendation#OpenUser</p>
+  <div class="comment">
+   <span class="markdown">High-openness personality individual — enjoys novel, artistic, experimental content.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    belongs to
+   </dt>
+   <dd>
+    <a href="#OpennessPersonality" title="http://example.org/emotion-aware-recommendation#OpennessPersonality">Openness Personality</a> <sup class="type-c" title="class">c</sup>
    </dd>
   </dl>
  </div>
@@ -1954,7 +2808,7 @@ This section provides details for each class and property defined by Emotion-Awa
   </dl>
  </div>
  <div class="entity" id="Feedback001">
-  <h3>Positive feedback for recommendation 001<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <h3>Positive feedback 001<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
   <p><strong>IRI:</strong> http://example.org/emotion-aware-recommendation#Feedback001</p>
   <dl class="description">
    <dt>
@@ -1972,7 +2826,7 @@ This section provides details for each class and property defined by Emotion-Awa
   </dl>
  </div>
  <div class="entity" id="Feedback002">
-  <h3>Positive feedback for recommendation 002<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <h3>Positive feedback 002<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
   <p><strong>IRI:</strong> http://example.org/emotion-aware-recommendation#Feedback002</p>
   <dl class="description">
    <dt>
@@ -1990,7 +2844,7 @@ This section provides details for each class and property defined by Emotion-Awa
   </dl>
  </div>
  <div class="entity" id="Feedback003">
-  <h3>Positive feedback for recommendation 003<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <h3>Positive feedback 003<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
   <p><strong>IRI:</strong> http://example.org/emotion-aware-recommendation#Feedback003</p>
   <dl class="description">
    <dt>
@@ -2008,7 +2862,7 @@ This section provides details for each class and property defined by Emotion-Awa
   </dl>
  </div>
  <div class="entity" id="Feedback004">
-  <h3>Positive feedback for recommendation 004<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <h3>Positive feedback 004<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
   <p><strong>IRI:</strong> http://example.org/emotion-aware-recommendation#Feedback004</p>
   <dl class="description">
    <dt>
@@ -2087,7 +2941,7 @@ This section provides details for each class and property defined by Emotion-Awa
     <a href="#givenTo" title="http://example.org/emotion-aware-recommendation#givenTo">given to</a> <sup class="type-op" title="object property">op</sup> <a href="#Busra" title="http://example.org/emotion-aware-recommendation#Busra">Büşra</a> <sup class="type-ni" title="named individual">ni</sup>
    </dd>
    <dd>
-    <a href="#hasFeedback" title="http://example.org/emotion-aware-recommendation#hasFeedback">has feedback</a> <sup class="type-op" title="object property">op</sup> <a href="#Feedback003" title="http://example.org/emotion-aware-recommendation#Feedback003">Positive feedback for recommendation 003</a> <sup class="type-ni" title="named individual">ni</sup>
+    <a href="#hasFeedback" title="http://example.org/emotion-aware-recommendation#hasFeedback">has feedback</a> <sup class="type-op" title="object property">op</sup> <a href="#Feedback003" title="http://example.org/emotion-aware-recommendation#Feedback003">Positive feedback 003</a> <sup class="type-ni" title="named individual">ni</sup>
    </dd>
    <dd>
     <a href="#hasIntention" title="http://example.org/emotion-aware-recommendation#hasIntention">has intention</a> <sup class="type-op" title="object property">op</sup> <a href="#ImproveMood" title="http://example.org/emotion-aware-recommendation#ImproveMood">Improve Mood</a> <sup class="type-ni" title="named individual">ni</sup>
@@ -2159,7 +3013,7 @@ This section provides details for each class and property defined by Emotion-Awa
     belongs to
    </dt>
    <dd>
-    <a href="#Emotion" title="http://example.org/emotion-aware-recommendation#Emotion">Emotion</a> <sup class="type-c" title="class">c</sup>
+    <a href="#NegativeEmotion" title="http://example.org/emotion-aware-recommendation#NegativeEmotion">Negative Emotion</a> <sup class="type-c" title="class">c</sup>
    </dd>
    <dt>
     has facts
@@ -2181,6 +3035,36 @@ This section provides details for each class and property defined by Emotion-Awa
    </dd>
   </dl>
  </div>
+ <div class="entity" id="SedentaryBehavior">
+  <h3>Sedentary Behavior<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://example.org/emotion-aware-recommendation#SedentaryBehavior</p>
+  <div class="comment">
+   <span class="markdown">User with passive interaction patterns, low effort content preferred.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    belongs to
+   </dt>
+   <dd>
+    <a href="#BehaviorProfile" title="http://example.org/emotion-aware-recommendation#BehaviorProfile">Behavior Profile</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="SpeedBehavior">
+  <h3>Speed Behavior<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://example.org/emotion-aware-recommendation#SpeedBehavior</p>
+  <div class="comment">
+   <span class="markdown">User who consumes content quickly, prefers short-form recommendations.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    belongs to
+   </dt>
+   <dd>
+    <a href="#BehaviorProfile" title="http://example.org/emotion-aware-recommendation#BehaviorProfile">Behavior Profile</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
  <div class="entity" id="Spotify">
   <h3>Spotify<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
   <p><strong>IRI:</strong> http://example.org/emotion-aware-recommendation#Spotify</p>
@@ -2193,6 +3077,27 @@ This section provides details for each class and property defined by Emotion-Awa
    </dd>
   </dl>
  </div>
+ <div class="entity" id="SpotifyAPISource">
+  <h3>Spotify Web API<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://example.org/emotion-aware-recommendation#SpotifyAPISource</p>
+  <div class="comment">
+   <span class="markdown">User listening history and interaction logs collected via the Spotify Web API.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    belongs to
+   </dt>
+   <dd>
+    <a href="#DataSource" title="http://example.org/emotion-aware-recommendation#DataSource">Data Source</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has facts
+   </dt>
+   <dd>
+    <a href="#hasSourceURL" title="http://example.org/emotion-aware-recommendation#hasSourceURL">has source URL</a> <sup class="type-dp" title="data property">dp</sup> <a href="https://developer.spotify.com/documentation/web-api" target="_blank" title="https://developer.spotify.com/documentation/web-api">web api</a> <sup class="type-ep" title="external property">ep</sup>
+   </dd>
+  </dl>
+ </div>
  <div class="entity" id="Stress">
   <h3>Stress<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
   <p><strong>IRI:</strong> http://example.org/emotion-aware-recommendation#Stress</p>
@@ -2201,7 +3106,7 @@ This section provides details for each class and property defined by Emotion-Awa
     belongs to
    </dt>
    <dd>
-    <a href="#Emotion" title="http://example.org/emotion-aware-recommendation#Emotion">Emotion</a> <sup class="type-c" title="class">c</sup>
+    <a href="#NegativeEmotion" title="http://example.org/emotion-aware-recommendation#NegativeEmotion">Negative Emotion</a> <sup class="type-c" title="class">c</sup>
    </dd>
    <dt>
     has facts
@@ -2243,7 +3148,7 @@ This section provides details for each class and property defined by Emotion-Awa
     <a href="#givenTo" title="http://example.org/emotion-aware-recommendation#givenTo">given to</a> <sup class="type-op" title="object property">op</sup> <a href="#Elif" title="http://example.org/emotion-aware-recommendation#Elif">Elif</a> <sup class="type-ni" title="named individual">ni</sup>
    </dd>
    <dd>
-    <a href="#hasFeedback" title="http://example.org/emotion-aware-recommendation#hasFeedback">has feedback</a> <sup class="type-op" title="object property">op</sup> <a href="#Feedback001" title="http://example.org/emotion-aware-recommendation#Feedback001">Positive feedback for recommendation 001</a> <sup class="type-ni" title="named individual">ni</sup>
+    <a href="#hasFeedback" title="http://example.org/emotion-aware-recommendation#hasFeedback">has feedback</a> <sup class="type-op" title="object property">op</sup> <a href="#Feedback001" title="http://example.org/emotion-aware-recommendation#Feedback001">Positive feedback 001</a> <sup class="type-ni" title="named individual">ni</sup>
    </dd>
    <dd>
     <a href="#hasIntention" title="http://example.org/emotion-aware-recommendation#hasIntention">has intention</a> <sup class="type-op" title="object property">op</sup> <a href="#ReduceStress" title="http://example.org/emotion-aware-recommendation#ReduceStress">Reduce Stress</a> <sup class="type-ni" title="named individual">ni</sup>
@@ -2264,7 +3169,7 @@ This section provides details for each class and property defined by Emotion-Awa
     belongs to
    </dt>
    <dd>
-    <a href="#Emotion" title="http://example.org/emotion-aware-recommendation#Emotion">Emotion</a> <sup class="type-c" title="class">c</sup>
+    <a href="#NegativeEmotion" title="http://example.org/emotion-aware-recommendation#NegativeEmotion">Negative Emotion</a> <sup class="type-c" title="class">c</sup>
    </dd>
    <dt>
     has facts
@@ -2313,12 +3218,15 @@ This section provides details for each class and property defined by Emotion-Awa
  <div class="entity" id="Introvert">
   <h3>Introvert<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
   <p><strong>IRI:</strong> http://example.org/emotion-aware-recommendation#Introvert</p>
+  <div class="comment">
+   <span class="markdown">Introverted personality individual. Suitable for calm, solo, low-stimulation content.</span>
+  </div>
   <dl class="description">
    <dt>
     belongs to
    </dt>
    <dd>
-    <a href="#Personality" title="http://example.org/emotion-aware-recommendation#Personality">Personality</a> <sup class="type-c" title="class">c</sup>
+    <a href="#IntrovertedPersonality" title="http://example.org/emotion-aware-recommendation#IntrovertedPersonality">Introverted Personality</a> <sup class="type-c" title="class">c</sup>
    </dd>
   </dl>
  </div>
@@ -2329,5 +3237,6 @@ This section provides details for each class and property defined by Emotion-Awa
 <sup class="type-op" title="Object Properties">op</sup>: Object Properties <br/>
 <sup class="type-dp" title="Data Properties">dp</sup>: Data Properties <br/>
 <sup class="type-ni" title="Named Individuals">ni</sup>: Named Individuals <br/>
+<sup class="type-ep" title="External Properties">ep</sup>: External Properties
 </div>
 </div>
