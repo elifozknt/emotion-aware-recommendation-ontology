@@ -3,7 +3,12 @@
 
 📄 [View Live Documentation](https://elifozknt.github.io/emotion-aware-recommendation-ontology/index-en.html)
 
-
+## Phase 2 Updates
+- Personality class extended with 6 subclasses (Big Five model)
+- Emotion class extended with 3 subclasses (UniEmotion inspired)
+- Added DynamicEmotion, BehaviorProfile, EmotionSession, UserInteraction, DataSource classes
+- Version: 2.0.0
+- 
 # Emotion-Aware Intelligent Recommendation Ontology
 
 ## Description
