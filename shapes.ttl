@@ -1,0 +1,84 @@
+@prefix ex: <http://example.org/emotion-aware-recommendation#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+
+
+ex:UserShape
+    a sh:NodeShape ;
+    sh:targetClass ex:User ;
+    sh:property [
+        sh:path ex:feels ;
+        sh:minCount 1 ;
+        sh:message "Each user must have at least one emotional state." ;
+    ] ;
+    sh:property [
+        sh:path ex:hasPersonality ;
+        sh:minCount 1 ;
+        sh:message "Each user must have a personality profile." ;
+    ] .
+
+ex:DynamicEmotionShape
+    a sh:NodeShape ;
+    sh:targetClass ex:DynamicEmotion ;
+    sh:property [
+        sh:path ex:hasIntensityLevel ;
+        sh:datatype xsd:decimal ;
+        sh:minInclusive 0.0 ;
+        sh:maxInclusive 1.0 ;
+        sh:minCount 1 ;
+        sh:message "Dynamic emotion intensity must be a decimal value between 0 and 1." ;
+    ] .
+
+ex:EmotionSessionShape
+    a sh:NodeShape ;
+    sh:targetClass ex:EmotionSession ;
+    sh:property [
+        sh:path ex:hasTimestamp ;
+        sh:datatype xsd:dateTime ;
+        sh:minCount 1 ;
+        sh:message "Each emotion session must have a timestamp." ;
+    ] ;
+    sh:property [
+        sh:path ex:hasInteraction ;
+        sh:minCount 1 ;
+        sh:message "Each emotion session must include at least one user interaction." ;
+    ] .
+
+ex:UserInteractionShape
+    a sh:NodeShape ;
+    sh:targetClass ex:UserInteraction ;
+    sh:property [
+        sh:path ex:interactedWith ;
+        sh:class ex:Content ;
+        sh:minCount 1 ;
+        sh:message "Each user interaction must be linked to a content item." ;
+    ] ;
+    sh:property [
+        sh:path ex:hasInteractionType ;
+        sh:datatype xsd:string ;
+        sh:in ("play" "skip" "complete") ;
+        sh:minCount 1 ;
+        sh:message "Interaction type must be play, skip, or complete." ;
+    ] .
+
+ex:RecommendationShape
+a sh:NodeShape ;
+sh:targetClass ex:Recommendation ;
+sh:property [
+sh:path rdfs:label ;
+sh:minCount 1 ;
+sh:message "Each recommendation should have a readable label." ;
+] .
+
+
+ex:DataSourceShape
+    a sh:NodeShape ;
+    sh:targetClass ex:DataSource ;
+    sh:property [
+        sh:path ex:hasSourceURL ;
+        sh:nodeKind sh:IRI ;
+        sh:minCount 1 ;
+        sh:message "Each data source must have a source URL." ;
+    ] .
